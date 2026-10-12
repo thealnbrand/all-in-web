@@ -1,26 +1,120 @@
 @import "tailwindcss";
 
+@theme {
+  --color-pine: #243528;
+  --color-shadow-ground: #1B291F;
+  --color-titanium: #E5E7EB;
+  --color-gold: #D4AF37;
+  --color-gold-hover: #E5C158;
+  --color-gold-muted: rgba(212, 175, 55, 0.15);
+  --color-muted: #9CA3AF;
+  --color-border-subtle: rgba(156, 163, 175, 0.2);
+  --font-sans: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --background: #243528;
+  --foreground: #E5E7EB;
+  --surface: #1B291F;
+  --gold: #D4AF37;
+  --titanium: #E5E7EB;
+  --muted: #9CA3AF;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #243528;
+  color: #E5E7EB;
+  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: #D4AF37;
+  color: #1B291F;
+}
+
+/* Custom subtle ambient grid pattern */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(156, 163, 175, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(156, 163, 175, 0.04) 1px, transparent 1px);
+}
+
+/* Gold glow utilities */
+.gold-glow {
+  box-shadow: 0 0 25px -5px rgba(212, 175, 55, 0.25);
+}
+
+.gold-glow-sm {
+  box-shadow: 0 0 12px -2px rgba(212, 175, 55, 0.2);
+}
+
+.gold-text-glow {
+  text-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
+}
+
+/* Custom scrollbar for deep pine theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1B291F;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #243528;
+  border: 1px solid #D4AF37;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #D4AF37;
+}
+
+/* Infinite non-stop continuous marquee animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 22s linear infinite;
+  will-change: transform;
+}
+
+/* Pipeline data stream laser animation */
+@keyframes pulseFlow {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(200%);
+    opacity: 0.2;
+  }
+}
+
+.animate-pulse-flow {
+  animation: pulseFlow 2.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes scanline {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
 }

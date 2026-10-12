@@ -1,7 +1,15 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  transpilePackages: ["@react-three/fiber", "@react-three/drei", "three", "zustand"],
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "public-files.gumroad.com",
+      },
+    ],
+  },
 };
 
 export default nextConfig;
