@@ -21,10 +21,9 @@ import { FloatingNavDock } from '../components/FloatingNavDock';
 
 export default function Home() {
   const [inquirySubject, setInquirySubject] = useState<string>('');
-  const [parallaxOffset, setParallaxOffset] = useState<{ x: number; y: number }>({ x: 0, y: 0 });
-  const [scrollYOffset, setScrollYOffset] = useState<number>(0);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const [activeLineIndex, setActiveLineIndex] = useState<number>(1);
+  const heroBgRef = React.useRef<HTMLDivElement | null>(null);
 
   React.useEffect(() => {
     let animationFrameId: number;
@@ -32,6 +31,7 @@ export default function Home() {
     let mouseY = 0;
     let currentX = 0;
     let currentY = 0;
+    let scrollYVal = 0;
 
     const lineInterval = setInterval(() => {
       setActiveLineIndex((prev) => (prev + 1) % 3);
@@ -46,19 +46,22 @@ export default function Home() {
 
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      setScrollYOffset(scrollY * 0.25);
+      scrollYVal = scrollY * 0.25;
       const heroElement = document.querySelector('section');
       const heroThreshold = heroElement ? heroElement.offsetHeight - 100 : 700;
-      setIsScrolled(scrollY > heroThreshold);
+      const nextScrolled = scrollY > heroThreshold;
+      setIsScrolled((prev) => (prev !== nextScrolled ? nextScrolled : prev));
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
     window.addEventListener('scroll', handleScroll, { passive: true });
 
     const updateParallax = () => {
       currentX += (mouseX - currentX) * 0.06;
       currentY += (mouseY - currentY) * 0.06;
-      setParallaxOffset({ x: currentX, y: currentY });
+      if (heroBgRef.current) {
+        heroBgRef.current.style.transform = `translate3d(${currentX.toFixed(2)}px, ${(currentY - scrollYVal).toFixed(2)}px, 0) scale(1.05)`;
+      }
       animationFrameId = requestAnimationFrame(updateParallax);
     };
 
@@ -139,9 +142,10 @@ export default function Home() {
       <section className="relative w-full min-h-[850px] sm:min-h-[880px] lg:min-h-[920px] bg-[#243528] overflow-hidden">
         {/* Custom Background Image Overlay Stretching Under Top Navbar with Smooth Mouse Parallax Depth */}
         <div
+          ref={heroBgRef}
           className="absolute inset-0 z-0 pointer-events-none will-change-transform"
           style={{
-            transform: `translate3d(${parallaxOffset.x}px, ${parallaxOffset.y - scrollYOffset}px, 0) scale(1.05)`,
+            transform: 'translate3d(0px, 0px, 0) scale(1.05)',
           }}
         >
           <Image

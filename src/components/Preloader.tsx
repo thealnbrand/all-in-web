@@ -10,42 +10,43 @@ interface PreloaderProps {
 export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
   const [step, setStep] = useState<number>(1);
   const [isFinished, setIsFinished] = useState<boolean>(false);
+  const onCompleteRef = React.useRef(onComplete);
+  onCompleteRef.current = onComplete;
 
-  const triggerOpenSite = () => {
+  const triggerOpenSite = React.useCallback(() => {
     setStep(4);
     setTimeout(() => {
       setIsFinished(true);
-      if (onComplete) onComplete();
-    }, 1000);
-  };
+      if (onCompleteRef.current) onCompleteRef.current();
+    }, 800);
+  }, []);
 
   useEffect(() => {
-    // Stage 1: Big phrase "ALL LINES. ALL IDEAS. NOW." (0ms - 1800ms)
-    // Stage 2: "ALL IN" (1800ms - 3400ms)
-    // Stage 3: Official Logo image /logo.png (3400ms - 5000ms)
-    // Stage 4: Open site (5000ms)
+    // Stage 1: Big phrase "ALL LINES. ALL IDEAS. NOW." (0ms - 1200ms)
+    // Stage 2: "ALL IN" (1200ms - 2200ms)
+    // Stage 3: Official Logo image /logo.png (2200ms - 3200ms)
+    // Stage 4: Open site (3200ms)
 
     const timer1 = setTimeout(() => {
       setStep(2);
-    }, 1800);
+    }, 1200);
 
     const timer2 = setTimeout(() => {
       setStep(3);
-    }, 3400);
+    }, 2200);
 
     const timer3 = setTimeout(() => {
       setStep(4);
-    }, 5000);
+    }, 3200);
 
     const timer4 = setTimeout(() => {
       setIsFinished(true);
-      if (onComplete) onComplete();
-    }, 6000);
+      if (onCompleteRef.current) onCompleteRef.current();
+    }, 4000);
 
     // Keyboard interaction to skip preloader:
     // Only active while preloader is currently visible and never intercepts form inputs.
     const handleKeyDown = (e: KeyboardEvent) => {
-      // Never intercept keystrokes if typing inside an input or textarea
       const target = e.target as HTMLElement | null;
       if (
         target?.tagName === 'INPUT' ||
@@ -71,7 +72,7 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
       clearTimeout(timer4);
       window.removeEventListener('keydown', handleKeyDown);
     };
-  }, [onComplete]);
+  }, [triggerOpenSite]);
 
   if (isFinished) return null;
 
