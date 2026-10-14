@@ -108,7 +108,7 @@ export default function SingleGoodsProductPage() {
           <Link href="/goods" className="text-[#D4AF37] border-b-2 border-[#D4AF37] pb-1 flex items-center gap-1">
             <span className="text-[#D4AF37]">03 //</span> GOODS
           </Link>
-          <Link href="/manifesto" className="text-[#E5E7EB]/80 hover:text-[#D4AF37] transition-colors flex items-center gap-1">
+          <Link href="/philosophy" className="text-[#E5E7EB]/80 hover:text-[#D4AF37] transition-colors flex items-center gap-1">
             <span className="text-[#D4AF37]">04 //</span> PHILOSOPHY
           </Link>
         </nav>

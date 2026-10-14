@@ -106,7 +106,7 @@ export default function SingleDigitalProductPage() {
           <Link href="/goods" className="hover:text-[#D4AF37] transition-colors flex items-center gap-1 group">
             <span className="text-[#D4AF37]">03 //</span> GOODS
           </Link>
-          <Link href="/manifesto" className="hover:text-[#D4AF37] transition-colors flex items-center gap-1 group">
+          <Link href="/philosophy" className="hover:text-[#D4AF37] transition-colors flex items-center gap-1 group">
             <span className="text-[#D4AF37]">04 //</span> PHILOSOPHY
           </Link>
         </nav>

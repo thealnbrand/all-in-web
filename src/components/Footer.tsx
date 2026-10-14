@@ -60,7 +60,7 @@ export const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/manifesto" className="hover:text-[#D4AF37] transition-colors flex items-center gap-1.5">
+                <Link href="/philosophy" className="hover:text-[#D4AF37] transition-colors flex items-center gap-1.5">
                   <span className="text-[#D4AF37]">04 //</span> PHILOSOPHY
                 </Link>
               </li>

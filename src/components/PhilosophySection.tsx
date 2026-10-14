@@ -214,7 +214,7 @@ export const PhilosophySection: React.FC = () => {
         </div>
 
         <Link
-          href="/manifesto"
+          href="/philosophy"
           className="font-mono text-xs font-extrabold text-[#1B291F] bg-[#D4AF37] hover:bg-[#E5C158] px-8 py-3.5 rounded-full transition-all shadow-xl hover:scale-105 cursor-pointer shrink-0 text-center flex items-center gap-2"
         >
           <span>[ READ STUDIO PHILOSOPHY ]</span>

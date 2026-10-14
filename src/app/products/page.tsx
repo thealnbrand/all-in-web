@@ -15,6 +15,7 @@ import {
   CatalogSearchAndCategories,
   CategoryOption,
 } from '../../components/CatalogSearchAndCategories';
+import { BackgroundWatermark } from '../../components/BackgroundWatermark';
 
 const CORE_CATEGORIES = [
   'ALL',
@@ -85,7 +86,8 @@ export default function ProductsPage() {
   }, [productsList, activeCategory, searchQuery]);
 
   return (
-    <div className="min-h-screen w-full bg-[#243528] text-[#E5E7EB] font-sans selection:bg-[#D4AF37] selection:text-[#1B291F]">
+    <div className="min-h-screen w-full bg-[#243528] text-[#E5E7EB] font-sans selection:bg-[#D4AF37] selection:text-[#1B291F] relative">
+      <BackgroundWatermark />
       {/* Fixed Navigation Header */}
       <header className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 lg:px-12 py-4 flex items-center justify-between h-[88px] bg-[#1B291F]/95 backdrop-blur-md border-b border-[#D4AF37]/35 shadow-xl">
         {/* Far Left: Logo Anchor */}
@@ -111,7 +113,7 @@ export default function ProductsPage() {
           <Link href="/goods" className="hover:text-[#D4AF37] transition-colors flex items-center gap-1 group">
             <span className="text-[#D4AF37]">03 //</span> GOODS
           </Link>
-          <Link href="/manifesto" className="hover:text-[#D4AF37] transition-colors flex items-center gap-1 group">
+          <Link href="/philosophy" className="hover:text-[#D4AF37] transition-colors flex items-center gap-1 group">
             <span className="text-[#D4AF37]">04 //</span> PHILOSOPHY
           </Link>
         </nav>
