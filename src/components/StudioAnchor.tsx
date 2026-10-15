@@ -44,7 +44,7 @@ export const StudioAnchor: React.FC = () => {
 
             <div>
               <Link
-                href="/#philosophy"
+                href="/philosophy"
                 className="inline-block text-xs font-mono text-[#D4AF37] hover:underline underline-offset-4 tracking-wider uppercase font-bold transition-all hover:translate-x-1"
               >
                 [ READ THE PHILOSOPHY → ]
