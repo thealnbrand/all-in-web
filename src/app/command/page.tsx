@@ -296,6 +296,41 @@ export default function CommandPage() {
     }
   };
 
+  const handleSetProductLandingSlot = async (productId: string, slot: number) => {
+    try {
+      const targetProd = products.find((p) => p.id === productId);
+      if (!targetProd) return;
+
+      const previousSlot = targetProd.sort_order || 0;
+      const occupant = products.find((p) => p.sort_order === slot && p.id !== productId);
+
+      if (occupant) {
+        await fetch('/api/admin/products', {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id: occupant.id, sort_order: previousSlot || 99 }),
+        });
+      }
+
+      const res = await fetch('/api/admin/products', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: productId, sort_order: slot }),
+      });
+
+      if (res.ok) {
+        showToast(
+          slot >= 1 && slot <= 4
+            ? `Set "${targetProd.name}" as Landing Slot #${slot}`
+            : `Moved "${targetProd.name}" to full catalog only`
+        );
+        fetchProducts();
+      }
+    } catch {
+      showToast('Error updating landing showcase slot');
+    }
+  };
+
   // GOODS
   const fetchGoods = async () => {
     setGoodsLoading(true);
@@ -363,6 +398,41 @@ export default function CommandPage() {
       }
     } catch {
       showToast('Error deleting capsule item');
+    }
+  };
+
+  const handleSetGoodsLandingSlot = async (goodsId: string, slot: number) => {
+    try {
+      const targetItem = goods.find((g) => g.id === goodsId);
+      if (!targetItem) return;
+
+      const previousSlot = targetItem.sort_order || 0;
+      const occupant = goods.find((g) => g.sort_order === slot && g.id !== goodsId);
+
+      if (occupant) {
+        await fetch('/api/admin/goods', {
+          method: 'PUT',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ id: occupant.id, sort_order: previousSlot || 99 }),
+        });
+      }
+
+      const res = await fetch('/api/admin/goods', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id: goodsId, sort_order: slot }),
+      });
+
+      if (res.ok) {
+        showToast(
+          slot >= 1 && slot <= 3
+            ? `Set "${targetItem.name}" as Landing Slot #${slot}`
+            : `Moved "${targetItem.name}" to full catalog only`
+        );
+        fetchGoods();
+      }
+    } catch {
+      showToast('Error updating landing showcase slot');
     }
   };
 
@@ -887,6 +957,102 @@ export default function CommandPage() {
               </button>
             </div>
 
+            {/* LANDING PAGE DIGITAL SHOWCASE (4 SLOTS) */}
+            <div className="bg-[#142018] border border-[#D4AF37]/40 rounded-2xl p-5 sm:p-6 shadow-xl space-y-4">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/10 pb-4">
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#D4AF37] animate-pulse" />
+                    <h3 className="font-mono text-xs sm:text-sm font-extrabold text-[#D4AF37] tracking-wider uppercase">
+                      // LANDING PAGE DIGITAL SHOWCASE (4 SLOTS)
+                    </h3>
+                  </div>
+                  <p className="text-xs text-[#E5E7EB]/70 font-sans mt-1">
+                    Select which 4 products appear on the landing page 2×2 grid. All products remain available in the full /products catalog.
+                  </p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                {[1, 2, 3, 4].map((slot) => {
+                  const assigned = products.find((p) => p.sort_order === slot);
+                  const slotLabel =
+                    slot === 1
+                      ? 'TOP LEFT'
+                      : slot === 2
+                      ? 'TOP RIGHT'
+                      : slot === 3
+                      ? 'BOTTOM LEFT'
+                      : 'BOTTOM RIGHT';
+
+                  return (
+                    <div
+                      key={slot}
+                      className={`bg-[#1B291F] border rounded-xl p-3.5 space-y-2.5 relative transition-all ${
+                        assigned ? 'border-[#D4AF37]/40 shadow-[0_0_15px_rgba(212,175,55,0.08)]' : 'border-dashed border-white/15'
+                      }`}
+                    >
+                      <div className="flex items-center justify-between text-[11px] font-mono">
+                        <span className="text-[#D4AF37] font-extrabold">SLOT 0{slot}</span>
+                        <span className="text-white/40 text-[10px]">{slotLabel}</span>
+                      </div>
+
+                      {assigned ? (
+                        <div className="flex items-center gap-2.5">
+                          <div className="relative w-11 h-11 rounded-lg overflow-hidden bg-[#152319] shrink-0 border border-white/10">
+                            {assigned.image ? (
+                              <Image
+                                src={assigned.image}
+                                alt={assigned.name}
+                                fill
+                                className="object-cover"
+                                unoptimized={assigned.image.startsWith('http')}
+                              />
+                            ) : (
+                              <div className="w-full h-full flex items-center justify-center font-mono text-[9px] text-white/30">
+                                NO IMG
+                              </div>
+                            )}
+                          </div>
+                          <div className="min-w-0 flex-1">
+                            <p className="text-xs font-bold text-[#E5E7EB] truncate" title={assigned.name}>
+                              {assigned.name}
+                            </p>
+                            <p className="text-[10px] font-mono text-[#D4AF37]">{assigned.badge || 'PRODUCT'}</p>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="py-2.5 text-center text-xs font-mono text-white/30 border border-dashed border-white/10 rounded-lg">
+                          UNASSIGNED SLOT
+                        </div>
+                      )}
+
+                      <div className="pt-1">
+                        <select
+                          value={assigned?.id || ''}
+                          onChange={(e) => {
+                            if (e.target.value) {
+                              handleSetProductLandingSlot(e.target.value, slot);
+                            } else if (assigned) {
+                              handleSetProductLandingSlot(assigned.id, 99);
+                            }
+                          }}
+                          className="w-full bg-[#152319] border border-white/10 text-[11px] text-[#E5E7EB] font-mono rounded-lg px-2.5 py-1.5 focus:border-[#D4AF37] outline-none cursor-pointer"
+                        >
+                          <option value="">{assigned ? '— Change product —' : '— Assign product —'}</option>
+                          {products.map((p) => (
+                            <option key={p.id} value={p.id}>
+                              {p.name} {p.sort_order === slot ? '(Active Slot)' : p.sort_order && p.sort_order <= 4 ? `(Slot 0${p.sort_order})` : ''}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
             {productsTableMissing && (
               <div className="p-4 rounded-xl bg-amber-950/40 border border-[#D4AF37]/50 text-xs font-mono text-[#D4AF37] space-y-1">
                 <p className="font-bold">⚠️ Supabase Table `studio_products` not created yet.</p>
@@ -944,6 +1110,17 @@ export default function CommandPage() {
                             {p.price_tag}
                           </span>
                         )}
+
+                        {/* Landing Slot Status Badge */}
+                        {p.sort_order && p.sort_order >= 1 && p.sort_order <= 4 ? (
+                          <span className="absolute bottom-3 left-3 font-mono text-[9px] font-extrabold bg-[#D4AF37] text-[#152319] px-2.5 py-0.5 rounded-full shadow-lg">
+                            ★ LANDING SLOT 0{p.sort_order}
+                          </span>
+                        ) : (
+                          <span className="absolute bottom-3 left-3 font-mono text-[9px] font-bold bg-black/70 text-white/50 px-2 py-0.5 rounded-full">
+                            CATALOG ONLY
+                          </span>
+                        )}
                       </div>
 
                       {/* Content */}
@@ -969,8 +1146,40 @@ export default function CommandPage() {
                       </div>
                     </div>
 
+                    {/* Quick Landing Slot Setter Bar */}
+                    <div className="px-5 py-2.5 bg-[#142018] border-t border-white/5 flex items-center justify-between gap-2 text-[10px] font-mono">
+                      <span className="text-[#E5E7EB]/50">LANDING:</span>
+                      <div className="flex items-center gap-1">
+                        {[1, 2, 3, 4].map((slot) => (
+                          <button
+                            key={slot}
+                            type="button"
+                            onClick={() => handleSetProductLandingSlot(p.id, slot)}
+                            title={`Set to Landing Page Slot 0${slot}`}
+                            className={`px-2 py-0.5 rounded transition-all cursor-pointer ${
+                              p.sort_order === slot
+                                ? 'bg-[#D4AF37] text-[#152319] font-extrabold shadow'
+                                : 'bg-[#152319] text-[#E5E7EB]/70 hover:text-white hover:border-[#D4AF37]/50 border border-white/10'
+                            }`}
+                          >
+                            0{slot}
+                          </button>
+                        ))}
+                        {p.sort_order && p.sort_order >= 1 && p.sort_order <= 4 ? (
+                          <button
+                            type="button"
+                            onClick={() => handleSetProductLandingSlot(p.id, 99)}
+                            title="Remove from landing page"
+                            className="px-1.5 py-0.5 rounded text-red-400 hover:text-red-200 bg-red-950/30 border border-red-500/20 cursor-pointer"
+                          >
+                            ✕
+                          </button>
+                        ) : null}
+                      </div>
+                    </div>
+
                     {/* Actions */}
-                    <div className="p-5 pt-0 border-t border-white/5 flex items-center justify-between gap-2 mt-4">
+                    <div className="p-5 pt-3 border-t border-white/5 flex items-center justify-between gap-2">
                       <a
                         href={p.url}
                         target="_blank"
@@ -1030,6 +1239,100 @@ export default function CommandPage() {
               </button>
             </div>
 
+            {/* LANDING PAGE CAPSULE SHOWCASE (3 SLOTS) */}
+            <div className="bg-[#142018] border border-[#D4AF37]/40 rounded-2xl p-5 sm:p-6 shadow-xl space-y-4">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/10 pb-4">
+                <div>
+                  <div className="flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#D4AF37] animate-pulse" />
+                    <h3 className="font-mono text-xs sm:text-sm font-extrabold text-[#D4AF37] tracking-wider uppercase">
+                      // LANDING PAGE CAPSULE SHOWCASE (3 SLOTS)
+                    </h3>
+                  </div>
+                  <p className="text-xs text-[#E5E7EB]/70 font-sans mt-1">
+                    Choose which 3 tactile goods appear on the landing page teaser. All items remain available in the full /goods catalog.
+                  </p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {[1, 2, 3].map((slot) => {
+                  const assigned = goods.find((g) => g.sort_order === slot);
+                  const slotLabel =
+                    slot === 1
+                      ? 'PRIMARY FEATURE'
+                      : slot === 2
+                      ? 'SECONDARY CAPSULE'
+                      : 'TERTIARY CAPSULE';
+
+                  return (
+                    <div
+                      key={slot}
+                      className={`bg-[#1B291F] border rounded-xl p-3.5 space-y-2.5 relative transition-all ${
+                        assigned ? 'border-[#D4AF37]/40 shadow-[0_0_15px_rgba(212,175,55,0.08)]' : 'border-dashed border-white/15'
+                      }`}
+                    >
+                      <div className="flex items-center justify-between text-[11px] font-mono">
+                        <span className="text-[#D4AF37] font-extrabold">CAPSULE SLOT 0{slot}</span>
+                        <span className="text-white/40 text-[10px]">{slotLabel}</span>
+                      </div>
+
+                      {assigned ? (
+                        <div className="flex items-center gap-2.5">
+                          <div className="relative w-11 h-11 rounded-lg overflow-hidden bg-[#152319] shrink-0 border border-white/10">
+                            {assigned.image ? (
+                              <Image
+                                src={assigned.image}
+                                alt={assigned.name}
+                                fill
+                                className="object-cover"
+                                unoptimized={assigned.image.startsWith('http')}
+                              />
+                            ) : (
+                              <div className="w-full h-full flex items-center justify-center font-mono text-[9px] text-white/30">
+                                NO IMG
+                              </div>
+                            )}
+                          </div>
+                          <div className="min-w-0 flex-1">
+                            <p className="text-xs font-bold text-[#E5E7EB] truncate" title={assigned.name}>
+                              {assigned.name}
+                            </p>
+                            <p className="text-[10px] font-mono text-[#D4AF37]">{assigned.badge || 'CAPSULE'}</p>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="py-2.5 text-center text-xs font-mono text-white/30 border border-dashed border-white/10 rounded-lg">
+                          UNASSIGNED SLOT
+                        </div>
+                      )}
+
+                      <div className="pt-1">
+                        <select
+                          value={assigned?.id || ''}
+                          onChange={(e) => {
+                            if (e.target.value) {
+                              handleSetGoodsLandingSlot(e.target.value, slot);
+                            } else if (assigned) {
+                              handleSetGoodsLandingSlot(assigned.id, 99);
+                            }
+                          }}
+                          className="w-full bg-[#152319] border border-white/10 text-[11px] text-[#E5E7EB] font-mono rounded-lg px-2.5 py-1.5 focus:border-[#D4AF37] outline-none cursor-pointer"
+                        >
+                          <option value="">{assigned ? '— Change capsule —' : '— Assign capsule —'}</option>
+                          {goods.map((g) => (
+                            <option key={g.id} value={g.id}>
+                              {g.name} {g.sort_order === slot ? '(Active Slot)' : g.sort_order && g.sort_order <= 3 ? `(Slot 0${g.sort_order})` : ''}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+
             {goodsTableMissing && (
               <div className="p-4 rounded-xl bg-amber-950/40 border border-[#D4AF37]/50 text-xs font-mono text-[#D4AF37] space-y-1">
                 <p className="font-bold">⚠️ Supabase Table `studio_goods` not created yet.</p>
@@ -1087,6 +1390,17 @@ export default function CommandPage() {
                             {item.price_tag}
                           </span>
                         )}
+
+                        {/* Landing Slot Status Badge */}
+                        {item.sort_order && item.sort_order >= 1 && item.sort_order <= 3 ? (
+                          <span className="absolute bottom-3 left-3 font-mono text-[9px] font-extrabold bg-[#D4AF37] text-[#152319] px-2.5 py-0.5 rounded-full shadow-lg">
+                            ★ LANDING SLOT 0{item.sort_order}
+                          </span>
+                        ) : (
+                          <span className="absolute bottom-3 left-3 font-mono text-[9px] font-bold bg-black/70 text-white/50 px-2 py-0.5 rounded-full">
+                            CATALOG ONLY
+                          </span>
+                        )}
                       </div>
 
                       {/* Content */}
@@ -1115,8 +1429,40 @@ export default function CommandPage() {
                       </div>
                     </div>
 
+                    {/* Quick Landing Slot Setter Bar */}
+                    <div className="px-5 py-2.5 bg-[#142018] border-t border-white/5 flex items-center justify-between gap-2 text-[10px] font-mono">
+                      <span className="text-[#E5E7EB]/50">LANDING:</span>
+                      <div className="flex items-center gap-1">
+                        {[1, 2, 3].map((slot) => (
+                          <button
+                            key={slot}
+                            type="button"
+                            onClick={() => handleSetGoodsLandingSlot(item.id, slot)}
+                            title={`Set to Landing Page Slot 0${slot}`}
+                            className={`px-2 py-0.5 rounded transition-all cursor-pointer ${
+                              item.sort_order === slot
+                                ? 'bg-[#D4AF37] text-[#152319] font-extrabold shadow'
+                                : 'bg-[#152319] text-[#E5E7EB]/70 hover:text-white hover:border-[#D4AF37]/50 border border-white/10'
+                            }`}
+                          >
+                            0{slot}
+                          </button>
+                        ))}
+                        {item.sort_order && item.sort_order >= 1 && item.sort_order <= 3 ? (
+                          <button
+                            type="button"
+                            onClick={() => handleSetGoodsLandingSlot(item.id, 99)}
+                            title="Remove from landing page"
+                            className="px-1.5 py-0.5 rounded text-red-400 hover:text-red-200 bg-red-950/30 border border-red-500/20 cursor-pointer"
+                          >
+                            ✕
+                          </button>
+                        ) : null}
+                      </div>
+                    </div>
+
                     {/* Actions */}
-                    <div className="p-5 pt-0 border-t border-white/5 flex items-center justify-between gap-2 mt-4">
+                    <div className="p-5 pt-3 border-t border-white/5 flex items-center justify-between gap-2">
                       <a
                         href={item.url}
                         target="_blank"
@@ -1534,14 +1880,19 @@ export default function CommandPage() {
                 </div>
                 <div>
                   <label className="block text-[11px] font-mono uppercase text-[#D4AF37] mb-1">
-                    Sort Order
+                    Landing Page Feature Slot
                   </label>
-                  <input
-                    type="number"
+                  <select
                     name="sort_order"
                     defaultValue={editingProduct?.sort_order ?? 0}
-                    className="w-full bg-[#152319] border border-white/10 focus:border-[#D4AF37] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
-                  />
+                    className="w-full bg-[#152319] border border-white/10 focus:border-[#D4AF37] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none cursor-pointer"
+                  >
+                    <option value="1">Slot 01 — Top Left (Featured on Landing)</option>
+                    <option value="2">Slot 02 — Top Right (Featured on Landing)</option>
+                    <option value="3">Slot 03 — Bottom Left (Featured on Landing)</option>
+                    <option value="4">Slot 04 — Bottom Right (Featured on Landing)</option>
+                    <option value="0">Standard Catalog (Full /products catalog only)</option>
+                  </select>
                 </div>
               </div>
 
@@ -1809,16 +2160,33 @@ export default function CommandPage() {
                 />
               </div>
 
-              <div>
-                <label className="block text-[11px] font-mono uppercase text-[#D4AF37] mb-1">
-                  Materials & Specs
-                </label>
-                <input
-                  name="materials"
-                  defaultValue={editingGoods?.materials || 'Curated Heavyweight Streetwear Cotton / DTG Print'}
-                  placeholder="e.g. Curated Heavyweight Streetwear Cotton / DTG Print"
-                  className="w-full bg-[#152319] border border-white/10 focus:border-[#D4AF37] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
-                />
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-[11px] font-mono uppercase text-[#D4AF37] mb-1">
+                    Materials & Specs
+                  </label>
+                  <input
+                    name="materials"
+                    defaultValue={editingGoods?.materials || 'Curated Heavyweight Streetwear Cotton / DTG Print'}
+                    placeholder="e.g. Curated Heavyweight Streetwear Cotton / DTG Print"
+                    className="w-full bg-[#152319] border border-white/10 focus:border-[#D4AF37] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
+                  />
+                </div>
+                <div>
+                  <label className="block text-[11px] font-mono uppercase text-[#D4AF37] mb-1">
+                    Landing Page Showcase Slot
+                  </label>
+                  <select
+                    name="sort_order"
+                    defaultValue={editingGoods?.sort_order ?? 0}
+                    className="w-full bg-[#152319] border border-white/10 focus:border-[#D4AF37] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none cursor-pointer"
+                  >
+                    <option value="1">Slot 01 — Primary Feature (First on Landing)</option>
+                    <option value="2">Slot 02 — Secondary Capsule (Second on Landing)</option>
+                    <option value="3">Slot 03 — Tertiary Capsule (Third on Landing)</option>
+                    <option value="0">Standard Goods (Full /goods catalog only)</option>
+                  </select>
+                </div>
               </div>
 
               <div>

@@ -9,11 +9,19 @@ interface PreloaderProps {
 
 export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
   const [step, setStep] = useState<number>(1);
-  const [isFinished, setIsFinished] = useState<boolean>(false);
+  const [isFinished, setIsFinished] = useState<boolean>(() => {
+    if (typeof window !== 'undefined') {
+      return sessionStorage.getItem('aln_preloader_seen') === 'true';
+    }
+    return false;
+  });
   const onCompleteRef = React.useRef(onComplete);
   onCompleteRef.current = onComplete;
 
   const triggerOpenSite = React.useCallback(() => {
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem('aln_preloader_seen', 'true');
+    }
     setStep(4);
     setTimeout(() => {
       setIsFinished(true);
@@ -22,6 +30,12 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
   }, []);
 
   useEffect(() => {
+    if (typeof window !== 'undefined' && sessionStorage.getItem('aln_preloader_seen') === 'true') {
+      setIsFinished(true);
+      if (onCompleteRef.current) onCompleteRef.current();
+      return;
+    }
+
     // Stage 1: Big phrase "ALL LINES. ALL IDEAS. NOW." (0ms - 1200ms)
     // Stage 2: "ALL IN" (1200ms - 2200ms)
     // Stage 3: Official Logo image /logo.png (2200ms - 3200ms)
@@ -40,6 +54,9 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
     }, 3200);
 
     const timer4 = setTimeout(() => {
+      if (typeof window !== 'undefined') {
+        sessionStorage.setItem('aln_preloader_seen', 'true');
+      }
       setIsFinished(true);
       if (onCompleteRef.current) onCompleteRef.current();
     }, 4000);
