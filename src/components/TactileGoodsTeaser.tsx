@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { EXTERNAL_LINKS } from '../lib/externalLinks';
+import { sanitizeImagePath } from '../lib/catalogData';
 
 interface TactileGoodsTeaserProps {
   onInquire?: (subject: string) => void;
@@ -134,8 +135,8 @@ export const TactileGoodsTeaser: React.FC<TactileGoodsTeaserProps> = ({ onInquir
                 status: g.status || fallback.status,
                 badge: g.badge || fallback.badge,
                 price: g.price_tag || fallback.price,
-                primaryImage: g.image || fallback.primaryImage,
-                secondaryImage: g.secondary_image || fallback.secondaryImage,
+                primaryImage: sanitizeImagePath(g.image || fallback.primaryImage),
+                secondaryImage: sanitizeImagePath(g.secondary_image || fallback.secondaryImage),
                 visual1Tag: fallback.visual1Tag,
                 visual1Sub: fallback.visual1Sub,
                 visual2Tag: fallback.visual2Tag,

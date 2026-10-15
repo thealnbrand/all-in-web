@@ -98,7 +98,7 @@ export const DigitalProductsTeaser: React.FC<DigitalProductsTeaserProps> = () =>
 
       {/* B. 2-Column Digital Release Decks (Distinct from Tall Apparel Cards) */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch relative z-10">
-        {products.map((item, idx) => {
+        {products.slice(0, 4).map((item, idx) => {
           const productHref = `/products/${encodeURIComponent(item.id)}`;
 
           return (
