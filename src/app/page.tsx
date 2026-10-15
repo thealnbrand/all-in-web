@@ -115,9 +115,9 @@ export default function Home() {
         <div className="absolute top-[10%] right-[5%] w-[320px] sm:w-[500px] h-[320px] sm:h-[500px] bg-[#D4AF37]/15 rounded-full blur-3xl pointer-events-none z-10 animate-pulse" />
 
         {/* Responsive Content Container: Left Column (Headline/CTA) + Right Column (Logo/Pills) */}
-        <div className="relative z-20 w-full max-w-[1480px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 pt-24 sm:pt-28 lg:pt-32 pb-16 lg:pb-20 flex flex-col lg:flex-row items-center lg:items-start justify-between gap-10 lg:gap-8">
+        <div className="relative z-20 w-full max-w-[1680px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 pt-24 sm:pt-28 lg:pt-32 pb-16 lg:pb-20 flex flex-col lg:flex-row items-center lg:items-start justify-between gap-10 lg:gap-8">
           {/* Left Side: Industrial Telemetry HUD, Kinetic Tagline & Action Deck */}
-          <div className="w-full lg:max-w-[520px] xl:max-w-[580px] flex flex-col gap-5 sm:gap-6 text-left shrink-0">
+          <div className="w-full lg:max-w-[540px] xl:max-w-[600px] flex flex-col gap-5 sm:gap-6 text-left shrink-0">
             {/* Status Badge */}
             <div className="inline-flex items-center gap-2.5 font-mono text-[10px] sm:text-[11px] tracking-widest bg-[#152319]/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-[#D4AF37]/40 shadow-lg w-fit">
               <span className="relative flex h-2 w-2">
