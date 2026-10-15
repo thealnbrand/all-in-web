@@ -87,8 +87,8 @@ export default function Home() {
       {/* Top Navbar Header with Responsive NavigationHeader */}
       <NavigationHeader activeRoute="home" transparentOnTop={true} actionLabel="[ INITIATE ]" actionHref="#contact" />
 
-      {/* Unified Hero Section (Responsive on Mobile, Tablet & Desktop) */}
-      <section className="relative w-full min-h-[850px] sm:min-h-[880px] lg:min-h-[920px] bg-[#243528] overflow-hidden flex flex-col justify-center">
+      {/* Unified Hero Section (Desktop Pixel-Perfect & Mobile/Tablet Responsive) */}
+      <section className="relative w-full min-h-[850px] sm:min-h-[880px] lg:min-h-[920px] bg-[#243528] overflow-hidden">
         {/* Custom Background Image Overlay Stretching Under Top Navbar with Smooth Mouse Parallax Depth */}
         <div
           ref={heroBgRef}
@@ -112,12 +112,10 @@ export default function Home() {
         <HeroEffectsCanvas />
 
         {/* Ambient Gold Radial Glow behind Logo */}
-        <div className="absolute top-[10%] right-[5%] w-[320px] sm:w-[500px] h-[320px] sm:h-[500px] bg-[#D4AF37]/15 rounded-full blur-3xl pointer-events-none z-10 animate-pulse" />
+        <div className="absolute top-[70px] sm:top-[90px] right-4 sm:right-12 lg:right-20 w-[500px] h-[500px] bg-[#D4AF37]/15 rounded-full blur-3xl pointer-events-none z-10 animate-pulse" />
 
-        {/* Responsive Content Container: Left Column (Headline/CTA) + Right Column (Logo/Pills) */}
-        <div className="relative z-20 w-full max-w-[1680px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-20 pt-24 sm:pt-28 lg:pt-32 pb-16 lg:pb-20 flex flex-col lg:flex-row items-center lg:items-start justify-between gap-10 lg:gap-8">
-          {/* Left Side: Industrial Telemetry HUD, Kinetic Tagline & Action Deck */}
-          <div className="w-full lg:max-w-[540px] xl:max-w-[600px] flex flex-col gap-5 sm:gap-6 text-left shrink-0">
+        {/* Left Side: Industrial Telemetry HUD, Kinetic Tagline & Action Deck */}
+        <div className="relative z-20 pt-24 sm:pt-28 pb-8 px-6 sm:px-10 max-w-xl mx-auto lg:mx-0 lg:max-w-[580px] lg:pt-0 lg:pb-0 lg:px-0 lg:absolute lg:top-[125px] xl:top-[135px] lg:left-10 xl:left-16 2xl:left-24 flex flex-col gap-5 sm:gap-6 text-left pointer-events-auto">
             {/* Status Badge */}
             <div className="inline-flex items-center gap-2.5 font-mono text-[10px] sm:text-[11px] tracking-widest bg-[#152319]/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-[#D4AF37]/40 shadow-lg w-fit">
               <span className="relative flex h-2 w-2">
@@ -201,72 +199,71 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Right Side: Big Logo & 3 Main Product Pictures Showcase */}
-          <div className="w-full lg:flex-1 flex flex-col items-center lg:items-end gap-4 sm:gap-5 p-2">
-            {/* Big Logo */}
-            <div className="relative w-[280px] sm:w-[420px] md:w-[500px] lg:w-[560px] xl:w-[640px] aspect-[3/1] max-w-full transition-transform duration-500 hover:scale-105 filter drop-shadow-[0_0_45px_rgba(212,175,55,0.45)]">
+          {/* Right Side: Big Logo & 3 Main Product Pictures Positioned Higher and to the Right */}
+        <div className="relative z-20 pb-16 px-4 lg:pb-0 lg:px-0 lg:absolute lg:top-[95px] xl:top-[105px] lg:right-10 xl:right-16 2xl:right-24 flex flex-col items-center lg:items-end gap-4 sm:gap-5 p-2 pointer-events-auto">
+          {/* Big Logo */}
+          <div className="relative w-[280px] sm:w-[400px] md:w-[500px] lg:w-[600px] xl:w-[660px] aspect-[3/1] max-w-[85vw] lg:max-w-none transition-transform duration-500 hover:scale-105 filter drop-shadow-[0_0_45px_rgba(212,175,55,0.45)]">
+            <Image
+              src="/logo.png"
+              alt="ALL IN Studio Big Logo"
+              fill
+              priority
+              className="object-contain object-center lg:object-right-top"
+            />
+          </div>
+
+          {/* 3 Main Product Showcase Pills (Matching User Reference Composition Exactly) */}
+          <div className="relative w-[280px] sm:w-[440px] md:w-[520px] lg:w-[580px] h-[200px] sm:h-[260px] md:h-[280px] lg:h-[300px] mt-1">
+            {/* 1. Top Left Pill: Digital Products (Laptop on Desk) */}
+            <Link
+              href="/products"
+              className="group absolute top-0 left-0 w-[56%] h-[62%] rounded-[999px] overflow-hidden border-2 border-[#D4AF37]/50 hover:border-[#D4AF37] shadow-2xl transition-all duration-500 hover:scale-105 hover:z-30 bg-[#152319]"
+            >
               <Image
-                src="/logo.png"
-                alt="ALL IN Studio Big Logo"
+                src="/DigitalProducts.webp"
+                alt="02 // PRODUCTS"
                 fill
-                priority
-                className="object-contain object-center lg:object-right-top"
+                className="object-cover group-hover:scale-110 transition-transform duration-700"
               />
-            </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity" />
+              <span className="absolute bottom-2.5 left-5 font-mono text-[9px] sm:text-[10px] font-extrabold text-[#D4AF37] bg-black/75 backdrop-blur-xs px-2.5 py-0.5 rounded-full border border-[#D4AF37]/30">
+                02 // PRODUCTS
+              </span>
+            </Link>
 
-            {/* 3 Main Product Showcase Pills (Matching User Reference Composition Exactly) */}
-            <div className="relative w-[280px] sm:w-[420px] md:w-[480px] lg:w-[540px] xl:w-[580px] h-[190px] sm:h-[260px] md:h-[290px] lg:h-[300px] mt-1">
-              {/* 1. Top Left Pill: Digital Products (Laptop on Desk) */}
-              <Link
-                href="/products"
-                className="group absolute top-0 left-0 w-[56%] h-[62%] rounded-[999px] overflow-hidden border-2 border-[#D4AF37]/50 hover:border-[#D4AF37] shadow-2xl transition-all duration-500 hover:scale-105 hover:z-30 bg-[#152319]"
-              >
-                <Image
-                  src="/DigitalProducts.webp"
-                  alt="02 // PRODUCTS"
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity" />
-                <span className="absolute bottom-2 sm:bottom-2.5 left-3 sm:left-5 font-mono text-[8px] sm:text-[10px] font-extrabold text-[#D4AF37] bg-black/75 backdrop-blur-xs px-2 sm:px-2.5 py-0.5 rounded-full border border-[#D4AF37]/30">
-                  02 // PRODUCTS
-                </span>
-              </Link>
+            {/* 2. Top Right Pill: Systems / Engineering (Code & Keyboard) */}
+            <Link
+              href="/systems"
+              className="group absolute top-0 right-0 w-[56%] h-[62%] rounded-[999px] overflow-hidden border-2 border-[#D4AF37]/50 hover:border-[#D4AF37] shadow-2xl transition-all duration-500 hover:scale-105 hover:z-30 bg-[#152319]"
+            >
+              <Image
+                src="/Engineering.webp"
+                alt="01 // SYSTEMS"
+                fill
+                className="object-cover group-hover:scale-110 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity" />
+              <span className="absolute bottom-2.5 right-5 font-mono text-[9px] sm:text-[10px] font-extrabold text-[#D4AF37] bg-black/75 backdrop-blur-xs px-2.5 py-0.5 rounded-full border border-[#D4AF37]/30">
+                01 // SYSTEMS
+              </span>
+            </Link>
 
-              {/* 2. Top Right Pill: Systems / Engineering (Code & Keyboard) */}
-              <Link
-                href="/systems"
-                className="group absolute top-0 right-0 w-[56%] h-[62%] rounded-[999px] overflow-hidden border-2 border-[#D4AF37]/50 hover:border-[#D4AF37] shadow-2xl transition-all duration-500 hover:scale-105 hover:z-30 bg-[#152319]"
-              >
-                <Image
-                  src="/Engineering.webp"
-                  alt="01 // SYSTEMS"
-                  fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity" />
-                <span className="absolute bottom-2 sm:bottom-2.5 right-3 sm:right-5 font-mono text-[8px] sm:text-[10px] font-extrabold text-[#D4AF37] bg-black/75 backdrop-blur-xs px-2 sm:px-2.5 py-0.5 rounded-full border border-[#D4AF37]/30">
-                  01 // SYSTEMS
-                </span>
-              </Link>
-
-              {/* 3. Center Bottom Overlapping Pill: Tactile Goods ([ALN] Metal Badge Rivet) */}
-              <Link
-                href="/goods"
-                className="group absolute bottom-0 left-1/2 -translate-x-1/2 w-[62%] h-[66%] rounded-[999px] overflow-hidden border-2 border-[#D4AF37]/75 hover:border-[#D4AF37] shadow-[0_25px_60px_rgba(0,0,0,0.9)] transition-all duration-500 hover:scale-105 z-20 bg-[#152319]"
-              >
-                <Image
-                  src="/TactileGoods.webp"
-                  alt="03 // GOODS"
-                  fill
-                  className="object-cover object-center group-hover:scale-110 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity" />
-                <span className="absolute bottom-2 sm:bottom-2.5 left-1/2 -translate-x-1/2 font-mono text-[8px] sm:text-[10px] font-extrabold text-[#D4AF37] bg-black/80 backdrop-blur-xs px-2.5 sm:px-3 py-0.5 rounded-full border border-[#D4AF37]/40 shadow-lg whitespace-nowrap">
-                  03 // GOODS
-                </span>
-              </Link>
-            </div>
+            {/* 3. Center Bottom Overlapping Pill: Tactile Goods ([ALN] Metal Badge Rivet) */}
+            <Link
+              href="/goods"
+              className="group absolute bottom-0 left-1/2 -translate-x-1/2 w-[62%] h-[66%] rounded-[999px] overflow-hidden border-2 border-[#D4AF37]/75 hover:border-[#D4AF37] shadow-[0_25px_60px_rgba(0,0,0,0.9)] transition-all duration-500 hover:scale-105 z-20 bg-[#152319]"
+            >
+              <Image
+                src="/TactileGoods.webp"
+                alt="03 // GOODS"
+                fill
+                className="object-cover object-center group-hover:scale-110 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-80 group-hover:opacity-40 transition-opacity" />
+              <span className="absolute bottom-2.5 left-1/2 -translate-x-1/2 font-mono text-[9px] sm:text-[10px] font-extrabold text-[#D4AF37] bg-black/80 backdrop-blur-xs px-3 py-0.5 rounded-full border border-[#D4AF37]/40 shadow-lg whitespace-nowrap">
+                03 // GOODS
+              </span>
+            </Link>
           </div>
         </div>
       </section>

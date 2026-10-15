@@ -201,6 +201,89 @@ export const DigitalProductsTeaser: React.FC<DigitalProductsTeaserProps> = () =>
             </div>
           );
         })}
+
+        {/* If fewer than 4 items are in the catalog, render Slot 04 so the 2x2 grid is balanced on big PCs */}
+        {products.length < 4 && (
+          <div className="bg-[#1B291F] border border-dashed border-[#D4AF37]/40 hover:border-[#D4AF37] rounded-2xl overflow-hidden shadow-2xl flex flex-col justify-between group hover:shadow-[0_0_35px_rgba(212,175,55,0.14)] transition-all">
+            <div>
+              {/* 1. Top OS / Release Window Telemetry Bar */}
+              <div className="bg-[#142018] border-b border-white/10 px-5 py-3 flex items-center justify-between gap-2 font-mono text-xs">
+                <div className="flex items-center gap-2.5 min-w-0">
+                  <div className="flex items-center gap-1 shrink-0">
+                    <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-ping" />
+                    <span className="w-2 h-2 rounded-full bg-[#D4AF37]" />
+                  </div>
+                  <span className="text-[#9CA3AF] text-[11px] font-bold shrink-0">
+                    REL // 04
+                  </span>
+                  <span className="text-white/20">|</span>
+                  <span className="text-[10px] font-extrabold text-[#D4AF37] bg-[#243528] px-2.5 py-0.5 rounded border border-[#D4AF37]/35 uppercase tracking-wider truncate">
+                    IN PIPELINE
+                  </span>
+                </div>
+
+                <span className="text-xs font-mono font-extrabold text-[#D4AF37] bg-[#D4AF37]/10 px-3 py-0.5 rounded-full border border-[#D4AF37]/30 shrink-0">
+                  UPCOMING
+                </span>
+              </div>
+
+              {/* 2. Horizontal Split Body: Left Screen Viewport + Right Release Dossier */}
+              <div className="p-5 sm:p-6 grid grid-cols-1 sm:grid-cols-12 gap-5 items-center">
+                {/* Left: Framed Digital Viewport */}
+                <a
+                  href="#contact"
+                  className="sm:col-span-5 relative h-44 sm:h-40 w-full rounded-xl overflow-hidden border border-[#D4AF37]/30 bg-[#0F1712] group-hover:border-[#D4AF37] transition-all block cursor-pointer flex flex-col items-center justify-center text-center p-4"
+                  title="Commission or Request Custom Tool"
+                >
+                  <Image
+                    src="/DigitalProducts.webp"
+                    alt="Upcoming Studio Release"
+                    fill
+                    className="object-cover opacity-25 group-hover:scale-105 group-hover:opacity-40 transition-all duration-700"
+                  />
+                  <div className="relative z-10 space-y-1">
+                    <span className="text-2xl font-mono text-[#D4AF37]">✦</span>
+                    <p className="font-mono text-[10px] text-[#D4AF37] font-bold uppercase tracking-wider">
+                      LAB RELEASE 04
+                    </p>
+                    <p className="font-mono text-[9px] text-white/60">
+                      IN PRODUCTION
+                    </p>
+                  </div>
+                </a>
+
+                {/* Right: Release Title, Payoff & Format Spec */}
+                <div className="sm:col-span-7 space-y-2.5 text-left min-w-0">
+                  <h3 className="text-lg sm:text-xl font-black text-white tracking-tight group-hover:text-[#D4AF37] transition-colors truncate">
+                    COMMISSION DIGITAL CREATION
+                  </h3>
+                  <p className="text-xs text-[#E5E7EB]/70 font-sans leading-relaxed line-clamp-2">
+                    Have an idea for a web app, digital asset pack, or software utility? We engineer and package production software for independent teams.
+                  </p>
+                  <div className="pt-1 flex flex-wrap items-center gap-2 font-mono text-[10px]">
+                    <span className="bg-[#243528]/90 text-[#E5E7EB] px-2.5 py-1 rounded border border-white/10 truncate max-w-full">
+                      <span className="text-[#9CA3AF] mr-1">FORMAT:</span>
+                      <span className="font-bold text-white">Bespoke / Custom Architecture</span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Bottom Footer Deck */}
+            <div className="bg-[#152219] border-t border-white/10 px-5 sm:px-6 py-3.5 flex items-center justify-between gap-4 font-mono text-xs">
+              <span className="text-[#9CA3AF] text-[11px] truncate">
+                Direct Inquiry to Tangier HQ
+              </span>
+              <a
+                href="#contact"
+                className="font-bold text-[#1B291F] bg-[#D4AF37] hover:bg-[#E5C158] px-4 py-2 rounded-full transition-all shadow-md hover:scale-105 shrink-0 uppercase"
+              >
+                [ INQUIRE / PRE-ORDER ]
+              </a>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* C. Dedicated Products Repository Link */}
