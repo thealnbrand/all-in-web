@@ -12,7 +12,6 @@ import {
   GoodsCatalogItem,
   normalizeGoodsList,
 } from '../../../lib/catalogData';
-import { NavigationHeader } from '../../../components/NavigationHeader';
 
 export default function SingleGoodsProductPage() {
   const params = useParams<{ id: string }>();
@@ -87,7 +86,40 @@ export default function SingleGoodsProductPage() {
   return (
     <div className="min-h-screen w-full bg-[#243528] text-[#E5E7EB] font-sans selection:bg-[#D4AF37] selection:text-[#1B291F]">
       {/* Fixed Navigation Header */}
-      <NavigationHeader activeRoute="goods" actionLabel="[ INITIATE ]" actionHref="#contact" />
+      <header className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 lg:px-12 py-4 flex items-center justify-between h-[88px] bg-[#1B291F]/95 backdrop-blur-md border-b border-[#D4AF37]/35 shadow-xl">
+        <Link href="/" className="flex items-center gap-3 group focus:outline-none shrink-0">
+          <div className="relative h-9 w-24 flex items-center">
+            <Image src="/logo.png" alt="[ALN] Logo" width={110} height={70} className="h-full w-auto object-contain" priority />
+          </div>
+          <span className="font-mono text-base font-extrabold tracking-widest text-[#E5E7EB] hidden xs:flex items-center gap-2">
+            <span><span className="text-[#D4AF37]">[</span> ALN <span className="text-[#D4AF37]">]</span></span>
+            <span className="text-white/30 font-normal">|</span>
+            <span className="text-xs font-bold text-[#E5E7EB]/90 tracking-widest">ALL IN</span>
+          </span>
+        </Link>
+
+        <nav className="hidden md:flex items-center gap-6 lg:gap-8 font-mono text-[11px] lg:text-xs font-bold tracking-wider">
+          <Link href="/systems" className="text-[#E5E7EB]/80 hover:text-[#D4AF37] transition-colors flex items-center gap-1">
+            <span className="text-[#D4AF37]">01 //</span> SYSTEMS
+          </Link>
+          <Link href="/products" className="text-[#E5E7EB]/80 hover:text-[#D4AF37] transition-colors flex items-center gap-1">
+            <span className="text-[#D4AF37]">02 //</span> PRODUCTS
+          </Link>
+          <Link href="/goods" className="text-[#D4AF37] border-b-2 border-[#D4AF37] pb-1 flex items-center gap-1">
+            <span className="text-[#D4AF37]">03 //</span> GOODS
+          </Link>
+          <Link href="/philosophy" className="text-[#E5E7EB]/80 hover:text-[#D4AF37] transition-colors flex items-center gap-1">
+            <span className="text-[#D4AF37]">04 //</span> PHILOSOPHY
+          </Link>
+        </nav>
+
+        <Link
+          href="#contact"
+          className="font-mono text-xs font-extrabold text-[#1B291F] bg-[#D4AF37] hover:bg-[#E5C158] px-5 py-2 rounded-full transition-all shadow-md hover:scale-105 cursor-pointer"
+        >
+          [ INITIATE ]
+        </Link>
+      </header>
 
       <main className="pt-32 pb-20 px-6 sm:px-12 lg:px-20 max-w-[1440px] mx-auto space-y-16">
         {/* Top Breadcrumb & Back Navigation */}
