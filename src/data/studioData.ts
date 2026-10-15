@@ -132,7 +132,7 @@ export const STUDIO_RELEASES: StudioRelease[] = [
     techStackOrMaterials: ['Next.js 16', 'TypeScript', 'Tailwind CSS v4', 'WebSockets', 'Chart Engine'],
     featured: true,
     imagePlaceholderText: 'SOFTWARE // ALN-OS TELEMETRY INTERFACE',
-    image: '/Engineering.jfif',
+    image: '/Engineering.webp',
     primaryActionLabel: 'EXPLORE CASE STUDY',
   },
   {

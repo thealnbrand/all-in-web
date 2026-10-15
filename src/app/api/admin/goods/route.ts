@@ -47,7 +47,7 @@ export async function POST(req: NextRequest) {
         status: body.status || 'STUDIO GRAPHIC EDITION // ON-DEMAND DISPATCH',
         badge: body.badge || 'STUDIO GRAPHIC EDITION',
         price_tag: body.price_tag || '$160.00 USD',
-        image: body.image || '/TactileGoods.jfif',
+        image: body.image || '/TactileGoods.webp',
         ...(body.secondary_image ? { secondary_image: body.secondary_image } : {}),
         description: body.description || '',
         materials: body.materials || 'Curated Heavyweight Streetwear Cotton / DTG Print',

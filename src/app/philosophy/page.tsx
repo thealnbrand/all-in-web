@@ -385,7 +385,7 @@ export default function ManifestoPage() {
           <div className="lg:col-span-5 flex justify-center">
             <div className="relative w-full max-w-[480px] aspect-[4/5] rounded-3xl overflow-hidden border-2 border-[#D4AF37]/50 shadow-2xl group bg-[#111A13]">
               <Image
-                src="/Option B.jfif"
+                src="/Option B.webp"
                 alt="ALL IN Studio Archival Piece"
                 fill
                 priority

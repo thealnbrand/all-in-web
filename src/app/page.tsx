@@ -271,7 +271,7 @@ export default function Home() {
               className="group absolute top-0 left-0 w-[56%] h-[62%] rounded-[999px] overflow-hidden border-2 border-[#D4AF37]/50 hover:border-[#D4AF37] shadow-2xl transition-all duration-500 hover:scale-105 hover:z-30 bg-[#152319]"
             >
               <Image
-                src="/DigitalProducts.jfif"
+                src="/DigitalProducts.webp"
                 alt="02 // PRODUCTS"
                 fill
                 className="object-cover group-hover:scale-110 transition-transform duration-700"
@@ -288,7 +288,7 @@ export default function Home() {
               className="group absolute top-0 right-0 w-[56%] h-[62%] rounded-[999px] overflow-hidden border-2 border-[#D4AF37]/50 hover:border-[#D4AF37] shadow-2xl transition-all duration-500 hover:scale-105 hover:z-30 bg-[#152319]"
             >
               <Image
-                src="/Engineering.jfif"
+                src="/Engineering.webp"
                 alt="01 // SYSTEMS"
                 fill
                 className="object-cover group-hover:scale-110 transition-transform duration-700"
@@ -305,7 +305,7 @@ export default function Home() {
               className="group absolute bottom-0 left-1/2 -translate-x-1/2 w-[62%] h-[66%] rounded-[999px] overflow-hidden border-2 border-[#D4AF37]/75 hover:border-[#D4AF37] shadow-[0_25px_60px_rgba(0,0,0,0.9)] transition-all duration-500 hover:scale-105 z-20 bg-[#152319]"
             >
               <Image
-                src="/TactileGoods.jfif"
+                src="/TactileGoods.webp"
                 alt="03 // GOODS"
                 fill
                 className="object-cover object-center group-hover:scale-110 transition-transform duration-700"

@@ -61,7 +61,7 @@ export const MouthDroppingHero2D: React.FC<MouthDroppingHero2DProps> = ({ onInqu
   const products: ProductItem[] = [
     {
       id: 0,
-      src: '/Engineering.jfif',
+      src: '/Engineering.webp',
       alt: 'Systems Infrastructure',
       tabLabel: '01 // SYSTEMS',
       badge: '[ 01 // SYSTEMS ]',

@@ -38,9 +38,9 @@ export const DEFAULT_GOODS_CATALOG: GoodsCatalogItem[] = [
     status: 'STUDIO GRAPHIC EDITION // ON-DEMAND DISPATCH',
     badge: 'CAPSULE 001 // FLEECE',
     price_tag: '$160.00 USD',
-    image: '/TactileGoods.jfif',
+    image: '/TactileGoods.webp',
     secondary_image: '/Lifestyle, Black (1).jpeg',
-    gallery: ['/TactileGoods.jfif', '/Lifestyle, Black (1).jpeg'],
+    gallery: ['/TactileGoods.webp', '/Lifestyle, Black (1).jpeg'],
     description:
       'Engineered with high-resolution studio typography, Tangier coordinate stamps (35.7595° N, 5.8340° W), and architectural wireframe prints on premium structured blanks. Built for everyday studio wear with a boxy drop-shoulder silhouette and double-layered hood.',
     materials: 'Curated Heavyweight Streetwear Cotton',
@@ -89,7 +89,7 @@ export const DEFAULT_DIGITAL_CATALOG: DigitalCatalogItem[] = [
     image: 'https://public-files.gumroad.com/77d3qzgy6b7v5yh72m5uzi59u6w3',
     gallery: [
       'https://public-files.gumroad.com/77d3qzgy6b7v5yh72m5uzi59u6w3',
-      '/DigitalProducts.jfif',
+      '/DigitalProducts.webp',
     ],
     tagline: 'High-Converting Travel & Agency Web Architecture',
     description:
@@ -108,7 +108,7 @@ export const DEFAULT_DIGITAL_CATALOG: DigitalCatalogItem[] = [
     image: 'https://public-files.gumroad.com/wrpiac3396k8wftwl8hx8pud9o84',
     gallery: [
       'https://public-files.gumroad.com/wrpiac3396k8wftwl8hx8pud9o84',
-      '/DigitalProducts.jfif',
+      '/DigitalProducts.webp',
     ],
     tagline: 'Precision Vector Emblem Package for High-Impact Branding',
     description:
@@ -124,8 +124,8 @@ export const DEFAULT_DIGITAL_CATALOG: DigitalCatalogItem[] = [
     name: 'THE MULTIDISCIPLINARY LAB',
     status: 'AVAILABLE NOW',
     badge: 'BOOK',
-    image: '/DigitalProducts.jfif',
-    gallery: ['/DigitalProducts.jfif', '/Engineering.jfif'],
+    image: '/DigitalProducts.webp',
+    gallery: ['/DigitalProducts.webp', '/Engineering.webp'],
     tagline: 'Studio Principles for Independent Creators & Engineers',
     description:
       'A practical studio publication breaking down how to bridge full-stack engineering with visual identity, physical apparel pipelines, and self-published digital products without venture bloat. Delivered in clean PDF, ePub, and Notion workspace formats.',
@@ -173,7 +173,7 @@ export const DEFAULT_DIGITAL_CATALOG: DigitalCatalogItem[] = [
     status: 'PRODUCTION LIVE',
     badge: 'SOFTWARE',
     image: '/smartinvoice-icon.png',
-    gallery: ['/smartinvoice-icon.png', '/Engineering.jfif'],
+    gallery: ['/smartinvoice-icon.png', '/Engineering.webp'],
     tagline: 'Automated Multi-Currency Invoicing for Independent Creators',
     description:
       'Bespoke SaaS invoicing engine tailored for freelancers and studios. Generates compliant PDF bills, calculates multi-currency rates, and tracks unpaid balances with zero paperwork.',
@@ -235,7 +235,7 @@ export function normalizeDigitalList(rawProducts: any[]): DigitalCatalogItem[] {
   }
   return rawProducts.map((p: any, idx: number) => {
     const fallback = DEFAULT_DIGITAL_CATALOG[idx] || DEFAULT_DIGITAL_CATALOG[0];
-    const mainImg = p.image || fallback.image || '/DigitalProducts.jfif';
+    const mainImg = p.image || fallback.image || '/DigitalProducts.webp';
     const secondaryImg = p.secondary_image || fallback.gallery?.[1];
     const uniqueGallery = Array.from(
       new Set([mainImg, secondaryImg].filter(Boolean) as string[])

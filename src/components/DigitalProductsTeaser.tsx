@@ -38,7 +38,7 @@ export const DigitalProductsTeaser: React.FC<DigitalProductsTeaserProps> = () =>
       {/* Visible Ambient Background Atmospheric Image */}
       <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden rounded-3xl">
         <img
-          src="/DigitalProducts.jfif"
+          src="/DigitalProducts.webp"
           alt=""
           className="w-full h-full object-cover object-center opacity-20 filter contrast-125"
         />

@@ -1490,7 +1490,7 @@ export default function CommandPage() {
                   name="image"
                   defaultValue={editingProduct?.image || ''}
                   required
-                  placeholder="https://public-files.gumroad.com/... or /DigitalProducts.jfif"
+                  placeholder="https://public-files.gumroad.com/... or /DigitalProducts.webp"
                   className="w-full bg-[#152319] border border-white/10 focus:border-[#D4AF37] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
                 />
               </div>
@@ -1802,9 +1802,9 @@ export default function CommandPage() {
                 </label>
                 <input
                   name="image"
-                  defaultValue={editingGoods?.image || '/TactileGoods.jfif'}
+                  defaultValue={editingGoods?.image || '/TactileGoods.webp'}
                   required
-                  placeholder="/TactileGoods.jfif, /Lifestyle, Black (1).jpeg, or Etsy image URL"
+                  placeholder="/TactileGoods.webp, /Lifestyle, Black (1).jpeg, or Etsy image URL"
                   className="w-full bg-[#152319] border border-white/10 focus:border-[#D4AF37] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
                 />
               </div>

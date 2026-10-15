@@ -81,7 +81,7 @@ export const PhilosophySection: React.FC = () => {
             {/* Visual Header Image */}
             <div className="relative h-48 w-full overflow-hidden bg-[#111A13]">
               <img
-                src="/Engineering.jfif"
+                src="/Engineering.webp"
                 alt="Engineering Architecture & Code Discipline"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100"
               />
@@ -111,7 +111,7 @@ export const PhilosophySection: React.FC = () => {
             {/* Visual Header Image */}
             <div className="relative h-48 w-full overflow-hidden bg-[#111A13]">
               <img
-                src="/TactileGoods.jfif"
+                src="/TactileGoods.webp"
                 alt="Tactile Hardware & Fabric Engineering"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100"
               />
@@ -141,7 +141,7 @@ export const PhilosophySection: React.FC = () => {
             {/* Visual Header Image */}
             <div className="relative h-48 w-full overflow-hidden bg-[#111A13]">
               <img
-                src="/DigitalProducts.jfif"
+                src="/DigitalProducts.webp"
                 alt="Tangier Borderland & Dual Discipline Standard"
                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100"
               />

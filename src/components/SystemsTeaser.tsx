@@ -74,7 +74,7 @@ const ROADMAP_STAGES: RoadmapStage[] = [
       "We translate your raw concept into a complete product blueprint, mapping out every user flow, screen wireframe, and brand design token before writing a single line of code. You see and approve the exact look and feel of your platform upfront.",
     deliverable: "Interactive Figma Prototype & System Architecture Spec",
     highlights: ["User Flow Mapping", "High-Craft UI Wireframes", "Brand & Design System", "Technical Scope Lock"],
-    bgImage: "/DigitalProducts.jfif",
+    bgImage: "/DigitalProducts.webp",
     visualType: "blueprint",
   },
   {
@@ -85,7 +85,7 @@ const ROADMAP_STAGES: RoadmapStage[] = [
       "We engineer the core data foundation of your platform with relational PostgreSQL schemas, role-based authentication, and secure API routes. Whether you need Stripe payments, admin dashboards, or real-time syncing, your backend is built to handle real business logic.",
     deliverable: "Production PostgreSQL Database, Auth & Secure API Layer",
     highlights: ["PostgreSQL / Supabase Schema", "Secure User Authentication", "Payment & Webhook APIs", "Row-Level Data Security"],
-    bgImage: "/Engineering.jfif",
+    bgImage: "/Engineering.webp",
     visualType: "database",
   },
   {
@@ -118,7 +118,7 @@ const ROADMAP_STAGES: RoadmapStage[] = [
       "We don't disappear after launch day—our studio stays on as your technical partner to monitor uptime, ship new features, and scale your infrastructure as your traffic grows. Whenever you need help, improvements, or expansion, you have direct engineering access.",
     deliverable: "Direct Studio Support Channel, Uptime Monitoring & Feature Upgrades",
     highlights: ["Direct Engineering Support", "Zero-Downtime Updates", "Performance & Uptime Alerts", "New Feature Rollouts"],
-    bgImage: "/Engineering.jfif",
+    bgImage: "/Engineering.webp",
     visualType: "scale",
   },
 ];
@@ -261,7 +261,7 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
       {/* Visible Ambient Background Atmospheric Image */}
       <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden rounded-3xl">
         <img
-          src="/Engineering.jfif"
+          src="/Engineering.webp"
           alt=""
           className="w-full h-full object-cover object-center opacity-20 filter contrast-125"
         />

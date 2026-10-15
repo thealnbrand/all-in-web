@@ -44,7 +44,7 @@ const DEFAULT_CAPSULE_ITEMS: CapsuleItem[] = [
     status: 'STUDIO GRAPHIC EDITION // ON-DEMAND DISPATCH',
     badge: 'CAPSULE 001 // FLEECE',
     price: '$160.00 USD',
-    primaryImage: '/TactileGoods.jfif',
+    primaryImage: '/TactileGoods.webp',
     secondaryImage: '/Lifestyle, Black (1).jpeg',
     visual1Tag: '[ GRAPHIC PRINT ]',
     visual1Sub: 'ARCHIVAL DTG PRINT',
@@ -171,7 +171,7 @@ export const TactileGoodsTeaser: React.FC<TactileGoodsTeaserProps> = ({ onInquir
       {/* Visible Ambient Background Atmospheric Image */}
       <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden rounded-3xl">
         <img
-          src="/TactileGoods.jfif"
+          src="/TactileGoods.webp"
           alt=""
           className="w-full h-full object-cover object-center opacity-22 filter contrast-125"
         />

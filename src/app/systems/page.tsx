@@ -401,7 +401,7 @@ export default function SystemsPage() {
             <div className="bg-[#1B291F] border border-[#E5E7EB]/10 hover:border-[#D4AF37]/60 rounded-2xl overflow-hidden transition-all shadow-xl group flex flex-col justify-between">
               <div className="relative w-full aspect-[16/9] bg-[#111A13] overflow-hidden">
                 <Image
-                  src="/Track 01.jfif"
+                  src="/Track 01.webp"
                   alt="Track 01 - Custom SaaS & Enterprise Portals"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -453,7 +453,7 @@ export default function SystemsPage() {
             <div className="bg-[#1B291F] border border-[#E5E7EB]/10 hover:border-[#D4AF37]/60 rounded-2xl overflow-hidden transition-all shadow-xl group flex flex-col justify-between">
               <div className="relative w-full aspect-[16/9] bg-[#111A13] overflow-hidden">
                 <Image
-                  src="/Track 02.jfif"
+                  src="/Track 02.webp"
                   alt="Track 02 - Multi-Vendor Marketplaces & Booking"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -505,7 +505,7 @@ export default function SystemsPage() {
             <div className="bg-[#1B291F] border border-[#E5E7EB]/10 hover:border-[#D4AF37]/60 rounded-2xl overflow-hidden transition-all shadow-xl group flex flex-col justify-between">
               <div className="relative w-full aspect-[16/9] bg-[#111A13] overflow-hidden">
                 <Image
-                  src="/Track 03.jfif"
+                  src="/Track 03.webp"
                   alt="Track 03 - High-Conversion E-Commerce Flagships"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
@@ -557,7 +557,7 @@ export default function SystemsPage() {
             <div className="bg-[#1B291F] border border-[#E5E7EB]/10 hover:border-[#D4AF37]/60 rounded-2xl overflow-hidden transition-all shadow-xl group flex flex-col justify-between">
               <div className="relative w-full aspect-[16/9] bg-[#111A13] overflow-hidden">
                 <Image
-                  src="/Track 04.jfif"
+                  src="/Track 04.webp"
                   alt="Track 04 - Interactive Simulators & Real-Time Engines"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
