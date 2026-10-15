@@ -19,11 +19,8 @@ import { BackgroundWatermark } from '../../components/BackgroundWatermark';
 
 const CORE_CATEGORIES = [
   'ALL',
-  'BOOK',
-  'GAME',
-  'WALLPAPER',
-  'ASSET PACK',
   'UTILITY',
+  'ASSET PACK',
   'SOFTWARE',
 ] as const;
 
