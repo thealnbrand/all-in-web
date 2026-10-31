@@ -47,7 +47,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen h-full w-full bg-[#0A0F1D] text-[#E5E7EB] overflow-x-hidden selection:bg-[#8B0000] selection:text-white font-sans">
+    <div className="min-h-screen h-full w-full text-[#E5E7EB] overflow-x-hidden selection:bg-[#8B0000] selection:text-white font-sans">
       {/* Fullscreen Dark Green & Gold Sequence Preloader */}
       <Preloader />
       {/* 3D Geometric Background — WebGL extruded crimson monolith, fixed full-viewport (Three.js) */}
