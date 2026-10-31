@@ -50,6 +50,9 @@ export default function Home() {
     <div className="min-h-screen h-full w-full bg-[#0A0F1D] text-[#E5E7EB] overflow-x-hidden selection:bg-[#8B0000] selection:text-white font-sans">
       {/* Fullscreen Dark Green & Gold Sequence Preloader */}
       <Preloader />
+      {/* 3D Geometric Background — WebGL extruded crimson monolith, fixed full-viewport (Three.js) */}
+      <Hero3DGeometricBackground />
+
       {/* Top Navbar Header with Dynamic Scroll Transition & The Full Bar Layout */}
       <header
         className={`fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 lg:px-12 py-4 flex items-center justify-between h-[88px] transition-all duration-500 ${
@@ -107,10 +110,8 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Unified Hero Section (Navbar, Background Image & Big Logo + Overlapping Product Cards on Right) */}
-      <section className="relative w-full min-h-[850px] sm:min-h-[880px] lg:min-h-[920px] bg-[#0A0F1D] overflow-hidden">
-        {/* 3D Geometric Background — WebGL extruded crimson monolith (Three.js) */}
-        <Hero3DGeometricBackground />
+      {/* Unified Hero Section */}
+      <section className="relative w-full min-h-[850px] sm:min-h-[880px] lg:min-h-[920px] overflow-hidden">
 
         {/* Left Side: Industrial Telemetry HUD, Kinetic Tagline & Action Deck */}
         <div className="absolute top-[100px] sm:top-[115px] lg:top-[130px] left-6 sm:left-10 lg:left-16 xl:left-24 max-w-[500px] lg:max-w-[580px] z-20 flex flex-col gap-5 sm:gap-6 text-left pointer-events-auto">

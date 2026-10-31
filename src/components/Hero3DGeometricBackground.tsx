@@ -35,8 +35,8 @@ export const Hero3DGeometricBackground: React.FC = () => {
     const scene = new THREE.Scene();
     const clock = new THREE.Clock();
 
-    const width = container.clientWidth || window.innerWidth;
-    const height = container.clientHeight || 920;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
 
     const camera = new THREE.PerspectiveCamera(42, width / height, 0.1, 100);
     camera.position.set(0, 0, 5.8);
@@ -184,9 +184,8 @@ export const Hero3DGeometricBackground: React.FC = () => {
 
     // 8. Responsive Resize Handler
     const handleResize = () => {
-      if (!container || !canvas) return;
-      const w = container.clientWidth || window.innerWidth;
-      const h = container.clientHeight || 920;
+      const w = window.innerWidth;
+      const h = window.innerHeight;
 
       camera.aspect = w / h;
       camera.updateProjectionMatrix();
@@ -252,7 +251,8 @@ export const Hero3DGeometricBackground: React.FC = () => {
   return (
     <div
       ref={containerRef}
-      className="absolute inset-0 pointer-events-none z-0 overflow-hidden select-none"
+      className="fixed inset-0 pointer-events-none select-none"
+      style={{ zIndex: -1 }}
     >
       {hasWebGL ? (
         <>
