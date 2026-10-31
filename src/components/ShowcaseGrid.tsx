@@ -41,7 +41,7 @@ export const ShowcaseGrid: React.FC<ShowcaseGridProps> = ({ onInquire }) => {
   const getStatusBadgeStyle = (status: string) => {
     switch (status) {
       case 'RELEASED':
-        return 'bg-[#D4AF37]/15 text-[#D4AF37] border-[#D4AF37]/50';
+        return 'bg-[#8B0000]/15 text-[#8B0000] border-[#8B0000]/50';
       case 'LIMITED DROP':
         return 'bg-emerald-950/60 text-emerald-400 border-emerald-500/50';
       case 'BETA':
@@ -51,17 +51,17 @@ export const ShowcaseGrid: React.FC<ShowcaseGridProps> = ({ onInquire }) => {
       case 'ARCHIVED':
         return 'bg-zinc-800 text-zinc-400 border-zinc-600';
       default:
-        return 'bg-[#1B291F] text-[#9CA3AF] border-[#9CA3AF]/30';
+        return 'bg-[#111A2E] text-[#9CA3AF] border-[#9CA3AF]/30';
     }
   };
 
   return (
-    <section id="showcase" className="py-24 bg-[#243528] relative">
+    <section id="showcase" className="py-24 bg-[#0A0F1D] relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-6 border-b border-[#9CA3AF]/20">
           <div>
-            <div className="font-mono text-xs font-semibold text-[#D4AF37] uppercase tracking-widest mb-2">
+            <div className="font-mono text-xs font-semibold text-[#8B0000] uppercase tracking-widest mb-2">
               UNIFIED MATRIX // SOFTWARE • DIGITAL • PHYSICAL
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#E5E7EB] tracking-tight">
@@ -86,8 +86,8 @@ export const ShowcaseGrid: React.FC<ShowcaseGridProps> = ({ onInquire }) => {
                   type="button"
                   className={`font-mono text-xs font-semibold tracking-wider px-4 py-2.5 rounded-xs border transition-all duration-200 ${
                     isActive
-                      ? 'bg-[#D4AF37] text-[#1B291F] border-[#D4AF37] shadow-sm'
-                      : 'bg-[#1B291F] text-[#9CA3AF] border-[#9CA3AF]/20 hover:border-[#D4AF37]/40 hover:text-[#E5E7EB]'
+                      ? 'bg-[#8B0000] text-white border-[#8B0000] shadow-sm'
+                      : 'bg-[#111A2E] text-[#9CA3AF] border-[#9CA3AF]/20 hover:border-[#8B0000]/40 hover:text-[#E5E7EB]'
                   }`}
                 >
                   {cat.label}
@@ -103,12 +103,12 @@ export const ShowcaseGrid: React.FC<ShowcaseGridProps> = ({ onInquire }) => {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search release code, tech, or name..."
-              className="w-full bg-[#1B291F] border border-[#9CA3AF]/30 focus:border-[#D4AF37] text-[#E5E7EB] placeholder-[#9CA3AF]/60 text-xs font-mono px-4 py-2.5 rounded-xs outline-none transition-colors"
+              className="w-full bg-[#111A2E] border border-[#9CA3AF]/30 focus:border-[#8B0000] text-[#E5E7EB] placeholder-[#9CA3AF]/60 text-xs font-mono px-4 py-2.5 rounded-xs outline-none transition-colors"
             />
             {searchQuery && (
               <button
                 onClick={() => setSearchQuery('')}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-mono text-[#9CA3AF] hover:text-[#D4AF37]"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-xs font-mono text-[#9CA3AF] hover:text-[#8B0000]"
               >
                 CLEAR
               </button>
@@ -118,7 +118,7 @@ export const ShowcaseGrid: React.FC<ShowcaseGridProps> = ({ onInquire }) => {
 
         {/* Release Grid */}
         {filteredReleases.length === 0 ? (
-          <div className="p-12 text-center bg-[#1B291F] border border-[#9CA3AF]/20 rounded-sm font-mono text-sm text-[#9CA3AF]">
+          <div className="p-12 text-center bg-[#111A2E] border border-[#9CA3AF]/20 rounded-sm font-mono text-sm text-[#9CA3AF]">
             NO RELEASES MATCHING SEARCH QUERY &quot;{searchQuery}&quot;
           </div>
         ) : (
@@ -127,12 +127,12 @@ export const ShowcaseGrid: React.FC<ShowcaseGridProps> = ({ onInquire }) => {
               <div
                 key={release.id}
                 onClick={() => setActiveModalRelease(release)}
-                className="group bg-[#1B291F] border border-[#9CA3AF]/20 hover:border-[#D4AF37] p-6 rounded-sm transition-all duration-300 flex flex-col justify-between cursor-pointer hover:shadow-xl hover:-translate-y-1 relative"
+                className="group bg-[#111A2E] border border-[#9CA3AF]/20 hover:border-[#8B0000] p-6 rounded-sm transition-all duration-300 flex flex-col justify-between cursor-pointer hover:shadow-xl hover:-translate-y-1 relative"
               >
                 {/* Visual Header / Status Badge */}
                 <div>
                   <div className="flex items-center justify-between gap-2 mb-4">
-                    <span className="font-mono text-xs font-bold text-[#D4AF37]">
+                    <span className="font-mono text-xs font-bold text-[#8B0000]">
                       {release.code}
                     </span>
                     <span
@@ -145,7 +145,7 @@ export const ShowcaseGrid: React.FC<ShowcaseGridProps> = ({ onInquire }) => {
                   </div>
 
                   {/* Visual Blueprint Container with Product Image or Watermark Logo */}
-                  <div className="w-full h-44 bg-[#243528] border border-[#9CA3AF]/10 rounded-xs mb-4 flex flex-col items-center justify-center text-center group-hover:border-[#D4AF37]/40 transition-colors relative overflow-hidden">
+                  <div className="w-full h-44 bg-[#0A0F1D] border border-[#9CA3AF]/10 rounded-xs mb-4 flex flex-col items-center justify-center text-center group-hover:border-[#8B0000]/40 transition-colors relative overflow-hidden">
                     {release.image ? (
                       <>
                         <Image
@@ -155,8 +155,8 @@ export const ShowcaseGrid: React.FC<ShowcaseGridProps> = ({ onInquire }) => {
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 400px"
                           className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#1B291F] via-[#1B291F]/30 to-transparent" />
-                        <div className="absolute top-2 left-2 font-mono text-[9px] text-[#D4AF37] tracking-widest uppercase bg-[#1B291F]/80 px-2 py-0.5 rounded-xs border border-[#D4AF37]/30 z-10">
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#111A2E] via-[#111A2E]/30 to-transparent" />
+                        <div className="absolute top-2 left-2 font-mono text-[9px] text-[#8B0000] tracking-widest uppercase bg-[#111A2E]/80 px-2 py-0.5 rounded-xs border border-[#8B0000]/30 z-10">
                           [ {release.category.toUpperCase()} MATRIX ]
                         </div>
                       </>
@@ -171,10 +171,10 @@ export const ShowcaseGrid: React.FC<ShowcaseGridProps> = ({ onInquire }) => {
                             className="object-contain max-h-full"
                           />
                         </div>
-                        <div className="font-mono text-[10px] text-[#D4AF37] tracking-widest uppercase mb-1 relative z-10">
+                        <div className="font-mono text-[10px] text-[#8B0000] tracking-widest uppercase mb-1 relative z-10">
                           [ {release.category.toUpperCase()} MATRIX ]
                         </div>
-                        <div className="font-mono text-xs text-[#E5E7EB] font-bold tracking-wide group-hover:text-[#D4AF37] transition-colors relative z-10">
+                        <div className="font-mono text-xs text-[#E5E7EB] font-bold tracking-wide group-hover:text-[#8B0000] transition-colors relative z-10">
                           {release.imagePlaceholderText}
                         </div>
                       </>
@@ -182,7 +182,7 @@ export const ShowcaseGrid: React.FC<ShowcaseGridProps> = ({ onInquire }) => {
                   </div>
 
                   {/* Title & Summary */}
-                  <h3 className="text-xl font-bold text-[#E5E7EB] mb-2 group-hover:text-[#D4AF37] transition-colors font-sans">
+                  <h3 className="text-xl font-bold text-[#E5E7EB] mb-2 group-hover:text-[#8B0000] transition-colors font-sans">
                     {release.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-[#9CA3AF] line-clamp-3 mb-4 font-sans leading-relaxed">
@@ -196,7 +196,7 @@ export const ShowcaseGrid: React.FC<ShowcaseGridProps> = ({ onInquire }) => {
                     {release.techStackOrMaterials.slice(0, 3).map((item, idx) => (
                       <span
                         key={idx}
-                        className="font-mono text-[10px] bg-[#243528] text-[#9CA3AF] border border-[#9CA3AF]/20 px-2 py-0.5 rounded-xs"
+                        className="font-mono text-[10px] bg-[#0A0F1D] text-[#9CA3AF] border border-[#9CA3AF]/20 px-2 py-0.5 rounded-xs"
                       >
                         {item}
                       </span>
@@ -208,7 +208,7 @@ export const ShowcaseGrid: React.FC<ShowcaseGridProps> = ({ onInquire }) => {
                     )}
                   </div>
 
-                  <div className="pt-3 border-t border-[#9CA3AF]/10 flex items-center justify-between font-mono text-xs text-[#D4AF37] group-hover:underline">
+                  <div className="pt-3 border-t border-[#9CA3AF]/10 flex items-center justify-between font-mono text-xs text-[#8B0000] group-hover:underline">
                     <span>VIEW BLUEPRINT & SPECS</span>
                     <span className="group-hover:translate-x-1 transition-transform">→</span>
                   </div>

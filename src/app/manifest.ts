@@ -8,8 +8,8 @@ export default function manifest(): MetadataRoute.Manifest {
       "Where engineering precision meets physical & digital artifacts. Tangier HQ.",
     start_url: "/",
     display: "standalone",
-    background_color: "#243528",
-    theme_color: "#1B291F",
+    background_color: "#0A0F1D",
+    theme_color: "#111A2E",
     icons: [
       {
         src: "/logo.png",

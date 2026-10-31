@@ -97,7 +97,7 @@ export const CatalogSearchAndCategories: React.FC<CatalogSearchAndCategoriesProp
     <div className="pt-4 space-y-3.5">
       {/* ROW 1: Full-Width Search Bar */}
       <div className="relative w-full font-mono text-xs">
-        <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#D4AF37] pointer-events-none text-sm">
+        <span className="absolute left-4 top-1/2 -translate-y-1/2 text-[#8B0000] pointer-events-none text-sm">
           🔍
         </span>
         <input
@@ -105,7 +105,7 @@ export const CatalogSearchAndCategories: React.FC<CatalogSearchAndCategoriesProp
           value={searchQuery}
           onChange={(e) => onSearchChange(e.target.value)}
           placeholder={searchPlaceholder}
-          className="w-full bg-[#1B291F] text-white placeholder-[#9CA3AF]/60 pl-11 pr-36 py-3.5 rounded-2xl border border-white/15 focus:border-[#D4AF37] focus:outline-none transition-all shadow-inner text-xs sm:text-sm"
+          className="w-full bg-[#111A2E] text-white placeholder-[#9CA3AF]/60 pl-11 pr-36 py-3.5 rounded-2xl border border-white/15 focus:border-[#8B0000] focus:outline-none transition-all shadow-inner text-xs sm:text-sm"
         />
 
         <div className="absolute right-3 top-1/2 -translate-y-1/2 flex items-center gap-2">
@@ -113,13 +113,13 @@ export const CatalogSearchAndCategories: React.FC<CatalogSearchAndCategoriesProp
             <button
               type="button"
               onClick={() => onSearchChange('')}
-              className="text-[#1B291F] bg-[#D4AF37] hover:bg-[#E5C158] px-2.5 py-1 rounded-lg cursor-pointer font-extrabold text-[10px] transition-colors"
+              className="text-white bg-[#8B0000] hover:bg-[#A30000] px-2.5 py-1 rounded-lg cursor-pointer font-extrabold text-[10px] transition-colors"
               title="Clear search"
             >
               CLEAR ✕
             </button>
           )}
-          <span className="hidden sm:inline-block bg-[#243528] text-[#D4AF37] px-2.5 py-1 rounded-lg border border-[#D4AF37]/30 font-bold text-[10px]">
+          <span className="hidden sm:inline-block bg-[#0A0F1D] text-[#8B0000] px-2.5 py-1 rounded-lg border border-[#8B0000]/30 font-bold text-[10px]">
             {String(totalMatching).padStart(2, '0')} ITEMS
           </span>
         </div>
@@ -131,14 +131,14 @@ export const CatalogSearchAndCategories: React.FC<CatalogSearchAndCategoriesProp
         onMouseLeave={() => setIsPaused(false)}
         onTouchStart={() => setIsPaused(true)}
         onTouchEnd={() => setIsPaused(false)}
-        className="relative flex items-center gap-2 bg-[#16231A]/95 border border-white/10 hover:border-[#D4AF37]/40 rounded-2xl p-2 transition-colors"
+        className="relative flex items-center gap-2 bg-[#16231A]/95 border border-white/10 hover:border-[#8B0000]/40 rounded-2xl p-2 transition-colors"
       >
         {/* Left Manual Scroll Button */}
         <button
           type="button"
           onClick={() => scrollByAmount('left')}
           aria-label="Scroll categories left"
-          className="shrink-0 w-8 h-8 rounded-xl font-mono text-sm font-black flex items-center justify-center border bg-[#1B291F] text-[#D4AF37] border-[#D4AF37]/40 hover:bg-[#D4AF37] hover:text-[#1B291F] cursor-pointer shadow-md transition-all z-10"
+          className="shrink-0 w-8 h-8 rounded-xl font-mono text-sm font-black flex items-center justify-center border bg-[#111A2E] text-white border-[#8B0000]/40 hover:bg-[#8B0000] hover:text-white cursor-pointer shadow-md transition-all z-10"
         >
           ‹
         </button>
@@ -159,8 +159,8 @@ export const CatalogSearchAndCategories: React.FC<CatalogSearchAndCategoriesProp
                 onClick={() => onCategoryChange(cat.id)}
                 className={`shrink-0 whitespace-nowrap px-4 py-2 rounded-xl border font-mono text-xs transition-all cursor-pointer font-bold flex items-center gap-1.5 ${
                   isActive
-                    ? 'bg-[#D4AF37] text-[#1B291F] border-[#D4AF37] shadow-[0_0_15px_rgba(212,175,55,0.3)]'
-                    : 'bg-[#1B291F] text-[#E5E7EB]/80 border-white/10 hover:border-[#D4AF37] hover:text-white'
+                    ? 'bg-[#8B0000] text-white border-[#8B0000] shadow-[0_0_15px_rgba(139,0,0,0.3)]'
+                    : 'bg-[#111A2E] text-[#E5E7EB]/80 border-white/10 hover:border-[#8B0000] hover:text-white'
                 }`}
               >
                 <span>{cat.label}</span>
@@ -168,8 +168,8 @@ export const CatalogSearchAndCategories: React.FC<CatalogSearchAndCategoriesProp
                   <span
                     className={`text-[10px] px-1.5 py-0.2 rounded-full ${
                       isActive
-                        ? 'bg-[#1B291F]/20 text-[#1B291F] font-extrabold'
-                        : 'text-[#D4AF37]'
+                        ? 'bg-black/30 text-white font-extrabold'
+                        : 'text-red-400'
                     }`}
                   >
                     {String(cat.count).padStart(2, '0')}
@@ -185,7 +185,7 @@ export const CatalogSearchAndCategories: React.FC<CatalogSearchAndCategoriesProp
           type="button"
           onClick={() => scrollByAmount('right')}
           aria-label="Scroll categories right"
-          className="shrink-0 w-8 h-8 rounded-xl font-mono text-sm font-black flex items-center justify-center border bg-[#1B291F] text-[#D4AF37] border-[#D4AF37]/40 hover:bg-[#D4AF37] hover:text-[#1B291F] cursor-pointer shadow-md transition-all z-10"
+          className="shrink-0 w-8 h-8 rounded-xl font-mono text-sm font-black flex items-center justify-center border bg-[#111A2E] text-white border-[#8B0000]/40 hover:bg-[#8B0000] hover:text-white cursor-pointer shadow-md transition-all z-10"
         >
           ›
         </button>

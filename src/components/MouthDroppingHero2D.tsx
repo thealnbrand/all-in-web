@@ -179,7 +179,7 @@ export const MouthDroppingHero2D: React.FC<MouthDroppingHero2DProps> = ({ onInqu
         vy: 0,
         angle: 0,
         vAngle: 0,
-        color: '#D4AF37',
+        color: '#8B0000',
         font: line1Font,
       });
     }
@@ -287,7 +287,7 @@ export const MouthDroppingHero2D: React.FC<MouthDroppingHero2DProps> = ({ onInqu
         vx: (Math.random() - 0.5) * 0.75,
         vy: (Math.random() - 0.5) * 0.75,
         radius: Math.random() * 2.4 + 0.7,
-        color: i % 4 === 0 ? '#D4AF37' : i % 3 === 0 ? '#E5E7EB' : '#9CA3AF',
+        color: i % 4 === 0 ? '#8B0000' : i % 3 === 0 ? '#E5E7EB' : '#9CA3AF',
         alpha: Math.random() * 0.65 + 0.25,
       });
     }
@@ -327,7 +327,7 @@ export const MouthDroppingHero2D: React.FC<MouthDroppingHero2DProps> = ({ onInqu
 
       // Grid lines
       if (hudGridVisible) {
-        ctx.strokeStyle = 'rgba(212, 175, 55, 0.06)';
+        ctx.strokeStyle = 'rgba(139, 0, 0, 0.06)';
         ctx.lineWidth = 1;
         const gridSize = 36;
 
@@ -358,7 +358,7 @@ export const MouthDroppingHero2D: React.FC<MouthDroppingHero2DProps> = ({ onInqu
         ctx.save();
         ctx.beginPath();
         ctx.arc(wave.x, wave.y, wave.radius, 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(212, 175, 55, ${wave.opacity})`;
+        ctx.strokeStyle = `rgba(139, 0, 0, ${wave.opacity})`;
         ctx.lineWidth = 2.5;
         ctx.stroke();
         ctx.restore();
@@ -387,8 +387,8 @@ export const MouthDroppingHero2D: React.FC<MouthDroppingHero2DProps> = ({ onInqu
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
         ctx.fillStyle = p.color;
         ctx.globalAlpha = p.alpha;
-        if (p.color === '#D4AF37') {
-          ctx.shadowColor = '#D4AF37';
+        if (p.color === '#8B0000') {
+          ctx.shadowColor = '#8B0000';
           ctx.shadowBlur = 8;
         }
         ctx.fill();
@@ -405,7 +405,7 @@ export const MouthDroppingHero2D: React.FC<MouthDroppingHero2DProps> = ({ onInqu
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = 'rgba(212, 175, 55, 0.1)';
+            ctx.strokeStyle = 'rgba(139, 0, 0, 0.1)';
             ctx.lineWidth = 0.75;
             ctx.stroke();
             ctx.restore();
@@ -424,9 +424,9 @@ export const MouthDroppingHero2D: React.FC<MouthDroppingHero2DProps> = ({ onInqu
 
       // Vertical beam
       const beamGlow = ctx.createLinearGradient(centerX + offsetX, 0, centerX + offsetX, currentHeight);
-      beamGlow.addColorStop(0, 'rgba(212, 175, 55, 0)');
-      beamGlow.addColorStop(0.5, 'rgba(212, 175, 55, 0.12)');
-      beamGlow.addColorStop(1, 'rgba(212, 175, 55, 0)');
+      beamGlow.addColorStop(0, 'rgba(139, 0, 0, 0)');
+      beamGlow.addColorStop(0.5, 'rgba(139, 0, 0, 0.12)');
+      beamGlow.addColorStop(1, 'rgba(139, 0, 0, 0)');
       ctx.fillStyle = beamGlow;
       ctx.fillRect(centerX + offsetX - 75, 0, 150, currentHeight);
 
@@ -434,9 +434,9 @@ export const MouthDroppingHero2D: React.FC<MouthDroppingHero2DProps> = ({ onInqu
       const ringGlow = Math.sin(now * 0.003) * 12 + 145;
       ctx.beginPath();
       ctx.arc(centerX + offsetX, centerY + offsetY - 18, ringGlow, 0, Math.PI * 2);
-      ctx.strokeStyle = 'rgba(212, 175, 55, 0.35)';
+      ctx.strokeStyle = 'rgba(139, 0, 0, 0.35)';
       ctx.lineWidth = 2;
-      ctx.shadowColor = '#D4AF37';
+      ctx.shadowColor = '#8B0000';
       ctx.shadowBlur = 16;
       ctx.stroke();
 
@@ -447,7 +447,7 @@ export const MouthDroppingHero2D: React.FC<MouthDroppingHero2DProps> = ({ onInqu
         const logoHeight = (logo.height / logo.width) * logoWidth;
 
         ctx.save();
-        ctx.shadowColor = 'rgba(212, 175, 55, 0.65)';
+        ctx.shadowColor = 'rgba(139, 0, 0, 0.65)';
         ctx.shadowBlur = 28;
         ctx.drawImage(
           logo,
@@ -510,8 +510,8 @@ export const MouthDroppingHero2D: React.FC<MouthDroppingHero2DProps> = ({ onInqu
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
 
-        if (lp.color === '#D4AF37') {
-          ctx.shadowColor = '#D4AF37';
+        if (lp.color === '#8B0000') {
+          ctx.shadowColor = '#8B0000';
           ctx.shadowBlur = 10;
         }
 
@@ -532,8 +532,8 @@ export const MouthDroppingHero2D: React.FC<MouthDroppingHero2DProps> = ({ onInqu
           mouseRef.current.y,
           110
         );
-        mouseGlow.addColorStop(0, 'rgba(212, 175, 55, 0.22)');
-        mouseGlow.addColorStop(1, 'rgba(212, 175, 55, 0)');
+        mouseGlow.addColorStop(0, 'rgba(139, 0, 0, 0.22)');
+        mouseGlow.addColorStop(1, 'rgba(139, 0, 0, 0)');
         ctx.fillStyle = mouseGlow;
         ctx.beginPath();
         ctx.arc(mouseRef.current.x, mouseRef.current.y, 110, 0, Math.PI * 2);
@@ -627,20 +627,20 @@ export const MouthDroppingHero2D: React.FC<MouthDroppingHero2DProps> = ({ onInqu
       {/* ------------------------------------------------------------- */}
       <div className="absolute top-[80px] left-4 sm:left-8 lg:left-12 z-20 pointer-events-auto flex flex-col gap-4 max-w-[340px] sm:max-w-[420px]">
         {/* HUD Telemetry Header Status Box */}
-        <div className="bg-[#152319]/85 backdrop-blur-md p-3 rounded-xl border border-[#D4AF37]/35 shadow-xl flex flex-col gap-1.5 font-mono text-[10px] text-[#E5E7EB]">
-          <div className="flex items-center justify-between border-b border-[#D4AF37]/20 pb-1.5">
+        <div className="bg-[#0D1527]/85 backdrop-blur-md p-3 rounded-xl border border-[#8B0000]/35 shadow-xl flex flex-col gap-1.5 font-mono text-[10px] text-[#E5E7EB]">
+          <div className="flex items-center justify-between border-b border-[#8B0000]/20 pb-1.5">
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-ping" />
-              <span className="text-[#D4AF37] font-extrabold">SYS_STATUS: ONLINE</span>
+              <span className="w-2 h-2 rounded-full bg-[#8B0000] animate-ping" />
+              <span className="text-[#8B0000] font-extrabold">SYS_STATUS: ONLINE</span>
             </div>
             <span className="text-[#9CA3AF]">{fps} FPS</span>
           </div>
           <div className="grid grid-cols-2 gap-2 text-[9px] text-[#9CA3AF]">
             <div>
-              <span className="text-[#D4AF37]">LOC:</span> TANGIER [35.7595° N]
+              <span className="text-[#8B0000]">LOC:</span> TANGIER [35.7595° N]
             </div>
             <div>
-              <span className="text-[#D4AF37]">POS:</span> X:{mousePos.x} Y:{mousePos.y}
+              <span className="text-[#8B0000]">POS:</span> X:{mousePos.x} Y:{mousePos.y}
             </div>
           </div>
         </div>
@@ -652,7 +652,7 @@ export const MouthDroppingHero2D: React.FC<MouthDroppingHero2DProps> = ({ onInqu
               e.stopPropagation();
               triggerDispersion();
             }}
-            className="bg-[#152319]/90 hover:bg-[#D4AF37] text-[#D4AF37] hover:text-[#152319] border border-[#D4AF37]/40 px-3 py-1.5 rounded-lg transition-all shadow-md flex items-center gap-1.5 cursor-pointer"
+            className="bg-[#0D1527]/90 hover:bg-[#8B0000] text-red-400 hover:text-white border border-[#8B0000]/40 px-3 py-1.5 rounded-lg transition-all shadow-md flex items-center gap-1.5 cursor-pointer"
           >
             <span>[ 💥 DISPERSE LOGO ]</span>
           </button>
@@ -662,7 +662,7 @@ export const MouthDroppingHero2D: React.FC<MouthDroppingHero2DProps> = ({ onInqu
               e.stopPropagation();
               triggerReassemble();
             }}
-            className="bg-[#152319]/90 hover:bg-[#E5E7EB] text-[#E5E7EB] hover:text-[#152319] border border-white/20 px-3 py-1.5 rounded-lg transition-all shadow-md flex items-center gap-1.5 cursor-pointer"
+            className="bg-[#0D1527]/90 hover:bg-[#E5E7EB] text-[#E5E7EB] hover:text-[#0D1527] border border-white/20 px-3 py-1.5 rounded-lg transition-all shadow-md flex items-center gap-1.5 cursor-pointer"
           >
             <span>[ 🧲 RE-ASSEMBLE ]</span>
           </button>
@@ -682,7 +682,7 @@ export const MouthDroppingHero2D: React.FC<MouthDroppingHero2DProps> = ({ onInqu
         className="absolute right-0 lg:right-0 xl:right-0 top-[76px] sm:top-[80px] w-full sm:w-[94%] lg:w-[48%] xl:w-[49%] h-[520px] sm:h-[560px] lg:h-[590px] z-20 pointer-events-auto flex flex-col gap-3 pr-0 sm:pr-4 lg:pr-0"
       >
         {/* Stage Pill Tabs Bar */}
-        <div className="flex items-center justify-between gap-1 p-1.5 rounded-l-2xl sm:rounded-2xl bg-[#152319]/90 backdrop-blur-md border-y border-l border-[#D4AF37]/40 border-r-0 sm:border-r shadow-xl mr-0 sm:mr-2 lg:mr-4">
+        <div className="flex items-center justify-between gap-1 p-1.5 rounded-l-2xl sm:rounded-2xl bg-[#0D1527]/90 backdrop-blur-md border-y border-l border-[#8B0000]/40 border-r-0 sm:border-r shadow-xl mr-0 sm:mr-2 lg:mr-4">
           {products.slice(0, 3).map((prod, idx) => {
             const isActive = activeSlot === idx;
             return (
@@ -695,11 +695,11 @@ export const MouthDroppingHero2D: React.FC<MouthDroppingHero2DProps> = ({ onInqu
                 }}
                 className={`flex-1 py-2 px-3 rounded-xl font-mono text-[10px] sm:text-[11px] font-extrabold tracking-wider transition-all duration-300 cursor-pointer text-center flex items-center justify-center gap-1.5 ${
                   isActive
-                    ? 'bg-[#D4AF37] text-[#152319] shadow-lg scale-[1.02]'
+                    ? 'bg-[#8B0000] text-white shadow-lg scale-[1.02]'
                     : 'text-[#9CA3AF] hover:text-white hover:bg-white/5'
                 }`}
               >
-                <span className={`w-1.5 h-1.5 rounded-full ${isActive ? 'bg-[#152319]' : 'bg-[#D4AF37]/40'}`} />
+                <span className={`w-1.5 h-1.5 rounded-full ${isActive ? 'bg-[#0D1527]' : 'bg-[#8B0000]/40'}`} />
                 <span>{prod.tabLabel}</span>
               </button>
             );
@@ -719,7 +719,7 @@ export const MouthDroppingHero2D: React.FC<MouthDroppingHero2DProps> = ({ onInqu
             transform: `perspective(1000px) rotateX(${tilt.rx}deg) rotateY(${tilt.ry}deg)`,
             transition: 'transform 0.15s ease-out',
           }}
-          className="relative w-full flex-1 rounded-l-3xl rounded-r-none border-y border-l border-[#D4AF37]/60 border-r-0 shadow-2xl shadow-emerald-950/95 bg-[#152319] group cursor-pointer overflow-hidden"
+          className="relative w-full flex-1 rounded-l-3xl rounded-r-none border-y border-l border-[#8B0000]/60 border-r-0 shadow-2xl shadow-emerald-950/95 bg-[#0D1527] group cursor-pointer overflow-hidden"
         >
           {products.map((prod, idx) => {
             const isActive = activeSlot === idx;
@@ -740,27 +740,27 @@ export const MouthDroppingHero2D: React.FC<MouthDroppingHero2DProps> = ({ onInqu
                 />
 
                 {/* Dark Vignette & Holographic Scanline Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#152319] via-[#152319]/40 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0D1527] via-[#0D1527]/40 to-transparent" />
                 <div className="absolute inset-0 bg-[linear-gradient(to_bottom,transparent_50%,rgba(0,0,0,0.25)_51%)] bg-[length:100%_4px] pointer-events-none opacity-40" />
 
                 {/* Top Header Status & Category Badge */}
                 <div className="absolute top-4 left-4 right-4 flex items-center justify-between z-20 pointer-events-none">
-                  <span className="bg-[#152319]/90 text-[#E5E7EB] backdrop-blur-md px-3 py-1 rounded-full font-mono text-[9px] font-extrabold border border-white/10">
+                  <span className="bg-[#0D1527]/90 text-[#E5E7EB] backdrop-blur-md px-3 py-1 rounded-full font-mono text-[9px] font-extrabold border border-white/10">
                     {prod.category}
                   </span>
-                  <div className="bg-[#152319]/90 text-[#D4AF37] backdrop-blur-md px-3 py-1 rounded-full font-mono text-[10px] font-extrabold border border-[#D4AF37]/40 shadow-lg flex items-center gap-1.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] animate-pulse" />
+                  <div className="bg-[#0D1527]/90 text-[#8B0000] backdrop-blur-md px-3 py-1 rounded-full font-mono text-[10px] font-extrabold border border-[#8B0000]/40 shadow-lg flex items-center gap-1.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#8B0000] animate-pulse" />
                     <span>{prod.status}</span>
                   </div>
                 </div>
 
                 {/* Bottom Overlay & CTAs */}
-                <div className="absolute bottom-0 inset-x-0 p-5 sm:p-6 bg-gradient-to-t from-[#152319] via-[#152319]/90 to-transparent text-left space-y-2.5 z-20">
-                  <div className="flex flex-wrap gap-1.5 font-mono text-[9px] text-[#D4AF37]">
+                <div className="absolute bottom-0 inset-x-0 p-5 sm:p-6 bg-gradient-to-t from-[#0D1527] via-[#0D1527]/90 to-transparent text-left space-y-2.5 z-20">
+                  <div className="flex flex-wrap gap-1.5 font-mono text-[9px] text-[#8B0000]">
                     {prod.techTags.map((tag) => (
                       <span
                         key={tag}
-                        className="bg-[#152319]/80 backdrop-blur-xs px-2.5 py-1 rounded-full border border-[#D4AF37]/35 font-extrabold"
+                        className="bg-[#0D1527]/80 backdrop-blur-xs px-2.5 py-1 rounded-full border border-[#8B0000]/35 font-extrabold"
                       >
                         {tag}
                       </span>
@@ -780,7 +780,7 @@ export const MouthDroppingHero2D: React.FC<MouthDroppingHero2DProps> = ({ onInqu
                     <a
                       href="#showcase"
                       onClick={(e) => e.stopPropagation()}
-                      className="font-mono text-[10px] sm:text-xs font-bold text-[#152319] bg-[#D4AF37] hover:bg-[#E5C158] px-4 py-2 rounded-full transition-all shadow-md flex items-center gap-1.5"
+                      className="font-mono text-[10px] sm:text-xs font-bold text-white bg-[#8B0000] hover:bg-[#A30000] px-4 py-2 rounded-full transition-all shadow-md flex items-center gap-1.5"
                     >
                       <span>EXPLORE DOMAIN</span>
                       <span>→</span>
@@ -796,7 +796,7 @@ export const MouthDroppingHero2D: React.FC<MouthDroppingHero2DProps> = ({ onInqu
                             contactElem.scrollIntoView({ behavior: 'smooth' });
                           }
                         }}
-                        className="font-mono text-[10px] sm:text-xs font-bold text-[#E5E7EB] bg-[#152319]/80 hover:bg-[#152319] border border-[#D4AF37]/40 px-4 py-2 rounded-full transition-all flex items-center gap-1.5 cursor-pointer"
+                        className="font-mono text-[10px] sm:text-xs font-bold text-[#E5E7EB] bg-[#0D1527]/80 hover:bg-[#0D1527] border border-[#8B0000]/40 px-4 py-2 rounded-full transition-all flex items-center gap-1.5 cursor-pointer"
                       >
                         <span>INQUIRE THIS SPEC</span>
                       </button>
@@ -821,7 +821,7 @@ export const MouthDroppingHero2D: React.FC<MouthDroppingHero2DProps> = ({ onInqu
                 }}
                 className={`relative h-12 w-20 shrink-0 rounded-lg overflow-hidden border transition-all cursor-pointer ${
                   isActive
-                    ? 'border-[#D4AF37] ring-2 ring-[#D4AF37]/50 scale-105'
+                    ? 'border-[#8B0000] ring-2 ring-[#8B0000]/50 scale-105'
                     : 'border-white/15 opacity-60 hover:opacity-100 hover:border-white/40'
                 }`}
               >
@@ -843,7 +843,7 @@ export const MouthDroppingHero2D: React.FC<MouthDroppingHero2DProps> = ({ onInqu
         <a
           href="#contact"
           onClick={(e) => e.stopPropagation()}
-          className="font-mono text-xs sm:text-sm font-extrabold text-[#152319] bg-[#D4AF37] hover:bg-[#E5C158] px-6 sm:px-8 py-3.5 rounded-full transition-all shadow-xl hover:scale-105 flex items-center gap-2 group cursor-pointer"
+          className="font-mono text-xs sm:text-sm font-extrabold text-white bg-[#8B0000] hover:bg-[#A30000] px-6 sm:px-8 py-3.5 rounded-full transition-all shadow-xl hover:scale-105 flex items-center gap-2 group cursor-pointer"
         >
           <span>[ INITIATE PROJECT ]</span>
           <span className="group-hover:translate-x-1 transition-transform">→</span>
@@ -852,7 +852,7 @@ export const MouthDroppingHero2D: React.FC<MouthDroppingHero2DProps> = ({ onInqu
         <a
           href="#offerings"
           onClick={(e) => e.stopPropagation()}
-          className="font-mono text-xs sm:text-sm font-bold text-[#E5E7EB] bg-[#152319]/85 hover:bg-[#152319] border border-[#D4AF37]/40 hover:border-[#D4AF37] px-6 sm:px-8 py-3.5 rounded-full transition-all shadow-lg hover:scale-105 cursor-pointer"
+          className="font-mono text-xs sm:text-sm font-bold text-[#E5E7EB] bg-[#0D1527]/85 hover:bg-[#0D1527] border border-[#8B0000]/40 hover:border-[#8B0000] px-6 sm:px-8 py-3.5 rounded-full transition-all shadow-lg hover:scale-105 cursor-pointer"
         >
           EXPLORE DOMAINS (04)
         </a>

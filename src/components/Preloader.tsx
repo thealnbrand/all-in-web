@@ -96,12 +96,12 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
   return (
     <div
       onClick={triggerOpenSite}
-      className={`fixed inset-0 z-[100] bg-[#0D150F] flex items-center justify-center overflow-hidden transition-all duration-1000 ease-in-out cursor-pointer ${
+      className={`fixed inset-0 z-[100] bg-[#060A14] flex items-center justify-center overflow-hidden transition-all duration-1000 ease-in-out cursor-pointer ${
         step === 4 ? '-translate-y-full opacity-0 pointer-events-none' : 'opacity-100'
       }`}
     >
       {/* Background Ambient Gold Glow behind Center Content */}
-      <div className="absolute w-[600px] h-[600px] bg-[#D4AF37]/15 rounded-full blur-3xl pointer-events-none animate-pulse" />
+      <div className="absolute w-[600px] h-[600px] bg-[#8B0000]/15 rounded-full blur-3xl pointer-events-none animate-pulse" />
 
       {/* Center Content Sequence Container */}
       <div className="relative z-10 flex flex-col items-center justify-center p-6 text-center max-w-[90vw]">
@@ -115,7 +115,7 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
         >
           <h2 className="font-sans text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight uppercase leading-snug">
             <span className="text-[#E5E7EB]">ALL LINES.</span> <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#D4AF37] drop-shadow-[0_0_35px_rgba(212,175,55,0.6)]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8B0000] via-[#EF4444] to-[#8B0000] drop-shadow-[0_0_35px_rgba(139,0,0,0.6)]">
               ALL IDEAS.
             </span> <br />
             <span className="text-[#E5E7EB]">NOW.</span>
@@ -130,7 +130,7 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
               : 'opacity-0 scale-95 -translate-y-6 absolute pointer-events-none'
           }`}
         >
-          <h1 className="font-sans text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#D4AF37] drop-shadow-[0_0_45px_rgba(212,175,55,0.65)] uppercase">
+          <h1 className="font-sans text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#8B0000] via-[#EF4444] to-[#8B0000] drop-shadow-[0_0_45px_rgba(139,0,0,0.65)] uppercase">
             ALL IN
           </h1>
         </div>
@@ -143,7 +143,7 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
               : 'opacity-0 scale-95 -translate-y-6 absolute pointer-events-none'
           }`}
         >
-          <div className="relative w-[280px] sm:w-[420px] md:w-[560px] lg:w-[660px] aspect-[3/1] max-w-[85vw] filter drop-shadow-[0_0_55px_rgba(212,175,55,0.7)]">
+          <div className="relative w-[280px] sm:w-[420px] md:w-[560px] lg:w-[660px] aspect-[3/1] max-w-[85vw] filter drop-shadow-[0_0_55px_rgba(139,0,0,0.7)]">
             <Image
               src="/logo.png"
               alt="ALL IN Studio Logo"

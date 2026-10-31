@@ -259,17 +259,17 @@ export default function SystemsPage() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-[#243528] text-[#E5E7EB] font-sans selection:bg-[#D4AF37] selection:text-[#1B291F] relative">
+    <div className="min-h-screen w-full bg-[#0A0F1D] text-[#E5E7EB] font-sans selection:bg-[#8B0000] selection:text-white relative">
       <BackgroundWatermark />
       {/* Fixed Navigation Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 lg:px-12 py-4 flex items-center justify-between h-[88px] bg-[#1B291F]/95 backdrop-blur-md border-b border-[#D4AF37]/35 shadow-xl">
+      <header className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 lg:px-12 py-4 flex items-center justify-between h-[88px] bg-[#111A2E]/95 backdrop-blur-md border-b border-[#8B0000]/35 shadow-xl">
         {/* Far Left: Logo Anchor */}
         <Link href="/" className="flex items-center gap-3 group focus:outline-none shrink-0">
           <div className="relative h-9 w-24 flex items-center">
             <Image src="/logo.png" alt="[ALN] Logo" width={110} height={70} className="h-full w-auto object-contain" priority />
           </div>
           <span className="font-mono text-base font-extrabold tracking-widest text-[#E5E7EB] hidden xs:flex items-center gap-2">
-            <span><span className="text-[#D4AF37]">[</span> ALN <span className="text-[#D4AF37]">]</span></span>
+            <span><span className="text-[#8B0000]">[</span> ALN <span className="text-[#8B0000]">]</span></span>
             <span className="text-white/30 font-normal">|</span>
             <span className="text-xs font-bold text-[#E5E7EB]/90 tracking-widest">ALL IN</span>
           </span>
@@ -277,24 +277,24 @@ export default function SystemsPage() {
 
         {/* Center: Route Links */}
         <nav className="hidden md:flex items-center gap-6 lg:gap-8 font-mono text-[11px] lg:text-xs font-bold tracking-wider">
-          <Link href="/systems" className="text-[#D4AF37] border-b-2 border-[#D4AF37] pb-1 flex items-center gap-1">
-            <span className="text-[#D4AF37]">01 //</span> SYSTEMS
+          <Link href="/systems" className="text-[#8B0000] border-b-2 border-[#8B0000] pb-1 flex items-center gap-1">
+            <span className="text-[#8B0000]">01 //</span> SYSTEMS
           </Link>
-          <Link href="/products" className="text-[#E5E7EB]/80 hover:text-[#D4AF37] transition-colors flex items-center gap-1">
-            <span className="text-[#D4AF37]">02 //</span> PRODUCTS
+          <Link href="/products" className="text-[#E5E7EB]/80 hover:text-[#8B0000] transition-colors flex items-center gap-1">
+            <span className="text-[#8B0000]">02 //</span> PRODUCTS
           </Link>
-          <Link href="/goods" className="text-[#E5E7EB]/80 hover:text-[#D4AF37] transition-colors flex items-center gap-1">
-            <span className="text-[#D4AF37]">03 //</span> GOODS
+          <Link href="/goods" className="text-[#E5E7EB]/80 hover:text-[#8B0000] transition-colors flex items-center gap-1">
+            <span className="text-[#8B0000]">03 //</span> GOODS
           </Link>
-          <Link href="/philosophy" className="text-[#E5E7EB]/80 hover:text-[#D4AF37] transition-colors flex items-center gap-1">
-            <span className="text-[#D4AF37]">04 //</span> PHILOSOPHY
+          <Link href="/philosophy" className="text-[#E5E7EB]/80 hover:text-[#8B0000] transition-colors flex items-center gap-1">
+            <span className="text-[#8B0000]">04 //</span> PHILOSOPHY
           </Link>
         </nav>
 
         {/* Far Right: Initiate CTA */}
         <a
           href="#contact"
-          className="font-mono text-xs font-extrabold text-[#1B291F] bg-[#D4AF37] hover:bg-[#E5C158] px-5 py-2 rounded-full transition-all shadow-md hover:scale-105 cursor-pointer"
+          className="font-mono text-xs font-extrabold text-white bg-[#8B0000] hover:bg-[#A30000] px-5 py-2 rounded-full transition-all shadow-md hover:scale-105 cursor-pointer"
         >
           [ START BUILD ]
         </a>
@@ -308,19 +308,19 @@ export default function SystemsPage() {
         <section className="space-y-6 border-b border-[#E5E7EB]/10 pb-14 pt-4">
           <div className="flex flex-wrap items-center justify-between gap-4 font-mono text-xs text-[#9CA3AF]">
             <div className="flex items-center gap-2">
-              <Link href="/" className="hover:text-[#D4AF37] transition-colors">HOME</Link>
+              <Link href="/" className="hover:text-[#8B0000] transition-colors">HOME</Link>
               <span>/</span>
-              <span className="text-[#D4AF37] font-bold">01 // SYSTEMS</span>
+              <span className="text-[#8B0000] font-bold">01 // SYSTEMS</span>
               <span>/</span>
               <span className="text-[#E5E7EB]/50">PRODUCTION ENGINEERING</span>
             </div>
-            <div className="bg-[#1B291F] px-3.5 py-1.5 rounded-full border border-[#D4AF37]/30 text-[#D4AF37] font-bold">
+            <div className="bg-[#111A2E] px-3.5 py-1.5 rounded-full border border-[#8B0000]/30 text-[#8B0000] font-bold">
               📍 35.7595° N, 5.8340° W · TANGIER HQ
             </div>
           </div>
 
           <div className="space-y-4 max-w-[950px]">
-            <div className="inline-flex items-center gap-2 font-mono text-xs text-[#D4AF37] font-extrabold tracking-widest uppercase bg-[#1B291F] px-3 py-1 rounded-full border border-[#D4AF37]/30">
+            <div className="inline-flex items-center gap-2 font-mono text-xs text-[#8B0000] font-extrabold tracking-widest uppercase bg-[#111A2E] px-3 py-1 rounded-full border border-[#8B0000]/30">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
               <span>CUSTOM SOFTWARE STUDIO</span>
             </div>
@@ -334,23 +334,23 @@ export default function SystemsPage() {
 
           {/* 4 Quick Stat Badges */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 pt-2 font-mono text-xs">
-            <div className="bg-[#1B291F] p-4 rounded-xl border border-[#D4AF37]/20 flex flex-col justify-between">
-              <span className="text-[#D4AF37] font-bold">[ OWNERSHIP ]</span>
+            <div className="bg-[#111A2E] p-4 rounded-xl border border-[#8B0000]/20 flex flex-col justify-between">
+              <span className="text-[#8B0000] font-bold">[ OWNERSHIP ]</span>
               <span className="text-white font-extrabold text-sm mt-1">100% Git Handover</span>
               <span className="text-[#9CA3AF] text-[10px] mt-0.5">Zero platform lock-in</span>
             </div>
-            <div className="bg-[#1B291F] p-4 rounded-xl border border-[#D4AF37]/20 flex flex-col justify-between">
-              <span className="text-[#D4AF37] font-bold">[ FULL-STACK ]</span>
+            <div className="bg-[#111A2E] p-4 rounded-xl border border-[#8B0000]/20 flex flex-col justify-between">
+              <span className="text-[#8B0000] font-bold">[ FULL-STACK ]</span>
               <span className="text-white font-extrabold text-sm mt-1">Design + DB + Cloud</span>
               <span className="text-[#9CA3AF] text-[10px] mt-0.5">Figma to Edge hosting</span>
             </div>
-            <div className="bg-[#1B291F] p-4 rounded-xl border border-[#D4AF37]/20 flex flex-col justify-between">
-              <span className="text-[#D4AF37] font-bold">[ SPEED ]</span>
+            <div className="bg-[#111A2E] p-4 rounded-xl border border-[#8B0000]/20 flex flex-col justify-between">
+              <span className="text-[#8B0000] font-bold">[ SPEED ]</span>
               <span className="text-white font-extrabold text-sm mt-1">&lt; 0.5s Global TTFB</span>
               <span className="text-[#9CA3AF] text-[10px] mt-0.5">100/100 Core Web Vitals</span>
             </div>
-            <div className="bg-[#1B291F] p-4 rounded-xl border border-[#D4AF37]/20 flex flex-col justify-between">
-              <span className="text-[#D4AF37] font-bold">[ DIRECT TEAM ]</span>
+            <div className="bg-[#111A2E] p-4 rounded-xl border border-[#8B0000]/20 flex flex-col justify-between">
+              <span className="text-[#8B0000] font-bold">[ DIRECT TEAM ]</span>
               <span className="text-white font-extrabold text-sm mt-1">Tangier Studio HQ</span>
               <span className="text-[#9CA3AF] text-[10px] mt-0.5">Direct senior engineers</span>
             </div>
@@ -360,20 +360,20 @@ export default function SystemsPage() {
           <div className="flex flex-wrap items-center gap-4 pt-2 font-mono text-xs">
             <a
               href="#contact"
-              className="font-extrabold text-[#1B291F] bg-[#D4AF37] hover:bg-[#E5C158] px-7 py-3 rounded-full transition-all shadow-xl hover:scale-105 cursor-pointer flex items-center gap-2"
+              className="font-extrabold text-white bg-[#8B0000] hover:bg-[#A30000] px-7 py-3 rounded-full transition-all shadow-xl hover:scale-105 cursor-pointer flex items-center gap-2"
             >
               <span>[ START YOUR BUILD ]</span>
               <span>→</span>
             </a>
             <a
               href="#tracks"
-              className="font-bold text-[#E5E7EB] bg-[#1B291F] border border-[#D4AF37]/30 hover:border-[#D4AF37] px-6 py-3 rounded-full transition-all cursor-pointer"
+              className="font-bold text-[#E5E7EB] bg-[#111A2E] border border-[#8B0000]/30 hover:border-[#8B0000] px-6 py-3 rounded-full transition-all cursor-pointer"
             >
               SYSTEM TRACKS ↓
             </a>
             <a
               href="#stacking-deck"
-              className="font-bold text-[#9CA3AF] hover:text-[#D4AF37] px-4 py-3 transition-colors cursor-pointer"
+              className="font-bold text-[#9CA3AF] hover:text-[#8B0000] px-4 py-3 transition-colors cursor-pointer"
             >
               VERIFIED PROJECTS ({projectsList.length}) ↓
             </a>
@@ -385,7 +385,7 @@ export default function SystemsPage() {
         {/* ========================================================================= */}
         <section id="tracks" className="space-y-12 scroll-mt-28">
           <div className="space-y-2">
-            <span className="font-mono text-xs text-[#D4AF37] font-extrabold tracking-widest uppercase">
+            <span className="font-mono text-xs text-[#8B0000] font-extrabold tracking-widest uppercase">
               // ARCHITECTURE TRACKS
             </span>
             <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
@@ -398,7 +398,7 @@ export default function SystemsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Track 01 */}
-            <div className="bg-[#1B291F] border border-[#E5E7EB]/10 hover:border-[#D4AF37]/60 rounded-2xl overflow-hidden transition-all shadow-xl group flex flex-col justify-between">
+            <div className="bg-[#111A2E] border border-[#E5E7EB]/10 hover:border-[#8B0000]/60 rounded-2xl overflow-hidden transition-all shadow-xl group flex flex-col justify-between">
               <div className="relative w-full aspect-[16/9] bg-[#111A13] overflow-hidden">
                 <Image
                   src="/Track 01.webp"
@@ -406,15 +406,15 @@ export default function SystemsPage() {
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1B291F] via-transparent to-transparent opacity-90" />
-                <span className="absolute top-4 left-4 font-mono text-[10px] font-extrabold text-[#D4AF37] bg-black/80 backdrop-blur-md px-3 py-1 rounded-full border border-[#D4AF37]/30">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#111A2E] via-transparent to-transparent opacity-90" />
+                <span className="absolute top-4 left-4 font-mono text-[10px] font-extrabold text-[#8B0000] bg-black/80 backdrop-blur-md px-3 py-1 rounded-full border border-[#8B0000]/30">
                   TRACK 01 // SAAS & UTILITIES
                 </span>
               </div>
 
               <div className="p-6 sm:p-8 space-y-5 flex-1 flex flex-col justify-between">
                 <div className="space-y-2">
-                  <h3 className="text-xl sm:text-2xl font-extrabold text-white group-hover:text-[#D4AF37] transition-colors">
+                  <h3 className="text-xl sm:text-2xl font-extrabold text-white group-hover:text-[#8B0000] transition-colors">
                     Custom SaaS & Enterprise Portals
                   </h3>
                   <p className="text-xs sm:text-sm text-[#E5E7EB]/80 font-sans leading-relaxed">
@@ -422,17 +422,17 @@ export default function SystemsPage() {
                   </p>
                 </div>
 
-                <div className="space-y-1.5 text-xs font-sans text-[#E5E7EB]/90 bg-[#243528]/60 p-3.5 rounded-xl border border-white/5">
+                <div className="space-y-1.5 text-xs font-sans text-[#E5E7EB]/90 bg-[#0A0F1D]/60 p-3.5 rounded-xl border border-white/5">
                   <div className="flex items-center gap-2">
-                    <span className="text-[#D4AF37]">✔</span>
+                    <span className="text-[#8B0000]">✔</span>
                     <span>Role-Based Permissions & User Portals</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[#D4AF37]">✔</span>
+                    <span className="text-[#8B0000]">✔</span>
                     <span>Automated PDF Billing & Financial Metrics</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[#D4AF37]">✔</span>
+                    <span className="text-[#8B0000]">✔</span>
                     <span>Sub-Second PostgreSQL Sync</span>
                   </div>
                 </div>
@@ -441,7 +441,7 @@ export default function SystemsPage() {
                   <span className="text-[#9CA3AF] text-[11px]">EXAMPLE: SmartInvoice Pro / PostResa</span>
                   <button
                     onClick={() => handleSelectTrack('Custom SaaS & Enterprise Portals')}
-                    className="font-bold text-[#1B291F] bg-[#D4AF37] hover:bg-[#E5C158] px-5 py-2 rounded-full transition-all shadow-md cursor-pointer hover:scale-105"
+                    className="font-bold text-white bg-[#8B0000] hover:bg-[#A30000] px-5 py-2 rounded-full transition-all shadow-md cursor-pointer hover:scale-105"
                   >
                     [ ORDER TRACK ]
                   </button>
@@ -450,7 +450,7 @@ export default function SystemsPage() {
             </div>
 
             {/* Track 02 */}
-            <div className="bg-[#1B291F] border border-[#E5E7EB]/10 hover:border-[#D4AF37]/60 rounded-2xl overflow-hidden transition-all shadow-xl group flex flex-col justify-between">
+            <div className="bg-[#111A2E] border border-[#E5E7EB]/10 hover:border-[#8B0000]/60 rounded-2xl overflow-hidden transition-all shadow-xl group flex flex-col justify-between">
               <div className="relative w-full aspect-[16/9] bg-[#111A13] overflow-hidden">
                 <Image
                   src="/Track 02.webp"
@@ -458,15 +458,15 @@ export default function SystemsPage() {
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1B291F] via-transparent to-transparent opacity-90" />
-                <span className="absolute top-4 left-4 font-mono text-[10px] font-extrabold text-[#D4AF37] bg-black/80 backdrop-blur-md px-3 py-1 rounded-full border border-[#D4AF37]/30">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#111A2E] via-transparent to-transparent opacity-90" />
+                <span className="absolute top-4 left-4 font-mono text-[10px] font-extrabold text-[#8B0000] bg-black/80 backdrop-blur-md px-3 py-1 rounded-full border border-[#8B0000]/30">
                   TRACK 02 // MARKETPLACES
                 </span>
               </div>
 
               <div className="p-6 sm:p-8 space-y-5 flex-1 flex flex-col justify-between">
                 <div className="space-y-2">
-                  <h3 className="text-xl sm:text-2xl font-extrabold text-white group-hover:text-[#D4AF37] transition-colors">
+                  <h3 className="text-xl sm:text-2xl font-extrabold text-white group-hover:text-[#8B0000] transition-colors">
                     Multi-Vendor Marketplaces & Booking
                   </h3>
                   <p className="text-xs sm:text-sm text-[#E5E7EB]/80 font-sans leading-relaxed">
@@ -474,17 +474,17 @@ export default function SystemsPage() {
                   </p>
                 </div>
 
-                <div className="space-y-1.5 text-xs font-sans text-[#E5E7EB]/90 bg-[#243528]/60 p-3.5 rounded-xl border border-white/5">
+                <div className="space-y-1.5 text-xs font-sans text-[#E5E7EB]/90 bg-[#0A0F1D]/60 p-3.5 rounded-xl border border-white/5">
                   <div className="flex items-center gap-2">
-                    <span className="text-[#D4AF37]">✔</span>
+                    <span className="text-[#8B0000]">✔</span>
                     <span>Multi-Vendor Publishing Dashboards</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[#D4AF37]">✔</span>
+                    <span className="text-[#8B0000]">✔</span>
                     <span>Instant WhatsApp & SMS Inquiry Alerts</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[#D4AF37]">✔</span>
+                    <span className="text-[#8B0000]">✔</span>
                     <span>24h Visual Stories & Multi-City Filtering</span>
                   </div>
                 </div>
@@ -493,7 +493,7 @@ export default function SystemsPage() {
                   <span className="text-[#9CA3AF] text-[11px]">EXAMPLE: RihlatBladna Network</span>
                   <button
                     onClick={() => handleSelectTrack('Multi-Vendor Marketplace')}
-                    className="font-bold text-[#1B291F] bg-[#D4AF37] hover:bg-[#E5C158] px-5 py-2 rounded-full transition-all shadow-md cursor-pointer hover:scale-105"
+                    className="font-bold text-white bg-[#8B0000] hover:bg-[#A30000] px-5 py-2 rounded-full transition-all shadow-md cursor-pointer hover:scale-105"
                   >
                     [ ORDER TRACK ]
                   </button>
@@ -502,7 +502,7 @@ export default function SystemsPage() {
             </div>
 
             {/* Track 03 */}
-            <div className="bg-[#1B291F] border border-[#E5E7EB]/10 hover:border-[#D4AF37]/60 rounded-2xl overflow-hidden transition-all shadow-xl group flex flex-col justify-between">
+            <div className="bg-[#111A2E] border border-[#E5E7EB]/10 hover:border-[#8B0000]/60 rounded-2xl overflow-hidden transition-all shadow-xl group flex flex-col justify-between">
               <div className="relative w-full aspect-[16/9] bg-[#111A13] overflow-hidden">
                 <Image
                   src="/Track 03.webp"
@@ -510,15 +510,15 @@ export default function SystemsPage() {
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1B291F] via-transparent to-transparent opacity-90" />
-                <span className="absolute top-4 left-4 font-mono text-[10px] font-extrabold text-[#D4AF37] bg-black/80 backdrop-blur-md px-3 py-1 rounded-full border border-[#D4AF37]/30">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#111A2E] via-transparent to-transparent opacity-90" />
+                <span className="absolute top-4 left-4 font-mono text-[10px] font-extrabold text-[#8B0000] bg-black/80 backdrop-blur-md px-3 py-1 rounded-full border border-[#8B0000]/30">
                   TRACK 03 // E-COMMERCE
                 </span>
               </div>
 
               <div className="p-6 sm:p-8 space-y-5 flex-1 flex flex-col justify-between">
                 <div className="space-y-2">
-                  <h3 className="text-xl sm:text-2xl font-extrabold text-white group-hover:text-[#D4AF37] transition-colors">
+                  <h3 className="text-xl sm:text-2xl font-extrabold text-white group-hover:text-[#8B0000] transition-colors">
                     High-Conversion E-Commerce Flagships
                   </h3>
                   <p className="text-xs sm:text-sm text-[#E5E7EB]/80 font-sans leading-relaxed">
@@ -526,17 +526,17 @@ export default function SystemsPage() {
                   </p>
                 </div>
 
-                <div className="space-y-1.5 text-xs font-sans text-[#E5E7EB]/90 bg-[#243528]/60 p-3.5 rounded-xl border border-white/5">
+                <div className="space-y-1.5 text-xs font-sans text-[#E5E7EB]/90 bg-[#0A0F1D]/60 p-3.5 rounded-xl border border-white/5">
                   <div className="flex items-center gap-2">
-                    <span className="text-[#D4AF37]">✔</span>
+                    <span className="text-[#8B0000]">✔</span>
                     <span>Tri-Lingual Localization (EN / FR / AR)</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[#D4AF37]">✔</span>
+                    <span className="text-[#8B0000]">✔</span>
                     <span>Multi-Currency Dynamic Conversion</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[#D4AF37]">✔</span>
+                    <span className="text-[#8B0000]">✔</span>
                     <span>Mobile-First High-Speed Catalog & Cart</span>
                   </div>
                 </div>
@@ -545,7 +545,7 @@ export default function SystemsPage() {
                   <span className="text-[#9CA3AF] text-[11px]">EXAMPLE: Jbala Peak Artisan Flagship</span>
                   <button
                     onClick={() => handleSelectTrack('High-Conversion E-Commerce Flagship')}
-                    className="font-bold text-[#1B291F] bg-[#D4AF37] hover:bg-[#E5C158] px-5 py-2 rounded-full transition-all shadow-md cursor-pointer hover:scale-105"
+                    className="font-bold text-white bg-[#8B0000] hover:bg-[#A30000] px-5 py-2 rounded-full transition-all shadow-md cursor-pointer hover:scale-105"
                   >
                     [ ORDER TRACK ]
                   </button>
@@ -554,7 +554,7 @@ export default function SystemsPage() {
             </div>
 
             {/* Track 04 */}
-            <div className="bg-[#1B291F] border border-[#E5E7EB]/10 hover:border-[#D4AF37]/60 rounded-2xl overflow-hidden transition-all shadow-xl group flex flex-col justify-between">
+            <div className="bg-[#111A2E] border border-[#E5E7EB]/10 hover:border-[#8B0000]/60 rounded-2xl overflow-hidden transition-all shadow-xl group flex flex-col justify-between">
               <div className="relative w-full aspect-[16/9] bg-[#111A13] overflow-hidden">
                 <Image
                   src="/Track 04.webp"
@@ -562,15 +562,15 @@ export default function SystemsPage() {
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#1B291F] via-transparent to-transparent opacity-90" />
-                <span className="absolute top-4 left-4 font-mono text-[10px] font-extrabold text-[#D4AF37] bg-black/80 backdrop-blur-md px-3 py-1 rounded-full border border-[#D4AF37]/30">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#111A2E] via-transparent to-transparent opacity-90" />
+                <span className="absolute top-4 left-4 font-mono text-[10px] font-extrabold text-[#8B0000] bg-black/80 backdrop-blur-md px-3 py-1 rounded-full border border-[#8B0000]/30">
                   TRACK 04 // INTERACTIVE
                 </span>
               </div>
 
               <div className="p-6 sm:p-8 space-y-5 flex-1 flex flex-col justify-between">
                 <div className="space-y-2">
-                  <h3 className="text-xl sm:text-2xl font-extrabold text-white group-hover:text-[#D4AF37] transition-colors">
+                  <h3 className="text-xl sm:text-2xl font-extrabold text-white group-hover:text-[#8B0000] transition-colors">
                     Interactive Simulators & Real-Time Engines
                   </h3>
                   <p className="text-xs sm:text-sm text-[#E5E7EB]/80 font-sans leading-relaxed">
@@ -578,17 +578,17 @@ export default function SystemsPage() {
                   </p>
                 </div>
 
-                <div className="space-y-1.5 text-xs font-sans text-[#E5E7EB]/90 bg-[#243528]/60 p-3.5 rounded-xl border border-white/5">
+                <div className="space-y-1.5 text-xs font-sans text-[#E5E7EB]/90 bg-[#0A0F1D]/60 p-3.5 rounded-xl border border-white/5">
                   <div className="flex items-center gap-2">
-                    <span className="text-[#D4AF37]">✔</span>
+                    <span className="text-[#8B0000]">✔</span>
                     <span>Branching Decision Dilemma Engines</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[#D4AF37]">✔</span>
+                    <span className="text-[#8B0000]">✔</span>
                     <span>Sub-25ms Live Leaderboards & Timers</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[#D4AF37]">✔</span>
+                    <span className="text-[#8B0000]">✔</span>
                     <span>60 FPS Fluid Canvas Micro-Interactions</span>
                   </div>
                 </div>
@@ -597,7 +597,7 @@ export default function SystemsPage() {
                   <span className="text-[#9CA3AF] text-[11px]">EXAMPLE: My Maze / Solayman</span>
                   <button
                     onClick={() => handleSelectTrack('Interactive Simulation & Gamification')}
-                    className="font-bold text-[#1B291F] bg-[#D4AF37] hover:bg-[#E5C158] px-5 py-2 rounded-full transition-all shadow-md cursor-pointer hover:scale-105"
+                    className="font-bold text-white bg-[#8B0000] hover:bg-[#A30000] px-5 py-2 rounded-full transition-all shadow-md cursor-pointer hover:scale-105"
                   >
                     [ ORDER TRACK ]
                   </button>
@@ -610,44 +610,44 @@ export default function SystemsPage() {
         {/* ========================================================================= */}
         {/* SECTION 3: THE 5-PHASE ENGINEERING GUARANTEE (COMPACT VISUAL TIMELINE)    */}
         {/* ========================================================================= */}
-        <section className="bg-[#1B291F] border border-[#E5E7EB]/10 rounded-2xl p-6 sm:p-10 space-y-6">
+        <section className="bg-[#111A2E] border border-[#E5E7EB]/10 rounded-2xl p-6 sm:p-10 space-y-6">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/10 pb-4">
             <div>
-              <span className="font-mono text-xs text-[#D4AF37] font-extrabold tracking-widest uppercase">
+              <span className="font-mono text-xs text-[#8B0000] font-extrabold tracking-widest uppercase">
                 // DELIVERY PIPELINE
               </span>
               <h2 className="text-xl sm:text-2xl font-extrabold text-white">
                 What Every ALL IN Build Includes
               </h2>
             </div>
-            <span className="font-mono text-xs text-emerald-400 font-bold bg-[#243528] px-3 py-1 rounded-full border border-emerald-400/30">
+            <span className="font-mono text-xs text-emerald-400 font-bold bg-[#0A0F1D] px-3 py-1 rounded-full border border-emerald-400/30">
               100% TRANSPARENT SPRINT
             </span>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 font-mono text-xs">
-            <div className="bg-[#243528] p-4 rounded-xl border border-white/5 space-y-1">
-              <span className="text-[#D4AF37] font-bold block">01 // BLUEPRINT</span>
+            <div className="bg-[#0A0F1D] p-4 rounded-xl border border-white/5 space-y-1">
+              <span className="text-[#8B0000] font-bold block">01 // BLUEPRINT</span>
               <span className="text-white font-extrabold block text-sm">Figma & UX</span>
               <p className="text-[11px] text-[#9CA3AF] font-sans">Full user flow & wireframes approved before code starts.</p>
             </div>
-            <div className="bg-[#243528] p-4 rounded-xl border border-white/5 space-y-1">
-              <span className="text-[#D4AF37] font-bold block">02 // DATABASE</span>
+            <div className="bg-[#0A0F1D] p-4 rounded-xl border border-white/5 space-y-1">
+              <span className="text-[#8B0000] font-bold block">02 // DATABASE</span>
               <span className="text-white font-extrabold block text-sm">PostgreSQL & Auth</span>
               <p className="text-[11px] text-[#9CA3AF] font-sans">Relational schemas, secure auth, and REST/GraphQL APIs.</p>
             </div>
-            <div className="bg-[#243528] p-4 rounded-xl border border-white/5 space-y-1">
-              <span className="text-[#D4AF37] font-bold block">03 // FRONTEND</span>
+            <div className="bg-[#0A0F1D] p-4 rounded-xl border border-white/5 space-y-1">
+              <span className="text-[#8B0000] font-bold block">03 // FRONTEND</span>
               <span className="text-white font-extrabold block text-sm">Next.js 16 / React 19</span>
               <p className="text-[11px] text-[#9CA3AF] font-sans">Fluid 60fps responsive UI for mobile, tablet, and desktop.</p>
             </div>
-            <div className="bg-[#243528] p-4 rounded-xl border border-white/5 space-y-1">
-              <span className="text-[#D4AF37] font-bold block">04 // DEPLOY</span>
+            <div className="bg-[#0A0F1D] p-4 rounded-xl border border-white/5 space-y-1">
+              <span className="text-[#8B0000] font-bold block">04 // DEPLOY</span>
               <span className="text-white font-extrabold block text-sm">Cloud Edge & SSL</span>
               <p className="text-[11px] text-[#9CA3AF] font-sans">Custom domain setup, global CDN edge, and 99.99% uptime.</p>
             </div>
-            <div className="bg-[#243528] p-4 rounded-xl border border-white/5 space-y-1">
-              <span className="text-[#D4AF37] font-bold block">05 // HANDOVER</span>
+            <div className="bg-[#0A0F1D] p-4 rounded-xl border border-white/5 space-y-1">
+              <span className="text-[#8B0000] font-bold block">05 // HANDOVER</span>
               <span className="text-white font-extrabold block text-sm">Git + 30d Warranty</span>
               <p className="text-[11px] text-[#9CA3AF] font-sans">Full repo ownership, technical docs, and launch warranty.</p>
             </div>
@@ -660,7 +660,7 @@ export default function SystemsPage() {
         <section id="stacking-deck" className="space-y-10 scroll-mt-28">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#E5E7EB]/10 pb-5">
             <div className="space-y-1">
-              <span className="font-mono text-xs text-[#D4AF37] font-extrabold tracking-widest uppercase">
+              <span className="font-mono text-xs text-[#8B0000] font-extrabold tracking-widest uppercase">
                 // PROOF OF CAPABILITY ({filteredProjects.length} RELEASES)
               </span>
               <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
@@ -677,8 +677,8 @@ export default function SystemsPage() {
                 onClick={() => setActiveFilter('all')}
                 className={`px-3.5 py-1.5 rounded-full transition-all cursor-pointer ${
                   activeFilter === 'all'
-                    ? 'bg-[#D4AF37] text-[#1B291F] font-bold shadow-md'
-                    : 'bg-[#1B291F] text-[#9CA3AF] hover:text-white border border-[#E5E7EB]/10'
+                    ? 'bg-[#8B0000] text-white font-bold shadow-md'
+                    : 'bg-[#111A2E] text-[#9CA3AF] hover:text-white border border-[#E5E7EB]/10'
                 }`}
               >
                 ALL ({projectsList.length})
@@ -687,8 +687,8 @@ export default function SystemsPage() {
                 onClick={() => setActiveFilter('marketplace')}
                 className={`px-3.5 py-1.5 rounded-full transition-all cursor-pointer ${
                   activeFilter === 'marketplace'
-                    ? 'bg-[#D4AF37] text-[#1B291F] font-bold shadow-md'
-                    : 'bg-[#1B291F] text-[#9CA3AF] hover:text-white border border-[#E5E7EB]/10'
+                    ? 'bg-[#8B0000] text-white font-bold shadow-md'
+                    : 'bg-[#111A2E] text-[#9CA3AF] hover:text-white border border-[#E5E7EB]/10'
                 }`}
               >
                 MARKETPLACE
@@ -697,8 +697,8 @@ export default function SystemsPage() {
                 onClick={() => setActiveFilter('saas')}
                 className={`px-3.5 py-1.5 rounded-full transition-all cursor-pointer ${
                   activeFilter === 'saas'
-                    ? 'bg-[#D4AF37] text-[#1B291F] font-bold shadow-md'
-                    : 'bg-[#1B291F] text-[#9CA3AF] hover:text-white border border-[#E5E7EB]/10'
+                    ? 'bg-[#8B0000] text-white font-bold shadow-md'
+                    : 'bg-[#111A2E] text-[#9CA3AF] hover:text-white border border-[#E5E7EB]/10'
                 }`}
               >
                 SAAS
@@ -707,8 +707,8 @@ export default function SystemsPage() {
                 onClick={() => setActiveFilter('ecommerce')}
                 className={`px-3.5 py-1.5 rounded-full transition-all cursor-pointer ${
                   activeFilter === 'ecommerce'
-                    ? 'bg-[#D4AF37] text-[#1B291F] font-bold shadow-md'
-                    : 'bg-[#1B291F] text-[#9CA3AF] hover:text-white border border-[#E5E7EB]/10'
+                    ? 'bg-[#8B0000] text-white font-bold shadow-md'
+                    : 'bg-[#111A2E] text-[#9CA3AF] hover:text-white border border-[#E5E7EB]/10'
                 }`}
               >
                 E-COMMERCE
@@ -717,8 +717,8 @@ export default function SystemsPage() {
                 onClick={() => setActiveFilter('interactive')}
                 className={`px-3.5 py-1.5 rounded-full transition-all cursor-pointer ${
                   activeFilter === 'interactive'
-                    ? 'bg-[#D4AF37] text-[#1B291F] font-bold shadow-md'
-                    : 'bg-[#1B291F] text-[#9CA3AF] hover:text-white border border-[#E5E7EB]/10'
+                    ? 'bg-[#8B0000] text-white font-bold shadow-md'
+                    : 'bg-[#111A2E] text-[#9CA3AF] hover:text-white border border-[#E5E7EB]/10'
                 }`}
               >
                 INTERACTIVE
@@ -735,7 +735,7 @@ export default function SystemsPage() {
                   top: `calc(105px + ${idx * 20}px)`,
                   zIndex: idx + 10,
                 }}
-                className="sticky bg-[#152319] border-2 border-[#D4AF37]/35 hover:border-[#D4AF37] rounded-3xl p-6 sm:p-8 lg:p-10 transition-all duration-300 shadow-[0_-25px_50px_rgba(0,0,0,0.85)] grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
+                className="sticky bg-[#0D1527] border-2 border-[#8B0000]/35 hover:border-[#8B0000] rounded-3xl p-6 sm:p-8 lg:p-10 transition-all duration-300 shadow-[0_-25px_50px_rgba(0,0,0,0.85)] grid grid-cols-1 lg:grid-cols-12 gap-8 items-center"
               >
                 {/* Left Column: Live Browser Frame */}
                 <div className="lg:col-span-6 space-y-3">
@@ -743,7 +743,7 @@ export default function SystemsPage() {
                     href={project.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block relative rounded-2xl overflow-hidden border border-[#E5E7EB]/20 bg-[#0E150F] group/frame hover:border-[#D4AF37] transition-all shadow-xl"
+                    className="block relative rounded-2xl overflow-hidden border border-[#E5E7EB]/20 bg-[#0E150F] group/frame hover:border-[#8B0000] transition-all shadow-xl"
                   >
                     {/* Browser Bar */}
                     <div className="h-9 bg-[#0A100B] border-b border-[#E5E7EB]/10 px-4 flex items-center justify-between">
@@ -752,11 +752,11 @@ export default function SystemsPage() {
                         <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
                         <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
                       </div>
-                      <div className="flex items-center gap-1.5 bg-[#1B291F] px-3 py-0.5 rounded text-[11px] font-mono text-[#E5E7EB]/80 max-w-[220px] truncate">
+                      <div className="flex items-center gap-1.5 bg-[#111A2E] px-3 py-0.5 rounded text-[11px] font-mono text-[#E5E7EB]/80 max-w-[220px] truncate">
                         <span className="text-emerald-400">🔒</span>
                         <span className="truncate">{project.displayUrl}</span>
                       </div>
-                      <div className="flex items-center gap-1 text-[10px] font-mono text-[#D4AF37] font-bold">
+                      <div className="flex items-center gap-1 text-[10px] font-mono text-[#8B0000] font-bold">
                         <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping" />
                         <span>LIVE ↗</span>
                       </div>
@@ -771,8 +771,8 @@ export default function SystemsPage() {
                         loading="lazy"
                       />
 
-                      <div className="absolute inset-0 bg-[#1B291F]/0 group-hover/frame:bg-[#1B291F]/40 transition-all duration-300 flex items-center justify-center pointer-events-none">
-                        <div className="opacity-0 group-hover/frame:opacity-100 transform translate-y-2 group-hover/frame:translate-y-0 transition-all duration-300 bg-[#1B291F]/95 backdrop-blur-md border border-[#D4AF37] px-5 py-2.5 rounded-full shadow-2xl text-xs font-mono font-bold text-[#D4AF37] flex items-center gap-2">
+                      <div className="absolute inset-0 bg-[#111A2E]/0 group-hover/frame:bg-[#111A2E]/40 transition-all duration-300 flex items-center justify-center pointer-events-none">
+                        <div className="opacity-0 group-hover/frame:opacity-100 transform translate-y-2 group-hover/frame:translate-y-0 transition-all duration-300 bg-[#111A2E]/95 backdrop-blur-md border border-[#8B0000] px-5 py-2.5 rounded-full shadow-2xl text-xs font-mono font-bold text-[#8B0000] flex items-center gap-2">
                           <span>OPEN LIVE SITE</span>
                           <span className="text-white">↗</span>
                         </div>
@@ -788,7 +788,7 @@ export default function SystemsPage() {
                       href={project.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#D4AF37] hover:underline flex items-center gap-1 font-bold text-[11px]"
+                      className="text-[#8B0000] hover:underline flex items-center gap-1 font-bold text-[11px]"
                     >
                       <span>LAUNCH APP</span>
                       <span>↗</span>
@@ -800,7 +800,7 @@ export default function SystemsPage() {
                 <div className="lg:col-span-6 space-y-5 text-left">
                   <div className="space-y-2">
                     <div className="flex items-center gap-3">
-                      <div className="relative w-9 h-9 rounded-lg bg-[#243528] border border-[#D4AF37]/40 flex items-center justify-center overflow-hidden shrink-0">
+                      <div className="relative w-9 h-9 rounded-lg bg-[#0A0F1D] border border-[#8B0000]/40 flex items-center justify-center overflow-hidden shrink-0">
                         <Image
                           src={project.logo}
                           alt={`${project.title} logo`}
@@ -809,9 +809,9 @@ export default function SystemsPage() {
                         />
                       </div>
                       <div className="flex flex-wrap items-center gap-2 font-mono text-xs">
-                        <span className="font-extrabold text-[#D4AF37]">{project.code}</span>
+                        <span className="font-extrabold text-[#8B0000]">{project.code}</span>
                         <span className="text-white/20">•</span>
-                        <span className="text-[10px] font-bold text-emerald-400 bg-[#243528] px-2.5 py-0.5 rounded-full border border-emerald-400/30 uppercase">
+                        <span className="text-[10px] font-bold text-emerald-400 bg-[#0A0F1D] px-2.5 py-0.5 rounded-full border border-emerald-400/30 uppercase">
                           {project.categoryLabel}
                         </span>
                       </div>
@@ -820,7 +820,7 @@ export default function SystemsPage() {
                     <h3 className="text-2xl sm:text-3xl font-extrabold text-white">
                       {project.title}
                     </h3>
-                    <p className="text-xs font-mono text-[#D4AF37]/90 font-medium">
+                    <p className="text-xs font-mono text-[#8B0000]/90 font-medium">
                       {project.subtitle}
                     </p>
                     <p className="text-xs sm:text-sm text-[#E5E7EB]/80 leading-relaxed font-sans pt-1">
@@ -829,14 +829,14 @@ export default function SystemsPage() {
                   </div>
 
                   {/* Checklist */}
-                  <div className="space-y-2 bg-[#243528]/80 p-3.5 rounded-xl border border-white/5 text-xs font-sans text-[#E5E7EB]/90">
-                    <span className="text-[10px] font-mono text-[#D4AF37] font-bold uppercase tracking-wider block">
+                  <div className="space-y-2 bg-[#0A0F1D]/80 p-3.5 rounded-xl border border-white/5 text-xs font-sans text-[#E5E7EB]/90">
+                    <span className="text-[10px] font-mono text-[#8B0000] font-bold uppercase tracking-wider block">
                       // DELIVERABLES & FEATURES:
                     </span>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
                       {project.deliverables.map((item, dIdx) => (
                         <div key={dIdx} className="flex items-start gap-1.5">
-                          <span className="text-[#D4AF37] font-bold">✔</span>
+                          <span className="text-[#8B0000] font-bold">✔</span>
                           <span className="text-[11px]">{item}</span>
                         </div>
                       ))}
@@ -844,9 +844,9 @@ export default function SystemsPage() {
                   </div>
 
                   {/* Tech Stack */}
-                  <div className="flex flex-wrap gap-1.5 font-mono text-[10px] text-[#D4AF37]">
+                  <div className="flex flex-wrap gap-1.5 font-mono text-[10px] text-[#8B0000]">
                     {project.stack.map((tech) => (
-                      <span key={tech} className="bg-[#243528] px-2.5 py-0.5 rounded-full border border-[#D4AF37]/30 font-bold">
+                      <span key={tech} className="bg-[#0A0F1D] px-2.5 py-0.5 rounded-full border border-[#8B0000]/30 font-bold">
                         {tech}
                       </span>
                     ))}
@@ -855,9 +855,9 @@ export default function SystemsPage() {
                   {/* Metrics */}
                   <div className="grid grid-cols-3 gap-2 font-mono pt-1">
                     {project.benchmarks.map((bm) => (
-                      <div key={bm.label} className="bg-[#243528] p-2.5 rounded-lg border border-white/5">
+                      <div key={bm.label} className="bg-[#0A0F1D] p-2.5 rounded-lg border border-white/5">
                         <span className="text-[8px] text-[#9CA3AF] block uppercase tracking-wider">{bm.label}</span>
-                        <span className="text-xs font-extrabold text-[#D4AF37] block mt-0.5">{bm.value}</span>
+                        <span className="text-xs font-extrabold text-[#8B0000] block mt-0.5">{bm.value}</span>
                         <span className="text-[8px] text-emerald-400 block mt-0.5 truncate">{bm.hint}</span>
                       </div>
                     ))}
@@ -869,14 +869,14 @@ export default function SystemsPage() {
                       href={project.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="font-extrabold text-[#1B291F] bg-[#D4AF37] hover:bg-[#E5C158] px-5 py-2.5 rounded-full transition-all shadow-lg hover:scale-105 cursor-pointer flex items-center gap-1.5"
+                      className="font-extrabold text-white bg-[#8B0000] hover:bg-[#A30000] px-5 py-2.5 rounded-full transition-all shadow-lg hover:scale-105 cursor-pointer flex items-center gap-1.5"
                     >
                       <span>LAUNCH LIVE PLATFORM</span>
                       <span>↗</span>
                     </a>
                     <button
                       onClick={() => handleCommissionClick(project.title)}
-                      className="font-bold text-[#E5E7EB] bg-[#243528] hover:bg-[#243528]/80 border border-[#D4AF37]/30 hover:border-[#D4AF37] px-5 py-2.5 rounded-full transition-all cursor-pointer"
+                      className="font-bold text-[#E5E7EB] bg-[#0A0F1D] hover:bg-[#0A0F1D]/80 border border-[#8B0000]/30 hover:border-[#8B0000] px-5 py-2.5 rounded-full transition-all cursor-pointer"
                     >
                       [ COMMISSION THIS TYPE ]
                     </button>

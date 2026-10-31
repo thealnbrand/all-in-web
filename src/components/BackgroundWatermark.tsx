@@ -23,9 +23,9 @@ export const BackgroundWatermark: React.FC = () => {
             <text
               x="25"
               y="50"
-              fill="#D4AF37"
+              fill="#8B0000"
               fillOpacity="0.055"
-              stroke="#D4AF37"
+              stroke="#8B0000"
               strokeOpacity="0.035"
               strokeWidth="0.5"
               fontFamily="var(--font-geist-mono), monospace"
@@ -38,9 +38,9 @@ export const BackgroundWatermark: React.FC = () => {
             <text
               x="135"
               y="105"
-              fill="#D4AF37"
+              fill="#8B0000"
               fillOpacity="0.055"
-              stroke="#D4AF37"
+              stroke="#8B0000"
               strokeOpacity="0.035"
               strokeWidth="0.5"
               fontFamily="var(--font-geist-mono), monospace"

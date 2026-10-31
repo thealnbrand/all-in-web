@@ -176,7 +176,7 @@ export const TactileGoodsTeaser: React.FC<TactileGoodsTeaserProps> = ({ onInquir
           alt=""
           className="w-full h-full object-cover object-center opacity-22 filter contrast-125"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#243528]/85 via-transparent to-[#243528]/95" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F1D]/85 via-transparent to-[#0A0F1D]/95" />
       </div>
 
       {/* A. Section Header + Direct Etsy Store Link */}
@@ -186,7 +186,7 @@ export const TactileGoodsTeaser: React.FC<TactileGoodsTeaserProps> = ({ onInquir
             <span className="text-[#E5E7EB]/40 font-mono text-xs tracking-widest uppercase">
               03 // TACTILE GOODS & APPAREL
             </span>
-            <span className="h-px w-16 bg-[#D4AF37]/30" />
+            <span className="h-px w-16 bg-[#8B0000]/30" />
           </div>
 
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#E5E7EB] tracking-tight leading-tight">
@@ -203,7 +203,7 @@ export const TactileGoodsTeaser: React.FC<TactileGoodsTeaserProps> = ({ onInquir
             href="https://chillguyso.etsy.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 font-mono text-xs font-extrabold text-[#1B291F] bg-[#D4AF37] hover:bg-[#E5C158] px-6 py-3.5 rounded-full transition-all shadow-xl hover:scale-105 cursor-pointer whitespace-nowrap"
+            className="inline-flex items-center gap-2 font-mono text-xs font-extrabold text-white bg-[#8B0000] hover:bg-[#A30000] px-6 py-3.5 rounded-full transition-all shadow-xl hover:scale-105 cursor-pointer whitespace-nowrap"
           >
             <span>[ GO STRAIGHT TO ETSY SHOP ]</span>
             <span>↗</span>
@@ -212,17 +212,17 @@ export const TactileGoodsTeaser: React.FC<TactileGoodsTeaserProps> = ({ onInquir
       </div>
 
       {/* B. Upper Feature Block (Dynamically Bound to Active Capsule Item) */}
-      <div className="bg-[#1B291F] border border-[#E5E7EB]/10 hover:border-[#D4AF37]/40 rounded-2xl p-6 sm:p-10 shadow-2xl relative overflow-hidden space-y-8 hover:shadow-[0_0_35px_rgba(212,175,55,0.12)] transition-all">
+      <div className="bg-[#111A2E] border border-[#E5E7EB]/10 hover:border-[#8B0000]/40 rounded-2xl p-6 sm:p-10 shadow-2xl relative overflow-hidden space-y-8 hover:shadow-[0_0_35px_rgba(139,0,0,0.12)] transition-all">
         {/* Ambient Background Watermark */}
-        <div className="absolute -right-6 -bottom-6 font-mono text-[120px] font-black text-[#243528]/30 pointer-events-none tracking-tighter leading-none select-none">
+        <div className="absolute -right-6 -bottom-6 font-mono text-[120px] font-black text-[#0A0F1D]/30 pointer-events-none tracking-tighter leading-none select-none">
           {activeItem.watermark}
         </div>
 
         {/* Top Spec Header Bar */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-[#E5E7EB]/10 pb-6 relative z-10">
           <div>
-            <div className="flex items-center gap-2 font-mono text-xs text-[#D4AF37] font-bold tracking-widest mb-1">
-              <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse" />
+            <div className="flex items-center gap-2 font-mono text-xs text-[#8B0000] font-bold tracking-widest mb-1">
+              <span className="w-2 h-2 rounded-full bg-[#8B0000] animate-pulse" />
               <span>{activeItem.status}</span>
             </div>
             <h3 className="text-xl sm:text-3xl font-black text-white tracking-wide">
@@ -231,13 +231,13 @@ export const TactileGoodsTeaser: React.FC<TactileGoodsTeaserProps> = ({ onInquir
           </div>
 
           <div className="flex flex-wrap items-center gap-3 font-mono text-xs">
-            <span className="text-[#E5E7EB] bg-[#243528] px-3.5 py-1.5 rounded-full border border-[#D4AF37]/30 font-bold">
+            <span className="text-[#E5E7EB] bg-[#0A0F1D] px-3.5 py-1.5 rounded-full border border-[#8B0000]/30 font-bold">
               {activeItem.price}
             </span>
-            <span className="text-[#9CA3AF] bg-[#243528] px-3.5 py-1.5 rounded-full border border-[#E5E7EB]/10">
+            <span className="text-[#9CA3AF] bg-[#0A0F1D] px-3.5 py-1.5 rounded-full border border-[#E5E7EB]/10">
               FULFILLMENT: <span className="text-white font-bold">PRINTIFY ON-DEMAND</span>
             </span>
-            <span className="text-[#D4AF37] bg-[#243528] px-3.5 py-1.5 rounded-full border border-[#D4AF37]/30 font-bold">
+            <span className="text-[#8B0000] bg-[#0A0F1D] px-3.5 py-1.5 rounded-full border border-[#8B0000]/30 font-bold">
               ● LIVE ON ETSY
             </span>
           </div>
@@ -250,7 +250,7 @@ export const TactileGoodsTeaser: React.FC<TactileGoodsTeaserProps> = ({ onInquir
             {/* Visual 1: Primary Mockup */}
             <Link
               href={`/goods/${encodeURIComponent(activeItem.id)}`}
-              className="relative h-[320px] sm:h-[380px] rounded-xl overflow-hidden border border-[#E5E7EB]/15 bg-[#152319] group block cursor-pointer hover:border-[#D4AF37]/60 transition-colors"
+              className="relative h-[320px] sm:h-[380px] rounded-xl overflow-hidden border border-[#E5E7EB]/15 bg-[#0D1527] group block cursor-pointer hover:border-[#8B0000]/60 transition-colors"
               title={`Open ${activeItem.name} Product Page`}
             >
               <Image
@@ -261,12 +261,12 @@ export const TactileGoodsTeaser: React.FC<TactileGoodsTeaserProps> = ({ onInquir
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#111A13]/90 via-transparent to-transparent opacity-80" />
-              <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity bg-black/80 backdrop-blur-xs text-[#D4AF37] px-3 py-1 rounded-full font-mono text-[10px] font-bold border border-[#D4AF37]/40 flex items-center gap-1">
+              <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity bg-black/80 backdrop-blur-xs text-[#8B0000] px-3 py-1 rounded-full font-mono text-[10px] font-bold border border-[#8B0000]/40 flex items-center gap-1">
                 <span>VIEW PRODUCT PAGE</span>
                 <span>→</span>
               </div>
-              <div className="absolute bottom-3 left-3 right-3 font-mono text-[10px] text-[#E5E7EB] bg-[#1B291F]/90 backdrop-blur-md p-2.5 rounded-lg border border-[#D4AF37]/30 flex items-center justify-between">
-                <span className="text-[#D4AF37] font-bold">{activeItem.visual1Tag}</span>
+              <div className="absolute bottom-3 left-3 right-3 font-mono text-[10px] text-[#E5E7EB] bg-[#111A2E]/90 backdrop-blur-md p-2.5 rounded-lg border border-[#8B0000]/30 flex items-center justify-between">
+                <span className="text-[#8B0000] font-bold">{activeItem.visual1Tag}</span>
                 <span>{activeItem.visual1Sub}</span>
               </div>
             </Link>
@@ -274,7 +274,7 @@ export const TactileGoodsTeaser: React.FC<TactileGoodsTeaserProps> = ({ onInquir
             {/* Visual 2: Secondary Mockup / Lifestyle Silhouette */}
             <Link
               href={`/goods/${encodeURIComponent(activeItem.id)}`}
-              className="relative h-[320px] sm:h-[380px] rounded-xl overflow-hidden border border-[#E5E7EB]/15 bg-[#152319] group block cursor-pointer hover:border-[#D4AF37]/60 transition-colors"
+              className="relative h-[320px] sm:h-[380px] rounded-xl overflow-hidden border border-[#E5E7EB]/15 bg-[#0D1527] group block cursor-pointer hover:border-[#8B0000]/60 transition-colors"
               title={`Open ${activeItem.name} Product Page`}
             >
               <Image
@@ -284,12 +284,12 @@ export const TactileGoodsTeaser: React.FC<TactileGoodsTeaserProps> = ({ onInquir
                 className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#111A13]/90 via-transparent to-transparent opacity-80" />
-              <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity bg-black/80 backdrop-blur-xs text-[#D4AF37] px-3 py-1 rounded-full font-mono text-[10px] font-bold border border-[#D4AF37]/40 flex items-center gap-1">
+              <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity bg-black/80 backdrop-blur-xs text-[#8B0000] px-3 py-1 rounded-full font-mono text-[10px] font-bold border border-[#8B0000]/40 flex items-center gap-1">
                 <span>VIEW PRODUCT PAGE</span>
                 <span>→</span>
               </div>
-              <div className="absolute bottom-3 left-3 right-3 font-mono text-[10px] text-[#E5E7EB] bg-[#1B291F]/90 backdrop-blur-md p-2.5 rounded-lg border border-[#D4AF37]/30 flex items-center justify-between">
-                <span className="text-[#D4AF37] font-bold">{activeItem.visual2Tag}</span>
+              <div className="absolute bottom-3 left-3 right-3 font-mono text-[10px] text-[#E5E7EB] bg-[#111A2E]/90 backdrop-blur-md p-2.5 rounded-lg border border-[#8B0000]/30 flex items-center justify-between">
+                <span className="text-[#8B0000] font-bold">{activeItem.visual2Tag}</span>
                 <span>{activeItem.visual2Sub}</span>
               </div>
             </Link>
@@ -298,7 +298,7 @@ export const TactileGoodsTeaser: React.FC<TactileGoodsTeaserProps> = ({ onInquir
           {/* Right Column: Industrial Material Spec Sheet */}
           <div className="lg:col-span-6 space-y-6 text-left">
             <div>
-              <span className="font-mono text-xs text-[#D4AF37] font-bold uppercase tracking-wider block mb-1">
+              <span className="font-mono text-xs text-[#8B0000] font-bold uppercase tracking-wider block mb-1">
                 // SPEC SHEET & PRODUCTION ARCHITECTURE
               </span>
               <p className="text-sm text-[#E5E7EB]/80 font-sans leading-relaxed">
@@ -307,7 +307,7 @@ export const TactileGoodsTeaser: React.FC<TactileGoodsTeaserProps> = ({ onInquir
             </div>
 
             {/* Specs Table */}
-            <div className="bg-[#243528]/80 rounded-xl border border-[#E5E7EB]/10 p-5 space-y-3 font-mono text-xs">
+            <div className="bg-[#0A0F1D]/80 rounded-xl border border-[#E5E7EB]/10 p-5 space-y-3 font-mono text-xs">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-[#E5E7EB]/10 pb-2.5 gap-1">
                 <span className="text-[#9CA3AF]">BLANK SELECTION:</span>
                 <span className="text-[#E5E7EB] font-bold">{activeItem.blankSelection}</span>
@@ -315,7 +315,7 @@ export const TactileGoodsTeaser: React.FC<TactileGoodsTeaserProps> = ({ onInquir
 
               <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-[#E5E7EB]/10 pb-2.5 gap-1">
                 <span className="text-[#9CA3AF]">PRINT METHOD:</span>
-                <span className="text-[#D4AF37] font-bold">{activeItem.printMethod}</span>
+                <span className="text-[#8B0000] font-bold">{activeItem.printMethod}</span>
               </div>
 
               <div className="flex flex-col sm:flex-row sm:items-center justify-between border-b border-[#E5E7EB]/10 pb-2.5 gap-1">
@@ -340,7 +340,7 @@ export const TactileGoodsTeaser: React.FC<TactileGoodsTeaserProps> = ({ onInquir
                 href={activeItem.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto font-extrabold text-[#1B291F] bg-[#D4AF37] hover:bg-[#E5C158] px-6 py-3.5 rounded-full transition-all shadow-lg hover:scale-105 cursor-pointer text-center flex items-center justify-center gap-2 whitespace-nowrap"
+                className="w-full sm:w-auto font-extrabold text-white bg-[#8B0000] hover:bg-[#A30000] px-6 py-3.5 rounded-full transition-all shadow-lg hover:scale-105 cursor-pointer text-center flex items-center justify-center gap-2 whitespace-nowrap"
               >
                 <span>[ ACQUIRE ON ETSY ]</span>
                 <span>↗</span>
@@ -348,7 +348,7 @@ export const TactileGoodsTeaser: React.FC<TactileGoodsTeaserProps> = ({ onInquir
 
               <Link
                 href={`/goods/${encodeURIComponent(activeItem.id)}`}
-                className="w-full sm:w-auto font-bold text-[#E5E7EB] bg-[#243528] hover:bg-[#243528]/80 border border-[#D4AF37]/30 hover:border-[#D4AF37] px-6 py-3.5 rounded-full transition-all text-center flex items-center justify-center gap-1.5 whitespace-nowrap"
+                className="w-full sm:w-auto font-bold text-[#E5E7EB] bg-[#0A0F1D] hover:bg-[#0A0F1D]/80 border border-[#8B0000]/30 hover:border-[#8B0000] px-6 py-3.5 rounded-full transition-all text-center flex items-center justify-center gap-1.5 whitespace-nowrap"
               >
                 <span>VIEW PRODUCT PAGE</span>
                 <span>→</span>
@@ -360,7 +360,7 @@ export const TactileGoodsTeaser: React.FC<TactileGoodsTeaserProps> = ({ onInquir
 
       {/* C. Lower Row: 3 Selectable Capsule Product Cards */}
       <div className="space-y-4 relative z-10">
-        <div className="flex items-center justify-between font-mono text-xs text-[#D4AF37] uppercase tracking-wider px-1">
+        <div className="flex items-center justify-between font-mono text-xs text-[#8B0000] uppercase tracking-wider px-1">
           <span>// SELECT CAPSULE EDITION TO INSPECT ({items.length} RELEASES)</span>
           <span className="text-[#E5E7EB]/50 hidden sm:inline">CLICK ANY EDITION TO LOAD SPECS ABOVE</span>
         </div>
@@ -375,19 +375,19 @@ export const TactileGoodsTeaser: React.FC<TactileGoodsTeaserProps> = ({ onInquir
                 onClick={() => setActiveIndex(idx)}
                 className={`text-left rounded-2xl p-4 sm:p-5 transition-all cursor-pointer flex items-center gap-4 border group relative overflow-hidden ${
                   isSelected
-                    ? 'bg-[#1B291F] border-2 border-[#D4AF37] shadow-[0_0_30px_rgba(212,175,55,0.22)] scale-[1.01]'
-                    : 'bg-[#1B291F]/70 border-[#E5E7EB]/10 hover:border-[#D4AF37]/50 hover:bg-[#1B291F]'
+                    ? 'bg-[#111A2E] border-2 border-[#8B0000] shadow-[0_0_30px_rgba(139,0,0,0.22)] scale-[1.01]'
+                    : 'bg-[#111A2E]/70 border-[#E5E7EB]/10 hover:border-[#8B0000]/50 hover:bg-[#111A2E]'
                 }`}
               >
                 {/* Dual Thumbnail Stack Preview */}
-                <div className="relative w-20 h-24 sm:w-24 sm:h-28 rounded-xl overflow-hidden bg-[#152319] border border-white/10 shrink-0">
+                <div className="relative w-20 h-24 sm:w-24 sm:h-28 rounded-xl overflow-hidden bg-[#0D1527] border border-white/10 shrink-0">
                   <Image
                     src={item.primaryImage}
                     alt={item.shortTitle}
                     fill
                     className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
                   />
-                  <div className="absolute bottom-1 right-1 w-8 h-8 rounded-md overflow-hidden border border-[#D4AF37]/60 shadow-md bg-[#111A13]">
+                  <div className="absolute bottom-1 right-1 w-8 h-8 rounded-md overflow-hidden border border-[#8B0000]/60 shadow-md bg-[#111A13]">
                     <Image
                       src={item.secondaryImage}
                       alt={`${item.shortTitle} alt`}
@@ -400,18 +400,18 @@ export const TactileGoodsTeaser: React.FC<TactileGoodsTeaserProps> = ({ onInquir
                 {/* Card Metadata */}
                 <div className="flex-1 min-w-0 space-y-1.5">
                   <div className="flex items-center justify-between gap-2">
-                    <span className="font-mono text-[10px] font-bold text-[#D4AF37] bg-[#243528] px-2.5 py-0.5 rounded-full border border-[#D4AF37]/30 uppercase">
+                    <span className="font-mono text-[10px] font-bold text-[#8B0000] bg-[#0A0F1D] px-2.5 py-0.5 rounded-full border border-[#8B0000]/30 uppercase">
                       {item.badge}
                     </span>
                     {isSelected && (
-                      <span className="font-mono text-[9px] font-extrabold text-[#1B291F] bg-[#D4AF37] px-2 py-0.5 rounded-full uppercase">
+                      <span className="font-mono text-[9px] font-extrabold text-white bg-[#8B0000] px-2 py-0.5 rounded-full uppercase">
                         ACTIVE
                       </span>
                     )}
                   </div>
 
                   <h4 className={`font-extrabold text-sm sm:text-base truncate transition-colors ${
-                    isSelected ? 'text-[#D4AF37]' : 'text-white group-hover:text-[#D4AF37]'
+                    isSelected ? 'text-[#8B0000]' : 'text-white group-hover:text-[#8B0000]'
                   }`}>
                     {item.shortTitle}
                   </h4>
@@ -422,7 +422,7 @@ export const TactileGoodsTeaser: React.FC<TactileGoodsTeaserProps> = ({ onInquir
 
                   <div className="pt-1 flex items-center justify-between font-mono text-xs">
                     <span className="text-emerald-400 font-bold">{item.price}</span>
-                    <span className={`text-[10px] ${isSelected ? 'text-[#D4AF37] font-bold' : 'text-white/40 group-hover:text-white/80'}`}>
+                    <span className={`text-[10px] ${isSelected ? 'text-[#8B0000] font-bold' : 'text-white/40 group-hover:text-white/80'}`}>
                       {isSelected ? '● INSPECTING' : 'SELECT →'}
                     </span>
                   </div>

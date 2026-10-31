@@ -42,7 +42,7 @@ export const HeroEffectsCanvas: React.FC = () => {
 
     // 120 Vibrant Golden Dust Particles
     const particleCount = 120;
-    const colors = ['#D4AF37', '#F3E5AB', '#FFD700', '#E5E7EB'];
+    const colors = ['#8B0000', '#EF4444', '#FFD700', '#E5E7EB'];
     const particles: Array<{
       x: number;
       y: number;
@@ -121,7 +121,7 @@ export const HeroEffectsCanvas: React.FC = () => {
       const baseAlpha = 0.05 + Math.min(scrollVelocity * 0.008, 0.12);
       const gridSize = 40;
 
-      ctx.strokeStyle = `rgba(212, 175, 55, ${baseAlpha})`;
+      ctx.strokeStyle = `rgba(139, 0, 0, ${baseAlpha})`;
       ctx.lineWidth = 1;
 
       for (let x = 0; x < w; x += gridSize) {
@@ -147,9 +147,9 @@ export const HeroEffectsCanvas: React.FC = () => {
 
         ctx.save();
         const beamGlow = ctx.createLinearGradient(0, scanY - 8, 0, scanY + 8);
-        beamGlow.addColorStop(0, 'rgba(212, 175, 55, 0)');
-        beamGlow.addColorStop(0.5, 'rgba(212, 175, 55, 0.85)');
-        beamGlow.addColorStop(1, 'rgba(212, 175, 55, 0)');
+        beamGlow.addColorStop(0, 'rgba(139, 0, 0, 0)');
+        beamGlow.addColorStop(0.5, 'rgba(139, 0, 0, 0.85)');
+        beamGlow.addColorStop(1, 'rgba(139, 0, 0, 0)');
 
         ctx.fillStyle = beamGlow;
         ctx.fillRect(0, scanY - 8, w, 16);
@@ -179,9 +179,9 @@ export const HeroEffectsCanvas: React.FC = () => {
         ctx.save();
         ctx.beginPath();
         ctx.arc(sw.x, sw.y, sw.radius, 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(212, 175, 55, ${sw.opacity})`;
+        ctx.strokeStyle = `rgba(139, 0, 0, ${sw.opacity})`;
         ctx.lineWidth = 2.5;
-        ctx.shadowColor = '#D4AF37';
+        ctx.shadowColor = '#8B0000';
         ctx.shadowBlur = 14;
         ctx.stroke();
         ctx.restore();
@@ -214,7 +214,7 @@ export const HeroEffectsCanvas: React.FC = () => {
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
         ctx.fillStyle = p.color;
         ctx.globalAlpha = currentAlpha;
-        ctx.shadowColor = '#D4AF37';
+        ctx.shadowColor = '#8B0000';
         ctx.shadowBlur = p.radius * 4;
         ctx.fill();
         ctx.restore();
@@ -231,7 +231,7 @@ export const HeroEffectsCanvas: React.FC = () => {
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = 'rgba(212, 175, 55, 0.18)';
+            ctx.strokeStyle = 'rgba(139, 0, 0, 0.18)';
             ctx.lineWidth = 0.8;
             ctx.stroke();
             ctx.restore();
@@ -243,8 +243,8 @@ export const HeroEffectsCanvas: React.FC = () => {
       if (mouse.x > 0 && mouse.y > 0) {
         ctx.save();
         const mouseGlow = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, 160);
-        mouseGlow.addColorStop(0, 'rgba(212, 175, 55, 0.28)');
-        mouseGlow.addColorStop(1, 'rgba(212, 175, 55, 0)');
+        mouseGlow.addColorStop(0, 'rgba(139, 0, 0, 0.28)');
+        mouseGlow.addColorStop(1, 'rgba(139, 0, 0, 0)');
         ctx.fillStyle = mouseGlow;
         ctx.beginPath();
         ctx.arc(mouse.x, mouse.y, 160, 0, Math.PI * 2);

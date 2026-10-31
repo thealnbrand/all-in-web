@@ -89,15 +89,15 @@ export const FloatingNavDock: React.FC = () => {
       {/* Floating Section Name Badge (Only appears briefly on section change to prevent hiding content) */}
       {recentChangeTitle && (
         <div className="absolute right-12 top-1/2 -translate-y-1/2 mr-2 pointer-events-none transition-all duration-300 animate-in fade-in slide-in-from-right-2">
-          <div className="bg-[#152319]/95 text-[#D4AF37] font-mono text-[11px] font-black px-3 py-1.5 rounded-full border border-[#D4AF37]/50 shadow-2xl backdrop-blur-md whitespace-nowrap flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] animate-ping" />
+          <div className="bg-[#0D1527]/95 text-[#8B0000] font-mono text-[11px] font-black px-3 py-1.5 rounded-full border border-[#8B0000]/50 shadow-2xl backdrop-blur-md whitespace-nowrap flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#8B0000] animate-ping" />
             <span>{recentChangeTitle}</span>
           </div>
         </div>
       )}
 
       {/* Ultra-Slim Dock Showing ONLY Numbers */}
-      <div className="bg-[#1B291F]/90 backdrop-blur-md border border-[#D4AF37]/30 p-1.5 rounded-2xl shadow-2xl flex flex-col items-center gap-1.5 font-mono text-[11px] w-9">
+      <div className="bg-[#111A2E]/90 backdrop-blur-md border border-[#8B0000]/30 p-1.5 rounded-2xl shadow-2xl flex flex-col items-center gap-1.5 font-mono text-[11px] w-9">
         {SECTIONS.map((sec) => {
           const isActive = activeSection === sec.id;
           const isHovered = hoveredSection === sec.id;
@@ -107,8 +107,8 @@ export const FloatingNavDock: React.FC = () => {
               {/* Tooltip on individual number hover */}
               {isHovered && !recentChangeTitle && (
                 <div className="absolute right-full mr-2.5 pointer-events-none z-50">
-                  <div className="bg-[#152319]/95 text-[#E5E7EB] font-mono text-[10px] font-bold px-2.5 py-1 rounded-lg border border-white/10 shadow-xl backdrop-blur-md whitespace-nowrap flex items-center gap-1">
-                    <span className="text-[#D4AF37]">{sec.label} //</span>
+                  <div className="bg-[#0D1527]/95 text-[#E5E7EB] font-mono text-[10px] font-bold px-2.5 py-1 rounded-lg border border-white/10 shadow-xl backdrop-blur-md whitespace-nowrap flex items-center gap-1">
+                    <span className="text-[#8B0000]">{sec.label} //</span>
                     <span>{sec.title}</span>
                   </div>
                 </div>
@@ -122,7 +122,7 @@ export const FloatingNavDock: React.FC = () => {
                 onMouseLeave={() => setHoveredSection(null)}
                 className={`w-7 h-7 rounded-xl flex items-center justify-center transition-all cursor-pointer font-bold ${
                   isActive
-                    ? 'bg-[#D4AF37] text-[#152319] font-black shadow-[0_0_15px_rgba(212,175,55,0.4)] scale-110'
+                    ? 'bg-[#8B0000] text-white font-black shadow-[0_0_15px_rgba(139,0,0,0.4)] scale-110'
                     : 'text-[#9CA3AF] hover:text-white hover:bg-white/10'
                 }`}
                 title={`${sec.label} // ${sec.title}`}

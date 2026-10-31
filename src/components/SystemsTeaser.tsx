@@ -265,7 +265,7 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
           alt=""
           className="w-full h-full object-cover object-center opacity-20 filter contrast-125"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#243528]/85 via-transparent to-[#243528]/95" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F1D]/85 via-transparent to-[#0A0F1D]/95" />
       </div>
 
       {/* =====================================================================
@@ -273,10 +273,10 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
       ===================================================================== */}
       <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 border-b border-white/10 pb-8 relative z-10">
         <div className="space-y-3 max-w-3xl text-left">
-          <div className="flex items-center gap-2.5 font-mono text-xs font-bold text-[#D4AF37] tracking-widest uppercase">
+          <div className="flex items-center gap-2.5 font-mono text-xs font-bold text-[#8B0000] tracking-widest uppercase">
             <span>01 // SYSTEMS & CUSTOM ENGINEERING</span>
-            <span className="h-px w-12 bg-[#D4AF37]/40" />
-            <span className="text-emerald-400 text-[10px] bg-[#1B291F] px-3 py-0.5 rounded-full border border-emerald-400/30 font-bold uppercase">
+            <span className="h-px w-12 bg-[#8B0000]/40" />
+            <span className="text-emerald-400 text-[10px] bg-[#111A2E] px-3 py-0.5 rounded-full border border-emerald-400/30 font-bold uppercase">
               IDEA TO LIVE PRODUCTION
             </span>
           </div>
@@ -294,14 +294,14 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
           <button
             type="button"
             onClick={handleCommissionClick}
-            className="font-extrabold text-[#1B291F] bg-[#D4AF37] hover:bg-[#E5C158] px-6 py-3.5 rounded-full transition-all shadow-xl hover:scale-105 cursor-pointer uppercase tracking-wider whitespace-nowrap"
+            className="font-extrabold text-white bg-[#8B0000] hover:bg-[#A30000] px-6 py-3.5 rounded-full transition-all shadow-xl hover:scale-105 cursor-pointer uppercase tracking-wider whitespace-nowrap"
           >
             [ START YOUR PROJECT ]
           </button>
 
           <Link
             href="/systems"
-            className="font-bold text-[#E5E7EB] bg-[#1B291F] hover:bg-[#1B291F]/80 border border-[#D4AF37]/40 hover:border-[#D4AF37] px-5 py-3.5 rounded-full transition-all whitespace-nowrap flex items-center gap-1.5"
+            className="font-bold text-[#E5E7EB] bg-[#111A2E] hover:bg-[#111A2E]/80 border border-[#8B0000]/40 hover:border-[#8B0000] px-5 py-3.5 rounded-full transition-all whitespace-nowrap flex items-center gap-1.5"
           >
             <span>ALL SYSTEMS</span>
             <span>→</span>
@@ -313,7 +313,7 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
           2. COMPANIES & PLATFORMS WE BUILT (Slow Seamless Logos-Only Strip)
       ===================================================================== */}
       <div className="space-y-3 relative z-10">
-        <div className="flex items-center justify-between font-mono text-xs text-[#D4AF37] px-1">
+        <div className="flex items-center justify-between font-mono text-xs text-[#8B0000] px-1">
           <span className="font-bold uppercase tracking-wider">
             // PLATFORMS & COMPANIES WE ENGINEERED — CLICK ANY LOGO TO PREVIEW BELOW
           </span>
@@ -327,11 +327,11 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
           onMouseLeave={() => setIsTickerPaused(false)}
           onTouchStart={() => setIsTickerPaused(true)}
           onTouchEnd={() => setIsTickerPaused(false)}
-          className="relative overflow-hidden rounded-2xl bg-[#152319] border border-[#D4AF37]/35 py-4 shadow-xl"
+          className="relative overflow-hidden rounded-2xl bg-[#0D1527] border border-[#8B0000]/35 py-4 shadow-xl"
         >
           {/* Soft edge fade overlays */}
-          <div className="absolute top-0 bottom-0 left-0 w-20 bg-gradient-to-r from-[#152319] to-transparent z-10 pointer-events-none" />
-          <div className="absolute top-0 bottom-0 right-0 w-20 bg-gradient-to-l from-[#152319] to-transparent z-10 pointer-events-none" />
+          <div className="absolute top-0 bottom-0 left-0 w-20 bg-gradient-to-r from-[#0D1527] to-transparent z-10 pointer-events-none" />
+          <div className="absolute top-0 bottom-0 right-0 w-20 bg-gradient-to-l from-[#0D1527] to-transparent z-10 pointer-events-none" />
 
           <div
             ref={tickerRef}
@@ -349,8 +349,8 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
                       onClick={() => setActiveIndex(idx)}
                       className={`relative p-3 rounded-2xl border transition-all shrink-0 cursor-pointer flex items-center justify-center ${
                         isSelected
-                          ? 'bg-[#1B291F] border-[#D4AF37] shadow-[0_0_25px_rgba(212,175,55,0.45)] scale-110 ring-2 ring-[#D4AF37]/30'
-                          : 'bg-[#1A261E]/80 border-white/10 hover:border-[#D4AF37]/60 hover:bg-[#1B291F] hover:scale-105'
+                          ? 'bg-[#111A2E] border-[#8B0000] shadow-[0_0_25px_rgba(139,0,0,0.45)] scale-110 ring-2 ring-[#8B0000]/30'
+                          : 'bg-[#1A261E]/80 border-white/10 hover:border-[#8B0000]/60 hover:bg-[#111A2E] hover:scale-105'
                       }`}
                       title={`Preview ${sys.name}`}
                     >
@@ -365,7 +365,7 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
                       </div>
 
                       {isSelected && (
-                        <span className="absolute -top-1 -right-1 h-3 w-3 rounded-full bg-emerald-400 border-2 border-[#152319] animate-pulse" />
+                        <span className="absolute -top-1 -right-1 h-3 w-3 rounded-full bg-emerald-400 border-2 border-[#0D1527] animate-pulse" />
                       )}
                     </button>
                   );
@@ -381,7 +381,7 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
       ===================================================================== */}
       <div className="space-y-5 relative z-10">
         {/* Standalone Full-Width Browser Preview */}
-        <div className="w-full h-[420px] sm:h-[520px] lg:h-[580px] rounded-3xl overflow-hidden border-2 border-[#D4AF37]/40 bg-[#152319] group shadow-[0_25px_70px_rgba(0,0,0,0.65)] relative">
+        <div className="w-full h-[420px] sm:h-[520px] lg:h-[580px] rounded-3xl overflow-hidden border-2 border-[#8B0000]/40 bg-[#0D1527] group shadow-[0_25px_70px_rgba(0,0,0,0.65)] relative">
           <a
             href={current.url}
             target="_blank"
@@ -395,17 +395,17 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
                 <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
                 <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
-                <span className="ml-2 font-mono text-[11px] font-bold text-[#D4AF37] hidden sm:inline">
+                <span className="ml-2 font-mono text-[11px] font-bold text-[#8B0000] hidden sm:inline">
                   {current.name}
                 </span>
               </div>
 
-              <div className="flex items-center gap-1.5 bg-[#1B291F] px-4 py-1 rounded-md border border-[#E5E7EB]/10 text-[11px] font-mono text-[#E5E7EB]/80 max-w-[320px] truncate">
+              <div className="flex items-center gap-1.5 bg-[#111A2E] px-4 py-1 rounded-md border border-[#E5E7EB]/10 text-[11px] font-mono text-[#E5E7EB]/80 max-w-[320px] truncate">
                 <span className="text-emerald-400">🔒</span>
                 <span className="truncate">{current.url}</span>
               </div>
 
-              <div className="flex items-center gap-1 text-[11px] font-mono text-[#D4AF37] font-bold group-hover:text-white transition-colors">
+              <div className="flex items-center gap-1 text-[11px] font-mono text-[#8B0000] font-bold group-hover:text-white transition-colors">
                 <span className="hidden sm:inline">OPEN LIVE SITE</span>
                 <span>↗</span>
               </div>
@@ -422,8 +422,8 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
               />
 
               {/* Hover Launch Prompt */}
-              <div className="absolute inset-0 bg-[#1B291F]/0 group-hover:bg-[#1B291F]/25 transition-all duration-300 flex items-center justify-center pointer-events-none">
-                <div className="opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 bg-[#1B291F]/95 backdrop-blur-md border border-[#D4AF37] px-6 py-3 rounded-full shadow-2xl text-xs font-mono font-bold text-[#D4AF37] flex items-center gap-2">
+              <div className="absolute inset-0 bg-[#111A2E]/0 group-hover:bg-[#111A2E]/25 transition-all duration-300 flex items-center justify-center pointer-events-none">
+                <div className="opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 bg-[#111A2E]/95 backdrop-blur-md border border-[#8B0000] px-6 py-3 rounded-full shadow-2xl text-xs font-mono font-bold text-[#8B0000] flex items-center gap-2">
                   <span>LAUNCH {current.name} IN NEW TAB</span>
                   <span className="text-white">↗</span>
                 </div>
@@ -437,7 +437,7 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
           <button
             type="button"
             onClick={handleCommissionClick}
-            className="font-extrabold text-[#1B291F] bg-[#D4AF37] hover:bg-[#E5C158] px-8 py-4 rounded-full transition-all shadow-xl hover:scale-105 cursor-pointer uppercase tracking-wider"
+            className="font-extrabold text-white bg-[#8B0000] hover:bg-[#A30000] px-8 py-4 rounded-full transition-all shadow-xl hover:scale-105 cursor-pointer uppercase tracking-wider"
           >
             [ BUILD YOUR PROJECT WITH US → ]
           </button>
@@ -446,7 +446,7 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
             href={current.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="font-bold text-white bg-[#1B291F] hover:bg-[#152319] border border-[#D4AF37]/40 hover:border-[#D4AF37] px-6 py-4 rounded-full transition-all flex items-center gap-2 cursor-pointer"
+            className="font-bold text-white bg-[#111A2E] hover:bg-[#0D1527] border border-[#8B0000]/40 hover:border-[#8B0000] px-6 py-4 rounded-full transition-all flex items-center gap-2 cursor-pointer"
           >
             <span>VISIT {current.name} LIVE</span>
             <span>↗</span>
@@ -454,7 +454,7 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
 
           <Link
             href="/systems"
-            className="font-bold text-[#E5E7EB]/85 bg-[#1B291F]/80 hover:bg-[#1B291F] border border-white/15 hover:border-[#D4AF37]/50 px-6 py-4 rounded-full transition-all flex items-center gap-2 cursor-pointer"
+            className="font-bold text-[#E5E7EB]/85 bg-[#111A2E]/80 hover:bg-[#111A2E] border border-white/15 hover:border-[#8B0000]/50 px-6 py-4 rounded-full transition-all flex items-center gap-2 cursor-pointer"
           >
             <span>EXPLORE ALL SYSTEMS</span>
             <span>→</span>
@@ -468,12 +468,12 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
       <div
         onMouseEnter={() => setIsStagePaused(true)}
         onMouseLeave={() => setIsStagePaused(false)}
-        className="bg-[#1B291F] border border-[#D4AF37]/40 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-2xl space-y-10 relative z-10 overflow-hidden"
+        className="bg-[#111A2E] border border-[#8B0000]/40 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-2xl space-y-10 relative z-10 overflow-hidden"
       >
         {/* Top Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-white/10 pb-6 text-left">
           <div>
-            <div className="flex items-center gap-2 font-mono text-xs text-[#D4AF37] font-bold uppercase tracking-widest mb-1">
+            <div className="flex items-center gap-2 font-mono text-xs text-[#8B0000] font-bold uppercase tracking-widest mb-1">
               <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
               <span>// HOW WE TAKE YOUR PROJECT FROM IDEA TO LAUNCH & BEYOND</span>
             </div>
@@ -482,7 +482,7 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
             </h3>
           </div>
 
-          <div className="flex items-center gap-2.5 font-mono text-[11px] bg-[#152319] px-4 py-2 rounded-full border border-white/10 self-start md:self-auto">
+          <div className="flex items-center gap-2.5 font-mono text-[11px] bg-[#0D1527] px-4 py-2 rounded-full border border-white/10 self-start md:self-auto">
             <span
               className={`w-2 h-2 rounded-full ${
                 isStagePaused ? 'bg-amber-400' : 'bg-emerald-400 animate-ping'
@@ -522,7 +522,7 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
                     <span
                       className={`font-mono text-[10px] sm:text-xs font-extrabold tracking-wider uppercase transition-colors ${
                         isCurrent
-                          ? 'text-[#D4AF37] scale-105'
+                          ? 'text-[#8B0000] scale-105'
                           : isCompleted
                           ? 'text-emerald-400'
                           : 'text-[#9CA3AF]/70 group-hover:text-white'
@@ -541,7 +541,7 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
               <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-1.5 bg-[#111A13] border border-white/10 rounded-full overflow-hidden z-0">
                 {/* Live Gold Progress Line Fill */}
                 <div
-                  className="h-full bg-gradient-to-r from-emerald-400 via-[#D4AF37] to-[#F3E5AB] shadow-[0_0_20px_rgba(212,175,55,0.8)] transition-all duration-75 ease-linear"
+                  className="h-full bg-gradient-to-r from-emerald-400 via-[#8B0000] to-[#EF4444] shadow-[0_0_20px_rgba(139,0,0,0.8)] transition-all duration-75 ease-linear"
                   style={{ width: `${lineFillPercent}%` }}
                 />
               </div>
@@ -561,16 +561,16 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
                   >
                     {/* Glowing Pulse Aura on Active Node */}
                     {isCurrent && (
-                      <span className="absolute -inset-2.5 rounded-full bg-[#D4AF37]/35 animate-ping pointer-events-none" />
+                      <span className="absolute -inset-2.5 rounded-full bg-[#8B0000]/35 animate-ping pointer-events-none" />
                     )}
 
                     <span
                       className={`w-6 h-6 sm:w-7 sm:h-7 rounded-full flex items-center justify-center font-mono text-[10px] font-black transition-all duration-300 border-2 ${
                         isCurrent
-                          ? 'bg-[#D4AF37] text-[#1B291F] border-white scale-125 shadow-[0_0_25px_rgba(212,175,55,0.9)]'
+                          ? 'bg-[#8B0000] text-white border-white scale-125 shadow-[0_0_25px_rgba(139,0,0,0.9)]'
                           : isCompleted
-                          ? 'bg-emerald-400 text-[#1B291F] border-emerald-200 shadow-[0_0_12px_rgba(52,211,153,0.5)]'
-                          : 'bg-[#152319] text-[#9CA3AF] border-white/25 group-hover:border-[#D4AF37] group-hover:text-white'
+                          ? 'bg-emerald-400 text-[#111A2E] border-emerald-200 shadow-[0_0_12px_rgba(52,211,153,0.5)]'
+                          : 'bg-[#0D1527] text-[#9CA3AF] border-white/25 group-hover:border-[#8B0000] group-hover:text-white'
                       }`}
                     >
                       {isCompleted ? '✓' : stage.step}
@@ -587,13 +587,13 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
         ------------------------------------------------------------------- */}
         <div
           key={currentStage.step}
-          className="bg-[#152319] border border-[#D4AF37]/35 rounded-2xl p-6 sm:p-8 lg:p-10 shadow-inner grid grid-cols-1 lg:grid-cols-12 gap-8 items-center transition-all duration-500 animate-fadeIn"
+          className="bg-[#0D1527] border border-[#8B0000]/35 rounded-2xl p-6 sm:p-8 lg:p-10 shadow-inner grid grid-cols-1 lg:grid-cols-12 gap-8 items-center transition-all duration-500 animate-fadeIn"
         >
           {/* LEFT COLUMN: Phase Name, 2-Sentence End-to-End Explanation & Deliverable Tag */}
           <div className="lg:col-span-6 space-y-6 text-left">
             <div className="space-y-3">
-              <div className="inline-flex items-center gap-2.5 font-mono text-xs text-[#D4AF37] bg-[#1B291F] px-3.5 py-1.5 rounded-full border border-[#D4AF37]/40">
-                <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse" />
+              <div className="inline-flex items-center gap-2.5 font-mono text-xs text-[#8B0000] bg-[#111A2E] px-3.5 py-1.5 rounded-full border border-[#8B0000]/40">
+                <span className="w-2 h-2 rounded-full bg-[#8B0000] animate-pulse" />
                 <span className="font-extrabold uppercase tracking-wider">
                   {currentStage.nodeLabel}
                 </span>
@@ -613,7 +613,7 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
               {currentStage.highlights.map((item, i) => (
                 <div
                   key={i}
-                  className="bg-[#1B291F]/90 border border-white/10 px-3.5 py-2.5 rounded-xl font-mono text-xs text-[#E5E7EB] flex items-center gap-2"
+                  className="bg-[#111A2E]/90 border border-white/10 px-3.5 py-2.5 rounded-xl font-mono text-xs text-[#E5E7EB] flex items-center gap-2"
                 >
                   <span className="text-emerald-400 font-black">✓</span>
                   <span className="font-bold">{item}</span>
@@ -623,8 +623,8 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
 
             {/* Final Deliverable Tag + Stage Navigation */}
             <div className="pt-4 border-t border-white/10 space-y-4">
-              <div className="bg-[#243528]/90 border border-[#D4AF37]/40 rounded-xl px-4 py-3 font-mono text-xs flex flex-col sm:flex-row sm:items-center justify-between gap-1">
-                <span className="text-[#D4AF37] font-bold uppercase tracking-wider shrink-0">
+              <div className="bg-[#0A0F1D]/90 border border-[#8B0000]/40 rounded-xl px-4 py-3 font-mono text-xs flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                <span className="text-[#8B0000] font-bold uppercase tracking-wider shrink-0">
                   FINAL DELIVERABLE:
                 </span>
                 <span className="text-white font-extrabold">
@@ -640,7 +640,7 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
                       (activeStage - 1 + ROADMAP_STAGES.length) % ROADMAP_STAGES.length
                     )
                   }
-                  className="text-[#9CA3AF] hover:text-[#D4AF37] transition-colors cursor-pointer font-bold flex items-center gap-1.5"
+                  className="text-[#9CA3AF] hover:text-[#8B0000] transition-colors cursor-pointer font-bold flex items-center gap-1.5"
                 >
                   <span>← PREVIOUS PHASE</span>
                 </button>
@@ -650,7 +650,7 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
                   onClick={() =>
                     handleSelectStage((activeStage + 1) % ROADMAP_STAGES.length)
                   }
-                  className="text-[#D4AF37] hover:text-white transition-colors cursor-pointer font-extrabold flex items-center gap-1.5"
+                  className="text-[#8B0000] hover:text-white transition-colors cursor-pointer font-extrabold flex items-center gap-1.5"
                 >
                   <span>
                     NEXT: {ROADMAP_STAGES[(activeStage + 1) % ROADMAP_STAGES.length].nodeLabel} →
@@ -662,7 +662,7 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
 
           {/* RIGHT COLUMN: Dedicated High-Res Stage Preview Mockup */}
           <div className="lg:col-span-6">
-            <div className="relative h-[320px] sm:h-[370px] w-full rounded-2xl overflow-hidden border-2 border-[#D4AF37]/40 bg-[#0F1712] shadow-2xl flex flex-col justify-between p-5 sm:p-6">
+            <div className="relative h-[320px] sm:h-[370px] w-full rounded-2xl overflow-hidden border-2 border-[#8B0000]/40 bg-[#0F1712] shadow-2xl flex flex-col justify-between p-5 sm:p-6">
               {/* Ambient Stage Background Image */}
               <Image
                 src={currentStage.bgImage}
@@ -670,7 +670,7 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
                 fill
                 className="object-cover object-center opacity-25 filter contrast-125"
               />
-              <div className="absolute inset-0 bg-gradient-to-br from-[#0F1712]/90 via-[#152319]/85 to-[#0F1712]/95" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#0F1712]/90 via-[#0D1527]/85 to-[#0F1712]/95" />
 
               {/* Top Mockup Window Bar */}
               <div className="relative z-10 flex items-center justify-between border-b border-white/10 pb-3 font-mono text-xs">
@@ -678,7 +678,7 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
                   <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
                   <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
                   <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
-                  <span className="ml-2 text-[#D4AF37] font-bold">
+                  <span className="ml-2 text-[#8B0000] font-bold">
                     {currentStage.nodeLabel} // STUDIO WORKSPACE
                   </span>
                 </div>
@@ -694,17 +694,17 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
                   <div className="space-y-3 font-mono text-xs">
                     <div className="grid grid-cols-12 gap-3">
                       {/* Left Sidebar Tokens */}
-                      <div className="col-span-4 bg-[#1B291F]/90 border border-[#D4AF37]/30 rounded-xl p-3 space-y-2">
-                        <span className="text-[10px] text-[#D4AF37] font-bold block">
+                      <div className="col-span-4 bg-[#111A2E]/90 border border-[#8B0000]/30 rounded-xl p-3 space-y-2">
+                        <span className="text-[10px] text-[#8B0000] font-bold block">
                           DESIGN TOKENS
                         </span>
                         <div className="flex items-center gap-2">
-                          <span className="w-4 h-4 rounded bg-[#D4AF37] border border-white/20" />
-                          <span className="text-[10px] text-white">#D4AF37</span>
+                          <span className="w-4 h-4 rounded bg-[#8B0000] border border-white/20" />
+                          <span className="text-[10px] text-white">#8B0000</span>
                         </div>
                         <div className="flex items-center gap-2">
-                          <span className="w-4 h-4 rounded bg-[#243528] border border-white/20" />
-                          <span className="text-[10px] text-white">#243528</span>
+                          <span className="w-4 h-4 rounded bg-[#0A0F1D] border border-white/20" />
+                          <span className="text-[10px] text-white">#0A0F1D</span>
                         </div>
                         <div className="pt-1 border-t border-white/10 text-[10px] text-emerald-400">
                           ✓ Grid: 12-Col
@@ -712,20 +712,20 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
                       </div>
 
                       {/* Right Wireframe Canvas */}
-                      <div className="col-span-8 bg-[#152319]/95 border border-white/15 rounded-xl p-3.5 space-y-2.5">
+                      <div className="col-span-8 bg-[#0D1527]/95 border border-white/15 rounded-xl p-3.5 space-y-2.5">
                         <div className="flex items-center justify-between">
-                          <div className="h-2.5 w-20 rounded bg-[#D4AF37]/80" />
+                          <div className="h-2.5 w-20 rounded bg-[#8B0000]/80" />
                           <div className="flex gap-1.5">
                             <div className="h-2 w-8 rounded bg-white/20" />
                             <div className="h-2 w-8 rounded bg-white/20" />
                           </div>
                         </div>
-                        <div className="h-16 rounded-lg bg-[#243528] border border-[#D4AF37]/40 p-2.5 flex flex-col justify-between">
-                          <span className="text-[10px] text-[#D4AF37] font-bold">
+                        <div className="h-16 rounded-lg bg-[#0A0F1D] border border-[#8B0000]/40 p-2.5 flex flex-col justify-between">
+                          <span className="text-[10px] text-[#8B0000] font-bold">
                             HERO WIREFRAME // APPROVED
                           </span>
                           <div className="flex gap-2">
-                            <span className="px-2 py-0.5 rounded bg-[#D4AF37] text-[#1B291F] text-[9px] font-black">
+                            <span className="px-2 py-0.5 rounded bg-[#8B0000] text-white text-[9px] font-black">
                               PRIMARY CTA
                             </span>
                             <span className="px-2 py-0.5 rounded border border-white/20 text-white/70 text-[9px]">
@@ -747,15 +747,15 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
                 {currentStage.visualType === 'database' && (
                   <div className="space-y-3 font-mono text-xs">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                      <div className="bg-[#1B291F]/95 border border-[#D4AF37]/40 rounded-xl p-3.5 space-y-2 text-left">
+                      <div className="bg-[#111A2E]/95 border border-[#8B0000]/40 rounded-xl p-3.5 space-y-2 text-left">
                         <div className="flex items-center justify-between border-b border-white/10 pb-1.5">
-                          <span className="text-[#D4AF37] font-bold">TABLE // users_auth</span>
+                          <span className="text-[#8B0000] font-bold">TABLE // users_auth</span>
                           <span className="text-[10px] text-emerald-400">PK · UUID</span>
                         </div>
                         <div className="space-y-1 text-[11px] text-white/85">
                           <div className="flex justify-between">
                             <span>id</span>
-                            <span className="text-[#D4AF37]">uuid [PK]</span>
+                            <span className="text-[#8B0000]">uuid [PK]</span>
                           </div>
                           <div className="flex justify-between">
                             <span>role</span>
@@ -768,10 +768,10 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
                         </div>
                       </div>
 
-                      <div className="bg-[#1B291F]/95 border border-emerald-400/30 rounded-xl p-3.5 space-y-2 text-left">
+                      <div className="bg-[#111A2E]/95 border border-emerald-400/30 rounded-xl p-3.5 space-y-2 text-left">
                         <div className="flex items-center justify-between border-b border-white/10 pb-1.5">
                           <span className="text-emerald-400 font-bold">API // /api/orders</span>
-                          <span className="text-[10px] text-[#D4AF37]">200 OK</span>
+                          <span className="text-[10px] text-[#8B0000]">200 OK</span>
                         </div>
                         <div className="space-y-1 text-[11px] text-white/85">
                           <div className="flex justify-between">
@@ -780,7 +780,7 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
                           </div>
                           <div className="flex justify-between">
                             <span>GET /analytics</span>
-                            <span className="text-[#D4AF37]">14ms query</span>
+                            <span className="text-[#8B0000]">14ms query</span>
                           </div>
                           <div className="flex justify-between">
                             <span>RLS Policy</span>
@@ -795,26 +795,26 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
                 {/* STAGE 03 MOCKUP: Live Responsive Frontend */}
                 {currentStage.visualType === 'frontend' && (
                   <div className="grid grid-cols-12 gap-3 font-mono text-xs items-center">
-                    <div className="col-span-8 bg-[#1B291F]/95 border border-[#D4AF37]/40 rounded-xl p-4 space-y-2.5 text-left">
-                      <div className="flex items-center justify-between text-[10px] text-[#D4AF37]">
+                    <div className="col-span-8 bg-[#111A2E]/95 border border-[#8B0000]/40 rounded-xl p-4 space-y-2.5 text-left">
+                      <div className="flex items-center justify-between text-[10px] text-[#8B0000]">
                         <span>DESKTOP VIEWPORT // NEXT.JS 16</span>
                         <span className="text-emerald-400 font-bold">120 FPS</span>
                       </div>
                       <div className="p-3 rounded-lg bg-[#111A13] border border-white/10 space-y-1.5 text-[11px]">
-                        <div className="text-[#D4AF37]">&lt;AppRouter layout=&quot;responsive&quot;&gt;</div>
+                        <div className="text-[#8B0000]">&lt;AppRouter layout=&quot;responsive&quot;&gt;</div>
                         <div className="pl-3 text-white">&lt;InteractiveDashboard liveSync /&gt;</div>
                         <div className="pl-3 text-emerald-400">&lt;ZeroLagCheckout /&gt;</div>
-                        <div className="text-[#D4AF37]">&lt;/AppRouter&gt;</div>
+                        <div className="text-[#8B0000]">&lt;/AppRouter&gt;</div>
                       </div>
                     </div>
 
-                    <div className="col-span-4 bg-[#152319] border-2 border-[#D4AF37]/50 rounded-2xl p-3 flex flex-col items-center justify-between h-36">
+                    <div className="col-span-4 bg-[#0D1527] border-2 border-[#8B0000]/50 rounded-2xl p-3 flex flex-col items-center justify-between h-36">
                       <div className="w-8 h-1 rounded-full bg-white/30" />
                       <div className="text-center space-y-1">
-                        <span className="text-[10px] text-[#D4AF37] font-bold block">MOBILE UI</span>
+                        <span className="text-[10px] text-[#8B0000] font-bold block">MOBILE UI</span>
                         <span className="text-xs text-white font-black block">100% FLUID</span>
                       </div>
-                      <div className="w-full py-1 rounded bg-[#D4AF37] text-[#1B291F] text-[9px] font-black text-center">
+                      <div className="w-full py-1 rounded bg-[#8B0000] text-white text-[9px] font-black text-center">
                         TOUCH READY
                       </div>
                     </div>
@@ -825,7 +825,7 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
                 {currentStage.visualType === 'deploy' && (
                   <div className="bg-[#111A13]/95 border border-emerald-400/40 rounded-xl p-4 font-mono text-xs space-y-2 text-left">
                     <div className="flex items-center justify-between border-b border-white/10 pb-2">
-                      <span className="text-[#D4AF37] font-bold">$ vercel deploy --prod</span>
+                      <span className="text-[#8B0000] font-bold">$ vercel deploy --prod</span>
                       <span className="text-emerald-400 font-extrabold">● EDGE LIVE</span>
                     </div>
                     <div className="space-y-1 text-[11px]">
@@ -837,7 +837,7 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
                         <span className="text-emerald-400 mr-2">✓</span>
                         SSL Certificate &amp; Custom Domain provisioned
                       </div>
-                      <div className="text-[#D4AF37] font-bold">
+                      <div className="text-[#8B0000] font-bold">
                         <span className="text-emerald-400 mr-2">★</span>
                         Lighthouse Performance: 100 / 100 · Global Latency: 18ms
                       </div>
@@ -848,7 +848,7 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
                 {/* STAGE 05 MOCKUP: Ongoing Support & Scaling */}
                 {currentStage.visualType === 'scale' && (
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 font-mono text-xs text-left">
-                    <div className="bg-[#1B291F]/95 border border-emerald-400/40 rounded-xl p-4 space-y-2">
+                    <div className="bg-[#111A2E]/95 border border-emerald-400/40 rounded-xl p-4 space-y-2">
                       <span className="text-[10px] text-emerald-400 font-bold block uppercase">
                         LIVE UPTIME & HEALTH
                       </span>
@@ -858,8 +858,8 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
                       </div>
                     </div>
 
-                    <div className="bg-[#1B291F]/95 border border-[#D4AF37]/40 rounded-xl p-4 space-y-2">
-                      <span className="text-[10px] text-[#D4AF37] font-bold block uppercase">
+                    <div className="bg-[#111A2E]/95 border border-[#8B0000]/40 rounded-xl p-4 space-y-2">
+                      <span className="text-[10px] text-[#8B0000] font-bold block uppercase">
                         DIRECT STUDIO PARTNER
                       </span>
                       <div className="text-base font-black text-white">PRIORITY UPDATES</div>
@@ -874,7 +874,7 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
               {/* Bottom Mockup Telemetry Footer */}
               <div className="relative z-10 flex items-center justify-between border-t border-white/10 pt-3 font-mono text-[10px] text-[#9CA3AF]">
                 <span>ALL IN ENGINEERING PIPELINE</span>
-                <span className="text-[#D4AF37] font-bold">
+                <span className="text-[#8B0000] font-bold">
                   {currentStage.nodeLabel} → VERIFIED
                 </span>
               </div>

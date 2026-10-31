@@ -1,77 +1,88 @@
 @import "tailwindcss";
 
 @theme {
-  --color-pine: #243528;
-  --color-shadow-ground: #1B291F;
+  --color-pine: #0A0F1D;
+  --color-shadow-ground: #111A2E;
+  --color-dark: #0A0F1D;
+  --color-dark-base: #0A0F1D;
+  --color-dark-surface: #111A2E;
+  --color-dark-card: #0D1527;
+  --color-crimson: #8B0000;
+  --color-crimson-hover: #A30000;
+  --color-gold: #8B0000;
+  --color-gold-hover: #A30000;
+  --color-gold-muted: rgba(139, 0, 0, 0.2);
+  --color-crimson-muted: rgba(139, 0, 0, 0.2);
   --color-titanium: #E5E7EB;
-  --color-gold: #D4AF37;
-  --color-gold-hover: #E5C158;
-  --color-gold-muted: rgba(212, 175, 55, 0.15);
   --color-muted: #9CA3AF;
-  --color-border-subtle: rgba(156, 163, 175, 0.2);
+  --color-border-subtle: rgba(139, 0, 0, 0.35);
   --font-sans: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
   --font-mono: var(--font-geist-mono), monospace;
 }
 
 :root {
-  --background: #243528;
+  --background: #0A0F1D;
   --foreground: #E5E7EB;
-  --surface: #1B291F;
-  --gold: #D4AF37;
+  --surface: #111A2E;
+  --accent: #8B0000;
+  --gold: #8B0000;
   --titanium: #E5E7EB;
   --muted: #9CA3AF;
 }
 
 body {
-  background-color: #243528;
+  background-color: #0A0F1D;
   color: #E5E7EB;
   font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
   overflow-x: hidden;
 }
 
 ::selection {
-  background-color: #D4AF37;
-  color: #1B291F;
+  background-color: #8B0000;
+  color: #FFFFFF;
 }
 
 /* Custom subtle ambient grid pattern */
 .bg-grid-pattern {
   background-size: 40px 40px;
   background-image: 
-    linear-gradient(to right, rgba(156, 163, 175, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(156, 163, 175, 0.04) 1px, transparent 1px);
+    linear-gradient(to right, rgba(139, 0, 0, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(139, 0, 0, 0.08) 1px, transparent 1px);
 }
 
-/* Gold glow utilities */
+/* Crimson glow utilities */
+.crimson-glow,
 .gold-glow {
-  box-shadow: 0 0 25px -5px rgba(212, 175, 55, 0.25);
+  box-shadow: 0 0 25px -5px rgba(139, 0, 0, 0.45);
 }
 
+.crimson-glow-sm,
 .gold-glow-sm {
-  box-shadow: 0 0 12px -2px rgba(212, 175, 55, 0.2);
+  box-shadow: 0 0 12px -2px rgba(139, 0, 0, 0.35);
 }
 
+.crimson-text-glow,
 .gold-text-glow {
-  text-shadow: 0 0 12px rgba(212, 175, 55, 0.4);
+  text-shadow: 0 0 12px rgba(139, 0, 0, 0.65);
 }
 
-/* Custom scrollbar for deep pine theme */
+/* Custom scrollbar for deep dark blue / crimson theme */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #1B291F;
+  background: #0A0F1D;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #243528;
-  border: 1px solid #D4AF37;
+  background: #111A2E;
+  border: 1px solid #8B0000;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #D4AF37;
+  background: #8B0000;
 }
 
 /* Infinite non-stop continuous marquee animation */

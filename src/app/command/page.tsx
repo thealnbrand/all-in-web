@@ -535,10 +535,10 @@ export default function CommandPage() {
   // 1. Initial Loading State
   if (isAuthenticated === null) {
     return (
-      <div className="min-h-screen w-full bg-[#152319] flex items-center justify-center text-[#E5E7EB] font-mono">
+      <div className="min-h-screen w-full bg-[#0D1527] flex items-center justify-center text-[#E5E7EB] font-mono">
         <div className="flex flex-col items-center gap-3">
-          <div className="h-8 w-8 border-2 border-[#D4AF37] border-t-transparent rounded-full animate-spin" />
-          <span className="text-xs tracking-widest text-[#D4AF37]">// VERIFYING STUDIO CLEARANCE...</span>
+          <div className="h-8 w-8 border-2 border-[#8B0000] border-t-transparent rounded-full animate-spin" />
+          <span className="text-xs tracking-widest text-[#8B0000]">// VERIFYING STUDIO CLEARANCE...</span>
         </div>
       </div>
     );
@@ -547,19 +547,19 @@ export default function CommandPage() {
   // 2. Unauthenticated Login Gate
   if (!isAuthenticated) {
     return (
-      <div className="min-h-screen w-full bg-[#152319] text-[#E5E7EB] flex flex-col items-center justify-center p-4 relative overflow-hidden select-none font-sans">
+      <div className="min-h-screen w-full bg-[#0D1527] text-[#E5E7EB] flex flex-col items-center justify-center p-4 relative overflow-hidden select-none font-sans">
         {/* Subtle grid background */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
 
-        <div className="relative z-10 w-full max-w-md bg-[#1B291F] border border-[#D4AF37]/40 rounded-2xl p-8 shadow-[0_20px_60px_rgba(0,0,0,0.8)] backdrop-blur-md">
+        <div className="relative z-10 w-full max-w-md bg-[#111A2E] border border-[#8B0000]/40 rounded-2xl p-8 shadow-[0_20px_60px_rgba(0,0,0,0.8)] backdrop-blur-md">
           {/* Logo & Header */}
           <div className="flex flex-col items-center text-center space-y-4 mb-8">
             <div className="relative h-12 w-28">
               <Image src="/logo.png" alt="[ALN] Logo" fill className="object-contain" priority />
             </div>
             <div>
-              <div className="inline-flex items-center gap-2 font-mono text-[10px] tracking-widest text-[#D4AF37] bg-black/40 px-3 py-1 rounded-full border border-[#D4AF37]/30 uppercase mb-2">
-                <span className="h-1.5 w-1.5 rounded-full bg-[#D4AF37] animate-ping" />
+              <div className="inline-flex items-center gap-2 font-mono text-[10px] tracking-widest text-[#8B0000] bg-black/40 px-3 py-1 rounded-full border border-[#8B0000]/30 uppercase mb-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-[#8B0000] animate-ping" />
                 RESTRICTED TERMINAL // HQ TANGIER
               </div>
               <h1 className="text-xl sm:text-2xl font-extrabold tracking-tight text-[#E5E7EB]">
@@ -574,7 +574,7 @@ export default function CommandPage() {
           {/* Login Form */}
           <form onSubmit={handleLogin} className="space-y-5">
             <div>
-              <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-[#D4AF37] mb-2">
+              <label className="block text-[11px] font-mono font-bold uppercase tracking-wider text-[#8B0000] mb-2">
                 Master Security Key / Passphrase
               </label>
               <input
@@ -582,7 +582,7 @@ export default function CommandPage() {
                 value={accessKey}
                 onChange={(e) => setAccessKey(e.target.value)}
                 placeholder="aln_studio_tangier_••••"
-                className="w-full bg-[#152319] border border-[#D4AF37]/40 focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37] rounded-xl px-4 py-3 text-sm text-[#E5E7EB] placeholder-[#E5E7EB]/30 font-mono outline-none transition-all"
+                className="w-full bg-[#0D1527] border border-[#8B0000]/40 focus:border-[#8B0000] focus:ring-1 focus:ring-[#8B0000] rounded-xl px-4 py-3 text-sm text-[#E5E7EB] placeholder-[#E5E7EB]/30 font-mono outline-none transition-all"
                 autoFocus
               />
             </div>
@@ -597,11 +597,11 @@ export default function CommandPage() {
             <button
               type="submit"
               disabled={authLoading}
-              className="w-full bg-[#D4AF37] hover:bg-[#E5C158] text-[#152319] font-mono font-extrabold text-xs tracking-wider uppercase py-3.5 rounded-xl transition-all shadow-lg hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 cursor-pointer flex items-center justify-center gap-2"
+              className="w-full bg-[#8B0000] hover:bg-[#A30000] text-white font-mono font-extrabold text-xs tracking-wider uppercase py-3.5 rounded-xl transition-all shadow-lg hover:scale-[1.02] active:scale-[0.98] disabled:opacity-50 cursor-pointer flex items-center justify-center gap-2"
             >
               {authLoading ? (
                 <>
-                  <div className="h-4 w-4 border-2 border-[#152319] border-t-transparent rounded-full animate-spin" />
+                  <div className="h-4 w-4 border-2 border-[#0D1527] border-t-transparent rounded-full animate-spin" />
                   <span>AUTHENTICATING...</span>
                 </>
               ) : (
@@ -614,7 +614,7 @@ export default function CommandPage() {
           <div className="mt-8 pt-6 border-t border-white/10 text-center">
             <Link
               href="/"
-              className="text-[11px] font-mono text-[#E5E7EB]/50 hover:text-[#D4AF37] transition-colors"
+              className="text-[11px] font-mono text-[#E5E7EB]/50 hover:text-[#8B0000] transition-colors"
             >
               ← RETURN TO PUBLIC SITE
             </Link>
@@ -626,17 +626,17 @@ export default function CommandPage() {
 
   // 3. Authenticated Studio Command Center
   return (
-    <div className="min-h-screen w-full bg-[#152319] text-[#E5E7EB] font-sans selection:bg-[#D4AF37] selection:text-[#1B291F]">
+    <div className="min-h-screen w-full bg-[#0D1527] text-[#E5E7EB] font-sans selection:bg-[#8B0000] selection:text-white">
       {/* Toast Notification */}
       {toastMsg && (
-        <div className="fixed bottom-6 right-6 z-50 bg-[#1B291F] border border-[#D4AF37] text-[#D4AF37] px-5 py-3 rounded-xl shadow-2xl font-mono text-xs flex items-center gap-3 animate-bounce">
-          <span className="h-2 w-2 rounded-full bg-[#D4AF37]" />
+        <div className="fixed bottom-6 right-6 z-50 bg-[#111A2E] border border-[#8B0000] text-[#8B0000] px-5 py-3 rounded-xl shadow-2xl font-mono text-xs flex items-center gap-3 animate-bounce">
+          <span className="h-2 w-2 rounded-full bg-[#8B0000]" />
           <span>{toastMsg}</span>
         </div>
       )}
 
       {/* Top Telemetry Header */}
-      <header className="sticky top-0 z-40 bg-[#1B291F]/95 backdrop-blur-md border-b border-[#D4AF37]/30 px-4 sm:px-8 py-3.5 flex items-center justify-between">
+      <header className="sticky top-0 z-40 bg-[#111A2E]/95 backdrop-blur-md border-b border-[#8B0000]/30 px-4 sm:px-8 py-3.5 flex items-center justify-between">
         <div className="flex items-center gap-4">
           <Link href="/" className="flex items-center gap-3 group">
             <div className="relative h-7 w-20">
@@ -644,9 +644,9 @@ export default function CommandPage() {
             </div>
             <div className="hidden sm:flex flex-col">
               <span className="font-mono text-xs font-extrabold tracking-widest text-[#E5E7EB]">
-                STUDIO COMMAND <span className="text-[#D4AF37]">v2.4</span>
+                STUDIO COMMAND <span className="text-[#8B0000]">v2.4</span>
               </span>
-              <span className="font-mono text-[9px] text-[#D4AF37]">
+              <span className="font-mono text-[9px] text-[#8B0000]">
                 TANGIER HQ // 35.7595° N, 5.8340° W
               </span>
             </div>
@@ -658,7 +658,7 @@ export default function CommandPage() {
           <Link
             href="/"
             target="_blank"
-            className="hidden md:flex items-center gap-1.5 font-mono text-[11px] font-bold text-[#E5E7EB]/80 hover:text-[#D4AF37] bg-black/30 border border-white/10 hover:border-[#D4AF37]/40 px-3 py-1.5 rounded-lg transition-colors"
+            className="hidden md:flex items-center gap-1.5 font-mono text-[11px] font-bold text-[#E5E7EB]/80 hover:text-[#8B0000] bg-black/30 border border-white/10 hover:border-[#8B0000]/40 px-3 py-1.5 rounded-lg transition-colors"
           >
             <span>LIVE SITE</span>
             <span>↗</span>
@@ -666,7 +666,7 @@ export default function CommandPage() {
 
           <button
             onClick={fetchAllData}
-            className="flex items-center gap-1.5 font-mono text-[11px] font-bold text-[#E5E7EB]/80 hover:text-[#D4AF37] bg-black/30 border border-white/10 hover:border-[#D4AF37]/40 px-3 py-1.5 rounded-lg transition-colors cursor-pointer"
+            className="flex items-center gap-1.5 font-mono text-[11px] font-bold text-[#E5E7EB]/80 hover:text-[#8B0000] bg-black/30 border border-white/10 hover:border-[#8B0000]/40 px-3 py-1.5 rounded-lg transition-colors cursor-pointer"
             title="Refresh All Data"
           >
             <span>SYNC</span>
@@ -689,8 +689,8 @@ export default function CommandPage() {
             onClick={() => setActiveTab('inbox')}
             className={`px-4 py-2.5 rounded-xl font-bold transition-all cursor-pointer flex items-center gap-2 ${
               activeTab === 'inbox'
-                ? 'bg-[#D4AF37] text-[#152319] shadow-lg'
-                : 'bg-[#1B291F] text-[#E5E7EB]/70 hover:text-white hover:bg-[#243528]'
+                ? 'bg-[#8B0000] text-white shadow-lg'
+                : 'bg-[#111A2E] text-[#E5E7EB]/70 hover:text-white hover:bg-[#0A0F1D]'
             }`}
           >
             <span>01 // INBOX</span>
@@ -698,8 +698,8 @@ export default function CommandPage() {
               <span
                 className={`text-[10px] px-2 py-0.5 rounded-full font-extrabold ${
                   activeTab === 'inbox'
-                    ? 'bg-[#152319] text-[#D4AF37]'
-                    : 'bg-[#D4AF37] text-[#152319]'
+                    ? 'bg-[#0D1527] text-[#8B0000]'
+                    : 'bg-[#8B0000] text-white'
                 }`}
               >
                 {newInquiriesCount} NEW
@@ -711,8 +711,8 @@ export default function CommandPage() {
             onClick={() => setActiveTab('products')}
             className={`px-4 py-2.5 rounded-xl font-bold transition-all cursor-pointer flex items-center gap-2 ${
               activeTab === 'products'
-                ? 'bg-[#D4AF37] text-[#152319] shadow-lg'
-                : 'bg-[#1B291F] text-[#E5E7EB]/70 hover:text-white hover:bg-[#243528]'
+                ? 'bg-[#8B0000] text-white shadow-lg'
+                : 'bg-[#111A2E] text-[#E5E7EB]/70 hover:text-white hover:bg-[#0A0F1D]'
             }`}
           >
             <span>02 // DIGITAL PRODUCTS</span>
@@ -723,8 +723,8 @@ export default function CommandPage() {
             onClick={() => setActiveTab('goods')}
             className={`px-4 py-2.5 rounded-xl font-bold transition-all cursor-pointer flex items-center gap-2 ${
               activeTab === 'goods'
-                ? 'bg-[#D4AF37] text-[#152319] shadow-lg'
-                : 'bg-[#1B291F] text-[#E5E7EB]/70 hover:text-white hover:bg-[#243528]'
+                ? 'bg-[#8B0000] text-white shadow-lg'
+                : 'bg-[#111A2E] text-[#E5E7EB]/70 hover:text-white hover:bg-[#0A0F1D]'
             }`}
           >
             <span>03 // TACTILE GOODS</span>
@@ -735,8 +735,8 @@ export default function CommandPage() {
             onClick={() => setActiveTab('systems')}
             className={`px-4 py-2.5 rounded-xl font-bold transition-all cursor-pointer flex items-center gap-2 ${
               activeTab === 'systems'
-                ? 'bg-[#D4AF37] text-[#152319] shadow-lg'
-                : 'bg-[#1B291F] text-[#E5E7EB]/70 hover:text-white hover:bg-[#243528]'
+                ? 'bg-[#8B0000] text-white shadow-lg'
+                : 'bg-[#111A2E] text-[#E5E7EB]/70 hover:text-white hover:bg-[#0A0F1D]'
             }`}
           >
             <span>04 // SYSTEMS PORTFOLIO</span>
@@ -747,8 +747,8 @@ export default function CommandPage() {
             onClick={() => setActiveTab('channels')}
             className={`px-4 py-2.5 rounded-xl font-bold transition-all cursor-pointer flex items-center gap-2 ${
               activeTab === 'channels'
-                ? 'bg-[#D4AF37] text-[#152319] shadow-lg'
-                : 'bg-[#1B291F] text-[#E5E7EB]/70 hover:text-white hover:bg-[#243528]'
+                ? 'bg-[#8B0000] text-white shadow-lg'
+                : 'bg-[#111A2E] text-[#E5E7EB]/70 hover:text-white hover:bg-[#0A0F1D]'
             }`}
           >
             <span>05 // CHANNELS & DB</span>
@@ -759,14 +759,14 @@ export default function CommandPage() {
         {activeTab === 'inbox' && (
           <div className="space-y-6">
             {/* Filter & Search Bar */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 bg-[#1B291F] p-4 rounded-2xl border border-white/10">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 bg-[#111A2E] p-4 rounded-2xl border border-white/10">
               <div className="relative flex-1">
                 <input
                   type="text"
                   placeholder="Search inquiries by client name, email, company, scope..."
                   value={inquirySearch}
                   onChange={(e) => setInquirySearch(e.target.value)}
-                  className="w-full bg-[#152319] border border-white/10 focus:border-[#D4AF37] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] placeholder-[#E5E7EB]/40 font-mono outline-none"
+                  className="w-full bg-[#0D1527] border border-white/10 focus:border-[#8B0000] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] placeholder-[#E5E7EB]/40 font-mono outline-none"
                 />
               </div>
 
@@ -777,8 +777,8 @@ export default function CommandPage() {
                     onClick={() => setInquiryFilter(st)}
                     className={`px-3 py-1.5 rounded-lg font-bold transition-colors cursor-pointer ${
                       inquiryFilter === st
-                        ? 'bg-[#D4AF37] text-[#152319]'
-                        : 'bg-[#152319] text-[#E5E7EB]/60 hover:text-white'
+                        ? 'bg-[#8B0000] text-white'
+                        : 'bg-[#0D1527] text-[#E5E7EB]/60 hover:text-white'
                     }`}
                   >
                     {st}
@@ -789,11 +789,11 @@ export default function CommandPage() {
 
             {/* Inquiries List */}
             {inquiriesLoading ? (
-              <div className="p-12 text-center text-xs font-mono text-[#D4AF37]">
+              <div className="p-12 text-center text-xs font-mono text-[#8B0000]">
                 SYNCING CLIENT INQUIRIES FROM SUPABASE...
               </div>
             ) : filteredInquiries.length === 0 ? (
-              <div className="bg-[#1B291F]/60 border border-dashed border-white/10 rounded-2xl p-12 text-center space-y-2">
+              <div className="bg-[#111A2E]/60 border border-dashed border-white/10 rounded-2xl p-12 text-center space-y-2">
                 <p className="font-mono text-sm text-[#E5E7EB]/60">NO INQUIRIES FOUND</p>
                 <p className="text-xs text-[#E5E7EB]/40 font-mono">
                   {inquirySearch ? 'Try clearing your search query' : 'New inquiries from the website contact form will appear here in real time.'}
@@ -804,9 +804,9 @@ export default function CommandPage() {
                 {filteredInquiries.map((inq) => (
                   <div
                     key={inq.id}
-                    className={`bg-[#1B291F] border rounded-2xl p-6 transition-all space-y-4 ${
+                    className={`bg-[#111A2E] border rounded-2xl p-6 transition-all space-y-4 ${
                       inq.status === 'NEW'
-                        ? 'border-[#D4AF37] shadow-[0_0_20px_rgba(212,175,55,0.15)]'
+                        ? 'border-[#8B0000] shadow-[0_0_20px_rgba(139,0,0,0.15)]'
                         : 'border-white/10 opacity-90'
                     }`}
                   >
@@ -816,14 +816,14 @@ export default function CommandPage() {
                           {inq.name}
                         </span>
                         {inq.company && (
-                          <span className="font-mono text-[10px] text-[#D4AF37] bg-[#152319] px-2.5 py-0.5 rounded-full border border-[#D4AF37]/30">
+                          <span className="font-mono text-[10px] text-[#8B0000] bg-[#0D1527] px-2.5 py-0.5 rounded-full border border-[#8B0000]/30">
                             {inq.company}
                           </span>
                         )}
                         <span
                           className={`font-mono text-[10px] px-2 py-0.5 rounded-full font-bold ${
                             inq.status === 'NEW'
-                              ? 'bg-[#D4AF37] text-[#152319]'
+                              ? 'bg-[#8B0000] text-white'
                               : inq.status === 'CONTACTED'
                               ? 'bg-blue-900/60 text-blue-200 border border-blue-400/40'
                               : 'bg-white/10 text-white/50'
@@ -847,7 +847,7 @@ export default function CommandPage() {
                     {/* Metadata Strip */}
                     <div className="flex flex-wrap items-center gap-4 font-mono text-xs text-[#E5E7EB]/70">
                       <div>
-                        <span className="text-[#D4AF37]">EMAIL: </span>
+                        <span className="text-[#8B0000]">EMAIL: </span>
                         <a
                           href={`mailto:${inq.email}?subject=ALL%20IN%20Studio%20//%20Follow-up%20on%20your%20Inquiry`}
                           className="hover:underline text-white font-semibold"
@@ -858,7 +858,7 @@ export default function CommandPage() {
 
                       {inq.phone && (
                         <div>
-                          <span className="text-[#D4AF37]">TEL / WA: </span>
+                          <span className="text-[#8B0000]">TEL / WA: </span>
                           <a
                             href={`https://wa.me/${inq.phone.replace(/[^0-9]/g, '')}`}
                             target="_blank"
@@ -872,21 +872,21 @@ export default function CommandPage() {
 
                       {inq.service_interest && (
                         <div>
-                          <span className="text-[#D4AF37]">SERVICE: </span>
+                          <span className="text-[#8B0000]">SERVICE: </span>
                           <span className="text-white">{inq.service_interest}</span>
                         </div>
                       )}
 
                       {inq.project_tier && (
                         <div>
-                          <span className="text-[#D4AF37]">BUDGET TIER: </span>
+                          <span className="text-[#8B0000]">BUDGET TIER: </span>
                           <span className="text-white">{inq.project_tier}</span>
                         </div>
                       )}
                     </div>
 
                     {/* Scope / Message Body */}
-                    <div className="bg-[#152319] p-4 rounded-xl border border-white/5 font-sans text-xs sm:text-sm text-[#E5E7EB]/90 leading-relaxed whitespace-pre-wrap">
+                    <div className="bg-[#0D1527] p-4 rounded-xl border border-white/5 font-sans text-xs sm:text-sm text-[#E5E7EB]/90 leading-relaxed whitespace-pre-wrap">
                       {inq.project_scope}
                     </div>
 
@@ -900,8 +900,8 @@ export default function CommandPage() {
                             onClick={() => handleUpdateInquiryStatus(inq.id, st)}
                             className={`px-2.5 py-1 rounded-md transition-colors cursor-pointer ${
                               inq.status === st
-                                ? 'bg-[#D4AF37] text-[#152319] font-bold'
-                                : 'bg-[#152319] text-[#E5E7EB]/60 hover:text-white border border-white/5'
+                                ? 'bg-[#8B0000] text-white font-bold'
+                                : 'bg-[#0D1527] text-[#E5E7EB]/60 hover:text-white border border-white/5'
                             }`}
                           >
                             {st}
@@ -912,7 +912,7 @@ export default function CommandPage() {
                       <div className="flex items-center gap-2">
                         <a
                           href={`mailto:${inq.email}?subject=ALL%20IN%20Studio%20//%20Follow-up%20on%20your%20Inquiry`}
-                          className="font-mono text-xs font-bold bg-[#D4AF37] hover:bg-[#E5C158] text-[#152319] px-4 py-2 rounded-lg transition-all cursor-pointer flex items-center gap-1.5"
+                          className="font-mono text-xs font-bold bg-[#8B0000] hover:bg-[#A30000] text-white px-4 py-2 rounded-lg transition-all cursor-pointer flex items-center gap-1.5"
                         >
                           <span>REPLY VIA MAIL</span>
                           <span>✉</span>
@@ -936,7 +936,7 @@ export default function CommandPage() {
         {/* TAB 2: PRODUCTS */}
         {activeTab === 'products' && (
           <div className="space-y-6">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#1B291F] p-4 rounded-2xl border border-white/10">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#111A2E] p-4 rounded-2xl border border-white/10">
               <div>
                 <h2 className="text-base font-bold text-[#E5E7EB]">
                   DIGITAL RELEASE LAB & MULTIDISCIPLINARY REPOSITORY
@@ -951,19 +951,19 @@ export default function CommandPage() {
                   setEditingProduct(null);
                   setIsProductModalOpen(true);
                 }}
-                className="bg-[#D4AF37] hover:bg-[#E5C158] text-[#152319] font-mono font-extrabold text-xs px-5 py-2.5 rounded-xl transition-all shadow-md cursor-pointer flex items-center gap-1.5 self-start sm:self-auto"
+                className="bg-[#8B0000] hover:bg-[#A30000] text-white font-mono font-extrabold text-xs px-5 py-2.5 rounded-xl transition-all shadow-md cursor-pointer flex items-center gap-1.5 self-start sm:self-auto"
               >
                 <span>+ ADD DIGITAL PRODUCT</span>
               </button>
             </div>
 
             {/* LANDING PAGE DIGITAL SHOWCASE (4 SLOTS) */}
-            <div className="bg-[#142018] border border-[#D4AF37]/40 rounded-2xl p-5 sm:p-6 shadow-xl space-y-4">
+            <div className="bg-[#142018] border border-[#8B0000]/40 rounded-2xl p-5 sm:p-6 shadow-xl space-y-4">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/10 pb-4">
                 <div>
                   <div className="flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#D4AF37] animate-pulse" />
-                    <h3 className="font-mono text-xs sm:text-sm font-extrabold text-[#D4AF37] tracking-wider uppercase">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#8B0000] animate-pulse" />
+                    <h3 className="font-mono text-xs sm:text-sm font-extrabold text-[#8B0000] tracking-wider uppercase">
                       // LANDING PAGE DIGITAL SHOWCASE (4 SLOTS)
                     </h3>
                   </div>
@@ -988,18 +988,18 @@ export default function CommandPage() {
                   return (
                     <div
                       key={slot}
-                      className={`bg-[#1B291F] border rounded-xl p-3.5 space-y-2.5 relative transition-all ${
-                        assigned ? 'border-[#D4AF37]/40 shadow-[0_0_15px_rgba(212,175,55,0.08)]' : 'border-dashed border-white/15'
+                      className={`bg-[#111A2E] border rounded-xl p-3.5 space-y-2.5 relative transition-all ${
+                        assigned ? 'border-[#8B0000]/40 shadow-[0_0_15px_rgba(139,0,0,0.08)]' : 'border-dashed border-white/15'
                       }`}
                     >
                       <div className="flex items-center justify-between text-[11px] font-mono">
-                        <span className="text-[#D4AF37] font-extrabold">SLOT 0{slot}</span>
+                        <span className="text-[#8B0000] font-extrabold">SLOT 0{slot}</span>
                         <span className="text-white/40 text-[10px]">{slotLabel}</span>
                       </div>
 
                       {assigned ? (
                         <div className="flex items-center gap-2.5">
-                          <div className="relative w-11 h-11 rounded-lg overflow-hidden bg-[#152319] shrink-0 border border-white/10">
+                          <div className="relative w-11 h-11 rounded-lg overflow-hidden bg-[#0D1527] shrink-0 border border-white/10">
                             {assigned.image ? (
                               <Image
                                 src={assigned.image}
@@ -1018,7 +1018,7 @@ export default function CommandPage() {
                             <p className="text-xs font-bold text-[#E5E7EB] truncate" title={assigned.name}>
                               {assigned.name}
                             </p>
-                            <p className="text-[10px] font-mono text-[#D4AF37]">{assigned.badge || 'PRODUCT'}</p>
+                            <p className="text-[10px] font-mono text-[#8B0000]">{assigned.badge || 'PRODUCT'}</p>
                           </div>
                         </div>
                       ) : (
@@ -1037,7 +1037,7 @@ export default function CommandPage() {
                               handleSetProductLandingSlot(assigned.id, 99);
                             }
                           }}
-                          className="w-full bg-[#152319] border border-white/10 text-[11px] text-[#E5E7EB] font-mono rounded-lg px-2.5 py-1.5 focus:border-[#D4AF37] outline-none cursor-pointer"
+                          className="w-full bg-[#0D1527] border border-white/10 text-[11px] text-[#E5E7EB] font-mono rounded-lg px-2.5 py-1.5 focus:border-[#8B0000] outline-none cursor-pointer"
                         >
                           <option value="">{assigned ? '— Change product —' : '— Assign product —'}</option>
                           {products.map((p) => (
@@ -1054,27 +1054,27 @@ export default function CommandPage() {
             </div>
 
             {productsTableMissing && (
-              <div className="p-4 rounded-xl bg-amber-950/40 border border-[#D4AF37]/50 text-xs font-mono text-[#D4AF37] space-y-1">
+              <div className="p-4 rounded-xl bg-amber-950/40 border border-[#8B0000]/50 text-xs font-mono text-[#8B0000] space-y-1">
                 <p className="font-bold">⚠️ Supabase Table `studio_products` not created yet.</p>
                 <p className="text-[#E5E7EB]/70">
-                  Go to tab <button onClick={() => setActiveTab('channels')} className="underline text-[#D4AF37] font-bold">04 // CHANNELS & DB</button> and copy the SQL schema script to execute in Supabase SQL Editor.
+                  Go to tab <button onClick={() => setActiveTab('channels')} className="underline text-[#8B0000] font-bold">04 // CHANNELS & DB</button> and copy the SQL schema script to execute in Supabase SQL Editor.
                 </p>
               </div>
             )}
 
             {productsLoading ? (
-              <div className="p-12 text-center text-xs font-mono text-[#D4AF37]">
+              <div className="p-12 text-center text-xs font-mono text-[#8B0000]">
                 LOADING STUDIO PRODUCTS...
               </div>
             ) : products.length === 0 ? (
-              <div className="bg-[#1B291F]/60 border border-dashed border-white/10 rounded-2xl p-12 text-center space-y-3">
+              <div className="bg-[#111A2E]/60 border border-dashed border-white/10 rounded-2xl p-12 text-center space-y-3">
                 <p className="font-mono text-sm text-[#E5E7EB]/60">NO PRODUCTS IN DATABASE</p>
                 <button
                   onClick={() => {
                     setEditingProduct(null);
                     setIsProductModalOpen(true);
                   }}
-                  className="font-mono text-xs bg-[#D4AF37] text-[#152319] px-4 py-2 rounded-lg font-bold"
+                  className="font-mono text-xs bg-[#8B0000] text-white px-4 py-2 rounded-lg font-bold"
                 >
                   Create First Product
                 </button>
@@ -1084,11 +1084,11 @@ export default function CommandPage() {
                 {products.map((p) => (
                   <div
                     key={p.id}
-                    className="bg-[#1B291F] border border-white/10 hover:border-[#D4AF37]/50 rounded-2xl overflow-hidden transition-all flex flex-col justify-between group"
+                    className="bg-[#111A2E] border border-white/10 hover:border-[#8B0000]/50 rounded-2xl overflow-hidden transition-all flex flex-col justify-between group"
                   >
                     <div>
                       {/* Product Thumbnail */}
-                      <div className="relative w-full h-48 bg-[#152319] overflow-hidden border-b border-white/10">
+                      <div className="relative w-full h-48 bg-[#0D1527] overflow-hidden border-b border-white/10">
                         {p.image ? (
                           <Image
                             src={p.image}
@@ -1102,18 +1102,18 @@ export default function CommandPage() {
                             NO THUMBNAIL
                           </div>
                         )}
-                        <span className="absolute top-3 left-3 font-mono text-[9px] font-bold bg-black/80 text-[#D4AF37] px-2.5 py-1 rounded-full border border-[#D4AF37]/40">
+                        <span className="absolute top-3 left-3 font-mono text-[9px] font-bold bg-black/80 text-[#8B0000] px-2.5 py-1 rounded-full border border-[#8B0000]/40">
                           {p.badge || 'PRODUCT'}
                         </span>
                         {p.price_tag && (
-                          <span className="absolute top-3 right-3 font-mono text-[10px] font-extrabold bg-[#D4AF37] text-[#152319] px-2.5 py-1 rounded-full">
+                          <span className="absolute top-3 right-3 font-mono text-[10px] font-extrabold bg-[#8B0000] text-white px-2.5 py-1 rounded-full">
                             {p.price_tag}
                           </span>
                         )}
 
                         {/* Landing Slot Status Badge */}
                         {p.sort_order && p.sort_order >= 1 && p.sort_order <= 4 ? (
-                          <span className="absolute bottom-3 left-3 font-mono text-[9px] font-extrabold bg-[#D4AF37] text-[#152319] px-2.5 py-0.5 rounded-full shadow-lg">
+                          <span className="absolute bottom-3 left-3 font-mono text-[9px] font-extrabold bg-[#8B0000] text-white px-2.5 py-0.5 rounded-full shadow-lg">
                             ★ LANDING SLOT 0{p.sort_order}
                           </span>
                         ) : (
@@ -1129,7 +1129,7 @@ export default function CommandPage() {
                           {p.name}
                         </h3>
                         {p.tagline && (
-                          <p className="text-xs text-[#D4AF37] font-mono line-clamp-1">
+                          <p className="text-xs text-[#8B0000] font-mono line-clamp-1">
                             {p.tagline}
                           </p>
                         )}
@@ -1158,8 +1158,8 @@ export default function CommandPage() {
                             title={`Set to Landing Page Slot 0${slot}`}
                             className={`px-2 py-0.5 rounded transition-all cursor-pointer ${
                               p.sort_order === slot
-                                ? 'bg-[#D4AF37] text-[#152319] font-extrabold shadow'
-                                : 'bg-[#152319] text-[#E5E7EB]/70 hover:text-white hover:border-[#D4AF37]/50 border border-white/10'
+                                ? 'bg-[#8B0000] text-white font-extrabold shadow'
+                                : 'bg-[#0D1527] text-[#E5E7EB]/70 hover:text-white hover:border-[#8B0000]/50 border border-white/10'
                             }`}
                           >
                             0{slot}
@@ -1184,7 +1184,7 @@ export default function CommandPage() {
                         href={p.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-mono text-[11px] text-[#D4AF37] hover:underline flex items-center gap-1"
+                        className="font-mono text-[11px] text-[#8B0000] hover:underline flex items-center gap-1"
                       >
                         <span>VIEW ON GUMROAD</span>
                         <span>↗</span>
@@ -1196,7 +1196,7 @@ export default function CommandPage() {
                             setEditingProduct(p);
                             setIsProductModalOpen(true);
                           }}
-                          className="font-mono text-[11px] font-bold bg-[#152319] hover:bg-[#243528] text-white px-3 py-1.5 rounded-lg border border-white/10 cursor-pointer"
+                          className="font-mono text-[11px] font-bold bg-[#0D1527] hover:bg-[#0A0F1D] text-white px-3 py-1.5 rounded-lg border border-white/10 cursor-pointer"
                         >
                           EDIT
                         </button>
@@ -1218,7 +1218,7 @@ export default function CommandPage() {
         {/* TAB 3: TACTILE GOODS */}
         {activeTab === 'goods' && (
           <div className="space-y-6">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#1B291F] p-4 rounded-2xl border border-white/10">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#111A2E] p-4 rounded-2xl border border-white/10">
               <div>
                 <h2 className="text-base font-bold text-[#E5E7EB]">
                   TACTILE GOODS & CAPSULE APPAREL
@@ -1233,19 +1233,19 @@ export default function CommandPage() {
                   setEditingGoods(null);
                   setIsGoodsModalOpen(true);
                 }}
-                className="bg-[#D4AF37] hover:bg-[#E5C158] text-[#152319] font-mono font-extrabold text-xs px-5 py-2.5 rounded-xl transition-all shadow-md cursor-pointer flex items-center gap-1.5 self-start sm:self-auto"
+                className="bg-[#8B0000] hover:bg-[#A30000] text-white font-mono font-extrabold text-xs px-5 py-2.5 rounded-xl transition-all shadow-md cursor-pointer flex items-center gap-1.5 self-start sm:self-auto"
               >
                 <span>+ ADD CAPSULE DROP</span>
               </button>
             </div>
 
             {/* LANDING PAGE CAPSULE SHOWCASE (3 SLOTS) */}
-            <div className="bg-[#142018] border border-[#D4AF37]/40 rounded-2xl p-5 sm:p-6 shadow-xl space-y-4">
+            <div className="bg-[#142018] border border-[#8B0000]/40 rounded-2xl p-5 sm:p-6 shadow-xl space-y-4">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/10 pb-4">
                 <div>
                   <div className="flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-[#D4AF37] animate-pulse" />
-                    <h3 className="font-mono text-xs sm:text-sm font-extrabold text-[#D4AF37] tracking-wider uppercase">
+                    <span className="w-2.5 h-2.5 rounded-full bg-[#8B0000] animate-pulse" />
+                    <h3 className="font-mono text-xs sm:text-sm font-extrabold text-[#8B0000] tracking-wider uppercase">
                       // LANDING PAGE CAPSULE SHOWCASE (3 SLOTS)
                     </h3>
                   </div>
@@ -1268,18 +1268,18 @@ export default function CommandPage() {
                   return (
                     <div
                       key={slot}
-                      className={`bg-[#1B291F] border rounded-xl p-3.5 space-y-2.5 relative transition-all ${
-                        assigned ? 'border-[#D4AF37]/40 shadow-[0_0_15px_rgba(212,175,55,0.08)]' : 'border-dashed border-white/15'
+                      className={`bg-[#111A2E] border rounded-xl p-3.5 space-y-2.5 relative transition-all ${
+                        assigned ? 'border-[#8B0000]/40 shadow-[0_0_15px_rgba(139,0,0,0.08)]' : 'border-dashed border-white/15'
                       }`}
                     >
                       <div className="flex items-center justify-between text-[11px] font-mono">
-                        <span className="text-[#D4AF37] font-extrabold">CAPSULE SLOT 0{slot}</span>
+                        <span className="text-[#8B0000] font-extrabold">CAPSULE SLOT 0{slot}</span>
                         <span className="text-white/40 text-[10px]">{slotLabel}</span>
                       </div>
 
                       {assigned ? (
                         <div className="flex items-center gap-2.5">
-                          <div className="relative w-11 h-11 rounded-lg overflow-hidden bg-[#152319] shrink-0 border border-white/10">
+                          <div className="relative w-11 h-11 rounded-lg overflow-hidden bg-[#0D1527] shrink-0 border border-white/10">
                             {assigned.image ? (
                               <Image
                                 src={assigned.image}
@@ -1298,7 +1298,7 @@ export default function CommandPage() {
                             <p className="text-xs font-bold text-[#E5E7EB] truncate" title={assigned.name}>
                               {assigned.name}
                             </p>
-                            <p className="text-[10px] font-mono text-[#D4AF37]">{assigned.badge || 'CAPSULE'}</p>
+                            <p className="text-[10px] font-mono text-[#8B0000]">{assigned.badge || 'CAPSULE'}</p>
                           </div>
                         </div>
                       ) : (
@@ -1317,7 +1317,7 @@ export default function CommandPage() {
                               handleSetGoodsLandingSlot(assigned.id, 99);
                             }
                           }}
-                          className="w-full bg-[#152319] border border-white/10 text-[11px] text-[#E5E7EB] font-mono rounded-lg px-2.5 py-1.5 focus:border-[#D4AF37] outline-none cursor-pointer"
+                          className="w-full bg-[#0D1527] border border-white/10 text-[11px] text-[#E5E7EB] font-mono rounded-lg px-2.5 py-1.5 focus:border-[#8B0000] outline-none cursor-pointer"
                         >
                           <option value="">{assigned ? '— Change capsule —' : '— Assign capsule —'}</option>
                           {goods.map((g) => (
@@ -1334,27 +1334,27 @@ export default function CommandPage() {
             </div>
 
             {goodsTableMissing && (
-              <div className="p-4 rounded-xl bg-amber-950/40 border border-[#D4AF37]/50 text-xs font-mono text-[#D4AF37] space-y-1">
+              <div className="p-4 rounded-xl bg-amber-950/40 border border-[#8B0000]/50 text-xs font-mono text-[#8B0000] space-y-1">
                 <p className="font-bold">⚠️ Supabase Table `studio_goods` not created yet.</p>
                 <p className="text-[#E5E7EB]/70">
-                  Go to tab <button onClick={() => setActiveTab('channels')} className="underline text-[#D4AF37] font-bold">05 // CHANNELS & DB</button> and copy the SQL schema script to execute in Supabase SQL Editor.
+                  Go to tab <button onClick={() => setActiveTab('channels')} className="underline text-[#8B0000] font-bold">05 // CHANNELS & DB</button> and copy the SQL schema script to execute in Supabase SQL Editor.
                 </p>
               </div>
             )}
 
             {goodsLoading ? (
-              <div className="p-12 text-center text-xs font-mono text-[#D4AF37]">
+              <div className="p-12 text-center text-xs font-mono text-[#8B0000]">
                 LOADING STUDIO CAPSULES...
               </div>
             ) : goods.length === 0 ? (
-              <div className="bg-[#1B291F]/60 border border-dashed border-white/10 rounded-2xl p-12 text-center space-y-3">
+              <div className="bg-[#111A2E]/60 border border-dashed border-white/10 rounded-2xl p-12 text-center space-y-3">
                 <p className="font-mono text-sm text-[#E5E7EB]/60">NO CAPSULE DROPS IN DATABASE</p>
                 <button
                   onClick={() => {
                     setEditingGoods(null);
                     setIsGoodsModalOpen(true);
                   }}
-                  className="font-mono text-xs bg-[#D4AF37] text-[#152319] px-4 py-2 rounded-lg font-bold"
+                  className="font-mono text-xs bg-[#8B0000] text-white px-4 py-2 rounded-lg font-bold"
                 >
                   Create First Capsule Drop
                 </button>
@@ -1364,11 +1364,11 @@ export default function CommandPage() {
                 {goods.map((item) => (
                   <div
                     key={item.id}
-                    className="bg-[#1B291F] border border-white/10 hover:border-[#D4AF37]/50 rounded-2xl overflow-hidden transition-all flex flex-col justify-between group"
+                    className="bg-[#111A2E] border border-white/10 hover:border-[#8B0000]/50 rounded-2xl overflow-hidden transition-all flex flex-col justify-between group"
                   >
                     <div>
                       {/* Image Thumbnail */}
-                      <div className="relative w-full h-52 bg-[#152319] overflow-hidden border-b border-white/10">
+                      <div className="relative w-full h-52 bg-[#0D1527] overflow-hidden border-b border-white/10">
                         {item.image ? (
                           <Image
                             src={item.image}
@@ -1382,18 +1382,18 @@ export default function CommandPage() {
                             NO IMAGE
                           </div>
                         )}
-                        <span className="absolute top-3 left-3 font-mono text-[9px] font-bold bg-black/80 text-[#D4AF37] px-2.5 py-1 rounded-full border border-[#D4AF37]/40">
+                        <span className="absolute top-3 left-3 font-mono text-[9px] font-bold bg-black/80 text-[#8B0000] px-2.5 py-1 rounded-full border border-[#8B0000]/40">
                           {item.badge || 'CAPSULE DROP'}
                         </span>
                         {item.price_tag && (
-                          <span className="absolute top-3 right-3 font-mono text-[10px] font-extrabold bg-[#D4AF37] text-[#152319] px-2.5 py-1 rounded-full">
+                          <span className="absolute top-3 right-3 font-mono text-[10px] font-extrabold bg-[#8B0000] text-white px-2.5 py-1 rounded-full">
                             {item.price_tag}
                           </span>
                         )}
 
                         {/* Landing Slot Status Badge */}
                         {item.sort_order && item.sort_order >= 1 && item.sort_order <= 3 ? (
-                          <span className="absolute bottom-3 left-3 font-mono text-[9px] font-extrabold bg-[#D4AF37] text-[#152319] px-2.5 py-0.5 rounded-full shadow-lg">
+                          <span className="absolute bottom-3 left-3 font-mono text-[9px] font-extrabold bg-[#8B0000] text-white px-2.5 py-0.5 rounded-full shadow-lg">
                             ★ LANDING SLOT 0{item.sort_order}
                           </span>
                         ) : (
@@ -1411,12 +1411,12 @@ export default function CommandPage() {
                           </h3>
                         </div>
 
-                        <span className="inline-block font-mono text-[10px] text-emerald-400 bg-[#152319] px-2 py-0.5 rounded border border-emerald-500/20">
+                        <span className="inline-block font-mono text-[10px] text-emerald-400 bg-[#0D1527] px-2 py-0.5 rounded border border-emerald-500/20">
                           {item.status}
                         </span>
 
                         {item.materials && (
-                          <p className="text-[11px] text-[#D4AF37] font-mono line-clamp-1">
+                          <p className="text-[11px] text-[#8B0000] font-mono line-clamp-1">
                             {item.materials}
                           </p>
                         )}
@@ -1441,8 +1441,8 @@ export default function CommandPage() {
                             title={`Set to Landing Page Slot 0${slot}`}
                             className={`px-2 py-0.5 rounded transition-all cursor-pointer ${
                               item.sort_order === slot
-                                ? 'bg-[#D4AF37] text-[#152319] font-extrabold shadow'
-                                : 'bg-[#152319] text-[#E5E7EB]/70 hover:text-white hover:border-[#D4AF37]/50 border border-white/10'
+                                ? 'bg-[#8B0000] text-white font-extrabold shadow'
+                                : 'bg-[#0D1527] text-[#E5E7EB]/70 hover:text-white hover:border-[#8B0000]/50 border border-white/10'
                             }`}
                           >
                             0{slot}
@@ -1467,7 +1467,7 @@ export default function CommandPage() {
                         href={item.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-mono text-[11px] text-[#D4AF37] hover:underline flex items-center gap-1"
+                        className="font-mono text-[11px] text-[#8B0000] hover:underline flex items-center gap-1"
                       >
                         <span>VIEW ON ETSY</span>
                         <span>↗</span>
@@ -1479,7 +1479,7 @@ export default function CommandPage() {
                             setEditingGoods(item);
                             setIsGoodsModalOpen(true);
                           }}
-                          className="font-mono text-[11px] font-bold bg-[#152319] hover:bg-[#243528] text-white px-3 py-1.5 rounded-lg border border-white/10 cursor-pointer"
+                          className="font-mono text-[11px] font-bold bg-[#0D1527] hover:bg-[#0A0F1D] text-white px-3 py-1.5 rounded-lg border border-white/10 cursor-pointer"
                         >
                           EDIT
                         </button>
@@ -1501,7 +1501,7 @@ export default function CommandPage() {
         {/* TAB 4: SYSTEMS */}
         {activeTab === 'systems' && (
           <div className="space-y-6">
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#1B291F] p-4 rounded-2xl border border-white/10">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-[#111A2E] p-4 rounded-2xl border border-white/10">
               <div>
                 <h2 className="text-base font-bold text-[#E5E7EB]">
                   SYSTEMS & LIVE PORTFOLIO PLATFORMS
@@ -1516,34 +1516,34 @@ export default function CommandPage() {
                   setEditingProject(null);
                   setIsProjectModalOpen(true);
                 }}
-                className="bg-[#D4AF37] hover:bg-[#E5C158] text-[#152319] font-mono font-extrabold text-xs px-5 py-2.5 rounded-xl transition-all shadow-md cursor-pointer flex items-center gap-1.5 self-start sm:self-auto"
+                className="bg-[#8B0000] hover:bg-[#A30000] text-white font-mono font-extrabold text-xs px-5 py-2.5 rounded-xl transition-all shadow-md cursor-pointer flex items-center gap-1.5 self-start sm:self-auto"
               >
                 <span>+ ADD SYSTEMS PROJECT</span>
               </button>
             </div>
 
             {projectsTableMissing && (
-              <div className="p-4 rounded-xl bg-amber-950/40 border border-[#D4AF37]/50 text-xs font-mono text-[#D4AF37] space-y-1">
+              <div className="p-4 rounded-xl bg-amber-950/40 border border-[#8B0000]/50 text-xs font-mono text-[#8B0000] space-y-1">
                 <p className="font-bold">⚠️ Supabase Table `studio_projects` not created yet.</p>
                 <p className="text-[#E5E7EB]/70">
-                  Go to tab <button onClick={() => setActiveTab('channels')} className="underline text-[#D4AF37] font-bold">04 // CHANNELS & DB</button> to copy and execute the SQL migration script in Supabase.
+                  Go to tab <button onClick={() => setActiveTab('channels')} className="underline text-[#8B0000] font-bold">04 // CHANNELS & DB</button> to copy and execute the SQL migration script in Supabase.
                 </p>
               </div>
             )}
 
             {projectsLoading ? (
-              <div className="p-12 text-center text-xs font-mono text-[#D4AF37]">
+              <div className="p-12 text-center text-xs font-mono text-[#8B0000]">
                 LOADING SYSTEMS PORTFOLIO...
               </div>
             ) : projects.length === 0 ? (
-              <div className="bg-[#1B291F]/60 border border-dashed border-white/10 rounded-2xl p-12 text-center space-y-3">
+              <div className="bg-[#111A2E]/60 border border-dashed border-white/10 rounded-2xl p-12 text-center space-y-3">
                 <p className="font-mono text-sm text-[#E5E7EB]/60">NO PORTFOLIO PROJECTS IN DATABASE</p>
                 <button
                   onClick={() => {
                     setEditingProject(null);
                     setIsProjectModalOpen(true);
                   }}
-                  className="font-mono text-xs bg-[#D4AF37] text-[#152319] px-4 py-2 rounded-lg font-bold"
+                  className="font-mono text-xs bg-[#8B0000] text-white px-4 py-2 rounded-lg font-bold"
                 >
                   Create First Project
                 </button>
@@ -1553,11 +1553,11 @@ export default function CommandPage() {
                 {projects.map((proj) => (
                   <div
                     key={proj.id}
-                    className="bg-[#1B291F] border border-white/10 hover:border-[#D4AF37]/50 rounded-2xl p-6 transition-all space-y-4"
+                    className="bg-[#111A2E] border border-white/10 hover:border-[#8B0000]/50 rounded-2xl p-6 transition-all space-y-4"
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div>
-                        <span className="font-mono text-[10px] text-[#D4AF37] bg-black/40 px-2.5 py-1 rounded-full border border-[#D4AF37]/30 uppercase">
+                        <span className="font-mono text-[10px] text-[#8B0000] bg-black/40 px-2.5 py-1 rounded-full border border-[#8B0000]/30 uppercase">
                           {proj.type_badge || proj.category}
                         </span>
                         <h3 className="font-bold text-lg text-[#E5E7EB] mt-2">
@@ -1569,19 +1569,19 @@ export default function CommandPage() {
                         href={proj.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-mono text-xs text-[#D4AF37] hover:underline shrink-0"
+                        className="font-mono text-xs text-[#8B0000] hover:underline shrink-0"
                       >
                         {proj.display_url || 'LIVE BUILD ↗'}
                       </a>
                     </div>
 
                     {/* Metrics preview */}
-                    <div className="grid grid-cols-2 gap-3 bg-[#152319] p-3 rounded-xl border border-white/5 font-mono text-xs">
+                    <div className="grid grid-cols-2 gap-3 bg-[#0D1527] p-3 rounded-xl border border-white/5 font-mono text-xs">
                       <div>
                         <span className="text-[10px] text-[#E5E7EB]/50 block">
                           {proj.metric1_label || 'METRIC 1'}
                         </span>
-                        <span className="text-[#D4AF37] font-bold text-sm">
+                        <span className="text-[#8B0000] font-bold text-sm">
                           {proj.metric1_value || '—'}
                         </span>
                       </div>
@@ -1589,7 +1589,7 @@ export default function CommandPage() {
                         <span className="text-[10px] text-[#E5E7EB]/50 block">
                           {proj.metric2_label || 'METRIC 2'}
                         </span>
-                        <span className="text-[#D4AF37] font-bold text-sm">
+                        <span className="text-[#8B0000] font-bold text-sm">
                           {proj.metric2_value || '—'}
                         </span>
                       </div>
@@ -1616,7 +1616,7 @@ export default function CommandPage() {
                           setEditingProject(proj);
                           setIsProjectModalOpen(true);
                         }}
-                        className="font-mono text-xs font-bold bg-[#152319] hover:bg-[#243528] text-white px-3 py-1.5 rounded-lg border border-white/10 cursor-pointer"
+                        className="font-mono text-xs font-bold bg-[#0D1527] hover:bg-[#0A0F1D] text-white px-3 py-1.5 rounded-lg border border-white/10 cursor-pointer"
                       >
                         EDIT
                       </button>
@@ -1638,10 +1638,10 @@ export default function CommandPage() {
         {activeTab === 'channels' && (
           <div className="space-y-8">
             {/* External Channel Links */}
-            <div className="bg-[#1B291F] border border-white/10 rounded-2xl p-6 space-y-4">
+            <div className="bg-[#111A2E] border border-white/10 rounded-2xl p-6 space-y-4">
               <h2 className="text-base font-bold text-[#E5E7EB] flex items-center gap-2">
                 <span>ESTABLISHED STUDIO CHANNELS</span>
-                <span className="font-mono text-[10px] text-[#D4AF37] bg-black/40 px-2.5 py-0.5 rounded-full border border-[#D4AF37]/30">
+                <span className="font-mono text-[10px] text-[#8B0000] bg-black/40 px-2.5 py-0.5 rounded-full border border-[#8B0000]/30">
                   MONITORED
                 </span>
               </h2>
@@ -1650,9 +1650,9 @@ export default function CommandPage() {
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                <div className="bg-[#152319] p-5 rounded-xl border border-white/5 space-y-2">
+                <div className="bg-[#0D1527] p-5 rounded-xl border border-white/5 space-y-2">
                   <div className="flex items-center justify-between">
-                    <span className="font-mono text-xs font-bold text-[#D4AF37]">
+                    <span className="font-mono text-xs font-bold text-[#8B0000]">
                       01 // GUMROAD STORE
                     </span>
                     <span className="font-mono text-[10px] text-emerald-400 font-bold">
@@ -1663,7 +1663,7 @@ export default function CommandPage() {
                     href="https://chillguystore.gumroad.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-mono text-xs text-white hover:text-[#D4AF37] break-all block"
+                    className="font-mono text-xs text-white hover:text-[#8B0000] break-all block"
                   >
                     https://chillguystore.gumroad.com ↗
                   </a>
@@ -1672,9 +1672,9 @@ export default function CommandPage() {
                   </p>
                 </div>
 
-                <div className="bg-[#152319] p-5 rounded-xl border border-white/5 space-y-2">
+                <div className="bg-[#0D1527] p-5 rounded-xl border border-white/5 space-y-2">
                   <div className="flex items-center justify-between">
-                    <span className="font-mono text-xs font-bold text-[#D4AF37]">
+                    <span className="font-mono text-xs font-bold text-[#8B0000]">
                       02 // ETSY BOUTIQUE
                     </span>
                     <span className="font-mono text-[10px] text-amber-300 font-bold">
@@ -1685,7 +1685,7 @@ export default function CommandPage() {
                     href="https://chillguyso.etsy.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="font-mono text-xs text-white hover:text-[#D4AF37] break-all block"
+                    className="font-mono text-xs text-white hover:text-[#8B0000] break-all block"
                   >
                     https://chillguyso.etsy.com ↗
                   </a>
@@ -1697,7 +1697,7 @@ export default function CommandPage() {
             </div>
 
             {/* Supabase SQL Migration Script Copier */}
-            <div className="bg-[#1B291F] border border-[#D4AF37]/30 rounded-2xl p-6 space-y-4">
+            <div className="bg-[#111A2E] border border-[#8B0000]/30 rounded-2xl p-6 space-y-4">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                 <div>
                   <h3 className="text-base font-bold text-[#E5E7EB] flex items-center gap-2">
@@ -1725,15 +1725,15 @@ export default function CommandPage() {
                       showToast('Could not access clipboard');
                     }
                   }}
-                  className="bg-[#D4AF37] hover:bg-[#E5C158] text-[#152319] font-mono font-bold text-xs px-4 py-2 rounded-xl transition-all cursor-pointer self-start sm:self-auto"
+                  className="bg-[#8B0000] hover:bg-[#A30000] text-white font-mono font-bold text-xs px-4 py-2 rounded-xl transition-all cursor-pointer self-start sm:self-auto"
                 >
                   [ COPY SQL SCHEMA ]
                 </button>
               </div>
 
-              <div className="bg-[#152319] p-4 rounded-xl border border-white/5 font-mono text-[11px] text-[#E5E7EB]/70 max-h-48 overflow-y-auto space-y-2">
-                <p className="text-[#D4AF37]">// Quick Steps to initialize in Supabase:</p>
-                <p>1. Open your Supabase Dashboard: <a href="https://supabase.com/dashboard" target="_blank" rel="noopener noreferrer" className="text-[#D4AF37] underline">supabase.com/dashboard</a></p>
+              <div className="bg-[#0D1527] p-4 rounded-xl border border-white/5 font-mono text-[11px] text-[#E5E7EB]/70 max-h-48 overflow-y-auto space-y-2">
+                <p className="text-[#8B0000]">// Quick Steps to initialize in Supabase:</p>
+                <p>1. Open your Supabase Dashboard: <a href="https://supabase.com/dashboard" target="_blank" rel="noopener noreferrer" className="text-[#8B0000] underline">supabase.com/dashboard</a></p>
                 <p>2. Select project `ccbgsanikzwcwodzoybt`</p>
                 <p>3. Go to the <b>SQL Editor</b> in the left sidebar</p>
                 <p>4. Paste the schema from `supabase/schema.sql` and click <b>RUN</b></p>
@@ -1747,7 +1747,7 @@ export default function CommandPage() {
       {/* PRODUCT MODAL (ADD / EDIT) */}
       {isProductModalOpen && (
         <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
-          <div className="bg-[#1B291F] border border-[#D4AF37]/40 rounded-2xl p-6 sm:p-8 max-w-xl w-full my-8 space-y-6">
+          <div className="bg-[#111A2E] border border-[#8B0000]/40 rounded-2xl p-6 sm:p-8 max-w-xl w-full my-8 space-y-6">
             <div className="flex items-center justify-between border-b border-white/10 pb-4">
               <h3 className="text-lg font-bold text-[#E5E7EB]">
                 {editingProduct ? 'EDIT PRODUCT' : 'ADD NEW DIGITAL PRODUCT'}
@@ -1762,7 +1762,7 @@ export default function CommandPage() {
 
             <form onSubmit={handleSaveProduct} className="space-y-4">
               <div>
-                <label className="block text-[11px] font-mono uppercase text-[#D4AF37] mb-1">
+                <label className="block text-[11px] font-mono uppercase text-[#8B0000] mb-1">
                   Product Title *
                 </label>
                 <input
@@ -1770,13 +1770,13 @@ export default function CommandPage() {
                   defaultValue={editingProduct?.name || ''}
                   required
                   placeholder="e.g. THE MULTIDISCIPLINARY LAB, GRID SHIFTER, 6K WALLPAPERS"
-                  className="w-full bg-[#152319] border border-white/10 focus:border-[#D4AF37] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
+                  className="w-full bg-[#0D1527] border border-white/10 focus:border-[#8B0000] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-[11px] font-mono uppercase text-[#D4AF37] mb-1">
+                  <label className="block text-[11px] font-mono uppercase text-[#8B0000] mb-1">
                     Category Badge *
                   </label>
                   <input
@@ -1784,7 +1784,7 @@ export default function CommandPage() {
                     id="product-badge-input"
                     defaultValue={editingProduct?.badge || 'UTILITY'}
                     placeholder="e.g. BOOK, GAME, WALLPAPER, ASSET PACK, UTILITY, SOFTWARE"
-                    className="w-full bg-[#152319] border border-white/10 focus:border-[#D4AF37] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
+                    className="w-full bg-[#0D1527] border border-white/10 focus:border-[#8B0000] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
                   />
                   <div className="flex flex-wrap gap-1 mt-1.5">
                     {['BOOK', 'GAME', 'WALLPAPER', 'ASSET PACK', 'UTILITY', 'SOFTWARE'].map((cat) => (
@@ -1795,7 +1795,7 @@ export default function CommandPage() {
                           const input = (e.currentTarget.closest('div')?.previousElementSibling as HTMLInputElement);
                           if (input) input.value = cat;
                         }}
-                        className="text-[9px] font-mono bg-black/40 hover:bg-[#D4AF37]/20 text-[#D4AF37] px-2 py-0.5 rounded border border-[#D4AF37]/30 transition-colors"
+                        className="text-[9px] font-mono bg-black/40 hover:bg-[#8B0000]/20 text-[#8B0000] px-2 py-0.5 rounded border border-[#8B0000]/30 transition-colors"
                       >
                         +{cat}
                       </button>
@@ -1803,20 +1803,20 @@ export default function CommandPage() {
                   </div>
                 </div>
                 <div>
-                  <label className="block text-[11px] font-mono uppercase text-[#D4AF37] mb-1">
+                  <label className="block text-[11px] font-mono uppercase text-[#8B0000] mb-1">
                     Price Tag
                   </label>
                   <input
                     name="price_tag"
                     defaultValue={editingProduct?.price_tag || '$10.00'}
                     placeholder="e.g. $10.00, $15.00, FREE"
-                    className="w-full bg-[#152319] border border-white/10 focus:border-[#D4AF37] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
+                    className="w-full bg-[#0D1527] border border-white/10 focus:border-[#8B0000] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-[11px] font-mono uppercase text-[#D4AF37] mb-1">
+                <label className="block text-[11px] font-mono uppercase text-[#8B0000] mb-1">
                   Gumroad / Product URL *
                 </label>
                 <input
@@ -1824,12 +1824,12 @@ export default function CommandPage() {
                   defaultValue={editingProduct?.url || ''}
                   required
                   placeholder="https://chillguystore.gumroad.com/l/..."
-                  className="w-full bg-[#152319] border border-white/10 focus:border-[#D4AF37] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
+                  className="w-full bg-[#0D1527] border border-white/10 focus:border-[#8B0000] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
                 />
               </div>
 
               <div>
-                <label className="block text-[11px] font-mono uppercase text-[#D4AF37] mb-1">
+                <label className="block text-[11px] font-mono uppercase text-[#8B0000] mb-1">
                   Thumbnail Image URL *
                 </label>
                 <input
@@ -1837,24 +1837,24 @@ export default function CommandPage() {
                   defaultValue={editingProduct?.image || ''}
                   required
                   placeholder="https://public-files.gumroad.com/... or /DigitalProducts.webp"
-                  className="w-full bg-[#152319] border border-white/10 focus:border-[#D4AF37] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
+                  className="w-full bg-[#0D1527] border border-white/10 focus:border-[#8B0000] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
                 />
               </div>
 
               <div>
-                <label className="block text-[11px] font-mono uppercase text-[#D4AF37] mb-1">
+                <label className="block text-[11px] font-mono uppercase text-[#8B0000] mb-1">
                   One-Sentence Payoff (Tagline)
                 </label>
                 <input
                   name="tagline"
                   defaultValue={editingProduct?.tagline || ''}
                   placeholder="e.g. Field Guide to Independent Creative Technology & Digital Craft"
-                  className="w-full bg-[#152319] border border-white/10 focus:border-[#D4AF37] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-sans outline-none"
+                  className="w-full bg-[#0D1527] border border-white/10 focus:border-[#8B0000] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-sans outline-none"
                 />
               </div>
 
               <div>
-                <label className="block text-[11px] font-mono uppercase text-[#D4AF37] mb-1">
+                <label className="block text-[11px] font-mono uppercase text-[#8B0000] mb-1">
                   Description
                 </label>
                 <textarea
@@ -1862,30 +1862,30 @@ export default function CommandPage() {
                   defaultValue={editingProduct?.description || ''}
                   rows={3}
                   placeholder="Overview of digital product contents, formats, and deliverables..."
-                  className="w-full bg-[#152319] border border-white/10 focus:border-[#D4AF37] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-sans outline-none"
+                  className="w-full bg-[#0D1527] border border-white/10 focus:border-[#8B0000] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-sans outline-none"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-[11px] font-mono uppercase text-[#D4AF37] mb-1">
+                  <label className="block text-[11px] font-mono uppercase text-[#8B0000] mb-1">
                     Format / Engine / Stack
                   </label>
                   <input
                     name="stack"
                     defaultValue={editingProduct?.stack || ''}
                     placeholder="e.g. PDF + ePub, HTML5 Canvas, 6K PNGs, Vector SVG"
-                    className="w-full bg-[#152319] border border-white/10 focus:border-[#D4AF37] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
+                    className="w-full bg-[#0D1527] border border-white/10 focus:border-[#8B0000] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
                   />
                 </div>
                 <div>
-                  <label className="block text-[11px] font-mono uppercase text-[#D4AF37] mb-1">
+                  <label className="block text-[11px] font-mono uppercase text-[#8B0000] mb-1">
                     Landing Page Feature Slot
                   </label>
                   <select
                     name="sort_order"
                     defaultValue={editingProduct?.sort_order ?? 0}
-                    className="w-full bg-[#152319] border border-white/10 focus:border-[#D4AF37] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none cursor-pointer"
+                    className="w-full bg-[#0D1527] border border-white/10 focus:border-[#8B0000] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none cursor-pointer"
                   >
                     <option value="1">Slot 01 — Top Left (Featured on Landing)</option>
                     <option value="2">Slot 02 — Top Right (Featured on Landing)</option>
@@ -1906,7 +1906,7 @@ export default function CommandPage() {
                 </button>
                 <button
                   type="submit"
-                  className="bg-[#D4AF37] hover:bg-[#E5C158] text-[#152319] font-mono font-extrabold text-xs px-6 py-2.5 rounded-xl cursor-pointer"
+                  className="bg-[#8B0000] hover:bg-[#A30000] text-white font-mono font-extrabold text-xs px-6 py-2.5 rounded-xl cursor-pointer"
                 >
                   Save Product
                 </button>
@@ -1919,7 +1919,7 @@ export default function CommandPage() {
       {/* SYSTEMS PROJECT MODAL (ADD / EDIT) */}
       {isProjectModalOpen && (
         <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
-          <div className="bg-[#1B291F] border border-[#D4AF37]/40 rounded-2xl p-6 sm:p-8 max-w-xl w-full my-8 space-y-6">
+          <div className="bg-[#111A2E] border border-[#8B0000]/40 rounded-2xl p-6 sm:p-8 max-w-xl w-full my-8 space-y-6">
             <div className="flex items-center justify-between border-b border-white/10 pb-4">
               <h3 className="text-lg font-bold text-[#E5E7EB]">
                 {editingProject ? 'EDIT SYSTEMS PROJECT' : 'ADD NEW SYSTEMS PROJECT'}
@@ -1934,7 +1934,7 @@ export default function CommandPage() {
 
             <form onSubmit={handleSaveProject} className="space-y-4">
               <div>
-                <label className="block text-[11px] font-mono uppercase text-[#D4AF37] mb-1">
+                <label className="block text-[11px] font-mono uppercase text-[#8B0000] mb-1">
                   Project Title *
                 </label>
                 <input
@@ -1942,19 +1942,19 @@ export default function CommandPage() {
                   defaultValue={editingProject?.name || ''}
                   required
                   placeholder="e.g. RihlatBladna — Direct Moroccan Travel Network"
-                  className="w-full bg-[#152319] border border-white/10 focus:border-[#D4AF37] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
+                  className="w-full bg-[#0D1527] border border-white/10 focus:border-[#8B0000] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-[11px] font-mono uppercase text-[#D4AF37] mb-1">
+                  <label className="block text-[11px] font-mono uppercase text-[#8B0000] mb-1">
                     Category
                   </label>
                   <select
                     name="category"
                     defaultValue={editingProject?.category || 'saas'}
-                    className="w-full bg-[#152319] border border-white/10 focus:border-[#D4AF37] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
+                    className="w-full bg-[#0D1527] border border-white/10 focus:border-[#8B0000] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
                   >
                     <option value="marketplace">marketplace</option>
                     <option value="saas">saas</option>
@@ -1963,20 +1963,20 @@ export default function CommandPage() {
                   </select>
                 </div>
                 <div>
-                  <label className="block text-[11px] font-mono uppercase text-[#D4AF37] mb-1">
+                  <label className="block text-[11px] font-mono uppercase text-[#8B0000] mb-1">
                     Type Badge
                   </label>
                   <input
                     name="type_badge"
                     defaultValue={editingProject?.type_badge || 'FEATURED LIVE BUILD // SAAS'}
-                    className="w-full bg-[#152319] border border-white/10 focus:border-[#D4AF37] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
+                    className="w-full bg-[#0D1527] border border-white/10 focus:border-[#8B0000] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-[11px] font-mono uppercase text-[#D4AF37] mb-1">
+                  <label className="block text-[11px] font-mono uppercase text-[#8B0000] mb-1">
                     Live URL *
                   </label>
                   <input
@@ -1984,57 +1984,57 @@ export default function CommandPage() {
                     defaultValue={editingProject?.url || ''}
                     required
                     placeholder="https://example.vercel.app/"
-                    className="w-full bg-[#152319] border border-white/10 focus:border-[#D4AF37] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
+                    className="w-full bg-[#0D1527] border border-white/10 focus:border-[#8B0000] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
                   />
                 </div>
                 <div>
-                  <label className="block text-[11px] font-mono uppercase text-[#D4AF37] mb-1">
+                  <label className="block text-[11px] font-mono uppercase text-[#8B0000] mb-1">
                     Display URL
                   </label>
                   <input
                     name="display_url"
                     defaultValue={editingProject?.display_url || ''}
                     placeholder="example.vercel.app"
-                    className="w-full bg-[#152319] border border-white/10 focus:border-[#D4AF37] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
+                    className="w-full bg-[#0D1527] border border-white/10 focus:border-[#8B0000] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-3 gap-3">
                 <div>
-                  <label className="block text-[10px] font-mono uppercase text-[#D4AF37] mb-1">
+                  <label className="block text-[10px] font-mono uppercase text-[#8B0000] mb-1">
                     Metric 1 Label
                   </label>
                   <input
                     name="metric1_label"
                     defaultValue={editingProject?.metric1_label || 'UPTIME'}
-                    className="w-full bg-[#152319] border border-white/10 focus:border-[#D4AF37] rounded-xl px-3 py-2 text-xs text-[#E5E7EB] font-mono outline-none"
+                    className="w-full bg-[#0D1527] border border-white/10 focus:border-[#8B0000] rounded-xl px-3 py-2 text-xs text-[#E5E7EB] font-mono outline-none"
                   />
                 </div>
                 <div>
-                  <label className="block text-[10px] font-mono uppercase text-[#D4AF37] mb-1">
+                  <label className="block text-[10px] font-mono uppercase text-[#8B0000] mb-1">
                     Metric 1 Value
                   </label>
                   <input
                     name="metric1_value"
                     defaultValue={editingProject?.metric1_value || '99.99%'}
-                    className="w-full bg-[#152319] border border-white/10 focus:border-[#D4AF37] rounded-xl px-3 py-2 text-xs text-[#E5E7EB] font-mono outline-none"
+                    className="w-full bg-[#0D1527] border border-white/10 focus:border-[#8B0000] rounded-xl px-3 py-2 text-xs text-[#E5E7EB] font-mono outline-none"
                   />
                 </div>
                 <div>
-                  <label className="block text-[10px] font-mono uppercase text-[#D4AF37] mb-1">
+                  <label className="block text-[10px] font-mono uppercase text-[#8B0000] mb-1">
                     Metric 1 Hint
                   </label>
                   <input
                     name="metric1_sub"
                     defaultValue={editingProject?.metric1_sub || 'Edge cloud'}
-                    className="w-full bg-[#152319] border border-white/10 focus:border-[#D4AF37] rounded-xl px-3 py-2 text-xs text-[#E5E7EB] font-mono outline-none"
+                    className="w-full bg-[#0D1527] border border-white/10 focus:border-[#8B0000] rounded-xl px-3 py-2 text-xs text-[#E5E7EB] font-mono outline-none"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-[11px] font-mono uppercase text-[#D4AF37] mb-1">
+                <label className="block text-[11px] font-mono uppercase text-[#8B0000] mb-1">
                   Deliverables (1 per line)
                 </label>
                 <textarea
@@ -2042,7 +2042,7 @@ export default function CommandPage() {
                   defaultValue={editingProject?.deliverables?.join('\n') || ''}
                   rows={3}
                   placeholder="Interactive Dashboard&#10;Real-Time Telemetry&#10;Instant Checkout"
-                  className="w-full bg-[#152319] border border-white/10 focus:border-[#D4AF37] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-sans outline-none"
+                  className="w-full bg-[#0D1527] border border-white/10 focus:border-[#8B0000] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-sans outline-none"
                 />
               </div>
 
@@ -2056,7 +2056,7 @@ export default function CommandPage() {
                 </button>
                 <button
                   type="submit"
-                  className="bg-[#D4AF37] hover:bg-[#E5C158] text-[#152319] font-mono font-extrabold text-xs px-6 py-2.5 rounded-xl cursor-pointer"
+                  className="bg-[#8B0000] hover:bg-[#A30000] text-white font-mono font-extrabold text-xs px-6 py-2.5 rounded-xl cursor-pointer"
                 >
                   Save Project
                 </button>
@@ -2069,7 +2069,7 @@ export default function CommandPage() {
       {/* GOODS MODAL (ADD / EDIT) */}
       {isGoodsModalOpen && (
         <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 overflow-y-auto">
-          <div className="bg-[#1B291F] border border-[#D4AF37]/40 rounded-2xl p-6 sm:p-8 max-w-xl w-full my-8 space-y-6">
+          <div className="bg-[#111A2E] border border-[#8B0000]/40 rounded-2xl p-6 sm:p-8 max-w-xl w-full my-8 space-y-6">
             <div className="flex items-center justify-between border-b border-white/10 pb-4">
               <h3 className="text-lg font-bold text-[#E5E7EB]">
                 {editingGoods ? 'EDIT CAPSULE ITEM' : 'ADD NEW CAPSULE ITEM'}
@@ -2084,7 +2084,7 @@ export default function CommandPage() {
 
             <form onSubmit={handleSaveGoods} className="space-y-4">
               <div>
-                <label className="block text-[11px] font-mono uppercase text-[#D4AF37] mb-1">
+                <label className="block text-[11px] font-mono uppercase text-[#8B0000] mb-1">
                   Item / Capsule Name *
                 </label>
                 <input
@@ -2092,49 +2092,49 @@ export default function CommandPage() {
                   defaultValue={editingGoods?.name || ''}
                   required
                   placeholder="e.g. CAPSULE 001 // TANGIER DOCK FLEECE"
-                  className="w-full bg-[#152319] border border-white/10 focus:border-[#D4AF37] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
+                  className="w-full bg-[#0D1527] border border-white/10 focus:border-[#8B0000] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-[11px] font-mono uppercase text-[#D4AF37] mb-1">
+                  <label className="block text-[11px] font-mono uppercase text-[#8B0000] mb-1">
                     Badge
                   </label>
                   <input
                     name="badge"
                     defaultValue={editingGoods?.badge || 'LIMITED CAPSULE // 50 PIECES'}
                     placeholder="e.g. LIMITED CAPSULE // 50 PIECES"
-                    className="w-full bg-[#152319] border border-white/10 focus:border-[#D4AF37] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
+                    className="w-full bg-[#0D1527] border border-white/10 focus:border-[#8B0000] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
                   />
                 </div>
                 <div>
-                  <label className="block text-[11px] font-mono uppercase text-[#D4AF37] mb-1">
+                  <label className="block text-[11px] font-mono uppercase text-[#8B0000] mb-1">
                     Price Tag
                   </label>
                   <input
                     name="price_tag"
                     defaultValue={editingGoods?.price_tag || '$160.00 USD'}
                     placeholder="e.g. $160.00 USD"
-                    className="w-full bg-[#152319] border border-white/10 focus:border-[#D4AF37] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
+                    className="w-full bg-[#0D1527] border border-white/10 focus:border-[#8B0000] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-[11px] font-mono uppercase text-[#D4AF37] mb-1">
+                  <label className="block text-[11px] font-mono uppercase text-[#8B0000] mb-1">
                     Status
                   </label>
                   <input
                     name="status"
                     defaultValue={editingGoods?.status || 'STUDIO GRAPHIC EDITION // LIVE ON ETSY'}
                     placeholder="e.g. STUDIO GRAPHIC EDITION, LIVE ON ETSY"
-                    className="w-full bg-[#152319] border border-white/10 focus:border-[#D4AF37] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
+                    className="w-full bg-[#0D1527] border border-white/10 focus:border-[#8B0000] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
                   />
                 </div>
                 <div>
-                  <label className="block text-[11px] font-mono uppercase text-[#D4AF37] mb-1">
+                  <label className="block text-[11px] font-mono uppercase text-[#8B0000] mb-1">
                     Etsy / Store Link *
                   </label>
                   <input
@@ -2142,13 +2142,13 @@ export default function CommandPage() {
                     defaultValue={editingGoods?.url || 'https://chillguyso.etsy.com'}
                     required
                     placeholder="https://chillguyso.etsy.com"
-                    className="w-full bg-[#152319] border border-white/10 focus:border-[#D4AF37] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
+                    className="w-full bg-[#0D1527] border border-white/10 focus:border-[#8B0000] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-[11px] font-mono uppercase text-[#D4AF37] mb-1">
+                <label className="block text-[11px] font-mono uppercase text-[#8B0000] mb-1">
                   Thumbnail Image URL *
                 </label>
                 <input
@@ -2156,30 +2156,30 @@ export default function CommandPage() {
                   defaultValue={editingGoods?.image || '/TactileGoods.webp'}
                   required
                   placeholder="/TactileGoods.webp, /Lifestyle, Black (1).jpeg, or Etsy image URL"
-                  className="w-full bg-[#152319] border border-white/10 focus:border-[#D4AF37] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
+                  className="w-full bg-[#0D1527] border border-white/10 focus:border-[#8B0000] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
                 />
               </div>
 
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-[11px] font-mono uppercase text-[#D4AF37] mb-1">
+                  <label className="block text-[11px] font-mono uppercase text-[#8B0000] mb-1">
                     Materials & Specs
                   </label>
                   <input
                     name="materials"
                     defaultValue={editingGoods?.materials || 'Curated Heavyweight Streetwear Cotton / DTG Print'}
                     placeholder="e.g. Curated Heavyweight Streetwear Cotton / DTG Print"
-                    className="w-full bg-[#152319] border border-white/10 focus:border-[#D4AF37] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
+                    className="w-full bg-[#0D1527] border border-white/10 focus:border-[#8B0000] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
                   />
                 </div>
                 <div>
-                  <label className="block text-[11px] font-mono uppercase text-[#D4AF37] mb-1">
+                  <label className="block text-[11px] font-mono uppercase text-[#8B0000] mb-1">
                     Landing Page Showcase Slot
                   </label>
                   <select
                     name="sort_order"
                     defaultValue={editingGoods?.sort_order ?? 0}
-                    className="w-full bg-[#152319] border border-white/10 focus:border-[#D4AF37] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none cursor-pointer"
+                    className="w-full bg-[#0D1527] border border-white/10 focus:border-[#8B0000] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none cursor-pointer"
                   >
                     <option value="1">Slot 01 — Primary Feature (First on Landing)</option>
                     <option value="2">Slot 02 — Secondary Capsule (Second on Landing)</option>
@@ -2190,7 +2190,7 @@ export default function CommandPage() {
               </div>
 
               <div>
-                <label className="block text-[11px] font-mono uppercase text-[#D4AF37] mb-1">
+                <label className="block text-[11px] font-mono uppercase text-[#8B0000] mb-1">
                   Description
                 </label>
                 <textarea
@@ -2198,7 +2198,7 @@ export default function CommandPage() {
                   defaultValue={editingGoods?.description || ''}
                   rows={3}
                   placeholder="Detailed capsule description, graphic concept, blank specifications, Etsy dispatch..."
-                  className="w-full bg-[#152319] border border-white/10 focus:border-[#D4AF37] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-sans outline-none"
+                  className="w-full bg-[#0D1527] border border-white/10 focus:border-[#8B0000] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-sans outline-none"
                 />
               </div>
 
@@ -2212,7 +2212,7 @@ export default function CommandPage() {
                 </button>
                 <button
                   type="submit"
-                  className="bg-[#D4AF37] hover:bg-[#E5C158] text-[#152319] font-mono font-extrabold text-xs px-6 py-2.5 rounded-xl cursor-pointer"
+                  className="bg-[#8B0000] hover:bg-[#A30000] text-white font-mono font-extrabold text-xs px-6 py-2.5 rounded-xl cursor-pointer"
                 >
                   Save Capsule Item
                 </button>

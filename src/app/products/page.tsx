@@ -83,17 +83,17 @@ export default function ProductsPage() {
   }, [productsList, activeCategory, searchQuery]);
 
   return (
-    <div className="min-h-screen w-full bg-[#243528] text-[#E5E7EB] font-sans selection:bg-[#D4AF37] selection:text-[#1B291F] relative">
+    <div className="min-h-screen w-full bg-[#0A0F1D] text-[#E5E7EB] font-sans selection:bg-[#8B0000] selection:text-white relative">
       <BackgroundWatermark />
       {/* Fixed Navigation Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 lg:px-12 py-4 flex items-center justify-between h-[88px] bg-[#1B291F]/95 backdrop-blur-md border-b border-[#D4AF37]/35 shadow-xl">
+      <header className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 lg:px-12 py-4 flex items-center justify-between h-[88px] bg-[#111A2E]/95 backdrop-blur-md border-b border-[#8B0000]/35 shadow-xl">
         {/* Far Left: Logo Anchor */}
         <Link href="/" className="flex items-center gap-3 group focus:outline-none shrink-0">
           <div className="relative h-9 w-24 flex items-center">
             <Image src="/logo.png" alt="[ALN] Logo" width={110} height={70} className="h-full w-auto object-contain" priority />
           </div>
           <span className="font-mono text-base font-extrabold tracking-widest text-[#E5E7EB] hidden xs:flex items-center gap-2">
-            <span><span className="text-[#D4AF37]">[</span> ALN <span className="text-[#D4AF37]">]</span></span>
+            <span><span className="text-[#8B0000]">[</span> ALN <span className="text-[#8B0000]">]</span></span>
             <span className="text-white/30 font-normal">|</span>
             <span className="text-xs font-bold text-[#E5E7EB]/90 tracking-widest">ALL IN</span>
           </span>
@@ -101,17 +101,17 @@ export default function ProductsPage() {
 
         {/* Center: The 4 Core Routes */}
         <nav className="hidden md:flex items-center gap-6 lg:gap-8 font-mono text-[11px] lg:text-xs font-bold tracking-wider text-[#E5E7EB]/90">
-          <Link href="/systems" className="hover:text-[#D4AF37] transition-colors flex items-center gap-1 group">
-            <span className="text-[#D4AF37]">01 //</span> SYSTEMS
+          <Link href="/systems" className="hover:text-[#8B0000] transition-colors flex items-center gap-1 group">
+            <span className="text-[#8B0000]">01 //</span> SYSTEMS
           </Link>
-          <Link href="/products" className="text-[#D4AF37] border-b-2 border-[#D4AF37] pb-1 flex items-center gap-1 group">
-            <span className="text-[#D4AF37]">02 //</span> PRODUCTS
+          <Link href="/products" className="text-[#8B0000] border-b-2 border-[#8B0000] pb-1 flex items-center gap-1 group">
+            <span className="text-[#8B0000]">02 //</span> PRODUCTS
           </Link>
-          <Link href="/goods" className="hover:text-[#D4AF37] transition-colors flex items-center gap-1 group">
-            <span className="text-[#D4AF37]">03 //</span> GOODS
+          <Link href="/goods" className="hover:text-[#8B0000] transition-colors flex items-center gap-1 group">
+            <span className="text-[#8B0000]">03 //</span> GOODS
           </Link>
-          <Link href="/philosophy" className="hover:text-[#D4AF37] transition-colors flex items-center gap-1 group">
-            <span className="text-[#D4AF37]">04 //</span> PHILOSOPHY
+          <Link href="/philosophy" className="hover:text-[#8B0000] transition-colors flex items-center gap-1 group">
+            <span className="text-[#8B0000]">04 //</span> PHILOSOPHY
           </Link>
         </nav>
 
@@ -119,7 +119,7 @@ export default function ProductsPage() {
         <div className="flex items-center gap-3">
           <a
             href="#contact"
-            className="font-mono text-xs font-extrabold text-[#1B291F] bg-[#D4AF37] hover:bg-[#E5C158] px-4 sm:px-5 py-2 sm:py-2.5 rounded-full transition-all shadow-lg hover:scale-105 uppercase tracking-wider"
+            className="font-mono text-xs font-extrabold text-white bg-[#8B0000] hover:bg-[#A30000] px-4 sm:px-5 py-2 sm:py-2.5 rounded-full transition-all shadow-lg hover:scale-105 uppercase tracking-wider"
           >
             [ INITIATE INQUIRY ]
           </a>
@@ -130,10 +130,10 @@ export default function ProductsPage() {
       <main className="pt-32 pb-20 px-6 sm:px-12 lg:px-20 max-w-[1440px] mx-auto space-y-16">
         {/* Breadcrumb & Hero Statement */}
         <div className="space-y-4 border-b border-[#E5E7EB]/10 pb-12">
-          <div className="flex items-center gap-3 font-mono text-xs text-[#D4AF37] uppercase tracking-widest">
+          <div className="flex items-center gap-3 font-mono text-xs text-[#8B0000] uppercase tracking-widest">
             <Link href="/" className="hover:underline text-[#E5E7EB]/60">HOME</Link>
             <span>/</span>
-            <span className="text-[#D4AF37] font-bold">INDEX // 02 // DIGITAL PRODUCTS</span>
+            <span className="text-[#8B0000] font-bold">INDEX // 02 // DIGITAL PRODUCTS</span>
             <span>/</span>
             <span className="text-[#E5E7EB]/40">RELEASE LAB</span>
           </div>
@@ -156,7 +156,7 @@ export default function ProductsPage() {
                 href={EXTERNAL_LINKS.GUMROAD.STORE}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 font-mono text-xs font-extrabold text-[#1B291F] bg-[#D4AF37] hover:bg-[#E5C158] px-6 py-3.5 rounded-full transition-all shadow-xl hover:scale-105 cursor-pointer whitespace-nowrap"
+                className="inline-flex items-center gap-2 font-mono text-xs font-extrabold text-white bg-[#8B0000] hover:bg-[#A30000] px-6 py-3.5 rounded-full transition-all shadow-xl hover:scale-105 cursor-pointer whitespace-nowrap"
               >
                 <span>[ GO STRAIGHT TO GUMROAD STORE ]</span>
                 <span>↗</span>
@@ -178,7 +178,7 @@ export default function ProductsPage() {
 
         {/* 2-Column Digital Release Decks */}
         <div className="space-y-6">
-          <div className="flex items-center justify-between font-mono text-xs text-[#D4AF37] border-b border-[#E5E7EB]/10 pb-3 uppercase tracking-wider">
+          <div className="flex items-center justify-between font-mono text-xs text-[#8B0000] border-b border-[#E5E7EB]/10 pb-3 uppercase tracking-wider">
             <span>
               CATALOG // {activeCategory} ({String(filteredProducts.length).padStart(2, '0')} RELEASES)
             </span>
@@ -186,8 +186,8 @@ export default function ProductsPage() {
           </div>
 
           {filteredProducts.length === 0 ? (
-            <div className="bg-[#1B291F] border border-white/10 rounded-2xl p-12 text-center space-y-3">
-              <p className="font-mono text-sm text-[#D4AF37] font-bold">
+            <div className="bg-[#111A2E] border border-white/10 rounded-2xl p-12 text-center space-y-3">
+              <p className="font-mono text-sm text-[#8B0000] font-bold">
                 {searchQuery
                   ? `NO DIGITAL RELEASES MATCH "${searchQuery.toUpperCase()}"`
                   : `NO RELEASES PUBLISHED IN [${activeCategory}] YET`}
@@ -203,7 +203,7 @@ export default function ProductsPage() {
                   setSearchQuery('');
                   setActiveCategory('ALL');
                 }}
-                className="font-mono text-xs font-extrabold text-[#1B291F] bg-[#D4AF37] hover:bg-[#E5C158] px-5 py-2.5 rounded-full transition-all cursor-pointer"
+                className="font-mono text-xs font-extrabold text-white bg-[#8B0000] hover:bg-[#A30000] px-5 py-2.5 rounded-full transition-all cursor-pointer"
               >
                 [ SHOW ALL DIGITAL RELEASES ]
               </button>
@@ -216,21 +216,21 @@ export default function ProductsPage() {
                 return (
                   <div
                     key={prod.id}
-                    className="bg-[#1B291F] border border-[#E5E7EB]/15 hover:border-[#D4AF37]/60 rounded-2xl overflow-hidden shadow-2xl flex flex-col justify-between group hover:shadow-[0_0_35px_rgba(212,175,55,0.14)] transition-all"
+                    className="bg-[#111A2E] border border-[#E5E7EB]/15 hover:border-[#8B0000]/60 rounded-2xl overflow-hidden shadow-2xl flex flex-col justify-between group hover:shadow-[0_0_35px_rgba(139,0,0,0.14)] transition-all"
                   >
                     <div>
                       {/* 1. Top OS / Release Window Telemetry Bar */}
                       <div className="bg-[#142018] border-b border-white/10 px-5 py-3 flex items-center justify-between gap-2 font-mono text-xs">
                         <div className="flex items-center gap-2.5 min-w-0">
                           <div className="flex items-center gap-1 shrink-0">
-                            <span className="w-2 h-2 rounded-full bg-[#D4AF37]/80" />
+                            <span className="w-2 h-2 rounded-full bg-[#8B0000]/80" />
                             <span className="w-2 h-2 rounded-full bg-emerald-400/70" />
                           </div>
                           <span className="text-[#9CA3AF] text-[11px] font-bold shrink-0">
                             REL // {prod.number}
                           </span>
                           <span className="text-white/20">|</span>
-                          <span className="text-[10px] font-extrabold text-[#D4AF37] bg-[#243528] px-2.5 py-0.5 rounded border border-[#D4AF37]/35 uppercase tracking-wider truncate">
+                          <span className="text-[10px] font-extrabold text-[#8B0000] bg-[#0A0F1D] px-2.5 py-0.5 rounded border border-[#8B0000]/35 uppercase tracking-wider truncate">
                             {prod.badge}
                           </span>
                         </div>
@@ -250,7 +250,7 @@ export default function ProductsPage() {
                         {/* Left: Framed Digital Viewport */}
                         <Link
                           href={productHref}
-                          className="sm:col-span-5 relative h-48 sm:h-44 w-full rounded-xl overflow-hidden border border-[#E5E7EB]/15 bg-[#0F1712] group-hover:border-[#D4AF37]/50 transition-all block cursor-pointer"
+                          className="sm:col-span-5 relative h-48 sm:h-44 w-full rounded-xl overflow-hidden border border-[#E5E7EB]/15 bg-[#0F1712] group-hover:border-[#8B0000]/50 transition-all block cursor-pointer"
                           title={`Open ${prod.name} Release Page`}
                         >
                           <Image
@@ -263,7 +263,7 @@ export default function ProductsPage() {
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-[#0F1712]/90 via-transparent to-transparent opacity-75" />
                           <div className="absolute bottom-2 left-2 right-2 flex items-center justify-between font-mono text-[9px] text-[#E5E7EB]/90 bg-black/75 backdrop-blur-xs px-2.5 py-1 rounded border border-white/10">
-                            <span className="text-[#D4AF37] font-bold">OPEN PAGE →</span>
+                            <span className="text-[#8B0000] font-bold">OPEN PAGE →</span>
                             <span>INSTANT DL</span>
                           </div>
                         </Link>
@@ -271,13 +271,13 @@ export default function ProductsPage() {
                         {/* Right: Release Title, Payoff & Format Spec */}
                         <div className="sm:col-span-7 space-y-2.5 text-left min-w-0">
                           <Link href={productHref} className="block">
-                            <h2 className="text-lg sm:text-xl font-black text-white tracking-tight group-hover:text-[#D4AF37] transition-colors cursor-pointer">
+                            <h2 className="text-lg sm:text-xl font-black text-white tracking-tight group-hover:text-[#8B0000] transition-colors cursor-pointer">
                               {prod.name}
                             </h2>
                           </Link>
 
                           {prod.tagline && (
-                            <p className="text-xs font-mono text-[#D4AF37] line-clamp-1">
+                            <p className="text-xs font-mono text-[#8B0000] line-clamp-1">
                               {prod.tagline}
                             </p>
                           )}
@@ -287,11 +287,11 @@ export default function ProductsPage() {
                           </p>
 
                           <div className="pt-1 space-y-1.5 font-mono text-[10px]">
-                            <div className="bg-[#243528]/90 px-3 py-1.5 rounded-lg border border-white/10 flex items-center justify-between gap-2">
+                            <div className="bg-[#0A0F1D]/90 px-3 py-1.5 rounded-lg border border-white/10 flex items-center justify-between gap-2">
                               <span className="text-[#9CA3AF] shrink-0">FORMAT:</span>
                               <span className="text-white font-bold truncate">{prod.stack}</span>
                             </div>
-                            <div className="bg-[#243528]/90 px-3 py-1.5 rounded-lg border border-white/10 flex items-center justify-between gap-2">
+                            <div className="bg-[#0A0F1D]/90 px-3 py-1.5 rounded-lg border border-white/10 flex items-center justify-between gap-2">
                               <span className="text-[#9CA3AF] shrink-0">ACCESS:</span>
                               <span className="text-emerald-400 font-bold truncate">{prod.access}</span>
                             </div>
@@ -304,7 +304,7 @@ export default function ProductsPage() {
                     <div className="bg-[#152219] border-t border-white/10 px-5 py-3.5 flex items-center justify-between gap-3 font-mono text-xs">
                       <Link
                         href={productHref}
-                        className="font-bold text-[#E5E7EB]/85 hover:text-[#D4AF37] transition-colors flex items-center gap-1.5 py-1.5 cursor-pointer"
+                        className="font-bold text-[#E5E7EB]/85 hover:text-[#8B0000] transition-colors flex items-center gap-1.5 py-1.5 cursor-pointer"
                       >
                         <span>VIEW PRODUCT PAGE</span>
                         <span>→</span>
@@ -314,7 +314,7 @@ export default function ProductsPage() {
                         href={prod.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="font-extrabold text-[#1B291F] bg-[#D4AF37] hover:bg-[#E5C158] px-5 py-2.5 rounded-full transition-all shadow-md hover:scale-105 cursor-pointer flex items-center gap-1.5 whitespace-nowrap"
+                        className="font-extrabold text-white bg-[#8B0000] hover:bg-[#A30000] px-5 py-2.5 rounded-full transition-all shadow-md hover:scale-105 cursor-pointer flex items-center gap-1.5 whitespace-nowrap"
                       >
                         <span>GET ON GUMROAD</span>
                         <span>↗</span>
@@ -336,7 +336,7 @@ export default function ProductsPage() {
               href={EXTERNAL_LINKS.GUMROAD.STORE}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#D4AF37] hover:underline font-bold"
+              className="text-[#8B0000] hover:underline font-bold"
             >
               VISIT FULL GUMROAD STORE (CHILL GUY) ↗
             </a>

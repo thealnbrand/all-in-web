@@ -12,8 +12,8 @@ export const StudioAnchor: React.FC = () => {
           <span className="text-[#E5E7EB]/40 tracking-widest uppercase">
             // STUDIO INDEX // 2026
           </span>
-          <span className="text-[#D4AF37]/80 tracking-wider flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#D4AF37] animate-pulse" />
+          <span className="text-[#8B0000]/80 tracking-wider flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#8B0000] animate-pulse" />
             TANGIER, MOROCCO · 35.7595° N, 5.8340° W · SYS: ACTIVE
           </span>
         </div>
@@ -22,15 +22,15 @@ export const StudioAnchor: React.FC = () => {
         <div className="space-y-6">
           <h2 className="text-2xl md:text-4xl lg:text-5xl font-medium tracking-tight leading-snug text-[#E5E7EB] max-w-4xl">
             ALL IN is an independent technology studio engineering{' '}
-            <span className="text-white font-semibold underline decoration-[#D4AF37]/50 underline-offset-8">
+            <span className="text-white font-semibold underline decoration-[#8B0000]/50 underline-offset-8">
               distributed web systems
             </span>
             ,{' '}
-            <span className="text-[#D4AF37] font-semibold">
+            <span className="text-[#8B0000] font-semibold">
               digital platforms
             </span>
             , and{' '}
-            <span className="text-white font-semibold underline decoration-[#D4AF37]/50 underline-offset-8">
+            <span className="text-white font-semibold underline decoration-[#8B0000]/50 underline-offset-8">
               heavyweight physical goods
             </span>{' '}
             from the Strait of Gibraltar.
@@ -45,7 +45,7 @@ export const StudioAnchor: React.FC = () => {
             <div>
               <Link
                 href="/#philosophy"
-                className="inline-block text-xs font-mono text-[#D4AF37] hover:underline underline-offset-4 tracking-wider uppercase font-bold transition-all hover:translate-x-1"
+                className="inline-block text-xs font-mono text-[#8B0000] hover:underline underline-offset-4 tracking-wider uppercase font-bold transition-all hover:translate-x-1"
               >
                 [ READ THE PHILOSOPHY → ]
               </Link>

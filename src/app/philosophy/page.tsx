@@ -106,7 +106,7 @@ export default function ManifestoPage() {
   }, [reelFinished, skipReel]);
 
   return (
-    <div className="min-h-screen w-full bg-[#243528] text-[#E5E7EB] font-sans selection:bg-[#D4AF37] selection:text-[#1B291F] relative">
+    <div className="min-h-screen w-full bg-[#0A0F1D] text-[#E5E7EB] font-sans selection:bg-[#8B0000] selection:text-white relative">
       <BackgroundWatermark />
       {/* ========================================================================= */}
       {/* PHASE 1: CINEMATIC REEL EXPERIENCE (STARTS COMPLETELY EMPTY)              */}
@@ -128,8 +128,8 @@ export default function ManifestoPage() {
           {/* Top Header Bar inside Reel */}
           <div className="w-full flex items-center justify-between font-mono text-xs text-[#9CA3AF]">
             <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-ping" />
-              <span className="text-[#D4AF37] font-bold tracking-widest uppercase">
+              <span className="w-2 h-2 rounded-full bg-[#8B0000] animate-ping" />
+              <span className="text-[#8B0000] font-bold tracking-widest uppercase">
                 {hasStarted ? `SCENE 0${reelScene} // 04` : 'STANDBY'}
               </span>
             </div>
@@ -140,7 +140,7 @@ export default function ManifestoPage() {
                 e.stopPropagation();
                 skipReel();
               }}
-              className="px-4 py-1.5 rounded-full bg-[#1B291F] text-[#E5E7EB] hover:text-[#D4AF37] border border-white/10 hover:border-[#D4AF37] transition-all cursor-pointer font-bold flex items-center gap-1.5"
+              className="px-4 py-1.5 rounded-full bg-[#111A2E] text-[#E5E7EB] hover:text-[#8B0000] border border-white/10 hover:border-[#8B0000] transition-all cursor-pointer font-bold flex items-center gap-1.5"
             >
               <span>[ SKIP TO ABOUT ]</span>
               <span>→</span>
@@ -150,7 +150,7 @@ export default function ManifestoPage() {
           {/* Central Cinematic Scene Projection */}
           <div className="relative flex-1 flex items-center justify-center text-center px-4 max-w-4xl mx-auto w-full">
             {/* Ambient Gold Glow */}
-            <div className="absolute w-[500px] h-[500px] bg-[#D4AF37]/15 rounded-full blur-3xl pointer-events-none animate-pulse" />
+            <div className="absolute w-[500px] h-[500px] bg-[#8B0000]/15 rounded-full blur-3xl pointer-events-none animate-pulse" />
 
             {/* SCENE 1: The Origin & Logo */}
             <div
@@ -161,7 +161,7 @@ export default function ManifestoPage() {
               }`}
             >
               <div className="space-y-6 flex flex-col items-center">
-                <div className="relative w-[280px] sm:w-[420px] md:w-[500px] aspect-[3/1] filter drop-shadow-[0_0_40px_rgba(212,175,55,0.6)]">
+                <div className="relative w-[280px] sm:w-[420px] md:w-[500px] aspect-[3/1] filter drop-shadow-[0_0_40px_rgba(139,0,0,0.6)]">
                   <Image
                     src="/logo.png"
                     alt="ALL IN Studio Logo"
@@ -171,7 +171,7 @@ export default function ManifestoPage() {
                   />
                 </div>
                 <div className="space-y-1 font-mono">
-                  <span className="text-[#D4AF37] font-extrabold text-xs sm:text-sm tracking-widest uppercase block">
+                  <span className="text-[#8B0000] font-extrabold text-xs sm:text-sm tracking-widest uppercase block">
                     📍 35.7595° N, 5.8340° W · TANGIER HQ
                   </span>
                   <span className="text-[#9CA3AF] text-xs tracking-wider block">
@@ -190,15 +190,15 @@ export default function ManifestoPage() {
               }`}
             >
               <div className="space-y-4">
-                <span className="font-mono text-xs text-[#D4AF37] font-extrabold tracking-widest uppercase block">
+                <span className="font-mono text-xs text-[#8B0000] font-extrabold tracking-widest uppercase block">
                   // THE STUDIO ETHOS
                 </span>
                 <h1 className="text-3xl sm:text-5xl md:text-6xl font-black text-white tracking-tight leading-tight uppercase font-sans">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#D4AF37] drop-shadow-[0_0_35px_rgba(212,175,55,0.6)]">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8B0000] via-[#EF4444] to-[#8B0000] drop-shadow-[0_0_35px_rgba(139,0,0,0.6)]">
                     ALL LINES.
                   </span> <br />
                   <span>ALL IDEAS.</span> <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#D4AF37] via-[#F3E5AB] to-[#D4AF37]">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#8B0000] via-[#EF4444] to-[#8B0000]">
                     NOW.
                   </span>
                 </h1>
@@ -217,24 +217,24 @@ export default function ManifestoPage() {
               }`}
             >
               <div className="space-y-6 w-full max-w-2xl mx-auto">
-                <span className="font-mono text-xs text-[#D4AF37] font-extrabold tracking-widest uppercase block">
+                <span className="font-mono text-xs text-[#8B0000] font-extrabold tracking-widest uppercase block">
                   // THE THREE CORE DISCIPLINES
                 </span>
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 font-mono text-xs text-left">
-                  <div className="bg-[#152319] p-5 rounded-xl border border-[#D4AF37]/40 space-y-2">
-                    <span className="text-[#D4AF37] font-extrabold block text-sm">01 // SYSTEMS</span>
+                  <div className="bg-[#0D1527] p-5 rounded-xl border border-[#8B0000]/40 space-y-2">
+                    <span className="text-[#8B0000] font-extrabold block text-sm">01 // SYSTEMS</span>
                     <p className="text-white text-xs font-bold">Custom Web Software</p>
                     <p className="text-[11px] text-[#9CA3AF] font-sans">Full-stack SaaS, marketplaces & cloud systems.</p>
                   </div>
 
-                  <div className="bg-[#152319] p-5 rounded-xl border border-[#D4AF37]/40 space-y-2">
-                    <span className="text-[#D4AF37] font-extrabold block text-sm">02 // PRODUCTS</span>
+                  <div className="bg-[#0D1527] p-5 rounded-xl border border-[#8B0000]/40 space-y-2">
+                    <span className="text-[#8B0000] font-extrabold block text-sm">02 // PRODUCTS</span>
                     <p className="text-white text-xs font-bold">Digital Creations</p>
                     <p className="text-[11px] text-[#9CA3AF] font-sans">Tools, starters & utilities on Gumroad.</p>
                   </div>
 
-                  <div className="bg-[#152319] p-5 rounded-xl border border-[#D4AF37]/40 space-y-2">
-                    <span className="text-[#D4AF37] font-extrabold block text-sm">03 // GOODS</span>
+                  <div className="bg-[#0D1527] p-5 rounded-xl border border-[#8B0000]/40 space-y-2">
+                    <span className="text-[#8B0000] font-extrabold block text-sm">03 // GOODS</span>
                     <p className="text-white text-xs font-bold">Tactile Apparel</p>
                     <p className="text-[11px] text-[#9CA3AF] font-sans">Heavyweight graphic streetwear on Etsy.</p>
                   </div>
@@ -262,7 +262,7 @@ export default function ManifestoPage() {
                   Just two caffeinated Moroccan nerds in Tangier turning ideas into production code and physical garments.
                 </p>
                 <div className="pt-2">
-                  <span className="font-mono text-xs text-[#D4AF37] bg-[#152319] px-4 py-1.5 rounded-full border border-[#D4AF37]/30">
+                  <span className="font-mono text-xs text-[#8B0000] bg-[#0D1527] px-4 py-1.5 rounded-full border border-[#8B0000]/30">
                     FUELED BY MINT TEA & ZERO BULLSHIT 🍵
                   </span>
                 </div>
@@ -274,7 +274,7 @@ export default function ManifestoPage() {
           <div className="w-full space-y-2">
             <div className="w-full h-1 bg-white/10 rounded-full overflow-hidden">
               <div
-                className="h-full bg-gradient-to-r from-[#D4AF37] to-[#E5C158] transition-all duration-1000 ease-linear"
+                className="h-full bg-gradient-to-r from-[#8B0000] to-[#A30000] transition-all duration-1000 ease-linear"
                 style={{
                   width: `${Math.min(100, (reelScene / 4) * 100)}%`,
                 }}
@@ -284,7 +284,7 @@ export default function ManifestoPage() {
               <span>ALL IN STUDIO FILM · TANGIER</span>
               <button
                 onClick={skipReel}
-                className="hover:text-[#D4AF37] text-white/70 transition-colors cursor-pointer font-bold"
+                className="hover:text-[#8B0000] text-white/70 transition-colors cursor-pointer font-bold"
               >
                 [ PRESS ENTER, SPACEBAR, OR CLICK ANYWHERE TO ENTER → ]
               </button>
@@ -297,14 +297,14 @@ export default function ManifestoPage() {
       {/* PHASE 2: CLEAN, MINIMAL "ABOUT US" PAGE (FEW WORDS, BIG IMPACT)           */}
       {/* ========================================================================= */}
       {/* Navigation Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 lg:px-12 py-4 flex items-center justify-between h-[88px] bg-[#1B291F]/95 backdrop-blur-md border-b border-[#D4AF37]/35 shadow-xl">
+      <header className="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 lg:px-12 py-4 flex items-center justify-between h-[88px] bg-[#111A2E]/95 backdrop-blur-md border-b border-[#8B0000]/35 shadow-xl">
         {/* Far Left: Logo */}
         <Link href="/" className="flex items-center gap-3 group focus:outline-none shrink-0">
           <div className="relative h-9 w-24 flex items-center">
             <Image src="/logo.png" alt="[ALN] Logo" width={110} height={70} className="h-full w-auto object-contain" priority />
           </div>
           <span className="font-mono text-base font-extrabold tracking-widest text-[#E5E7EB] hidden xs:flex items-center gap-2">
-            <span><span className="text-[#D4AF37]">[</span> ALN <span className="text-[#D4AF37]">]</span></span>
+            <span><span className="text-[#8B0000]">[</span> ALN <span className="text-[#8B0000]">]</span></span>
             <span className="text-white/30 font-normal">|</span>
             <span className="text-xs font-bold text-[#E5E7EB]/90 tracking-widest">ALL IN</span>
           </span>
@@ -312,24 +312,24 @@ export default function ManifestoPage() {
 
         {/* Center: Route Links */}
         <nav className="hidden md:flex items-center gap-6 lg:gap-8 font-mono text-[11px] lg:text-xs font-bold tracking-wider">
-          <Link href="/systems" className="text-[#E5E7EB]/80 hover:text-[#D4AF37] transition-colors flex items-center gap-1">
-            <span className="text-[#D4AF37]">01 //</span> SYSTEMS
+          <Link href="/systems" className="text-[#E5E7EB]/80 hover:text-[#8B0000] transition-colors flex items-center gap-1">
+            <span className="text-[#8B0000]">01 //</span> SYSTEMS
           </Link>
-          <Link href="/products" className="text-[#E5E7EB]/80 hover:text-[#D4AF37] transition-colors flex items-center gap-1">
-            <span className="text-[#D4AF37]">02 //</span> PRODUCTS
+          <Link href="/products" className="text-[#E5E7EB]/80 hover:text-[#8B0000] transition-colors flex items-center gap-1">
+            <span className="text-[#8B0000]">02 //</span> PRODUCTS
           </Link>
-          <Link href="/goods" className="text-[#E5E7EB]/80 hover:text-[#D4AF37] transition-colors flex items-center gap-1">
-            <span className="text-[#D4AF37]">03 //</span> GOODS
+          <Link href="/goods" className="text-[#E5E7EB]/80 hover:text-[#8B0000] transition-colors flex items-center gap-1">
+            <span className="text-[#8B0000]">03 //</span> GOODS
           </Link>
-          <Link href="/philosophy" className="text-[#D4AF37] border-b-2 border-[#D4AF37] pb-1 flex items-center gap-1">
-            <span className="text-[#D4AF37]">04 //</span> PHILOSOPHY
+          <Link href="/philosophy" className="text-[#8B0000] border-b-2 border-[#8B0000] pb-1 flex items-center gap-1">
+            <span className="text-[#8B0000]">04 //</span> PHILOSOPHY
           </Link>
         </nav>
 
         {/* Far Right: Contact */}
         <a
           href="#contact"
-          className="font-mono text-xs font-extrabold text-[#1B291F] bg-[#D4AF37] hover:bg-[#E5C158] px-5 py-2 rounded-full transition-all shadow-md hover:scale-105 cursor-pointer"
+          className="font-mono text-xs font-extrabold text-white bg-[#8B0000] hover:bg-[#A30000] px-5 py-2 rounded-full transition-all shadow-md hover:scale-105 cursor-pointer"
         >
           [ GET IN TOUCH ]
         </a>
@@ -342,10 +342,10 @@ export default function ManifestoPage() {
           {/* Left Column: Short Story */}
           <div className="lg:col-span-7 space-y-6 text-left">
             <div className="flex flex-wrap items-center gap-3 font-mono text-xs text-[#9CA3AF]">
-              <span className="text-[#D4AF37] font-bold">04 // PHILOSOPHY</span>
+              <span className="text-[#8B0000] font-bold">04 // PHILOSOPHY</span>
               <span>/</span>
               <span>ABOUT THE STUDIO</span>
-              <span className="bg-[#1B291F] px-3 py-1 rounded-full border border-[#D4AF37]/30 text-[#D4AF37] font-bold">
+              <span className="bg-[#111A2E] px-3 py-1 rounded-full border border-[#8B0000]/30 text-[#8B0000] font-bold">
                 📍 TANGIER HQ
               </span>
             </div>
@@ -354,7 +354,7 @@ export default function ManifestoPage() {
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-[1.1]">
                 We Ship the Entire Machine. From Tangier to the World.
               </h1>
-              <p className="text-sm sm:text-base text-[#D4AF37] font-mono italic">
+              <p className="text-sm sm:text-base text-[#8B0000] font-mono italic">
                 “ALL LINES. ALL IDEAS. NOW.”
               </p>
             </div>
@@ -369,13 +369,13 @@ export default function ManifestoPage() {
             </div>
 
             <div className="flex flex-wrap gap-2 pt-1 font-mono text-xs">
-              <span className="bg-[#1B291F] px-3.5 py-1.5 rounded-full border border-[#D4AF37]/30 text-[#D4AF37] font-bold">
+              <span className="bg-[#111A2E] px-3.5 py-1.5 rounded-full border border-[#8B0000]/30 text-[#8B0000] font-bold">
                 100% CODE OWNERSHIP
               </span>
-              <span className="bg-[#1B291F] px-3.5 py-1.5 rounded-full border border-[#D4AF37]/30 text-white font-bold">
+              <span className="bg-[#111A2E] px-3.5 py-1.5 rounded-full border border-[#8B0000]/30 text-white font-bold">
                 ZERO MIDDLEMEN
               </span>
-              <span className="bg-[#1B291F] px-3.5 py-1.5 rounded-full border border-emerald-400/30 text-emerald-400 font-bold">
+              <span className="bg-[#111A2E] px-3.5 py-1.5 rounded-full border border-emerald-400/30 text-emerald-400 font-bold">
                 DIRECT FOUNDER ACCESS
               </span>
             </div>
@@ -383,7 +383,7 @@ export default function ManifestoPage() {
 
           {/* Right Column: The Option B Picture */}
           <div className="lg:col-span-5 flex justify-center">
-            <div className="relative w-full max-w-[480px] aspect-[4/5] rounded-3xl overflow-hidden border-2 border-[#D4AF37]/50 shadow-2xl group bg-[#111A13]">
+            <div className="relative w-full max-w-[480px] aspect-[4/5] rounded-3xl overflow-hidden border-2 border-[#8B0000]/50 shadow-2xl group bg-[#111A13]">
               <Image
                 src="/Option B.webp"
                 alt="ALL IN Studio Archival Piece"
@@ -393,7 +393,7 @@ export default function ManifestoPage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-70" />
               <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between font-mono text-xs bg-black/80 backdrop-blur-md p-3 rounded-2xl border border-white/10">
-                <span className="text-[#D4AF37] font-bold">[ ALN ] STUDIO ARCHIVE</span>
+                <span className="text-[#8B0000] font-bold">[ ALN ] STUDIO ARCHIVE</span>
                 <span className="text-[#9CA3AF] text-[10px]">TANGIER · 35.7595° N</span>
               </div>
             </div>
@@ -403,7 +403,7 @@ export default function ManifestoPage() {
         {/* THE 3 CORE PILLARS (CLEAN & DIRECT) */}
         <section className="space-y-6">
           <div className="space-y-1">
-            <span className="font-mono text-xs text-[#D4AF37] font-extrabold tracking-widest uppercase">
+            <span className="font-mono text-xs text-[#8B0000] font-extrabold tracking-widest uppercase">
               // WHAT WE DO
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
@@ -413,9 +413,9 @@ export default function ManifestoPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 font-mono text-xs">
             {/* 01 Systems */}
-            <div className="bg-[#1B291F] p-6 rounded-2xl border border-[#D4AF37]/30 hover:border-[#D4AF37] transition-all space-y-4 flex flex-col justify-between">
+            <div className="bg-[#111A2E] p-6 rounded-2xl border border-[#8B0000]/30 hover:border-[#8B0000] transition-all space-y-4 flex flex-col justify-between">
               <div className="space-y-2">
-                <span className="text-[#D4AF37] font-extrabold text-sm block">01 // SYSTEMS</span>
+                <span className="text-[#8B0000] font-extrabold text-sm block">01 // SYSTEMS</span>
                 <h3 className="text-lg font-bold text-white font-sans">Full-Stack Web Engineering</h3>
                 <p className="text-xs text-[#9CA3AF] font-sans leading-relaxed">
                   We build custom SaaS, marketplaces, and e-commerce flagships from scratch. PostgreSQL, Next.js 16, sub-second speeds.
@@ -423,16 +423,16 @@ export default function ManifestoPage() {
               </div>
               <Link
                 href="/systems"
-                className="font-bold text-[#1B291F] bg-[#D4AF37] hover:bg-[#E5C158] py-2 px-4 rounded-full text-center transition-all block mt-2"
+                className="font-bold text-white bg-[#8B0000] hover:bg-[#A30000] py-2 px-4 rounded-full text-center transition-all block mt-2"
               >
                 [ EXPLORE SYSTEMS → ]
               </Link>
             </div>
 
             {/* 02 Products */}
-            <div className="bg-[#1B291F] p-6 rounded-2xl border border-[#D4AF37]/30 hover:border-[#D4AF37] transition-all space-y-4 flex flex-col justify-between">
+            <div className="bg-[#111A2E] p-6 rounded-2xl border border-[#8B0000]/30 hover:border-[#8B0000] transition-all space-y-4 flex flex-col justify-between">
               <div className="space-y-2">
-                <span className="text-[#D4AF37] font-extrabold text-sm block">02 // PRODUCTS</span>
+                <span className="text-[#8B0000] font-extrabold text-sm block">02 // PRODUCTS</span>
                 <h3 className="text-lg font-bold text-white font-sans">Digital Tools & Blueprints</h3>
                 <p className="text-xs text-[#9CA3AF] font-sans leading-relaxed">
                   Independent developer starters, billing engines, and simulators published directly on our Gumroad storefront.
@@ -442,16 +442,16 @@ export default function ManifestoPage() {
                 href="https://allinbrand.gumroad.com/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-bold text-white bg-[#243528] hover:bg-[#111A13] border border-[#D4AF37]/40 py-2 px-4 rounded-full text-center transition-all block mt-2"
+                className="font-bold text-white bg-[#0A0F1D] hover:bg-[#111A13] border border-[#8B0000]/40 py-2 px-4 rounded-full text-center transition-all block mt-2"
               >
                 [ GUMROAD STORE ↗ ]
               </a>
             </div>
 
             {/* 03 Goods */}
-            <div className="bg-[#1B291F] p-6 rounded-2xl border border-[#D4AF37]/30 hover:border-[#D4AF37] transition-all space-y-4 flex flex-col justify-between">
+            <div className="bg-[#111A2E] p-6 rounded-2xl border border-[#8B0000]/30 hover:border-[#8B0000] transition-all space-y-4 flex flex-col justify-between">
               <div className="space-y-2">
-                <span className="text-[#D4AF37] font-extrabold text-sm block">03 // GOODS</span>
+                <span className="text-[#8B0000] font-extrabold text-sm block">03 // GOODS</span>
                 <h3 className="text-lg font-bold text-white font-sans">Tactile Archival Apparel</h3>
                 <p className="text-xs text-[#9CA3AF] font-sans leading-relaxed">
                   Heavyweight structured graphic tees and hoodies stamped with our architectural wireframes and coordinates on Etsy.
@@ -461,7 +461,7 @@ export default function ManifestoPage() {
                 href="https://www.etsy.com/shop/allinbrand/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-bold text-white bg-[#243528] hover:bg-[#111A13] border border-[#D4AF37]/40 py-2 px-4 rounded-full text-center transition-all block mt-2"
+                className="font-bold text-white bg-[#0A0F1D] hover:bg-[#111A13] border border-[#8B0000]/40 py-2 px-4 rounded-full text-center transition-all block mt-2"
               >
                 [ ETSY SHOP ↗ ]
               </a>
@@ -470,9 +470,9 @@ export default function ManifestoPage() {
         </section>
 
         {/* THE WITTY CLOSING SIGN-OFF */}
-        <section className="bg-[#1B291F] border-2 border-[#D4AF37] rounded-3xl p-8 sm:p-12 text-center space-y-8 shadow-2xl">
+        <section className="bg-[#111A2E] border-2 border-[#8B0000] rounded-3xl p-8 sm:p-12 text-center space-y-8 shadow-2xl">
           <div className="space-y-3">
-            <span className="font-mono text-xs text-[#D4AF37] font-bold tracking-widest uppercase bg-[#243528] px-4 py-1.5 rounded-full border border-[#D4AF37]/40 inline-block">
+            <span className="font-mono text-xs text-[#8B0000] font-bold tracking-widest uppercase bg-[#0A0F1D] px-4 py-1.5 rounded-full border border-[#8B0000]/40 inline-block">
               // THE NEXT MOVE IS YOURS
             </span>
             <h2 className="text-2xl sm:text-4xl font-black text-white tracking-tight">
@@ -481,9 +481,9 @@ export default function ManifestoPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto text-left font-sans">
-            <div className="bg-[#243528] p-6 rounded-2xl border border-[#D4AF37]/30 space-y-3 flex flex-col justify-between">
+            <div className="bg-[#0A0F1D] p-6 rounded-2xl border border-[#8B0000]/30 space-y-3 flex flex-col justify-between">
               <div>
-                <span className="font-mono text-xs text-[#D4AF37] font-extrabold block">[ 01 // HIRE US ]</span>
+                <span className="font-mono text-xs text-[#8B0000] font-extrabold block">[ 01 // HIRE US ]</span>
                 <h4 className="text-base font-bold text-white mt-1">Engineer a System</h4>
                 <p className="text-xs text-[#9CA3AF] mt-1 leading-relaxed">
                   Have an ambitious web platform or SaaS? Talk directly with the engineers.
@@ -491,15 +491,15 @@ export default function ManifestoPage() {
               </div>
               <a
                 href="#contact"
-                className="font-mono text-xs font-extrabold text-[#1B291F] bg-[#D4AF37] hover:bg-[#E5C158] py-2 px-4 rounded-full text-center block transition-all mt-3"
+                className="font-mono text-xs font-extrabold text-white bg-[#8B0000] hover:bg-[#A30000] py-2 px-4 rounded-full text-center block transition-all mt-3"
               >
                 START A PROJECT ↓
               </a>
             </div>
 
-            <div className="bg-[#243528] p-6 rounded-2xl border border-[#D4AF37]/30 space-y-3 flex flex-col justify-between">
+            <div className="bg-[#0A0F1D] p-6 rounded-2xl border border-[#8B0000]/30 space-y-3 flex flex-col justify-between">
               <div>
-                <span className="font-mono text-xs text-[#D4AF37] font-extrabold block">[ 02 // SHOP ]</span>
+                <span className="font-mono text-xs text-[#8B0000] font-extrabold block">[ 02 // SHOP ]</span>
                 <h4 className="text-base font-bold text-white mt-1">Digital Tools & Goods</h4>
                 <p className="text-xs text-[#9CA3AF] mt-1 leading-relaxed">
                   Get our code templates on Gumroad or our heavyweight streetwear on Etsy.
@@ -510,7 +510,7 @@ export default function ManifestoPage() {
                   href="https://allinbrand.gumroad.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 py-2 rounded-full text-center bg-[#1B291F] text-white hover:text-[#D4AF37] border border-white/10"
+                  className="flex-1 py-2 rounded-full text-center bg-[#111A2E] text-white hover:text-[#8B0000] border border-white/10"
                 >
                   GUMROAD ↗
                 </a>
@@ -518,14 +518,14 @@ export default function ManifestoPage() {
                   href="https://www.etsy.com/shop/allinbrand/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 py-2 rounded-full text-center bg-[#1B291F] text-white hover:text-[#D4AF37] border border-white/10"
+                  className="flex-1 py-2 rounded-full text-center bg-[#111A2E] text-white hover:text-[#8B0000] border border-white/10"
                 >
                   ETSY ↗
                 </a>
               </div>
             </div>
 
-            <div className="bg-[#243528] p-6 rounded-2xl border border-emerald-400/30 space-y-3 flex flex-col justify-between">
+            <div className="bg-[#0A0F1D] p-6 rounded-2xl border border-emerald-400/30 space-y-3 flex flex-col justify-between">
               <div>
                 <span className="font-mono text-xs text-emerald-400 font-extrabold block">[ 03 // RELAX ]</span>
                 <h4 className="text-base font-bold text-white mt-1">Drink Mint Tea 🍵</h4>
@@ -533,7 +533,7 @@ export default function ManifestoPage() {
                   Close your laptop, step away from the screen, and brew a hot pot of fresh mint tea.
                 </p>
               </div>
-              <div className="py-2 bg-[#1B291F] text-emerald-400 font-mono text-[11px] font-bold rounded-full text-center border border-emerald-400/20 mt-3">
+              <div className="py-2 bg-[#111A2E] text-emerald-400 font-mono text-[11px] font-bold rounded-full text-center border border-emerald-400/20 mt-3">
                 ENJOY LIFE · NO STRESS
               </div>
             </div>
@@ -541,29 +541,29 @@ export default function ManifestoPage() {
         </section>
 
         {/* 1-CLICK ALL-ACCESS HUB */}
-        <section className="bg-[#1B291F] border border-[#E5E7EB]/10 rounded-2xl p-6 sm:p-8 space-y-4 font-mono text-xs">
+        <section className="bg-[#111A2E] border border-[#E5E7EB]/10 rounded-2xl p-6 sm:p-8 space-y-4 font-mono text-xs">
           <div className="flex items-center justify-between border-b border-white/10 pb-3">
-            <span className="text-[#D4AF37] font-bold uppercase">// 1-CLICK ALL-ACCESS HUB</span>
+            <span className="text-[#8B0000] font-bold uppercase">// 1-CLICK ALL-ACCESS HUB</span>
             <span className="text-[#9CA3AF] text-[11px]">DIRECT DESTINATIONS</span>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
-            <Link href="/systems" className="bg-[#243528] p-3 rounded-xl border border-white/5 hover:border-[#D4AF37] transition-all">
-              <span className="text-[#D4AF37] font-bold block">01 // SYSTEMS</span>
+            <Link href="/systems" className="bg-[#0A0F1D] p-3 rounded-xl border border-white/5 hover:border-[#8B0000] transition-all">
+              <span className="text-[#8B0000] font-bold block">01 // SYSTEMS</span>
               <span className="text-white text-[11px] block mt-0.5">Software Builds</span>
             </Link>
-            <Link href="/products" className="bg-[#243528] p-3 rounded-xl border border-white/5 hover:border-[#D4AF37] transition-all">
-              <span className="text-[#D4AF37] font-bold block">02 // PRODUCTS</span>
+            <Link href="/products" className="bg-[#0A0F1D] p-3 rounded-xl border border-white/5 hover:border-[#8B0000] transition-all">
+              <span className="text-[#8B0000] font-bold block">02 // PRODUCTS</span>
               <span className="text-white text-[11px] block mt-0.5">Gumroad Store</span>
             </Link>
-            <Link href="/goods" className="bg-[#243528] p-3 rounded-xl border border-white/5 hover:border-[#D4AF37] transition-all">
-              <span className="text-[#D4AF37] font-bold block">03 // GOODS</span>
+            <Link href="/goods" className="bg-[#0A0F1D] p-3 rounded-xl border border-white/5 hover:border-[#8B0000] transition-all">
+              <span className="text-[#8B0000] font-bold block">03 // GOODS</span>
               <span className="text-white text-[11px] block mt-0.5">Etsy Apparel</span>
             </Link>
             <a
               href="https://github.com/thealnbrand/all-in-web"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-[#243528] p-3 rounded-xl border border-white/5 hover:border-emerald-400 transition-all text-emerald-400 font-bold"
+              className="bg-[#0A0F1D] p-3 rounded-xl border border-white/5 hover:border-emerald-400 transition-all text-emerald-400 font-bold"
             >
               <span className="block">GITHUB ↗</span>
               <span className="text-white text-[11px] font-normal block mt-0.5">Open Codebase</span>
