@@ -59,7 +59,9 @@ export default function Home() {
         }`}
       >
         {/* Far Left: [ ALN ] Logo Anchor */}
-        <Link href="/" className="flex items-center gap-3 group focus:outline-none shrink-0">
+        <Link href="/" className="relative flex items-center gap-3 group focus:outline-none shrink-0">
+          {/* Radial glow behind logo for contrast on dark bg */}
+          <div className="absolute -inset-3 rounded-full bg-[#8B0000]/18 blur-2xl pointer-events-none" />
           <div className="relative h-9 w-24 flex items-center">
             <Image
               src="/logo.png"
@@ -70,7 +72,7 @@ export default function Home() {
               priority
             />
           </div>
-          <span className="font-mono text-base font-extrabold tracking-widest text-[#E5E7EB] hidden xs:flex items-center gap-2">
+          <span className="relative font-mono text-base font-extrabold tracking-widest text-[#E5E7EB] hidden xs:flex items-center gap-2">
             <span><span className="text-[#8B0000]">[</span> ALN <span className="text-[#8B0000]">]</span></span>
             <span className="text-white/30 font-normal">|</span>
             <span className="text-xs font-bold text-[#E5E7EB]/90 tracking-widest">ALL IN</span>
