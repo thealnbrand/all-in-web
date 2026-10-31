@@ -15,6 +15,7 @@ import { StudioAnchor } from '../components/StudioAnchor';
 import { Preloader } from '../components/Preloader';
 import { ScrollReveal } from '../components/ScrollReveal';
 import { FloatingNavDock } from '../components/FloatingNavDock';
+import { Hero3DGeometricBackground } from '../components/Hero3DGeometricBackground';
 
 export default function Home() {
   const [inquirySubject, setInquirySubject] = useState<string>('');
@@ -106,119 +107,8 @@ export default function Home() {
 
       {/* Unified Hero Section (Navbar, Background Image & Big Logo + Overlapping Product Cards on Right) */}
       <section className="relative w-full min-h-[850px] sm:min-h-[880px] lg:min-h-[920px] bg-[#0A0F1D] overflow-hidden">
-        {/* 2D Geometric Diagonal/Triangular Cut Architectural Layer */}
-        <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden select-none">
-          {/* Desktop & Tablet: Sweeping diagonal polygon slice + faceted corner cut */}
-          <svg
-            className="hidden sm:block absolute inset-0 w-full h-full"
-            viewBox="0 0 1000 1000"
-            preserveAspectRatio="none"
-            aria-hidden="true"
-          >
-            <defs>
-              <linearGradient id="heroCrimsonWedge" x1="1" y1="0" x2="0.3" y2="1">
-                <stop offset="0%" stopColor="#8B0000" stopOpacity="0.95" />
-                <stop offset="55%" stopColor="#750000" stopOpacity="0.88" />
-                <stop offset="100%" stopColor="#4A0000" stopOpacity="0.8" />
-              </linearGradient>
-              <linearGradient id="heroFacetWedge" x1="1" y1="0" x2="0.75" y2="0.6">
-                <stop offset="0%" stopColor="#A30000" stopOpacity="0.7" />
-                <stop offset="100%" stopColor="#550000" stopOpacity="0.35" />
-              </linearGradient>
-              <linearGradient id="heroSeamGlow" x1="0.76" y1="0" x2="0.46" y2="1">
-                <stop offset="0%" stopColor="#EF4444" stopOpacity="0.95" />
-                <stop offset="45%" stopColor="#DC2626" stopOpacity="0.75" />
-                <stop offset="100%" stopColor="#8B0000" stopOpacity="0.3" />
-              </linearGradient>
-            </defs>
-
-            {/* Main Diagonal Polygon Wedge (Right Flank) */}
-            <polygon
-              points="760,0 1000,0 1000,1000 460,1000"
-              fill="url(#heroCrimsonWedge)"
-            />
-
-            {/* Architectural Facet Triangle (Top-Right Precision Slice) */}
-            <polygon
-              points="820,0 1000,0 1000,420"
-              fill="url(#heroFacetWedge)"
-            />
-
-            {/* Glowing Accent Seam Line */}
-            <line
-              x1="760"
-              y1="0"
-              x2="460"
-              y2="1000"
-              stroke="#8B0000"
-              strokeWidth="5"
-              strokeOpacity="0.4"
-            />
-            {/* Razor-Sharp Front Seam Highlight */}
-            <line
-              x1="760"
-              y1="0"
-              x2="460"
-              y2="1000"
-              stroke="url(#heroSeamGlow)"
-              strokeWidth="1.5"
-            />
-
-            {/* Secondary Facet Seam Line */}
-            <line
-              x1="820"
-              y1="0"
-              x2="1000"
-              y2="420"
-              stroke="#EF4444"
-              strokeWidth="1"
-              strokeOpacity="0.45"
-            />
-
-            {/* Tangier Studio Precision Coordinates Hatch / Crosshair Accent */}
-            <g opacity="0.35" stroke="#EF4444" strokeWidth="1">
-              <line x1="720" y1="180" x2="745" y2="180" />
-              <line x1="732.5" y1="167.5" x2="732.5" y2="192.5" />
-            </g>
-          </svg>
-
-          {/* Mobile Optimized: Responsive geometric diagonal wedge keeping left text unobstructed */}
-          <svg
-            className="block sm:hidden absolute inset-0 w-full h-full"
-            viewBox="0 0 1000 1000"
-            preserveAspectRatio="none"
-            aria-hidden="true"
-          >
-            <defs>
-              <linearGradient id="heroMobileCrimson" x1="1" y1="0" x2="0.6" y2="1">
-                <stop offset="0%" stopColor="#8B0000" stopOpacity="0.9" />
-                <stop offset="100%" stopColor="#4A0000" stopOpacity="0.75" />
-              </linearGradient>
-              <linearGradient id="heroMobileSeam" x1="0.85" y1="0" x2="0.62" y2="1">
-                <stop offset="0%" stopColor="#EF4444" stopOpacity="0.9" />
-                <stop offset="100%" stopColor="#8B0000" stopOpacity="0.4" />
-              </linearGradient>
-            </defs>
-
-            {/* Mobile Diagonal Wedge */}
-            <polygon
-              points="840,0 1000,0 1000,1000 620,1000"
-              fill="url(#heroMobileCrimson)"
-            />
-            {/* Mobile Razor Seam */}
-            <line
-              x1="840"
-              y1="0"
-              x2="620"
-              y2="1000"
-              stroke="url(#heroMobileSeam)"
-              strokeWidth="1.5"
-            />
-          </svg>
-
-          {/* Ambient Crimson Radial Bloom behind Big Logo */}
-          <div className="absolute top-[80px] right-0 w-[420px] sm:w-[580px] h-[420px] sm:h-[580px] bg-[#8B0000]/25 rounded-full blur-[100px] pointer-events-none" />
-        </div>
+        {/* 3D Geometric Background — WebGL extruded crimson monolith (Three.js) */}
+        <Hero3DGeometricBackground />
 
         {/* Left Side: Industrial Telemetry HUD, Kinetic Tagline & Action Deck */}
         <div className="absolute top-[100px] sm:top-[115px] lg:top-[130px] left-6 sm:left-10 lg:left-16 xl:left-24 max-w-[500px] lg:max-w-[580px] z-20 flex flex-col gap-5 sm:gap-6 text-left pointer-events-auto">
