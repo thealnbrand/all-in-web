@@ -52,7 +52,7 @@ const DEFAULT_CAPSULE_ITEMS: CapsuleItem[] = [
     visual2Tag: '[ SILHOUETTE ]',
     visual2Sub: 'BOXY STREETWEAR FIT',
     description:
-      'Engineered with high-resolution studio typography, Tangier coordinate stamps (35.7595° N, 5.8340° W), and architectural wireframe prints on premium structured blanks.',
+      'Engineered with high-resolution studio typography, Tangier coordinate stamps, and architectural wireframe prints on premium structured blanks.',
     blankSelection: 'Curated Heavyweight Streetwear Cotton',
     printMethod: 'High-Resolution Direct-to-Garment (DTG)',
     fitProfile: 'Architectural Relaxed / Drop-Shoulder',

@@ -140,7 +140,7 @@ export default function GoodsPage() {
           <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pt-2">
             <div className="space-y-3">
               <span className="font-mono text-xs text-[#E5E7EB]/40 tracking-widest block uppercase">
-                ALL IN APPAREL DIVISION // TANGIER 35.7595° N, 5.8340° W
+                ALL IN APPAREL DIVISION // TANGIER HQ
               </span>
               <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight">
                 TACTILE GOODS & ARCHIVAL PRINTS

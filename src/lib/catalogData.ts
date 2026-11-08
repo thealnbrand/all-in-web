@@ -42,7 +42,7 @@ export const DEFAULT_GOODS_CATALOG: GoodsCatalogItem[] = [
     secondary_image: '/Lifestyle, Black (1).jpeg',
     gallery: ['/TactileGoods.webp', '/Lifestyle, Black (1).jpeg'],
     description:
-      'Engineered with high-resolution studio typography, Tangier coordinate stamps (35.7595° N, 5.8340° W), and architectural wireframe prints on premium structured blanks. Built for everyday studio wear with a boxy drop-shoulder silhouette and double-layered hood.',
+      'Engineered with high-resolution studio typography, Tangier coordinate stamps, and architectural wireframe prints on premium structured blanks. Built for everyday studio wear with a boxy drop-shoulder silhouette and double-layered hood.',
     materials: 'Curated Heavyweight Streetwear Cotton',
     url: EXTERNAL_LINKS.ETSY.CAPSULE_001_FLEECE,
     sort_order: 1,

@@ -314,9 +314,7 @@ export default function SystemsPage() {
               <span>/</span>
               <span className="text-[#E5E7EB]/50">PRODUCTION ENGINEERING</span>
             </div>
-            <div className="bg-[#111A2E] px-3.5 py-1.5 rounded-full border border-[#8B0000]/30 text-[#8B0000] font-bold">
-              📍 35.7595° N, 5.8340° W · TANGIER HQ
-            </div>
+
           </div>
 
           <div className="space-y-4 max-w-[950px]">

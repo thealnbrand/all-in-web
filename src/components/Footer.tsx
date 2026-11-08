@@ -87,8 +87,8 @@ export const Footer: React.FC = () => {
               </a>
             </div>
             <div>
-              <span className="text-[#9CA3AF]">STUDIO COORDINATES:</span>
-              <p className="text-[#E5E7EB] mt-0.5">35.7595° N, 5.8340° W (TANGIER HQ)</p>
+              <span className="text-[#9CA3AF]">LOCATION:</span>
+              <p className="text-[#E5E7EB] mt-0.5">TANGIER HQ · MOROCCO</p>
             </div>
           </div>
         </div>

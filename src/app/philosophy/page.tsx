@@ -172,7 +172,7 @@ export default function ManifestoPage() {
                 </div>
                 <div className="space-y-1 font-mono">
                   <span className="text-[#8B0000] font-extrabold text-xs sm:text-sm tracking-widest uppercase block">
-                    📍 35.7595° N, 5.8340° W · TANGIER HQ
+                    TANGIER HQ
                   </span>
                   <span className="text-[#9CA3AF] text-xs tracking-wider block">
                     STRAIT OF GIBRALTAR · MOROCCO
@@ -345,9 +345,7 @@ export default function ManifestoPage() {
               <span className="text-[#8B0000] font-bold">04 // PHILOSOPHY</span>
               <span>/</span>
               <span>ABOUT THE STUDIO</span>
-              <span className="bg-[#111A2E] px-3 py-1 rounded-full border border-[#8B0000]/30 text-[#8B0000] font-bold">
-                📍 TANGIER HQ
-              </span>
+
             </div>
 
             <div className="space-y-3">
@@ -394,7 +392,7 @@ export default function ManifestoPage() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-70" />
               <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between font-mono text-xs bg-black/80 backdrop-blur-md p-3 rounded-2xl border border-white/10">
                 <span className="text-[#8B0000] font-bold">[ ALN ] STUDIO ARCHIVE</span>
-                <span className="text-[#9CA3AF] text-[10px]">TANGIER · 35.7595° N</span>
+                <span className="text-[#9CA3AF] text-[10px]">TANGIER HQ</span>
               </div>
             </div>
           </div>

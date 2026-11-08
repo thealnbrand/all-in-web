@@ -14,7 +14,7 @@ export const StudioAnchor: React.FC = () => {
           </span>
           <span className="text-[#8B0000]/80 tracking-wider flex items-center gap-2">
             <span className="w-1.5 h-1.5 rounded-full bg-[#8B0000] animate-pulse" />
-            TANGIER, MOROCCO · 35.7595° N, 5.8340° W · SYS: ACTIVE
+            TANGIER, MOROCCO
           </span>
         </div>
 

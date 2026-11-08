@@ -647,7 +647,7 @@ export default function CommandPage() {
                 STUDIO COMMAND <span className="text-[#8B0000]">v2.4</span>
               </span>
               <span className="font-mono text-[9px] text-[#8B0000]">
-                TANGIER HQ // 35.7595° N, 5.8340° W
+                TANGIER HQ
               </span>
             </div>
           </Link>

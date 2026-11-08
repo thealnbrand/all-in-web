@@ -637,7 +637,7 @@ export const MouthDroppingHero2D: React.FC<MouthDroppingHero2DProps> = ({ onInqu
           </div>
           <div className="grid grid-cols-2 gap-2 text-[9px] text-[#9CA3AF]">
             <div>
-              <span className="text-[#8B0000]">LOC:</span> TANGIER [35.7595° N]
+              <span className="text-[#8B0000]">LOC:</span> TANGIER HQ
             </div>
             <div>
               <span className="text-[#8B0000]">POS:</span> X:{mousePos.x} Y:{mousePos.y}

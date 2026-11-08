@@ -108,7 +108,7 @@ export const PhilosophySection: React.FC = () => {
 
           <div className="pt-4 flex items-center justify-center gap-3 font-mono text-xs text-[#9CA3AF]">
             <span className="w-8 h-px bg-[#8B0000]/40" />
-            <span>ALL IN STUDIO [ ALN ] · TANGIER, MOROCCO · 35.7595° N, 5.8340° W</span>
+            <span>ALL IN STUDIO [ ALN ] · TANGIER, MOROCCO</span>
             <span className="w-8 h-px bg-[#8B0000]/40" />
           </div>
         </div>

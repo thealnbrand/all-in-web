@@ -5,7 +5,7 @@ export const STUDIO_METADATA = {
   tagline: 'Where engineering precision meets physical & digital artifacts.',
   shortBranding: '[ ALN ]',
   email: 'thealnbrand@gmail.com',
-  coordinates: '35.7595° N, 5.8340° W',
+  coordinates: 'TANGIER HQ',
   location: 'Tangier HQ, Morocco',
   timezone: 'WEST (UTC+1)',
   statusText: 'STUDIO STATUS: OPERATIONAL',
@@ -148,7 +148,7 @@ export const STUDIO_RELEASES: StudioRelease[] = [
     specifications: [
       'Curated heavyweight combed streetwear cotton blank',
       'High-resolution archival direct-to-garment (DTG) print',
-      'Tangier studio coordinates typography (35.7595° N, 5.8340° W)',
+      'Tangier studio coordinates typography',
       'Fulfilled on-demand via Printify and dispatched via Etsy',
     ],
     techStackOrMaterials: ['Curated Heavyweight Cotton', 'DTG Archival Print', 'Printify Fulfillment', 'Etsy Storefront'],
@@ -305,6 +305,6 @@ export const FAQ_ITEMS = [
   {
     question: 'Where is the studio based?',
     answer:
-      'Our primary studio is located in Tangier, Morocco (35.7595° N, 5.8340° W), with distributed operations across Europe and North Africa.',
+      'Our primary studio is located in Tangier, Morocco, with distributed operations across Europe and North Africa.',
   },
 ];
