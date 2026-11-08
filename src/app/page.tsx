@@ -204,10 +204,10 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Big Studio Logo Centered in the Hero (Middle & Significantly Larger) */}
-        <div className="absolute top-[520px] sm:top-[500px] lg:top-1/2 lg:-translate-y-1/2 left-1/2 -translate-x-1/2 lg:left-auto lg:translate-x-0 right-auto lg:right-6 xl:right-14 2xl:right-20 z-20 flex flex-col items-center lg:items-end p-2 pointer-events-auto">
-          {/* Big Logo */}
-          <div className="relative w-[320px] sm:w-[500px] md:w-[620px] lg:w-[720px] xl:w-[860px] 2xl:w-[980px] aspect-[1348/784] max-w-[92vw] transition-transform duration-500 hover:scale-105 filter drop-shadow-[0_0_60px_rgba(139,0,0,0.55)]">
+        {/* Studio Insignia Logo - Balanced & Anchored to the Right */}
+        <div className="absolute top-[540px] sm:top-[510px] lg:top-1/2 lg:-translate-y-1/2 left-1/2 -translate-x-1/2 lg:left-auto lg:translate-x-0 right-auto lg:right-10 xl:right-16 2xl:right-24 z-20 flex flex-col items-center lg:items-end p-2 pointer-events-auto">
+          {/* Studio Logo */}
+          <div className="relative w-[260px] sm:w-[380px] md:w-[480px] lg:w-[540px] xl:w-[620px] 2xl:w-[700px] aspect-[1348/784] max-w-[85vw] transition-transform duration-500 hover:scale-105 filter drop-shadow-[0_0_45px_rgba(139,0,0,0.45)]">
             <Image
               src="/logo.png"
               alt="ALL IN Studio Big Logo"
