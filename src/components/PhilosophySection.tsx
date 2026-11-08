@@ -1,31 +1,9 @@
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Link from 'next/link';
 
 export const PhilosophySection: React.FC = () => {
-  const [tangierTime, setTangierTime] = useState<string>('');
-
-  useEffect(() => {
-    const updateTime = () => {
-      try {
-        const now = new Date();
-        const timeStr = now.toLocaleTimeString('en-US', {
-          timeZone: 'Africa/Casablanca',
-          hour: '2-digit',
-          minute: '2-digit',
-          second: '2-digit',
-          hour12: false,
-        });
-        setTangierTime(`${timeStr} (GMT+1)`);
-      } catch {
-        setTangierTime('12:00:00 (GMT+1)');
-      }
-    };
-    updateTime();
-    const interval = setInterval(updateTime, 1000);
-    return () => clearInterval(interval);
-  }, []);
 
   return (
     <section id="philosophy" className="py-24 px-6 sm:px-12 lg:px-20 max-w-[1440px] mx-auto select-none font-sans scroll-mt-24 space-y-16">
@@ -39,19 +17,7 @@ export const PhilosophySection: React.FC = () => {
             <span className="h-px w-16 bg-[#8B0000]/30" />
           </div>
 
-          <div className="flex items-center gap-3 font-mono text-xs">
-            <div className="font-mono text-xs text-[#8B0000] bg-[#111A2E] px-3.5 py-1.5 rounded-full border border-[#8B0000]/30 flex items-center gap-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#8B0000] animate-ping" />
-              <span>35.7595° N, 5.8340° W // TANGIER HQ</span>
-            </div>
 
-            {tangierTime && (
-              <div className="hidden sm:flex items-center gap-1.5 text-[#9CA3AF] bg-[#111A2E] px-3 py-1.5 rounded-full border border-[#E5E7EB]/10">
-                <span className="text-[#8B0000]">LOCAL:</span>
-                <span>{tangierTime}</span>
-              </div>
-            )}
-          </div>
         </div>
 
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#E5E7EB] tracking-tight leading-tight pt-2">

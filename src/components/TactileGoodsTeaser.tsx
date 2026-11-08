@@ -351,10 +351,6 @@ export const TactileGoodsTeaser: React.FC<TactileGoodsTeaserProps> = ({ onInquir
 
       {/* C. Lower Row: 3 Selectable Capsule Product Cards */}
       <div className="space-y-4 relative z-10">
-        <div className="flex items-center justify-between font-mono text-xs text-[#8B0000] uppercase tracking-wider px-1">
-          <span>// SELECT CAPSULE EDITION TO INSPECT ({items.length} RELEASES)</span>
-          <span className="text-[#E5E7EB]/50 hidden sm:inline">CLICK ANY EDITION TO LOAD SPECS ABOVE</span>
-        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {items.map((item, idx) => {

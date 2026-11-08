@@ -21,6 +21,28 @@ export default function Home() {
   const [inquirySubject, setInquirySubject] = useState<string>('');
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const [activeLineIndex, setActiveLineIndex] = useState<number>(1);
+  const [tangierTime, setTangierTime] = useState<string>('');
+
+  React.useEffect(() => {
+    const updateTime = () => {
+      try {
+        const now = new Date();
+        const timeStr = now.toLocaleTimeString('en-US', {
+          timeZone: 'Africa/Casablanca',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+          hour12: false,
+        });
+        setTangierTime(`${timeStr} (GMT+1)`);
+      } catch {
+        setTangierTime('12:00:00 (GMT+1)');
+      }
+    };
+    updateTime();
+    const interval = setInterval(updateTime, 1000);
+    return () => clearInterval(interval);
+  }, []);
   React.useEffect(() => {
     const lineInterval = setInterval(() => {
       setActiveLineIndex((prev) => (prev + 1) % 3);
@@ -98,12 +120,20 @@ export default function Home() {
           </Link>
         </nav>
 
-        {/* Far Right: Action Trigger */}
-        <div className="flex items-center gap-3 sm:gap-4 shrink-0">
+        {/* Far Right: Tangier Live Telemetry & Action Trigger */}
+        <div className="flex items-center gap-3 sm:gap-4 shrink-0 font-mono">
+          {tangierTime && (
+            <div className="hidden sm:flex items-center gap-2 text-[11px] text-[#9CA3AF] bg-[#111A2E]/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-[#8B0000]/30 shadow-md">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#8B0000] animate-pulse" />
+              <span className="text-[#8B0000] font-bold">TNG:</span>
+              <span className="text-[#E5E7EB] font-medium">{tangierTime}</span>
+            </div>
+          )}
+
           {/* INITIATE Action Button */}
           <a
             href="#contact"
-            className="font-mono text-xs font-extrabold text-white bg-[#8B0000] hover:bg-[#A30000] px-5 py-2 rounded-full transition-all shadow-md hover:shadow-lg hover:scale-105 cursor-pointer flex items-center gap-1.5"
+            className="text-xs font-extrabold text-white bg-[#8B0000] hover:bg-[#A30000] px-5 py-2 rounded-full transition-all shadow-md hover:shadow-lg hover:scale-105 cursor-pointer flex items-center gap-1.5"
           >
             <span>[ INITIATE ]</span>
           </a>

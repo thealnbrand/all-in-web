@@ -88,10 +88,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ initialSubject =
               <span className="font-mono text-xs font-semibold text-[#8B0000] uppercase tracking-widest">
                 DIRECT DISPATCH CHANNEL // CLIENT INQUIRIES
               </span>
-              <div className="inline-flex items-center gap-2 font-mono text-[11px] text-emerald-400 bg-[#111A2E] px-3 py-1 rounded-full border border-emerald-400/30">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                <span>AVG. RESPONSE: &lt; 4 HOURS · SLOTS: 2 AVAILABLE</span>
-              </div>
+
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#E5E7EB] tracking-tight">
               Initiate Inquiry
