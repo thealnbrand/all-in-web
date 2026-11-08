@@ -115,16 +115,6 @@ export default function Home() {
 
         {/* Left Side: Industrial Telemetry HUD, Kinetic Tagline & Action Deck */}
         <div className="absolute top-[100px] sm:top-[115px] lg:top-[130px] left-6 sm:left-10 lg:left-16 xl:left-24 max-w-[500px] lg:max-w-[580px] z-20 flex flex-col gap-5 sm:gap-6 text-left pointer-events-auto">
-          {/* Status Badge */}
-          <div className="inline-flex items-center gap-2.5 font-mono text-[10px] sm:text-[11px] tracking-widest bg-[#0D1527]/90 backdrop-blur-md px-3.5 py-1.5 rounded-full border border-[#8B0000]/40 shadow-lg w-fit">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#8B0000] opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#8B0000]" />
-            </span>
-            <span className="text-[#8B0000] font-extrabold uppercase">
-              // ALL IN STUDIO · TANGIER OPERATIONAL LAB
-            </span>
-          </div>
 
           {/* High-Impact Kinetic Headline with Cycling Golden Metallic Highlight */}
           <div className="space-y-1">
