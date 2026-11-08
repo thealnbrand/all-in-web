@@ -144,7 +144,7 @@ export default function Home() {
       <section className="relative w-full min-h-[850px] sm:min-h-[880px] lg:min-h-[920px] overflow-hidden">
 
         {/* Left Side: Industrial Telemetry HUD, Kinetic Tagline & Action Deck */}
-        <div className="absolute top-[100px] sm:top-[115px] lg:top-[130px] left-6 sm:left-10 lg:left-16 xl:left-24 max-w-[500px] lg:max-w-[580px] z-20 flex flex-col gap-5 sm:gap-6 text-left pointer-events-auto">
+        <div className="absolute top-[100px] sm:top-[115px] lg:top-1/2 lg:-translate-y-1/2 left-6 sm:left-10 lg:left-16 xl:left-24 max-w-[500px] lg:max-w-[580px] z-20 flex flex-col gap-5 sm:gap-6 text-left pointer-events-auto">
 
           {/* High-Impact Kinetic Headline with Cycling Golden Metallic Highlight */}
           <div className="space-y-1">
@@ -204,16 +204,16 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Big Logo Positioned Higher and to the Right */}
-        <div className="absolute top-[85px] sm:top-[95px] lg:top-[105px] right-4 sm:right-10 lg:right-16 xl:right-24 z-20 flex flex-col items-end gap-4 sm:gap-5 p-2">
+        {/* Big Studio Logo Centered in the Hero (Middle & Significantly Larger) */}
+        <div className="absolute top-[520px] sm:top-[500px] lg:top-1/2 lg:-translate-y-1/2 left-1/2 -translate-x-1/2 lg:left-auto lg:translate-x-0 right-auto lg:right-6 xl:right-14 2xl:right-20 z-20 flex flex-col items-center lg:items-end p-2 pointer-events-auto">
           {/* Big Logo */}
-          <div className="relative w-[260px] sm:w-[400px] md:w-[500px] lg:w-[600px] xl:w-[660px] aspect-[3/1] max-w-[85vw] transition-transform duration-500 hover:scale-105 filter drop-shadow-[0_0_45px_rgba(139,0,0,0.45)]">
+          <div className="relative w-[320px] sm:w-[500px] md:w-[620px] lg:w-[720px] xl:w-[860px] 2xl:w-[980px] aspect-[1348/784] max-w-[92vw] transition-transform duration-500 hover:scale-105 filter drop-shadow-[0_0_60px_rgba(139,0,0,0.55)]">
             <Image
               src="/logo.png"
               alt="ALL IN Studio Big Logo"
               fill
               priority
-              className="object-contain object-right-top"
+              className="object-contain object-center lg:object-right"
             />
           </div>
         </div>
