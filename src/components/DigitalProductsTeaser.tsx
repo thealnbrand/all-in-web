@@ -35,15 +35,8 @@ export const DigitalProductsTeaser: React.FC<DigitalProductsTeaserProps> = () =>
 
   return (
     <section id="products" className="relative py-20 px-6 sm:px-12 lg:px-20 max-w-[1440px] mx-auto select-none font-sans scroll-mt-24 space-y-12 overflow-hidden rounded-3xl">
-      {/* Visible Ambient Background Atmospheric Image */}
-      <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden rounded-3xl">
-        <img
-          src="/DigitalProducts.webp"
-          alt=""
-          className="w-full h-full object-cover object-center opacity-20 filter contrast-125"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F1D]/85 via-transparent to-[#0A0F1D]/95" />
-      </div>
+
+
 
       {/* A. Section Header: Open Digital Catalog Framing + Direct Gumroad Store Link */}
       <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 relative z-10">

@@ -78,21 +78,6 @@ export const PhilosophySection: React.FC = () => {
         {/* Thesis 01: Systems & Engineering */}
         <div className="bg-[#111A2E] border border-[#E5E7EB]/10 hover:border-[#8B0000]/50 rounded-2xl overflow-hidden transition-all shadow-xl flex flex-col justify-between group hover:shadow-[0_0_35px_rgba(139,0,0,0.15)] relative">
           <div>
-            {/* Visual Header Image */}
-            <div className="relative h-48 w-full overflow-hidden bg-[#111A13]">
-              <img
-                src="/Engineering.webp"
-                alt="Engineering Architecture & Code Discipline"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#111A2E] via-[#111A2E]/40 to-transparent" />
-              <div className="absolute top-3 left-4 right-4 flex items-center justify-between">
-                <span className="font-mono text-2xl font-black text-[#8B0000] drop-shadow-md">01</span>
-                <span className="font-mono text-[9px] tracking-widest uppercase text-white bg-black/70 backdrop-blur-xs px-2.5 py-1 rounded border border-[#8B0000]/40">
-                  CODE AS STRUCTURE
-                </span>
-              </div>
-            </div>
 
             <div className="p-6 sm:p-8 space-y-3">
               <h3 className="text-xl sm:text-2xl font-bold text-white tracking-wide group-hover:text-[#8B0000] transition-colors">
@@ -108,21 +93,6 @@ export const PhilosophySection: React.FC = () => {
         {/* Thesis 02: Tactile Craft */}
         <div className="bg-[#111A2E] border border-[#E5E7EB]/10 hover:border-[#8B0000]/50 rounded-2xl overflow-hidden transition-all shadow-xl flex flex-col justify-between group hover:shadow-[0_0_35px_rgba(139,0,0,0.15)] relative">
           <div>
-            {/* Visual Header Image */}
-            <div className="relative h-48 w-full overflow-hidden bg-[#111A13]">
-              <img
-                src="/TactileGoods.webp"
-                alt="Tactile Hardware & Fabric Engineering"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#111A2E] via-[#111A2E]/40 to-transparent" />
-              <div className="absolute top-3 left-4 right-4 flex items-center justify-between">
-                <span className="font-mono text-2xl font-black text-[#8B0000] drop-shadow-md">02</span>
-                <span className="font-mono text-[9px] tracking-widest uppercase text-white bg-black/70 backdrop-blur-xs px-2.5 py-1 rounded border border-[#8B0000]/40">
-                  VISUAL & TACTILE GOODS
-                </span>
-              </div>
-            </div>
 
             <div className="p-6 sm:p-8 space-y-3">
               <h3 className="text-xl sm:text-2xl font-bold text-white tracking-wide group-hover:text-[#8B0000] transition-colors">
@@ -138,21 +108,6 @@ export const PhilosophySection: React.FC = () => {
         {/* Thesis 03: The Strait Intersection */}
         <div className="bg-[#111A2E] border border-[#E5E7EB]/10 hover:border-[#8B0000]/50 rounded-2xl overflow-hidden transition-all shadow-xl flex flex-col justify-between group hover:shadow-[0_0_35px_rgba(139,0,0,0.15)] relative">
           <div>
-            {/* Visual Header Image */}
-            <div className="relative h-48 w-full overflow-hidden bg-[#111A13]">
-              <img
-                src="/DigitalProducts.webp"
-                alt="Tangier Borderland & Dual Discipline Standard"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#111A2E] via-[#111A2E]/40 to-transparent" />
-              <div className="absolute top-3 left-4 right-4 flex items-center justify-between">
-                <span className="font-mono text-2xl font-black text-[#8B0000] drop-shadow-md">03</span>
-                <span className="font-mono text-[9px] tracking-widest uppercase text-white bg-black/70 backdrop-blur-xs px-2.5 py-1 rounded border border-[#8B0000]/40">
-                  END-TO-END OWNERSHIP
-                </span>
-              </div>
-            </div>
 
             <div className="p-6 sm:p-8 space-y-3">
               <h3 className="text-xl sm:text-2xl font-bold text-white tracking-wide group-hover:text-[#8B0000] transition-colors">
@@ -168,15 +123,6 @@ export const PhilosophySection: React.FC = () => {
 
       {/* C. The Signature Quote with Ambient Studio Photography */}
       <div className="bg-[#111A2E] border border-[#8B0000]/40 rounded-2xl p-8 sm:p-14 relative overflow-hidden shadow-2xl text-center space-y-6 group">
-        {/* Subtle Background Photography */}
-        <div className="absolute inset-0 opacity-15 group-hover:opacity-25 transition-opacity duration-700 pointer-events-none">
-          <img
-            src="/Lifestyle, Black (1).jpeg"
-            alt="Studio Tangier Craft"
-            className="w-full h-full object-cover object-center filter grayscale"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#111A2E] via-[#111A2E]/80 to-[#111A2E]" />
-        </div>
 
         <div className="absolute top-4 left-6 font-mono text-6xl text-[#8B0000]/10 pointer-events-none select-none">
           “

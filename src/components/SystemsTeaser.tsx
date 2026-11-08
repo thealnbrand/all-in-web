@@ -258,15 +258,8 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
       id="systems"
       className="relative py-20 px-4 sm:px-8 lg:px-16 max-w-[1440px] mx-auto select-none font-sans scroll-mt-24 space-y-12 overflow-hidden rounded-3xl"
     >
-      {/* Visible Ambient Background Atmospheric Image */}
-      <div className="absolute inset-0 pointer-events-none -z-10 overflow-hidden rounded-3xl">
-        <img
-          src="/Engineering.webp"
-          alt=""
-          className="w-full h-full object-cover object-center opacity-20 filter contrast-125"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A0F1D]/85 via-transparent to-[#0A0F1D]/95" />
-      </div>
+
+
 
       {/* =====================================================================
           1. WHAT WE DO: Clear Studio Value Proposition Header
