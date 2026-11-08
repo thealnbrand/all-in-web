@@ -266,12 +266,11 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
       ===================================================================== */}
       <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 border-b border-white/10 pb-8 relative z-10">
         <div className="space-y-3 max-w-3xl text-left">
-          <div className="flex items-center gap-2.5 font-mono text-xs font-bold text-[#8B0000] tracking-widest uppercase">
-            <span>01 // SYSTEMS & CUSTOM ENGINEERING</span>
-            <span className="h-px w-12 bg-[#8B0000]/40" />
-            <span className="text-emerald-400 text-[10px] bg-[#111A2E] px-3 py-0.5 rounded-full border border-emerald-400/30 font-bold uppercase">
-              IDEA TO LIVE PRODUCTION
+          <div className="flex items-center gap-3">
+            <span className="text-[#E5E7EB]/40 font-mono text-xs tracking-widest uppercase">
+              01 // SYSTEMS & CUSTOM ENGINEERING
             </span>
+            <span className="h-px w-16 bg-[#8B0000]/30" />
           </div>
 
           <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#E5E7EB] tracking-tight leading-tight">
@@ -306,14 +305,6 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
           2. COMPANIES & PLATFORMS WE BUILT (Slow Seamless Logos-Only Strip)
       ===================================================================== */}
       <div className="space-y-3 relative z-10">
-        <div className="flex items-center justify-between font-mono text-xs text-[#8B0000] px-1">
-          <span className="font-bold uppercase tracking-wider">
-            // PLATFORMS & COMPANIES WE ENGINEERED — CLICK ANY LOGO TO PREVIEW BELOW
-          </span>
-          <span className="text-[#9CA3AF] hidden sm:inline">
-            ACTIVE PREVIEW: <strong className="text-white">{current.name}</strong>
-          </span>
-        </div>
 
         <div
           onMouseEnter={() => setIsTickerPaused(true)}
