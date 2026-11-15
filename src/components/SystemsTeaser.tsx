@@ -11,6 +11,12 @@ interface SystemsTeaserProps {
 interface SystemShowcase {
   id: string;
   name: string;
+  subtitle: string;
+  category: string;
+  description: string;
+  stack: string[];
+  forSaleStatus?: string;
+  priceNote?: string;
   logo: string;
   url: string;
 }
@@ -19,36 +25,72 @@ const DEFAULT_SYSTEMS: SystemShowcase[] = [
   {
     id: "smart-invoice",
     name: "SMART INVOICE PRO",
+    subtitle: "Automated Financial & Invoicing Platform",
+    category: "FINTECH & SAAS",
+    description: "Production-ready automated billing and invoice engine. Generates tax-compliant PDF invoices instantly, tracks cash flow and overdue balances, and supports multi-currency calculations with zero database latency.",
+    stack: ["Next.js 16", "TypeScript", "Tailwind CSS", "PDF Engine", "Vercel Edge"],
+    forSaleStatus: "FOR SALE // TURNKEY SAAS",
+    priceNote: "Turnkey Codebase · Ready to Deploy",
     logo: "/logos/smartinvoice.png",
     url: "https://smartinvoice-six.vercel.app/",
   },
   {
     id: "rihlat-bladna",
     name: "RIHLAT BLADNA",
+    subtitle: "Direct Moroccan Travel Network",
+    category: "TRAVEL MARKETPLACE",
+    description: "Multi-sided travel marketplace platform connecting agencies and travelers. Features real-time WhatsApp & SMS lead dispatch, multi-vendor agency dashboards, interactive 24-hour stories, and multi-city tour booking.",
+    stack: ["React", "Node.js API", "Tailwind CSS", "Vercel Edge", "WhatsApp API"],
+    forSaleStatus: "FOR SALE // FULL PLATFORM",
+    priceNote: "Complete Multi-Vendor Marketplace",
     logo: "/logos/rihlatbladna.png",
     url: "https://rihlatbladna.vercel.app/",
   },
   {
     id: "postresa",
     name: "POSTRESA",
+    subtitle: "Academic Space & Room Reservation System",
+    category: "CAMPUS SCHEDULING",
+    description: "Campus operations platform eliminating room booking overlap for lecture halls, computer labs, and meeting spaces with role-based validation workflows and instant conflict detection.",
+    stack: ["React", "TypeScript", "Tailwind CSS", "RBAC Security", "Vite"],
+    forSaleStatus: "FOR SALE // COMMERCIAL TURNKEY",
+    priceNote: "Full Institutional Reservation Engine",
     logo: "/logos/postresa.png",
     url: "https://postresa.vercel.app/",
   },
   {
     id: "jbala-peak",
     name: "JBALA PEAK",
+    subtitle: "Northern Moroccan Artisan Flagship",
+    category: "ARTISAN E-COMMERCE",
+    description: "Tri-lingual digital flagship exporting handcrafted pottery, traditional winter djellabas, and mountain honey worldwide with instant language and currency switching and 1-click checkout.",
+    stack: ["Full-Stack E-Com", "Tri-Lingual (EN/FR/AR)", "Tailwind CSS", "Vercel Edge"],
+    forSaleStatus: "FOR SALE // TURNKEY STORE",
+    priceNote: "Complete Localized E-Commerce Engine",
     logo: "/logos/jbalapeak.png",
     url: "https://jbala-peak.vercel.app/",
   },
   {
     id: "my-maze",
     name: "MY MAZE",
+    subtitle: "Interactive Decision & Dilemma Engine",
+    category: "SIMULATION & GAMIFICATION",
+    description: "Interactive web simulation putting users inside realistic workplace dilemmas under time pressure, tracking decision velocity and ranking players on global real-time leaderboards.",
+    stack: ["React", "Node.js API", "Canvas Physics", "Leaderboard API"],
+    forSaleStatus: "FOR SALE // FULL SOURCE",
+    priceNote: "Gamified Decision Engine & Scenario Spec",
     logo: "/logos/mymaze.svg",
     url: "https://my-maze.vercel.app/",
   },
   {
     id: "solayman",
     name: "SOLAYMAN",
+    subtitle: "Fluid Creative Engineering Interface",
+    category: "CREATIVE PORTFOLIO",
+    description: "Minimalist creative studio interface demonstrating creative front-end architecture, ambient gradients, and crisp interaction design with 100/100 Lighthouse performance benchmarks.",
+    stack: ["React", "Tailwind CSS", "Interactive Canvas", "Vercel Edge"],
+    forSaleStatus: "FOR SALE // STUDIO TEMPLATE",
+    priceNote: "Ultra-Fast Minimalist Creative Interface",
     logo: "/logos/solayman.jpg",
     url: "https://solayman.vercel.app/",
   },
@@ -168,6 +210,12 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
               return {
                 id: p.id || fallback.id || `sys-${idx}`,
                 name: p.name || fallback.name,
+                subtitle: p.subtitle || fallback.subtitle,
+                category: p.categoryLabel || p.category || fallback.category,
+                description: p.description || fallback.description,
+                stack: Array.isArray(p.stack) && p.stack.length > 0 ? p.stack : fallback.stack,
+                forSaleStatus: p.forSaleStatus || fallback.forSaleStatus,
+                priceNote: p.priceNote || fallback.priceNote,
                 logo: resolveProjectLogo(p, fallback.logo),
                 url: p.url || fallback.url,
               };
@@ -391,84 +439,172 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
       </div>
 
       {/* =====================================================================
-          3. CLEAN FULL-WIDTH LIVE PREVIEW WINDOW ALONE + BUTTONS UNDERNEATH
+          3. TWO-COLUMN SPLIT: SITE PREVIEW + SITE INFO, BUILT WITH & FOR SALE
       ===================================================================== */}
-      <div className="space-y-5 relative z-10">
-        {/* Standalone Full-Width Browser Preview */}
-        <div className="w-full h-[420px] sm:h-[520px] lg:h-[580px] rounded-3xl overflow-hidden border-2 border-[#8B0000]/40 bg-[#0D1527] group shadow-[0_25px_70px_rgba(0,0,0,0.65)] relative">
-          <a
-            href={current.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block w-full h-full relative cursor-pointer"
-            title={`Click to open ${current.name} live in a new tab`}
-          >
-            {/* Browser Top Chrome Bar */}
-            <div className="h-10 bg-[#111A13] border-b border-[#E5E7EB]/10 px-5 flex items-center justify-between z-20 relative">
-              <div className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
-                <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
-                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
-                <span className="ml-2 font-mono text-[11px] font-bold text-[#8B0000] hidden sm:inline">
-                  {current.name}
-                </span>
-              </div>
+      <div className="space-y-6 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
+          {/* Column 1: Live Interactive Site Preview (Kept as it is) */}
+          <div className="lg:col-span-7 w-full h-[460px] sm:h-[520px] lg:h-[560px] rounded-3xl overflow-hidden border-2 border-[#8B0000]/40 bg-[#0D1527] group shadow-[0_25px_70px_rgba(0,0,0,0.65)] relative flex flex-col">
+            <a
+              href={current.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block w-full h-full relative cursor-pointer"
+              title={`Click to open ${current.name} live in a new tab`}
+            >
+              {/* Browser Top Chrome Bar */}
+              <div className="h-10 bg-[#111A13] border-b border-[#E5E7EB]/10 px-5 flex items-center justify-between z-20 relative shrink-0">
+                <div className="flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
+                  <span className="ml-2 font-mono text-[11px] font-bold text-[#8B0000] hidden sm:inline">
+                    {current.name}
+                  </span>
+                </div>
 
-              <div className="flex items-center gap-1.5 bg-[#111A2E] px-4 py-1 rounded-md border border-[#E5E7EB]/10 text-[11px] font-mono text-[#E5E7EB]/80 max-w-[320px] truncate">
-                <span className="text-emerald-400">🔒</span>
-                <span className="truncate">{current.url}</span>
-              </div>
+                <div className="flex items-center gap-1.5 bg-[#111A2E] px-4 py-1 rounded-md border border-[#E5E7EB]/10 text-[11px] font-mono text-[#E5E7EB]/80 max-w-[220px] sm:max-w-[280px] truncate">
+                  <span className="text-emerald-400">🔒</span>
+                  <span className="truncate">{current.url}</span>
+                </div>
 
-              <div className="flex items-center gap-1 text-[11px] font-mono text-[#8B0000] font-bold group-hover:text-white transition-colors">
-                <span className="hidden sm:inline">OPEN LIVE SITE</span>
-                <span>↗</span>
-              </div>
-            </div>
-
-            {/* Embedded Live Web Application Viewport */}
-            <div className="relative w-full h-[calc(100%-40px)] bg-white overflow-hidden">
-              <iframe
-                key={current.id}
-                src={current.url}
-                title={`${current.name} Live Viewport`}
-                className="w-full h-full border-0 pointer-events-none transform origin-top transition-transform duration-500 group-hover:scale-[1.01]"
-                loading="lazy"
-              />
-
-              {/* Hover Launch Prompt */}
-              <div className="absolute inset-0 bg-[#111A2E]/0 group-hover:bg-[#111A2E]/25 transition-all duration-300 flex items-center justify-center pointer-events-none">
-                <div className="opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 bg-[#111A2E]/95 backdrop-blur-md border border-[#8B0000] px-6 py-3 rounded-full shadow-2xl text-xs font-mono font-bold text-[#8B0000] flex items-center gap-2">
-                  <span>LAUNCH {current.name} IN NEW TAB</span>
-                  <span className="text-white">↗</span>
+                <div className="flex items-center gap-1 text-[11px] font-mono text-[#8B0000] font-bold group-hover:text-white transition-colors">
+                  <span className="hidden sm:inline">LIVE PREVIEW</span>
+                  <span>↗</span>
                 </div>
               </div>
+
+              {/* Embedded Live Web Application Viewport */}
+              <div className="relative w-full flex-1 bg-white overflow-hidden">
+                <iframe
+                  key={current.id}
+                  src={current.url}
+                  title={`${current.name} Live Viewport`}
+                  className="w-full h-full border-0 pointer-events-none transform origin-top transition-transform duration-500 group-hover:scale-[1.01]"
+                  loading="lazy"
+                />
+
+                {/* Hover Launch Prompt */}
+                <div className="absolute inset-0 bg-[#111A2E]/0 group-hover:bg-[#111A2E]/25 transition-all duration-300 flex items-center justify-center pointer-events-none">
+                  <div className="opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 bg-[#111A2E]/95 backdrop-blur-md border border-[#8B0000] px-6 py-3 rounded-full shadow-2xl text-xs font-mono font-bold text-[#8B0000] flex items-center gap-2">
+                    <span>LAUNCH {current.name} IN NEW TAB</span>
+                    <span className="text-white">↗</span>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+
+          {/* Column 2: Site Info, What it was created with & For Sale Commercial Box */}
+          <div className="lg:col-span-5 bg-[#111A2E] border-2 border-[#8B0000]/50 hover:border-[#8B0000] rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-2xl relative transition-all group overflow-hidden">
+            {/* Technical Brutalist Corner Brackets */}
+            <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-[#8B0000]" />
+            <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-[#8B0000]" />
+            <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-[#8B0000]" />
+            <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-[#8B0000]" />
+
+            <div className="space-y-5">
+              {/* Top Header Badge Row */}
+              <div className="flex items-center justify-between border-b border-white/10 pb-4">
+                <span className="font-mono text-xs text-[#8B0000] font-bold tracking-widest uppercase">
+                  [ SYS-0{activeIndex + 1} // {current.category} ]
+                </span>
+                
+                {/* For Sale Pill */}
+                <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#8B0000]/20 border border-[#8B0000] text-rose-400 font-mono text-[11px] font-extrabold shadow-sm animate-pulse">
+                  <span className="w-1.5 h-1.5 rounded-full bg-rose-500" />
+                  <span>FOR SALE // TURNKEY</span>
+                </div>
+              </div>
+
+              {/* What It Is */}
+              <div className="space-y-1.5">
+                <h4 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
+                  {current.name}
+                </h4>
+                <div className="text-xs sm:text-sm font-mono text-[#8B0000] font-bold">
+                  {current.subtitle}
+                </div>
+                <p className="text-xs sm:text-sm text-[#E5E7EB]/80 leading-relaxed font-sans pt-1">
+                  {current.description}
+                </p>
+              </div>
+
+              {/* What It Was Created With (Tech Stack) */}
+              <div className="space-y-2 pt-1 border-t border-white/10">
+                <span className="font-mono text-[11px] text-[#9CA3AF] uppercase tracking-wider block font-semibold">
+                  // BUILT WITH &amp; ARCHITECTURE
+                </span>
+                <div className="flex flex-wrap gap-2">
+                  {current.stack.map((tech) => (
+                    <span
+                      key={tech}
+                      className="bg-[#0A0F1D] border border-white/15 px-2.5 py-1 text-[#E5E7EB] font-mono text-[11px] rounded transition-colors group-hover:border-[#8B0000]/40"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Commercial For-Sale Callout */}
+              <div className="bg-[#0A0F1D]/80 border border-[#8B0000]/40 p-3.5 rounded-xl space-y-1.5 font-mono text-xs">
+                <div className="flex items-center justify-between text-[#8B0000] font-bold">
+                  <span>// COMMERCIAL LICENSE</span>
+                  <span className="text-emerald-400 font-semibold text-[11px]">
+                    {current.priceNote || 'Ready to Deploy'}
+                  </span>
+                </div>
+                <p className="text-[11px] text-[#9CA3AF] font-sans leading-relaxed">
+                  Turnkey acquisition includes production source code, database schema, design assets, and full intellectual property.
+                </p>
+              </div>
             </div>
-          </a>
+
+            {/* Direct Action Buttons for this Specific System */}
+            <div className="pt-5 mt-5 border-t border-white/10 flex flex-col sm:flex-row items-stretch gap-3 font-mono text-xs">
+              <button
+                type="button"
+                onClick={() => {
+                  if (onInquire) {
+                    onInquire(`Acquire / Buy Turnkey: ${current.name}`);
+                  } else {
+                    const el = document.getElementById('contact');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                className="font-extrabold text-white bg-[#8B0000] hover:bg-[#A30000] px-5 py-3.5 rounded-xl transition-all shadow-xl hover:scale-[1.02] cursor-pointer flex-1 flex items-center justify-center gap-2 tracking-wider"
+              >
+                <span>[ INQUIRE TO BUY THIS SITE ]</span>
+                <span>→</span>
+              </button>
+
+              <a
+                href={current.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-bold text-white bg-[#0A0F1D] hover:bg-[#0A0F1D]/80 border border-[#8B0000]/50 hover:border-[#8B0000] px-5 py-3.5 rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer"
+              >
+                <span>LIVE DEMO</span>
+                <span>↗</span>
+              </a>
+            </div>
+          </div>
         </div>
 
-        {/* Clean Action Bar Directly Under the Live Preview */}
-        <div className="flex flex-wrap items-center justify-center gap-4 pt-1 font-mono text-xs">
+        {/* Global Commission / System Exploration Action Bar */}
+        <div className="flex flex-wrap items-center justify-center gap-4 pt-2 font-mono text-xs">
           <button
             type="button"
             onClick={handleCommissionClick}
-            className="font-extrabold text-white bg-[#8B0000] hover:bg-[#A30000] px-8 py-4 rounded-full transition-all shadow-xl hover:scale-105 cursor-pointer uppercase tracking-wider"
+            className="font-extrabold text-white bg-[#8B0000] hover:bg-[#A30000] px-8 py-3.5 rounded-full transition-all shadow-xl hover:scale-105 cursor-pointer uppercase tracking-wider"
           >
-            [ BUILD YOUR PROJECT WITH US → ]
+            [ COMMISSION A BESPOKE SYSTEM WITH US → ]
           </button>
-
-          <a
-            href={current.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-bold text-white bg-[#111A2E] hover:bg-[#0D1527] border border-[#8B0000]/40 hover:border-[#8B0000] px-6 py-4 rounded-full transition-all flex items-center gap-2 cursor-pointer"
-          >
-            <span>VISIT {current.name} LIVE</span>
-            <span>↗</span>
-          </a>
 
           <Link
             href="/systems"
-            className="font-bold text-[#E5E7EB]/85 bg-[#111A2E]/80 hover:bg-[#111A2E] border border-white/15 hover:border-[#8B0000]/50 px-6 py-4 rounded-full transition-all flex items-center gap-2 cursor-pointer"
+            className="font-bold text-[#E5E7EB]/85 bg-[#111A2E]/80 hover:bg-[#111A2E] border border-white/15 hover:border-[#8B0000]/50 px-6 py-3.5 rounded-full transition-all flex items-center gap-2 cursor-pointer"
           >
             <span>EXPLORE ALL SYSTEMS</span>
             <span>→</span>
