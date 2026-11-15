@@ -64,18 +64,6 @@ export const PhilosophySection: React.FC = () => {
         <p className="text-sm sm:text-base text-[#E5E7EB]/75 font-sans leading-relaxed max-w-3xl">
           Tangier sits where the Atlantic meets the Mediterranean, and Africa meets Europe. ALL IN embraces that same borderland identity by refusing the false boundary between software engineering and physical craft.
         </p>
-
-        {/* Ambient Telemetry Indicators */}
-        <div className="pt-2 flex flex-wrap items-center gap-3 sm:gap-4 text-xs font-mono text-[#9CA3AF]">
-          <span className="flex items-center gap-1.5 text-emerald-400">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            STUDIO LAB: OPERATIONAL
-          </span>
-          <span className="text-white/20">|</span>
-          <span className="text-[#E5E7EB]/70">HQ: TANGIER, MOROCCO</span>
-          <span className="text-white/20">|</span>
-          <span className="text-[#8B0000]">MEDITERRANEAN &bull; ATLANTIC INTERSECTION</span>
-        </div>
       </div>
 
       {/* B. Brutalist Two-Column Panel Grid */}
@@ -89,12 +77,9 @@ export const PhilosophySection: React.FC = () => {
           <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-[#8B0000]" />
 
           <div className="space-y-6">
-            <div className="flex items-center justify-between border-b border-[#E5E7EB]/10 pb-4">
+            <div className="border-b border-[#E5E7EB]/10 pb-4">
               <span className="font-mono text-xs text-[#8B0000] font-bold tracking-widest uppercase">
                 [ ORIGINS // OPERATIONAL LAB ]
-              </span>
-              <span className="font-mono text-[11px] text-[#9CA3AF]/60 uppercase">
-                LAB ID: TNG-01
               </span>
             </div>
 
