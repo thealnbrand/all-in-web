@@ -206,18 +206,30 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
           const data = await res.json();
           if (data.projects && Array.isArray(data.projects) && data.projects.length > 0) {
             const mapped: SystemShowcase[] = data.projects.map((p: any, idx: number) => {
-              const fallback = DEFAULT_SYSTEMS[idx] || DEFAULT_SYSTEMS[0];
+              const matchedStatic =
+                DEFAULT_SYSTEMS.find(
+                  (item) =>
+                    item.id === p.id ||
+                    (p.url && item.url.includes(p.url)) ||
+                    (p.name && item.name.toLowerCase().includes(p.name.toLowerCase()))
+                ) || DEFAULT_SYSTEMS[idx % DEFAULT_SYSTEMS.length] || DEFAULT_SYSTEMS[0];
+
               return {
-                id: p.id || fallback.id || `sys-${idx}`,
-                name: p.name || fallback.name,
-                subtitle: p.subtitle || fallback.subtitle,
-                category: p.categoryLabel || p.category || fallback.category,
-                description: p.description || fallback.description,
-                stack: Array.isArray(p.stack) && p.stack.length > 0 ? p.stack : fallback.stack,
-                forSaleStatus: p.forSaleStatus || fallback.forSaleStatus,
-                priceNote: p.priceNote || fallback.priceNote,
-                logo: resolveProjectLogo(p, fallback.logo),
-                url: p.url || fallback.url,
+                id: p.id || matchedStatic.id || `sys-${idx}`,
+                name: p.name || matchedStatic.name,
+                subtitle: p.subtitle || matchedStatic.subtitle,
+                category: p.categoryLabel || p.category || matchedStatic.category,
+                description: p.description || matchedStatic.description,
+                stack:
+                  Array.isArray(p.stack) && p.stack.length > 0
+                    ? p.stack
+                    : Array.isArray(matchedStatic.stack) && matchedStatic.stack.length > 0
+                    ? matchedStatic.stack
+                    : ['Next.js 16', 'TypeScript', 'Tailwind CSS', 'Vercel Edge'],
+                forSaleStatus: p.forSaleStatus || matchedStatic.forSaleStatus || 'FOR SALE // TURNKEY',
+                priceNote: p.priceNote || matchedStatic.priceNote || 'Turnkey Codebase · Ready to Deploy',
+                logo: resolveProjectLogo(p, matchedStatic.logo),
+                url: p.url || matchedStatic.url,
               };
             });
             setSystemsList(mapped);
@@ -318,7 +330,11 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
       : ((activeStage + stageProgress / 100) / totalSegments) * 100
   );
 
-  const current = systemsList[activeIndex] || systemsList[0];
+  const current = systemsList[activeIndex] || DEFAULT_SYSTEMS[0];
+  const currentStack: string[] =
+    Array.isArray(current?.stack) && current.stack.length > 0
+      ? current.stack
+      : ['Next.js 16', 'TypeScript', 'Tailwind CSS', 'Vercel Edge'];
   const currentStage = ROADMAP_STAGES[activeStage] || ROADMAP_STAGES[0];
 
   const handleCommissionClick = () => {
@@ -536,7 +552,7 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
                   // BUILT WITH &amp; ARCHITECTURE
                 </span>
                 <div className="flex flex-wrap gap-2">
-                  {current.stack.map((tech) => (
+                  {currentStack.map((tech) => (
                     <span
                       key={tech}
                       className="bg-[#0A0F1D] border border-white/15 px-2.5 py-1 text-[#E5E7EB] font-mono text-[11px] rounded transition-colors group-hover:border-[#8B0000]/40"
