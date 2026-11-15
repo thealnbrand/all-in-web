@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
+import { NewsletterDispatch } from './NewsletterDispatch';
 
 export const PhilosophySection: React.FC = () => {
 
@@ -114,25 +115,8 @@ export const PhilosophySection: React.FC = () => {
         </div>
       </div>
 
-      {/* D. The Exit Trigger */}
-      <div className="flex flex-col sm:flex-row items-center justify-between gap-4 p-6 sm:p-8 rounded-2xl bg-[#111A2E]/70 border border-[#E5E7EB]/10 hover:border-[#8B0000]/30 transition-colors backdrop-blur-sm">
-        <div className="text-left">
-          <span className="font-mono text-xs text-[#8B0000] font-bold tracking-wider uppercase block">
-            // EDITORIAL DISPATCHES & BEHIND-THE-SCENES
-          </span>
-          <p className="text-sm text-[#E5E7EB]/80 mt-1 font-sans">
-            Read our long-form essays on Mediterranean engineering, studio manufacturing photojournalism, and technical design notes.
-          </p>
-        </div>
-
-        <Link
-          href="/philosophy"
-          className="font-mono text-xs font-extrabold text-white bg-[#8B0000] hover:bg-[#A30000] px-8 py-3.5 rounded-full transition-all shadow-xl hover:scale-105 cursor-pointer shrink-0 text-center flex items-center gap-2"
-        >
-          <span>[ READ STUDIO PHILOSOPHY ]</span>
-          <span>→</span>
-        </Link>
-      </div>
+      {/* D. Newsletter / Dispatch Terminal Component */}
+      <NewsletterDispatch id="philosophy-dispatch" />
     </section>
   );
 };
