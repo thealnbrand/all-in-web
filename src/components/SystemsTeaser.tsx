@@ -148,6 +148,8 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
   const [activeStage, setActiveStage] = useState<number>(0);
   const [stageProgress, setStageProgress] = useState<number>(0); // 0 to 100 within current stage
   const [isStagePaused, setIsStagePaused] = useState<boolean>(false);
+  const [isRoadmapInView, setIsRoadmapInView] = useState<boolean>(false);
+  const roadmapRef = React.useRef<HTMLDivElement>(null);
 
   // Moving Logo Ticker State
   const [isTickerPaused, setIsTickerPaused] = useState<boolean>(false);
@@ -206,9 +208,37 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
     return () => cancelAnimationFrame(animId);
   }, [isTickerPaused, systemsList]);
 
-  // Automated Timeline Stepper Timer (cycles Step 1 -> Step 5 every 4.5s, pauses on hover)
+  // Detect when the viewer scrolls to and reaches the roadmap section
   useEffect(() => {
-    if (isStagePaused) return;
+    const el = roadmapRef.current;
+    if (!el || typeof IntersectionObserver === 'undefined') {
+      setIsRoadmapInView(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsRoadmapInView(true);
+          } else {
+            setIsRoadmapInView(false);
+          }
+        });
+      },
+      {
+        threshold: 0.15,
+        rootMargin: '0px 0px -40px 0px',
+      }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+
+  // Automated Timeline Stepper Timer (cycles Step 1 -> Step 5 every 4.5s, ONLY starts when viewer reaches it, pauses on hover)
+  useEffect(() => {
+    if (!isRoadmapInView || isStagePaused) return;
 
     const intervalMs = 45;
     const increment = (intervalMs / STAGE_DURATION_MS) * 100;
@@ -224,7 +254,7 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
     }, intervalMs);
 
     return () => clearInterval(timer);
-  }, [isStagePaused]);
+  }, [isRoadmapInView, isStagePaused]);
 
   const handleSelectStage = (idx: number) => {
     setActiveStage(idx);
@@ -450,6 +480,7 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
           4. FOLLOW THE LINE: AUTOMATED TIMELINE STEPPER & 2-COLUMN STAGE DECK
       ===================================================================== */}
       <div
+        ref={roadmapRef}
         onMouseEnter={() => setIsStagePaused(true)}
         onMouseLeave={() => setIsStagePaused(false)}
         className="bg-[#111A2E] border border-[#8B0000]/40 rounded-3xl p-6 sm:p-10 lg:p-12 shadow-2xl space-y-10 relative z-10 overflow-hidden"
@@ -469,11 +500,15 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
           <div className="flex items-center gap-2.5 font-mono text-[11px] bg-[#0D1527] px-4 py-2 rounded-full border border-white/10 self-start md:self-auto">
             <span
               className={`w-2 h-2 rounded-full ${
-                isStagePaused ? 'bg-amber-400' : 'bg-emerald-400 animate-ping'
+                !isRoadmapInView ? 'bg-white/30' : isStagePaused ? 'bg-amber-400' : 'bg-emerald-400 animate-ping'
               }`}
             />
             <span className="text-[#E5E7EB]/80 font-bold">
-              {isStagePaused ? 'PAUSED ON HOVER // CLICK ANY NODE' : 'AUTO-CYCLING // CLICK ANY POINT'}
+              {!isRoadmapInView
+                ? 'STANDBY // REACH TO INITIATE'
+                : isStagePaused
+                ? 'PAUSED ON HOVER // CLICK ANY NODE'
+                : 'AUTO-CYCLING // CLICK ANY POINT'}
             </span>
           </div>
         </div>
