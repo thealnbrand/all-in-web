@@ -368,3 +368,27 @@ VALUES
   )
 ON CONFLICT DO NOTHING;
 
+
+
+-- 5. Studio Newsletter Subscribers
+CREATE TABLE IF NOT EXISTS public.studio_subscribers (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  email TEXT NOT NULL UNIQUE,
+  source TEXT DEFAULT 'landing_philosophy',
+  created_at TIMESTAMPTZ DEFAULT now()
+);
+
+ALTER TABLE public.studio_subscribers ENABLE ROW LEVEL SECURITY;
+
+CREATE POLICY "Allow anon insert subscribers"
+  ON public.studio_subscribers
+  FOR INSERT
+  TO anon, authenticated
+  WITH CHECK (true);
+
+CREATE POLICY "Allow service role full access subscribers"
+  ON public.studio_subscribers
+  FOR ALL
+  TO service_role
+  USING (true)
+  WITH CHECK (true);

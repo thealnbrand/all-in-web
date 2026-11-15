@@ -1,122 +1,323 @@
 "use client";
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
-import { NewsletterDispatch } from './NewsletterDispatch';
 
 export const PhilosophySection: React.FC = () => {
+  const [email, setEmail] = useState('');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleSubscribe = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setErrorMessage('');
+
+    const cleanEmail = email.trim();
+    if (!cleanEmail || !cleanEmail.includes('@') || !cleanEmail.includes('.')) {
+      setStatus('error');
+      setErrorMessage('INVALID_EMAIL_FORMAT // SPECIFY VALID TRANSMISSION ADDRESS');
+      return;
+    }
+
+    setStatus('loading');
+
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: cleanEmail, source: 'landing_philosophy' }),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok || !data.success) {
+        throw new Error(data.error || 'SUBSCRIPTION_REJECTED');
+      }
+
+      setStatus('success');
+      setEmail('');
+    } catch (err: unknown) {
+      setStatus('error');
+      const msg = err instanceof Error ? err.message : 'TRANSMISSION_ERROR';
+      setErrorMessage(msg.toUpperCase());
+    }
+  };
 
   return (
-    <section id="philosophy" className="py-24 px-6 sm:px-12 lg:px-20 max-w-[1440px] mx-auto select-none font-sans scroll-mt-24 space-y-16">
-      {/* A. Section Header with Live Tangier Coordinates & Time Telemetry */}
+    <section
+      id="philosophy"
+      className="py-24 px-6 sm:px-12 lg:px-20 max-w-[1440px] mx-auto select-none font-sans scroll-mt-24 space-y-16"
+    >
+      {/* A. Section Header */}
       <div className="text-left space-y-4 max-w-4xl border-b border-[#E5E7EB]/10 pb-8">
-        <div className="flex flex-wrap items-center justify-between gap-4">
-          <div className="flex items-center gap-3">
-            <span className="text-[#E5E7EB]/40 font-mono text-xs tracking-widest uppercase">
-              04 // PHILOSOPHY
-            </span>
-            <span className="h-px w-16 bg-[#8B0000]/30" />
-          </div>
-
-
+        <div className="flex items-center gap-3">
+          <span className="text-[#8B0000] font-mono text-xs tracking-widest uppercase font-bold">
+            04 // ABOUT &amp; PHILOSOPHY
+          </span>
+          <span className="h-px w-16 bg-[#8B0000]/40" />
         </div>
 
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#E5E7EB] tracking-tight leading-tight pt-2">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#E5E7EB] tracking-tight leading-tight pt-1">
           Standing at the strait between computational logic and tactile permanence.
         </h2>
 
-        <p className="text-sm sm:text-base text-[#E5E7EB]/75 font-sans leading-relaxed pt-1 max-w-3xl">
+        <p className="text-sm sm:text-base text-[#E5E7EB]/75 font-sans leading-relaxed max-w-3xl">
           Tangier sits where the Atlantic meets the Mediterranean, and Africa meets Europe. ALL IN embraces that same borderland identity by refusing the false boundary between software engineering and physical craft.
         </p>
 
-        {/* Ambient Strait Radar Widget */}
-        <div className="pt-2 flex items-center gap-4 text-xs font-mono text-[#9CA3AF]">
+        {/* Ambient Telemetry Indicators */}
+        <div className="pt-2 flex flex-wrap items-center gap-3 sm:gap-4 text-xs font-mono text-[#9CA3AF]">
           <span className="flex items-center gap-1.5 text-emerald-400">
             <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            STRAIT BEACON: ONLINE
+            STUDIO LAB: OPERATIONAL
           </span>
           <span className="text-white/20">|</span>
-          <span>MEDITERRANEAN &bull; ATLANTIC INTERSECTION</span>
+          <span className="text-[#E5E7EB]/70">HQ: TANGIER, MOROCCO</span>
+          <span className="text-white/20">|</span>
+          <span className="text-[#8B0000]">MEDITERRANEAN &bull; ATLANTIC INTERSECTION</span>
         </div>
       </div>
 
-      {/* B. The Three Studio Pillars with Visual Photography & Tactile Telemetry */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Thesis 01: Systems & Engineering */}
-        <div className="bg-[#111A2E] border border-[#E5E7EB]/10 hover:border-[#8B0000]/50 rounded-2xl overflow-hidden transition-all shadow-xl flex flex-col justify-between group hover:shadow-[0_0_35px_rgba(139,0,0,0.15)] relative">
-          <div>
+      {/* B. Brutalist Two-Column Panel Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        {/* Left Column: Studio Origins / Operational Lab Overview */}
+        <div className="lg:col-span-6 bg-[#111A2E] border border-[#E5E7EB]/15 hover:border-[#8B0000]/40 rounded-sm p-8 sm:p-10 relative shadow-2xl transition-all flex flex-col justify-between group">
+          {/* Brutalist Corner Brackets */}
+          <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-[#8B0000]" />
+          <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-[#8B0000]" />
+          <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-[#8B0000]" />
+          <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-[#8B0000]" />
 
-            <div className="p-6 sm:p-8 space-y-3">
-              <h3 className="text-xl sm:text-2xl font-bold text-white tracking-wide group-hover:text-[#8B0000] transition-colors">
-                Architectural Discipline
+          <div className="space-y-6">
+            <div className="flex items-center justify-between border-b border-[#E5E7EB]/10 pb-4">
+              <span className="font-mono text-xs text-[#8B0000] font-bold tracking-widest uppercase">
+                [ ORIGINS // OPERATIONAL LAB ]
+              </span>
+              <span className="font-mono text-[11px] text-[#9CA3AF]/60 uppercase">
+                LAB ID: TNG-01
+              </span>
+            </div>
+
+            <div className="space-y-3">
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#E5E7EB] tracking-tight">
+                An Independent Lab Forged at the Continental Crossroads.
               </h3>
-              <p className="text-xs sm:text-sm text-[#E5E7EB]/75 leading-relaxed font-sans">
-                Software is digital civil engineering. We build resilient, low-latency architectures with zero algorithmic bloat and sub-second execution.
+              <p className="text-xs sm:text-sm text-[#E5E7EB]/80 leading-relaxed font-sans">
+                Founded in Tangier, Morocco — a historic crossroads of maritime trade, cultural collision, and international territory — ALL IN operates as a self-reliant laboratory outside conventional tech epicenters, free from venture contagion and corporate homogenization.
+              </p>
+              <p className="text-xs sm:text-sm text-[#E5E7EB]/70 leading-relaxed font-sans">
+                We are structured not as an agency, but as an applied craft laboratory. Our work spans three interdependent vectors: high-frequency distributed systems, autonomous digital tools, and physical graphic streetwear editions.
               </p>
             </div>
+
+            {/* Brutalist Lab Telemetry Specs */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 font-mono text-xs">
+              <div className="bg-[#0A0F1D]/80 border border-[#E5E7EB]/10 p-3.5 space-y-1">
+                <span className="text-[#8B0000] font-bold block text-[11px] uppercase tracking-wider">
+                  DISCIPLINES
+                </span>
+                <span className="text-[#E5E7EB] text-xs">
+                  Software &bull; Digital Tools &bull; Apparel
+                </span>
+              </div>
+              <div className="bg-[#0A0F1D]/80 border border-[#E5E7EB]/10 p-3.5 space-y-1">
+                <span className="text-[#8B0000] font-bold block text-[11px] uppercase tracking-wider">
+                  PRODUCTION MODEL
+                </span>
+                <span className="text-[#E5E7EB] text-xs">
+                  Zero Middlemen &bull; 100% In-House
+                </span>
+              </div>
+              <div className="bg-[#0A0F1D]/80 border border-[#E5E7EB]/10 p-3.5 space-y-1">
+                <span className="text-[#8B0000] font-bold block text-[11px] uppercase tracking-wider">
+                  SYSTEM ARCHITECTURE
+                </span>
+                <span className="text-[#E5E7EB] text-xs">
+                  Sub-second Edge Latency
+                </span>
+              </div>
+              <div className="bg-[#0A0F1D]/80 border border-[#E5E7EB]/10 p-3.5 space-y-1">
+                <span className="text-[#8B0000] font-bold block text-[11px] uppercase tracking-wider">
+                  TACTILE STANDARD
+                </span>
+                <span className="text-[#E5E7EB] text-xs">
+                  Curated Heavyweight DTG
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div className="pt-6 mt-6 border-t border-[#E5E7EB]/10 font-mono text-xs text-[#9CA3AF] flex items-center justify-between">
+            <span className="text-[#8B0000] font-bold">// TANGIER HQ LAB</span>
+            <span>AUTONOMOUS EXECUTION</span>
           </div>
         </div>
 
-        {/* Thesis 02: Tactile Craft */}
-        <div className="bg-[#111A2E] border border-[#E5E7EB]/10 hover:border-[#8B0000]/50 rounded-2xl overflow-hidden transition-all shadow-xl flex flex-col justify-between group hover:shadow-[0_0_35px_rgba(139,0,0,0.15)] relative">
-          <div>
+        {/* Right Column: Core Philosophy & Execution Ethos (Sharp Dark Red Borders) */}
+        <div className="lg:col-span-6 bg-[#111A2E] border-2 border-[#8B0000] rounded-sm p-8 sm:p-10 relative shadow-[0_0_35px_rgba(139,0,0,0.18)] hover:shadow-[0_0_45px_rgba(139,0,0,0.28)] transition-all flex flex-col justify-between group">
+          {/* Brutalist Corner Brackets in Bright Crimson */}
+          <div className="absolute top-0 left-0 w-3.5 h-3.5 border-t-2 border-l-2 border-white/60" />
+          <div className="absolute top-0 right-0 w-3.5 h-3.5 border-t-2 border-r-2 border-white/60" />
+          <div className="absolute bottom-0 left-0 w-3.5 h-3.5 border-b-2 border-l-2 border-white/60" />
+          <div className="absolute bottom-0 right-0 w-3.5 h-3.5 border-b-2 border-r-2 border-white/60" />
 
-            <div className="p-6 sm:p-8 space-y-3">
-              <h3 className="text-xl sm:text-2xl font-bold text-white tracking-wide group-hover:text-[#8B0000] transition-colors">
-                Physical Graphic Editions
-              </h3>
-              <p className="text-xs sm:text-sm text-[#E5E7EB]/75 leading-relaxed font-sans">
-                Studio uniforms and technical typography on curated heavyweight streetwear blanks. High-resolution direct prints with zero inventory waste.
-              </p>
+          <div className="space-y-6">
+            <div className="flex items-center justify-between border-b border-[#8B0000]/40 pb-4">
+              <span className="font-mono text-xs text-[#8B0000] font-bold tracking-widest uppercase">
+                [ CORE PHILOSOPHY // EXECUTION ETHOS ]
+              </span>
+              <span className="font-mono text-[11px] text-emerald-400">
+                ACTIVE DOCTRINE
+              </span>
+            </div>
+
+            <h3 className="text-2xl sm:text-3xl font-extrabold text-[#E5E7EB] tracking-tight">
+              &ldquo;We don&apos;t outsource the hard parts. We ship the entire machine.&rdquo;
+            </h3>
+
+            {/* Three Core Ethos Statements */}
+            <div className="space-y-4 pt-2">
+              {/* Ethos 01 */}
+              <div className="border-l-2 border-[#8B0000] pl-4 py-1 space-y-1 bg-[#0A0F1D]/40 p-3">
+                <div className="flex items-center gap-2">
+                  <span className="font-mono text-xs text-[#8B0000] font-bold">01 //</span>
+                  <h4 className="text-sm font-bold text-[#E5E7EB] tracking-wide">
+                    ARCHITECTURAL DISCIPLINE
+                  </h4>
+                </div>
+                <p className="text-xs text-[#E5E7EB]/75 font-sans leading-relaxed">
+                  Software is digital civil engineering. We build resilient, low-latency architectures with zero algorithmic bloat and sub-second execution. No rented fragility, no unnecessary abstractions.
+                </p>
+              </div>
+
+              {/* Ethos 02 */}
+              <div className="border-l-2 border-[#8B0000] pl-4 py-1 space-y-1 bg-[#0A0F1D]/40 p-3">
+                <div className="flex items-center gap-2">
+                  <span className="font-mono text-xs text-[#8B0000] font-bold">02 //</span>
+                  <h4 className="text-sm font-bold text-[#E5E7EB] tracking-wide">
+                    TACTILE PERMANENCE
+                  </h4>
+                </div>
+                <p className="text-xs text-[#E5E7EB]/75 font-sans leading-relaxed">
+                  Physicality validates digital theory. Studio uniforms and technical typography on curated heavyweight streetwear blanks with zero inventory waste. Direct-to-garment archival permanence.
+                </p>
+              </div>
+
+              {/* Ethos 03 */}
+              <div className="border-l-2 border-[#8B0000] pl-4 py-1 space-y-1 bg-[#0A0F1D]/40 p-3">
+                <div className="flex items-center gap-2">
+                  <span className="font-mono text-xs text-[#8B0000] font-bold">03 //</span>
+                  <h4 className="text-sm font-bold text-[#E5E7EB] tracking-wide">
+                    THE UNIFIED STANDARD
+                  </h4>
+                </div>
+                <p className="text-xs text-[#E5E7EB]/75 font-sans leading-relaxed">
+                  The same engineering rigor that powers distributed backends dictates our vector typography and graphic production. Everything is measured against real-world production utility.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Thesis 03: The Strait Intersection */}
-        <div className="bg-[#111A2E] border border-[#E5E7EB]/10 hover:border-[#8B0000]/50 rounded-2xl overflow-hidden transition-all shadow-xl flex flex-col justify-between group hover:shadow-[0_0_35px_rgba(139,0,0,0.15)] relative">
-          <div>
-
-            <div className="p-6 sm:p-8 space-y-3">
-              <h3 className="text-xl sm:text-2xl font-bold text-white tracking-wide group-hover:text-[#8B0000] transition-colors">
-                The Unified Standard
-              </h3>
-              <p className="text-xs sm:text-sm text-[#E5E7EB]/75 leading-relaxed font-sans">
-                Operating from the strait of Tangier, we build real things with zero middlemen. Every line of code and visual artifact is executed with engineering discipline.
-              </p>
-            </div>
+          <div className="pt-6 mt-6 border-t border-[#8B0000]/40 flex items-center justify-between">
+            <span className="font-mono text-xs text-[#9CA3AF]">
+              ALL IN STUDIO [ ALN ]
+            </span>
+            <Link
+              href="/philosophy"
+              className="font-mono text-xs font-bold text-[#8B0000] hover:text-[#EF4444] transition-colors flex items-center gap-1.5"
+            >
+              <span>[ READ FULL MANIFESTO ]</span>
+              <span>→</span>
+            </Link>
           </div>
         </div>
       </div>
 
-      {/* C. The Signature Quote with Ambient Studio Photography */}
-      <div className="bg-[#111A2E] border border-[#8B0000]/40 rounded-2xl p-8 sm:p-14 relative overflow-hidden shadow-2xl text-center space-y-6 group">
+      {/* C. Terminal-Style Newsletter Sign-Up Block */}
+      <div className="bg-[#0D1527] border border-[#8B0000]/60 rounded-sm overflow-hidden shadow-2xl relative">
+        {/* Terminal Header Bar */}
+        <div className="bg-[#0A0F1D] border-b border-[#8B0000]/40 px-5 py-3 flex items-center justify-between font-mono text-xs text-[#9CA3AF]">
+          <div className="flex items-center gap-2.5">
+            <span className="w-2.5 h-2.5 rounded-full bg-[#8B0000]" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#8B0000]/50" />
+            <span className="w-2.5 h-2.5 rounded-full bg-[#8B0000]/25" />
+            <span className="ml-2 text-[#E5E7EB] font-bold tracking-wider">
+              ALL_IN_DISPATCH // TERMINAL v2.4.0
+            </span>
+          </div>
 
-        <div className="absolute top-4 left-6 font-mono text-6xl text-[#8B0000]/10 pointer-events-none select-none">
-          “
+          <div className="flex items-center gap-2 text-[11px] text-[#9CA3AF]">
+            <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+            <span>CHANNEL: SECURE_SUBSCRIBE // 256-BIT</span>
+          </div>
         </div>
-        <div className="absolute -bottom-6 right-6 font-mono text-6xl text-[#8B0000]/10 pointer-events-none select-none">
-          ”
-        </div>
 
-        <div className="relative z-10 space-y-4">
-          <span className="font-mono text-xs text-[#8B0000] font-bold tracking-widest uppercase block">
-            // THE CORE DOCTRINE
-          </span>
+        {/* Terminal Body */}
+        <div className="p-6 sm:p-10 space-y-6">
+          <div className="space-y-2 font-mono">
+            <div className="text-xs text-[#8B0000] font-semibold">
+              $ ./subscribe.sh --channel=studio-dispatches --frequency=bi-weekly
+            </div>
+            <div className="text-sm sm:text-base text-[#E5E7EB] font-sans font-medium">
+              Join the studio network for bi-weekly engineering dispatches, open-source lab releases, and archival capsule drop alerts.
+            </div>
+          </div>
 
-          <blockquote className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#E5E7EB] tracking-tight leading-snug max-w-4xl mx-auto">
-            &ldquo;We don&apos;t outsource the hard parts. We ship the entire machine.&rdquo;
-          </blockquote>
+          <form onSubmit={handleSubscribe} className="space-y-4">
+            <div className="flex flex-col sm:flex-row items-stretch gap-3">
+              {/* Terminal Input with prompt prefix */}
+              <div className="flex-1 flex items-center bg-[#0A0F1D] border border-[#8B0000]/40 focus-within:border-[#8B0000] px-4 py-3 transition-colors">
+                <span className="font-mono text-xs text-[#8B0000] mr-3 select-none font-bold">
+                  usr@aln:~$
+                </span>
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    if (status !== 'idle') setStatus('idle');
+                  }}
+                  placeholder="architect@domain.com"
+                  disabled={status === 'loading'}
+                  className="bg-transparent border-none text-[#E5E7EB] placeholder-[#9CA3AF]/40 text-xs sm:text-sm font-mono w-full focus:outline-none focus:ring-0"
+                />
+              </div>
 
-          <div className="pt-4 flex items-center justify-center gap-3 font-mono text-xs text-[#9CA3AF]">
-            <span className="w-8 h-px bg-[#8B0000]/40" />
-            <span>ALL IN STUDIO [ ALN ] · TANGIER, MOROCCO</span>
-            <span className="w-8 h-px bg-[#8B0000]/40" />
+              {/* Sharp Brutalist Subscribe Button */}
+              <button
+                type="submit"
+                disabled={status === 'loading'}
+                className="font-mono font-bold text-xs sm:text-sm text-white bg-[#8B0000] hover:bg-[#A30000] px-8 py-3.5 border border-[#8B0000] rounded-none transition-all duration-200 hover:shadow-[0_0_20px_rgba(139,0,0,0.4)] cursor-pointer flex items-center justify-center gap-2 shrink-0 disabled:opacity-50 active:scale-95"
+              >
+                <span>
+                  {status === 'loading' ? '[ PROCESSING... ]' : '[ SUBSCRIBE ]'}
+                </span>
+                {status !== 'loading' && <span>→</span>}
+              </button>
+            </div>
+
+            {/* Terminal Status Feedback Messages */}
+            {status === 'success' && (
+              <div className="font-mono text-xs text-emerald-400 bg-emerald-950/40 border border-emerald-500/40 p-3 rounded-none animate-fade-in flex items-center gap-2">
+                <span className="font-bold">✓</span>
+                <span>TRANSMISSION CONFIRMED // YOU ARE SUBSCRIBED TO STUDIO DISPATCHES.</span>
+              </div>
+            )}
+
+            {status === 'error' && (
+              <div className="font-mono text-xs text-[#EF4444] bg-red-950/40 border border-[#8B0000] p-3 rounded-none animate-fade-in flex items-center gap-2">
+                <span className="font-bold">✕</span>
+                <span>{errorMessage}</span>
+              </div>
+            )}
+          </form>
+
+          <div className="pt-2 border-t border-[#E5E7EB]/10 flex flex-wrap items-center justify-between gap-2 font-mono text-[11px] text-[#9CA3AF]">
+            <span>// NO SPAM. NO THIRD-PARTY TRACKERS. UNSUBSCRIBE ANYTIME.</span>
+            <span className="text-[#8B0000]">DISPATCHED DIRECTLY FROM TANGIER HQ</span>
           </div>
         </div>
       </div>
-
-      {/* D. Newsletter / Dispatch Terminal Component */}
-      <NewsletterDispatch id="philosophy-dispatch" />
     </section>
   );
 };

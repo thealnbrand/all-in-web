@@ -196,7 +196,7 @@ export default function Home() {
             </a>
 
             <a
-              href="#about"
+              href="#philosophy"
               className="font-bold text-[#E5E7EB] bg-[#0D1527]/80 hover:bg-[#0D1527] border border-[#8B0000]/40 hover:border-[#8B0000] px-7 py-3.5 rounded-full transition-all shadow-lg hover:scale-105 cursor-pointer"
             >
               PHILOSOPHY
