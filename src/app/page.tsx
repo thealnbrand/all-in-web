@@ -141,10 +141,10 @@ export default function Home() {
       </header>
 
       {/* Unified Hero Section */}
-      <section className="relative w-full min-h-[850px] sm:min-h-[880px] lg:min-h-[920px] overflow-hidden">
+      <section className="relative w-full min-h-[760px] sm:min-h-[800px] lg:min-h-[820px] overflow-hidden">
 
         {/* Left Side: Industrial Telemetry HUD, Kinetic Tagline & Action Deck */}
-        <div className="absolute top-[100px] sm:top-[115px] lg:top-1/2 lg:-translate-y-1/2 left-6 sm:left-10 lg:left-16 xl:left-24 max-w-[500px] lg:max-w-[580px] z-20 flex flex-col gap-5 sm:gap-6 text-left pointer-events-auto">
+        <div className="absolute top-[80px] sm:top-[95px] lg:top-[38%] lg:-translate-y-1/2 left-6 sm:left-10 lg:left-16 xl:left-24 max-w-[500px] lg:max-w-[580px] z-20 flex flex-col gap-5 sm:gap-6 text-left pointer-events-auto">
 
           {/* High-Impact Kinetic Headline with Cycling Golden Metallic Highlight */}
           <div className="space-y-1">
@@ -205,7 +205,7 @@ export default function Home() {
         </div>
 
         {/* Studio Insignia Logo - Balanced & Anchored to the Right */}
-        <div className="absolute top-[540px] sm:top-[510px] lg:top-1/2 lg:-translate-y-1/2 left-1/2 -translate-x-1/2 lg:left-auto lg:translate-x-0 right-auto lg:right-10 xl:right-16 2xl:right-24 z-20 flex flex-col items-center lg:items-end p-2 pointer-events-auto">
+        <div className="absolute top-[440px] sm:top-[420px] lg:top-[38%] lg:-translate-y-1/2 left-1/2 -translate-x-1/2 lg:left-auto lg:translate-x-0 right-auto lg:right-10 xl:right-16 2xl:right-24 z-20 flex flex-col items-center lg:items-end p-2 pointer-events-auto">
           {/* Studio Logo */}
           <div className="relative w-[260px] sm:w-[380px] md:w-[480px] lg:w-[540px] xl:w-[620px] 2xl:w-[700px] aspect-[1348/784] max-w-[85vw] transition-transform duration-500 hover:scale-105 filter drop-shadow-[0_0_45px_rgba(139,0,0,0.45)]">
             <Image
