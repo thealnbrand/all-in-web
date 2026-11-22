@@ -464,30 +464,25 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
           {/* Column 1: Live Interactive Site Preview (Kept as it is) */}
           <div className="lg:col-span-7 w-full h-[460px] sm:h-[520px] lg:h-[560px] rounded-3xl overflow-hidden border-2 border-[#8B0000]/40 bg-[#0D1527] shadow-[0_25px_70px_rgba(0,0,0,0.65)] relative flex flex-col">
             {/* Browser Top Chrome Bar */}
-            <div className="h-10 bg-[#111A13] border-b border-[#E5E7EB]/10 px-5 flex items-center justify-between z-20 relative shrink-0">
+            <div className="h-10 bg-[#0A0F1D] border-b border-[#8B0000]/25 px-4 sm:px-5 flex items-center justify-between z-20 relative shrink-0">
               <div className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
                 <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
                 <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
-                <span className="ml-2 font-mono text-[11px] font-bold text-[#8B0000] hidden sm:inline">
+                <span className="ml-2 font-mono text-xs font-bold text-white/70">
                   {current.name}
                 </span>
-              </div>
-
-              <div className="flex items-center gap-1.5 bg-[#111A2E] px-4 py-1 rounded-md border border-[#E5E7EB]/10 text-[11px] font-mono text-[#E5E7EB]/80 max-w-[220px] sm:max-w-[280px] truncate">
-                <span className="text-emerald-400">🔒</span>
-                <span className="truncate">{current.url}</span>
               </div>
 
               <a
                 href={current.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1 text-[11px] font-mono text-[#8B0000] hover:text-white font-bold transition-colors cursor-pointer"
+                className="inline-flex items-center gap-1.5 px-3 py-1 rounded bg-[#8B0000] hover:bg-[#A30000] text-white font-mono text-xs font-bold transition-all shadow-sm hover:shadow-[0_0_12px_rgba(139,0,0,0.5)] cursor-pointer whitespace-nowrap"
                 title={`Open ${current.name} live in a new tab`}
               >
-                <span className="hidden sm:inline">OPEN LIVE SITE</span>
-                <span>↗</span>
+                <span>OPEN LIVE SITE</span>
+                <span className="text-xs">↗</span>
               </a>
             </div>
 
