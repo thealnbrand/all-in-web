@@ -48,7 +48,13 @@ interface TactileItem {
 interface SystemProject {
   id: string;
   name: string;
+  subtitle?: string;
   category: string;
+  description?: string;
+  stack?: string[] | string;
+  for_sale_status?: string;
+  price_note?: string;
+  logo?: string;
   url: string;
   display_url?: string;
   type_badge?: string;
@@ -462,10 +468,22 @@ export default function CommandPage() {
       .map((s) => s.trim())
       .filter(Boolean);
 
+    const stackRaw = (formData.get('stack') as string) || '';
+    const stack = stackRaw
+      .split(/[\n,]/)
+      .map((s) => s.trim())
+      .filter(Boolean);
+
     const payload = {
       id: editingProject?.id,
       name: formData.get('name') as string,
+      subtitle: (formData.get('subtitle') as string) || '',
       category: formData.get('category') as string,
+      description: (formData.get('description') as string) || '',
+      stack,
+      for_sale_status: (formData.get('for_sale_status') as string) || 'FOR SALE // TURNKEY',
+      price_note: (formData.get('price_note') as string) || 'Turnkey Codebase · Ready to Deploy',
+      logo: (formData.get('logo') as string) || '',
       url: formData.get('url') as string,
       display_url: formData.get('display_url') as string,
       type_badge: formData.get('type_badge') as string,
@@ -1557,12 +1575,29 @@ export default function CommandPage() {
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div>
-                        <span className="font-mono text-[10px] text-[#8B0000] bg-black/40 px-2.5 py-1 rounded-full border border-[#8B0000]/30 uppercase">
-                          {proj.type_badge || proj.category}
-                        </span>
+                        <div className="flex flex-wrap items-center gap-2">
+                          <span className="font-mono text-[10px] text-[#8B0000] bg-black/40 px-2.5 py-1 rounded-full border border-[#8B0000]/30 uppercase">
+                            {proj.type_badge || proj.category}
+                          </span>
+                          {proj.for_sale_status && (
+                            <span className="font-mono text-[10px] text-rose-400 bg-rose-950/40 px-2.5 py-1 rounded-full border border-rose-500/30 uppercase font-bold">
+                              {proj.for_sale_status}
+                            </span>
+                          )}
+                        </div>
                         <h3 className="font-bold text-lg text-[#E5E7EB] mt-2">
                           {proj.name}
                         </h3>
+                        {proj.subtitle && (
+                          <p className="font-mono text-xs text-[#8B0000] mt-0.5">
+                            {proj.subtitle}
+                          </p>
+                        )}
+                        {proj.description && (
+                          <p className="text-xs text-[#E5E7EB]/70 mt-1 line-clamp-2">
+                            {proj.description}
+                          </p>
+                        )}
                       </div>
 
                       <a
@@ -1574,6 +1609,26 @@ export default function CommandPage() {
                         {proj.display_url || 'LIVE BUILD ↗'}
                       </a>
                     </div>
+
+                    {/* Tech Stack pills */}
+                    {proj.stack && (
+                      <div className="space-y-1">
+                        <span className="text-[10px] text-[#9CA3AF] font-mono block">BUILT WITH:</span>
+                        <div className="flex flex-wrap gap-1.5">
+                          {(Array.isArray(proj.stack) ? proj.stack : String(proj.stack).split(/[,\n]/))
+                            .map((s) => String(s).trim())
+                            .filter(Boolean)
+                            .map((tech, i) => (
+                              <span
+                                key={i}
+                                className="font-mono text-[10px] text-[#E5E7EB] bg-[#0A0F1D] border border-white/10 px-2 py-0.5 rounded"
+                              >
+                                {tech}
+                              </span>
+                            ))}
+                        </div>
+                      </div>
+                    )}
 
                     {/* Metrics preview */}
                     <div className="grid grid-cols-2 gap-3 bg-[#0D1527] p-3 rounded-xl border border-white/5 font-mono text-xs">
@@ -1941,7 +1996,85 @@ export default function CommandPage() {
                   name="name"
                   defaultValue={editingProject?.name || ''}
                   required
-                  placeholder="e.g. RihlatBladna — Direct Moroccan Travel Network"
+                  placeholder="e.g. SMART INVOICE PRO"
+                  className="w-full bg-[#0D1527] border border-white/10 focus:border-[#8B0000] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
+                />
+              </div>
+
+              <div>
+                <label className="block text-[11px] font-mono uppercase text-[#8B0000] mb-1">
+                  Subtitle / What is it Tagline
+                </label>
+                <input
+                  name="subtitle"
+                  defaultValue={editingProject?.subtitle || ''}
+                  placeholder="e.g. Automated Financial & Invoicing Platform"
+                  className="w-full bg-[#0D1527] border border-white/10 focus:border-[#8B0000] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
+                />
+              </div>
+
+              <div>
+                <label className="block text-[11px] font-mono uppercase text-[#8B0000] mb-1">
+                  Full Description (What It Is)
+                </label>
+                <textarea
+                  name="description"
+                  defaultValue={editingProject?.description || ''}
+                  rows={2}
+                  placeholder="e.g. Production-ready automated billing and invoice engine..."
+                  className="w-full bg-[#0D1527] border border-white/10 focus:border-[#8B0000] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-sans outline-none"
+                />
+              </div>
+
+              <div>
+                <label className="block text-[11px] font-mono uppercase text-[#8B0000] mb-1">
+                  Built With / Tech Stack (comma or line separated)
+                </label>
+                <input
+                  name="stack"
+                  defaultValue={
+                    Array.isArray(editingProject?.stack)
+                      ? editingProject.stack.join(', ')
+                      : editingProject?.stack || ''
+                  }
+                  placeholder="e.g. Next.js 16, TypeScript, Tailwind CSS, PDF Engine, Vercel Edge"
+                  className="w-full bg-[#0D1527] border border-white/10 focus:border-[#8B0000] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
+                />
+              </div>
+
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-[11px] font-mono uppercase text-[#8B0000] mb-1">
+                    Commercial Status (For Sale)
+                  </label>
+                  <input
+                    name="for_sale_status"
+                    defaultValue={editingProject?.for_sale_status || 'FOR SALE // TURNKEY'}
+                    placeholder="e.g. FOR SALE // TURNKEY SAAS"
+                    className="w-full bg-[#0D1527] border border-white/10 focus:border-[#8B0000] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
+                  />
+                </div>
+                <div>
+                  <label className="block text-[11px] font-mono uppercase text-[#8B0000] mb-1">
+                    Acquisition / Price Note
+                  </label>
+                  <input
+                    name="price_note"
+                    defaultValue={editingProject?.price_note || 'Turnkey Codebase · Ready to Deploy'}
+                    placeholder="e.g. Turnkey Codebase · Ready to Deploy"
+                    className="w-full bg-[#0D1527] border border-white/10 focus:border-[#8B0000] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-[11px] font-mono uppercase text-[#8B0000] mb-1">
+                  Logo URL / Image Path
+                </label>
+                <input
+                  name="logo"
+                  defaultValue={editingProject?.logo || ''}
+                  placeholder="e.g. /logos/smartinvoice.png"
                   className="w-full bg-[#0D1527] border border-white/10 focus:border-[#8B0000] rounded-xl px-4 py-2.5 text-xs text-[#E5E7EB] font-mono outline-none"
                 />
               </div>

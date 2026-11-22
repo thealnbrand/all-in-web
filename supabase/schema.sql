@@ -97,10 +97,24 @@ CREATE TABLE IF NOT EXISTS public.studio_projects (
   metric2_value TEXT DEFAULT 'INSTANT',
   metric2_sub TEXT DEFAULT 'Sub-second',
   deliverables JSONB DEFAULT '[]'::jsonb,
+  subtitle TEXT,
+  description TEXT,
+  stack JSONB DEFAULT '[]'::jsonb,
+  for_sale_status TEXT DEFAULT 'FOR SALE // TURNKEY',
+  price_note TEXT DEFAULT 'Turnkey Codebase · Ready to Deploy',
+  logo TEXT,
   sort_order INT DEFAULT 0,
   created_at TIMESTAMPTZ DEFAULT now(),
   updated_at TIMESTAMPTZ DEFAULT now()
 );
+
+-- Migration helpers for existing studio_projects tables
+ALTER TABLE public.studio_projects ADD COLUMN IF NOT EXISTS subtitle TEXT;
+ALTER TABLE public.studio_projects ADD COLUMN IF NOT EXISTS description TEXT;
+ALTER TABLE public.studio_projects ADD COLUMN IF NOT EXISTS stack JSONB DEFAULT '[]'::jsonb;
+ALTER TABLE public.studio_projects ADD COLUMN IF NOT EXISTS for_sale_status TEXT DEFAULT 'FOR SALE // TURNKEY';
+ALTER TABLE public.studio_projects ADD COLUMN IF NOT EXISTS price_note TEXT DEFAULT 'Turnkey Codebase · Ready to Deploy';
+ALTER TABLE public.studio_projects ADD COLUMN IF NOT EXISTS logo TEXT;
 
 -- Enable RLS for projects
 ALTER TABLE public.studio_projects ENABLE ROW LEVEL SECURITY;

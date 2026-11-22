@@ -39,12 +39,24 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Database not connected' }, { status: 500 });
   }
 
+  const stack = Array.isArray(body.stack)
+    ? body.stack
+    : typeof body.stack === 'string'
+    ? body.stack.split(/[,\n]/).map((s: string) => s.trim()).filter(Boolean)
+    : [];
+
   const { data, error } = await supabase
     .from('studio_projects')
     .insert([
       {
         name: body.name,
+        subtitle: body.subtitle || '',
         category: body.category || '',
+        description: body.description || '',
+        stack,
+        for_sale_status: body.for_sale_status || body.forSaleStatus || 'FOR SALE // TURNKEY',
+        price_note: body.price_note || body.priceNote || 'Turnkey Codebase · Ready to Deploy',
+        logo: body.logo || '',
         url: body.url || '',
         display_url: body.display_url || body.url || '',
         type_badge: body.type_badge || 'FEATURED LIVE BUILD // SAAS PLATFORM',
@@ -78,6 +90,16 @@ export async function PUT(req: NextRequest) {
 
   if (!id) {
     return NextResponse.json({ error: 'Missing project ID' }, { status: 400 });
+  }
+
+  if (updates.stack && typeof updates.stack === 'string') {
+    updates.stack = updates.stack.split(/[,\n]/).map((s: string) => s.trim()).filter(Boolean);
+  }
+  if (updates.forSaleStatus && !updates.for_sale_status) {
+    updates.for_sale_status = updates.forSaleStatus;
+  }
+  if (updates.priceNote && !updates.price_note) {
+    updates.price_note = updates.priceNote;
   }
 
   const supabase = getServerSupabase();

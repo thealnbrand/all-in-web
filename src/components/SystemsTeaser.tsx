@@ -223,12 +223,14 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
                 stack:
                   Array.isArray(p.stack) && p.stack.length > 0
                     ? p.stack
+                    : typeof p.stack === 'string' && p.stack.trim()
+                    ? p.stack.split(/[,\n]/).map((s: string) => s.trim()).filter(Boolean)
                     : Array.isArray(matchedStatic.stack) && matchedStatic.stack.length > 0
                     ? matchedStatic.stack
                     : ['Next.js 16', 'TypeScript', 'Tailwind CSS', 'Vercel Edge'],
-                forSaleStatus: p.forSaleStatus || matchedStatic.forSaleStatus || 'FOR SALE // TURNKEY',
-                priceNote: p.priceNote || matchedStatic.priceNote || 'Turnkey Codebase · Ready to Deploy',
-                logo: resolveProjectLogo(p, matchedStatic.logo),
+                forSaleStatus: p.for_sale_status || p.forSaleStatus || matchedStatic.forSaleStatus || 'FOR SALE // TURNKEY',
+                priceNote: p.price_note || p.priceNote || matchedStatic.priceNote || 'Turnkey Codebase · Ready to Deploy',
+                logo: p.logo || resolveProjectLogo(p, matchedStatic.logo),
                 url: p.url || matchedStatic.url,
               };
             });
