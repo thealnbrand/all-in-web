@@ -7,6 +7,7 @@ export const Hero3DGeometricBackground: React.FC = () => {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const [hasWebGL, setHasWebGL] = useState<boolean>(true);
+  const [scrollOpacity, setScrollOpacity] = useState<number>(1);
 
   useEffect(() => {
     // 1. Detect WebGL availability
@@ -227,11 +228,22 @@ export const Hero3DGeometricBackground: React.FC = () => {
 
     animate();
 
+    // Scroll fade: fully visible in hero, fades out before systems section
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const op = Math.max(0, Math.min(1, 1 - (scrollY - 100) / 600));
+      setScrollOpacity(op);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
     // 10. Cleanup
     return () => {
       cancelAnimationFrame(animationFrameId);
       window.removeEventListener('mousemove', handleMouseMove);
       window.removeEventListener('resize', handleResize);
+      window.removeEventListener('scroll', handleScroll);
 
       // Dispose Three.js resources
       mainGeo.dispose();
@@ -251,8 +263,8 @@ export const Hero3DGeometricBackground: React.FC = () => {
   return (
     <div
       ref={containerRef}
-      className="fixed inset-0 pointer-events-none select-none"
-      style={{ zIndex: -1 }}
+      className="fixed inset-0 pointer-events-none select-none transition-opacity duration-300"
+      style={{ zIndex: -1, opacity: scrollOpacity }}
     >
       {hasWebGL ? (
         <>

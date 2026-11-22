@@ -84,7 +84,7 @@ export const FloatingNavDock: React.FC = () => {
   return (
     <aside
       aria-label="Section Quick Navigation"
-      className="fixed right-3 sm:right-5 top-1/2 -translate-y-1/2 z-40 hidden md:flex flex-col items-end select-none pointer-events-auto"
+      className="fixed right-2 sm:right-3.5 top-1/2 -translate-y-1/2 z-30 hidden xl:flex flex-col items-end select-none pointer-events-auto"
     >
       {/* Floating Section Name Badge (Only appears briefly on section change to prevent hiding content) */}
       {recentChangeTitle && (
@@ -97,7 +97,7 @@ export const FloatingNavDock: React.FC = () => {
       )}
 
       {/* Ultra-Slim Dock Showing ONLY Numbers */}
-      <div className="bg-[#111A2E]/90 backdrop-blur-md border border-[#8B0000]/30 p-1.5 rounded-2xl shadow-2xl flex flex-col items-center gap-1.5 font-mono text-[11px] w-9">
+      <div className="bg-[#111A2E]/90 backdrop-blur-md border border-[#8B0000]/30 p-1 rounded-xl shadow-2xl flex flex-col items-center gap-1 font-mono text-[10px] w-8">
         {SECTIONS.map((sec) => {
           const isActive = activeSection === sec.id;
           const isHovered = hoveredSection === sec.id;

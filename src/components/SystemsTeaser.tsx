@@ -352,7 +352,7 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
   return (
     <section
       id="systems"
-      className="relative py-20 px-4 sm:px-8 lg:px-16 max-w-[1440px] mx-auto select-none font-sans scroll-mt-24 space-y-12 overflow-hidden rounded-3xl"
+      className="relative py-20 px-4 sm:px-8 lg:px-12 max-w-[1340px] mx-auto select-none font-sans scroll-mt-24 space-y-12 overflow-hidden rounded-3xl"
     >
 
 
@@ -462,55 +462,45 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
       <div className="space-y-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
           {/* Column 1: Live Interactive Site Preview (Kept as it is) */}
-          <div className="lg:col-span-7 w-full h-[460px] sm:h-[520px] lg:h-[560px] rounded-3xl overflow-hidden border-2 border-[#8B0000]/40 bg-[#0D1527] group shadow-[0_25px_70px_rgba(0,0,0,0.65)] relative flex flex-col">
-            <a
-              href={current.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block w-full h-full relative cursor-pointer"
-              title={`Click to open ${current.name} live in a new tab`}
-            >
-              {/* Browser Top Chrome Bar */}
-              <div className="h-10 bg-[#111A13] border-b border-[#E5E7EB]/10 px-5 flex items-center justify-between z-20 relative shrink-0">
-                <div className="flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
-                  <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
-                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
-                  <span className="ml-2 font-mono text-[11px] font-bold text-[#8B0000] hidden sm:inline">
-                    {current.name}
-                  </span>
-                </div>
-
-                <div className="flex items-center gap-1.5 bg-[#111A2E] px-4 py-1 rounded-md border border-[#E5E7EB]/10 text-[11px] font-mono text-[#E5E7EB]/80 max-w-[220px] sm:max-w-[280px] truncate">
-                  <span className="text-emerald-400">🔒</span>
-                  <span className="truncate">{current.url}</span>
-                </div>
-
-                <div className="flex items-center gap-1 text-[11px] font-mono text-[#8B0000] font-bold group-hover:text-white transition-colors">
-                  <span className="hidden sm:inline">LIVE PREVIEW</span>
-                  <span>↗</span>
-                </div>
+          <div className="lg:col-span-7 w-full h-[460px] sm:h-[520px] lg:h-[560px] rounded-3xl overflow-hidden border-2 border-[#8B0000]/40 bg-[#0D1527] shadow-[0_25px_70px_rgba(0,0,0,0.65)] relative flex flex-col">
+            {/* Browser Top Chrome Bar */}
+            <div className="h-10 bg-[#111A13] border-b border-[#E5E7EB]/10 px-5 flex items-center justify-between z-20 relative shrink-0">
+              <div className="flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-rose-500/80" />
+                <span className="w-2.5 h-2.5 rounded-full bg-amber-500/80" />
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500/80" />
+                <span className="ml-2 font-mono text-[11px] font-bold text-[#8B0000] hidden sm:inline">
+                  {current.name}
+                </span>
               </div>
 
-              {/* Embedded Live Web Application Viewport */}
-              <div className="relative w-full flex-1 bg-white overflow-hidden">
-                <iframe
-                  key={current.id}
-                  src={current.url}
-                  title={`${current.name} Live Viewport`}
-                  className="w-full h-full border-0 pointer-events-none transform origin-top transition-transform duration-500 group-hover:scale-[1.01]"
-                  loading="lazy"
-                />
-
-                {/* Hover Launch Prompt */}
-                <div className="absolute inset-0 bg-[#111A2E]/0 group-hover:bg-[#111A2E]/25 transition-all duration-300 flex items-center justify-center pointer-events-none">
-                  <div className="opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 bg-[#111A2E]/95 backdrop-blur-md border border-[#8B0000] px-6 py-3 rounded-full shadow-2xl text-xs font-mono font-bold text-[#8B0000] flex items-center gap-2">
-                    <span>LAUNCH {current.name} IN NEW TAB</span>
-                    <span className="text-white">↗</span>
-                  </div>
-                </div>
+              <div className="flex items-center gap-1.5 bg-[#111A2E] px-4 py-1 rounded-md border border-[#E5E7EB]/10 text-[11px] font-mono text-[#E5E7EB]/80 max-w-[220px] sm:max-w-[280px] truncate">
+                <span className="text-emerald-400">🔒</span>
+                <span className="truncate">{current.url}</span>
               </div>
-            </a>
+
+              <a
+                href={current.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1 text-[11px] font-mono text-[#8B0000] hover:text-white font-bold transition-colors cursor-pointer"
+                title={`Open ${current.name} live in a new tab`}
+              >
+                <span className="hidden sm:inline">OPEN LIVE SITE</span>
+                <span>↗</span>
+              </a>
+            </div>
+
+            {/* Embedded Live Web Application Viewport */}
+            <div className="relative w-full flex-1 bg-[#060A14] overflow-hidden">
+              <iframe
+                key={current.id}
+                src={current.url}
+                title={`${current.name} Live Viewport`}
+                className="w-full h-full border-0"
+                loading="lazy"
+              />
+            </div>
           </div>
 
           {/* Column 2: Site Info, What it was created with & For Sale Commercial Box */}
