@@ -318,10 +318,7 @@ export default function SystemsPage() {
           </div>
 
           <div className="space-y-4 max-w-[950px]">
-            <div className="inline-flex items-center gap-2 font-mono text-xs text-[#8B0000] font-extrabold tracking-widest uppercase bg-[#111A2E] px-3 py-1 rounded-full border border-[#8B0000]/30">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-              <span>CUSTOM SOFTWARE STUDIO</span>
-            </div>
+
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#E5E7EB] tracking-tight leading-[1.1]">
               Custom Web Platforms & Scalable Systems. Engineered From Scratch.
             </h1>
@@ -618,9 +615,7 @@ export default function SystemsPage() {
                 What Every ALL IN Build Includes
               </h2>
             </div>
-            <span className="font-mono text-xs text-emerald-400 font-bold bg-[#0A0F1D] px-3 py-1 rounded-full border border-emerald-400/30">
-              100% TRANSPARENT SPRINT
-            </span>
+
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-3 font-mono text-xs">
