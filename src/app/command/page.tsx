@@ -68,6 +68,14 @@ interface SystemProject {
   sort_order?: number;
 }
 
+interface Subscriber {
+  id: string;
+  email: string;
+  interests?: string[];
+  source?: string;
+  created_at: string;
+}
+
 export default function CommandPage() {
   const [isAuthenticated, setIsAuthenticated] = useState<boolean | null>(null);
   const [accessKey, setAccessKey] = useState<string>('');
@@ -104,6 +112,11 @@ export default function CommandPage() {
   const [projectsTableMissing, setProjectsTableMissing] = useState<boolean>(false);
   const [editingProject, setEditingProject] = useState<SystemProject | null>(null);
   const [isProjectModalOpen, setIsProjectModalOpen] = useState<boolean>(false);
+
+  // Subscribers State
+  const [subscribers, setSubscribers] = useState<Subscriber[]>([]);
+  const [subscribersLoading, setSubscribersLoading] = useState<boolean>(false);
+  const [subscriberFilter, setSubscriberFilter] = useState<string>('ALL');
 
   // Notification Toast
   const [toastMsg, setToastMsg] = useState<string>('');
@@ -179,6 +192,40 @@ export default function CommandPage() {
     fetchProducts();
     fetchGoods();
     fetchProjects();
+    fetchSubscribers();
+  };
+
+  // SUBSCRIBERS
+  const fetchSubscribers = async () => {
+    setSubscribersLoading(true);
+    try {
+      const res = await fetch('/api/admin/subscribers');
+      if (res.ok) {
+        const data = await res.json();
+        setSubscribers(data.subscribers || []);
+      }
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setSubscribersLoading(false);
+    }
+  };
+
+  const handleDeleteSubscriber = async (id: string) => {
+    if (!confirm('Remove this subscriber from studio network?')) return;
+    try {
+      const res = await fetch('/api/admin/subscribers', {
+        method: 'DELETE',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ id }),
+      });
+      if (res.ok) {
+        setSubscribers((prev) => prev.filter((s) => s.id !== id));
+        showToast('Subscriber removed');
+      }
+    } catch {
+      showToast('Error removing subscriber');
+    }
   };
 
   // INQUIRIES
@@ -770,6 +817,7 @@ export default function CommandPage() {
             }`}
           >
             <span>05 // CHANNELS & DB</span>
+            <span className="text-[10px] opacity-70">({subscribers.length})</span>
           </button>
         </div>
 
@@ -1749,6 +1797,128 @@ export default function CommandPage() {
                   </p>
                 </div>
               </div>
+            </div>
+
+            {/* Studio Newsletter Subscribers & Chosen Channels */}
+            <div className="bg-[#111A2E] border border-[#8B0000]/40 rounded-2xl p-6 space-y-5">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-4">
+                <div>
+                  <h3 className="text-base font-bold text-[#E5E7EB] flex items-center gap-2">
+                    <span>STUDIO NEWSLETTER SUBSCRIBERS</span>
+                    <span className="text-xs font-mono text-[#8B0000] bg-black/40 px-2.5 py-0.5 rounded border border-[#8B0000]/30 font-extrabold">
+                      {subscribers.length} TOTAL
+                    </span>
+                  </h3>
+                  <p className="text-xs text-[#E5E7EB]/60 font-mono mt-1">
+                    Subscriber stream segmented by chosen channels: Clothes, Digital Products, and Systems.
+                  </p>
+                </div>
+
+                {/* Filter by Channel */}
+                <div className="flex items-center gap-1.5 font-mono text-xs flex-wrap">
+                  {['ALL', 'clothes', 'digital_products', 'systems'].map((f) => (
+                    <button
+                      key={f}
+                      type="button"
+                      onClick={() => setSubscriberFilter(f)}
+                      className={`px-3 py-1.5 rounded-lg font-bold transition-all cursor-pointer ${
+                        subscriberFilter === f
+                          ? 'bg-[#8B0000] text-white shadow'
+                          : 'bg-[#0D1527] text-[#9CA3AF] hover:text-white'
+                      }`}
+                    >
+                      {f === 'ALL'
+                        ? 'ALL CHANNELS'
+                        : f === 'clothes'
+                        ? 'CLOTHES'
+                        : f === 'digital_products'
+                        ? 'DIGITAL'
+                        : 'SYSTEMS'}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {subscribersLoading ? (
+                <div className="py-8 text-center text-xs font-mono text-[#9CA3AF]">
+                  LOADING SUBSCRIBERS STREAM...
+                </div>
+              ) : subscribers.length === 0 ? (
+                <div className="py-8 text-center font-mono text-xs text-[#9CA3AF] bg-[#0D1527] rounded-xl border border-white/5">
+                  NO ACTIVE SUBSCRIBERS YET // NEW SIGN-UPS WILL APPEAR HERE AUTOMATICALLY.
+                </div>
+              ) : (
+                <div className="overflow-x-auto">
+                  <table className="w-full text-left font-mono text-xs">
+                    <thead>
+                      <tr className="border-b border-white/10 text-[#8B0000] text-[11px]">
+                        <th className="py-2.5 px-3">EMAIL ADDRESS</th>
+                        <th className="py-2.5 px-3">CHOSEN CHANNELS</th>
+                        <th className="py-2.5 px-3">SOURCE</th>
+                        <th className="py-2.5 px-3">DATE</th>
+                        <th className="py-2.5 px-3 text-right">ACTION</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-white/5">
+                      {subscribers
+                        .filter((sub) => {
+                          if (subscriberFilter === 'ALL') return true;
+                          return (
+                            (sub.interests || []).includes(subscriberFilter) ||
+                            (sub.source || '').includes(subscriberFilter)
+                          );
+                        })
+                        .map((sub) => {
+                          const interests =
+                            Array.isArray(sub.interests) && sub.interests.length > 0
+                              ? sub.interests
+                              : ['clothes', 'digital_products', 'systems'];
+
+                          return (
+                            <tr key={sub.id} className="hover:bg-white/5 transition-colors">
+                              <td className="py-3 px-3 text-white font-bold">{sub.email}</td>
+                              <td className="py-3 px-3">
+                                <div className="flex flex-wrap gap-1.5">
+                                  {interests.includes('clothes') && (
+                                    <span className="bg-amber-950/60 text-amber-300 border border-amber-500/30 px-2 py-0.5 rounded text-[10px] font-bold">
+                                      CLOTHES
+                                    </span>
+                                  )}
+                                  {interests.includes('digital_products') && (
+                                    <span className="bg-blue-950/60 text-blue-300 border border-blue-500/30 px-2 py-0.5 rounded text-[10px] font-bold">
+                                      DIGITAL
+                                    </span>
+                                  )}
+                                  {interests.includes('systems') && (
+                                    <span className="bg-purple-950/60 text-purple-300 border border-purple-500/30 px-2 py-0.5 rounded text-[10px] font-bold">
+                                      SYSTEMS
+                                    </span>
+                                  )}
+                                </div>
+                              </td>
+                              <td className="py-3 px-3 text-[#9CA3AF] text-[11px]">
+                                {sub.source || 'landing'}
+                              </td>
+                              <td className="py-3 px-3 text-[#9CA3AF] text-[11px]">
+                                {new Date(sub.created_at).toLocaleDateString()}
+                              </td>
+                              <td className="py-3 px-3 text-right">
+                                <button
+                                  type="button"
+                                  onClick={() => handleDeleteSubscriber(sub.id)}
+                                  className="text-red-400 hover:text-red-300 transition-colors text-[11px] cursor-pointer"
+                                  title="Remove subscriber"
+                                >
+                                  [ REMOVE ]
+                                </button>
+                              </td>
+                            </tr>
+                          );
+                        })}
+                    </tbody>
+                  </table>
+                </div>
+              )}
             </div>
 
             {/* Supabase SQL Migration Script Copier */}

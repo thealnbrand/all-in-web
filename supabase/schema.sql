@@ -388,9 +388,15 @@ ON CONFLICT DO NOTHING;
 CREATE TABLE IF NOT EXISTS public.studio_subscribers (
   id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
   email TEXT NOT NULL UNIQUE,
+  interests TEXT[] DEFAULT ARRAY['clothes', 'digital_products', 'systems']::TEXT[],
   source TEXT DEFAULT 'landing_philosophy',
-  created_at TIMESTAMPTZ DEFAULT now()
+  created_at TIMESTAMPTZ DEFAULT now(),
+  updated_at TIMESTAMPTZ DEFAULT now()
 );
+
+-- In case table was already created without interests column:
+ALTER TABLE public.studio_subscribers ADD COLUMN IF NOT EXISTS interests TEXT[] DEFAULT ARRAY['clothes', 'digital_products', 'systems']::TEXT[];
+ALTER TABLE public.studio_subscribers ADD COLUMN IF NOT EXISTS updated_at TIMESTAMPTZ DEFAULT now();
 
 ALTER TABLE public.studio_subscribers ENABLE ROW LEVEL SECURITY;
 

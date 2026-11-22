@@ -3,10 +3,40 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 
+const CHANNELS = [
+  {
+    id: 'clothes',
+    tag: '01 // CLOTHES',
+    name: 'Clothes & Tactical Goods',
+    desc: 'Archival streetwear drops, heavyweight blanks, and limited capsule alerts.',
+  },
+  {
+    id: 'digital_products',
+    tag: '02 // DIGITAL PRODUCTS',
+    name: 'Digital Products & Kits',
+    desc: 'UI/UX frameworks, full web templates, vector assets, and engineering manuals.',
+  },
+  {
+    id: 'systems',
+    tag: '03 // SYSTEMS',
+    name: 'Systems & Software',
+    desc: 'Turnkey codebases, full-stack SaaS builds, and production platform sales.',
+  },
+] as const;
+
 export const PhilosophySection: React.FC = () => {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [errorMessage, setErrorMessage] = useState('');
+  const [selectedChannels, setSelectedChannels] = useState<string[]>(['clothes', 'digital_products', 'systems']);
+  const [confirmedChannels, setConfirmedChannels] = useState<string[]>([]);
+
+  const toggleChannel = (id: string) => {
+    if (status !== 'idle') setStatus('idle');
+    setSelectedChannels((prev) =>
+      prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id]
+    );
+  };
 
   const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -19,13 +49,23 @@ export const PhilosophySection: React.FC = () => {
       return;
     }
 
+    if (selectedChannels.length === 0) {
+      setStatus('error');
+      setErrorMessage('CHANNEL_REQUIRED // PLEASE SELECT AT LEAST ONE DISPATCH CHANNEL (CLOTHES, DIGITAL PRODUCTS, OR SYSTEMS)');
+      return;
+    }
+
     setStatus('loading');
 
     try {
       const res = await fetch('/api/subscribe', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: cleanEmail, source: 'landing_philosophy' }),
+        body: JSON.stringify({
+          email: cleanEmail,
+          interests: selectedChannels,
+          source: 'landing_philosophy',
+        }),
       });
 
       const data = await res.json();
@@ -34,6 +74,7 @@ export const PhilosophySection: React.FC = () => {
         throw new Error(data.error || 'SUBSCRIPTION_REJECTED');
       }
 
+      setConfirmedChannels([...selectedChannels]);
       setStatus('success');
       setEmail('');
     } catch (err: unknown) {
@@ -240,17 +281,70 @@ export const PhilosophySection: React.FC = () => {
         {/* Terminal Body */}
         <div className="p-6 sm:p-10 space-y-6">
           <div className="space-y-2 font-mono">
-            <div className="text-xs text-[#8B0000] font-semibold">
-              $ ./subscribe.sh --channel=studio-dispatches --frequency=bi-weekly
+            <div className="text-xs text-[#8B0000] font-semibold flex items-center gap-1.5 flex-wrap">
+              <span>$ ./subscribe.sh</span>
+              <span className="text-[#E5E7EB]">
+                --channels={selectedChannels.length === 3 ? 'all' : selectedChannels.length === 0 ? 'none' : selectedChannels.join(',')}
+              </span>
+              <span className="text-[#9CA3AF] opacity-60">--frequency=bi-weekly</span>
             </div>
             <div className="text-sm sm:text-base text-[#E5E7EB] font-sans font-medium">
               Join the studio network for bi-weekly engineering dispatches, open-source lab releases, and archival capsule drop alerts.
             </div>
           </div>
 
-          <form onSubmit={handleSubscribe} className="space-y-4">
-            <div className="flex flex-col sm:flex-row items-stretch gap-3">
-              {/* Terminal Input with prompt prefix */}
+          <form onSubmit={handleSubscribe} className="space-y-5">
+            {/* Interactive Channel Selection Deck */}
+            <div className="space-y-2 font-mono">
+              <div className="flex items-center justify-between text-[11px] text-[#9CA3AF]">
+                <span>// CHOOSE YOUR DISPATCH STREAMS (CLICK TO TOGGLE):</span>
+                <span className="text-[#8B0000] font-bold">
+                  [{selectedChannels.length}/3 ACTIVE]
+                </span>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                {CHANNELS.map((ch) => {
+                  const isSelected = selectedChannels.includes(ch.id);
+                  return (
+                    <button
+                      key={ch.id}
+                      type="button"
+                      onClick={() => toggleChannel(ch.id)}
+                      className={`text-left p-3.5 rounded-sm border transition-all cursor-pointer flex flex-col justify-between group ${
+                        isSelected
+                          ? 'bg-[#111A2E] border-[#8B0000] shadow-[0_0_20px_rgba(139,0,0,0.35)] text-[#E5E7EB]'
+                          : 'bg-[#0A0F1D]/80 border-white/10 text-[#9CA3AF] hover:border-white/30 hover:text-[#E5E7EB]'
+                      }`}
+                    >
+                      <div className="flex items-center justify-between text-xs mb-1.5">
+                        <span className={`font-bold font-mono text-[11px] ${isSelected ? 'text-[#8B0000]' : 'text-[#9CA3AF]'}`}>
+                          {ch.tag}
+                        </span>
+                        <span
+                          className={`font-mono text-[10px] font-bold px-1.5 py-0.5 rounded ${
+                            isSelected
+                              ? 'bg-[#8B0000] text-white shadow-sm'
+                              : 'bg-white/5 text-[#9CA3AF] border border-white/10'
+                          }`}
+                        >
+                          {isSelected ? '✓ ACTIVE' : '+ SELECT'}
+                        </span>
+                      </div>
+                      <div className="font-sans font-bold text-xs sm:text-sm text-white mb-1">
+                        {ch.name}
+                      </div>
+                      <div className="font-sans text-[11px] text-[#9CA3AF] leading-tight line-clamp-2">
+                        {ch.desc}
+                      </div>
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+
+            {/* Terminal Input with prompt prefix + Subscribe Button */}
+            <div className="flex flex-col sm:flex-row items-stretch gap-3 pt-1">
               <div className="flex-1 flex items-center bg-[#0A0F1D] border border-[#8B0000]/40 focus-within:border-[#8B0000] px-4 py-3 transition-colors">
                 <span className="font-mono text-xs text-[#8B0000] mr-3 select-none font-bold">
                   usr@aln:~$
@@ -275,7 +369,7 @@ export const PhilosophySection: React.FC = () => {
                 className="font-mono font-bold text-xs sm:text-sm text-white bg-[#8B0000] hover:bg-[#A30000] px-8 py-3.5 border border-[#8B0000] rounded-none transition-all duration-200 hover:shadow-[0_0_20px_rgba(139,0,0,0.4)] cursor-pointer flex items-center justify-center gap-2 shrink-0 disabled:opacity-50 active:scale-95"
               >
                 <span>
-                  {status === 'loading' ? '[ PROCESSING... ]' : '[ SUBSCRIBE ]'}
+                  {status === 'loading' ? '[ TRANSMITTING... ]' : '[ SUBSCRIBE ]'}
                 </span>
                 {status !== 'loading' && <span>→</span>}
               </button>
@@ -283,9 +377,17 @@ export const PhilosophySection: React.FC = () => {
 
             {/* Terminal Status Feedback Messages */}
             {status === 'success' && (
-              <div className="font-mono text-xs text-emerald-400 bg-emerald-950/40 border border-emerald-500/40 p-3 rounded-none animate-fade-in flex items-center gap-2">
-                <span className="font-bold">✓</span>
-                <span>TRANSMISSION CONFIRMED // YOU ARE SUBSCRIBED TO STUDIO DISPATCHES.</span>
+              <div className="font-mono text-xs text-emerald-400 bg-emerald-950/40 border border-emerald-500/40 p-4 rounded-none animate-fade-in space-y-1.5">
+                <div className="flex items-center gap-2 font-bold">
+                  <span>✓ TRANSMISSION CONFIRMED // YOU ARE SUBSCRIBED TO:</span>
+                </div>
+                <div className="text-[11px] text-emerald-300 flex flex-wrap gap-2 pt-0.5">
+                  {confirmedChannels.map((c) => (
+                    <span key={c} className="bg-emerald-900/60 border border-emerald-500/40 px-2 py-0.5 rounded font-mono font-bold">
+                      [{c === 'clothes' ? '01 // CLOTHES' : c === 'digital_products' ? '02 // DIGITAL PRODUCTS' : '03 // SYSTEMS'}]
+                    </span>
+                  ))}
+                </div>
               </div>
             )}
 
