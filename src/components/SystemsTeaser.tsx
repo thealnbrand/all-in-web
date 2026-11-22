@@ -462,7 +462,7 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
       <div className="space-y-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
           {/* Column 1: Live Interactive Site Preview (Kept as it is) */}
-          <div className="lg:col-span-7 w-full h-[460px] sm:h-[520px] lg:h-[560px] rounded-3xl overflow-hidden border-2 border-[#8B0000]/40 bg-[#0D1527] shadow-[0_25px_70px_rgba(0,0,0,0.65)] relative flex flex-col">
+          <div className="lg:col-span-7 w-full h-full min-h-[500px] sm:min-h-[560px] lg:min-h-[640px] rounded-3xl overflow-hidden border-2 border-[#8B0000]/40 bg-[#0D1527] shadow-[0_25px_70px_rgba(0,0,0,0.65)] relative flex flex-col">
             {/* Browser Top Chrome Bar */}
             <div className="h-10 bg-[#0A0F1D] border-b border-[#8B0000]/25 px-4 sm:px-5 flex items-center justify-between z-20 relative shrink-0">
               <div className="flex items-center gap-2">
@@ -499,7 +499,7 @@ export const SystemsTeaser: React.FC<SystemsTeaserProps> = ({ onInquire }) => {
           </div>
 
           {/* Column 2: Site Info, What it was created with & For Sale Commercial Box */}
-          <div className="lg:col-span-5 bg-[#111A2E] border-2 border-[#8B0000]/50 hover:border-[#8B0000] rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-2xl relative transition-all group overflow-hidden">
+          <div className="lg:col-span-5 h-full bg-[#111A2E] border-2 border-[#8B0000]/50 hover:border-[#8B0000] rounded-3xl p-6 sm:p-8 flex flex-col justify-between shadow-2xl relative transition-all group overflow-hidden">
             {/* Technical Brutalist Corner Brackets */}
             <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-[#8B0000]" />
             <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-[#8B0000]" />
