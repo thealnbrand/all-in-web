@@ -9,12 +9,7 @@ interface PreloaderProps {
 
 export const Preloader: React.FC<PreloaderProps> = ({ onComplete }) => {
   const [step, setStep] = useState<number>(1);
-  const [isFinished, setIsFinished] = useState<boolean>(() => {
-    if (typeof window !== 'undefined') {
-      return sessionStorage.getItem('aln_preloader_seen') === 'true';
-    }
-    return false;
-  });
+  const [isFinished, setIsFinished] = useState<boolean>(false);
   const onCompleteRef = React.useRef(onComplete);
   onCompleteRef.current = onComplete;
 

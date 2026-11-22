@@ -2,6 +2,7 @@
 
 import '../utils/react19Polyfill';
 import React, { useState } from 'react';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
 import { PhilosophySection } from '../components/PhilosophySection';
@@ -12,10 +13,18 @@ import { SystemsTeaser } from '../components/SystemsTeaser';
 import { DigitalProductsTeaser } from '../components/DigitalProductsTeaser';
 import { TactileGoodsTeaser } from '../components/TactileGoodsTeaser';
 import { StudioAnchor } from '../components/StudioAnchor';
-import { Preloader } from '../components/Preloader';
 import { ScrollReveal } from '../components/ScrollReveal';
 import { FloatingNavDock } from '../components/FloatingNavDock';
-import { Hero3DGeometricBackground } from '../components/Hero3DGeometricBackground';
+
+const Preloader = dynamic(
+  () => import('../components/Preloader').then((mod) => mod.Preloader),
+  { ssr: false }
+);
+
+const Hero3DGeometricBackground = dynamic(
+  () => import('../components/Hero3DGeometricBackground').then((mod) => mod.Hero3DGeometricBackground),
+  { ssr: false }
+);
 
 export default function Home() {
   const [inquirySubject, setInquirySubject] = useState<string>('');
